@@ -38,6 +38,7 @@
 		BA60432022A7D3C700345259 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431F22A7D3C700345259 /* Query.swift */; };
 		BA60432222A7D3D400345259 /* HTTPHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60432122A7D3D400345259 /* HTTPHeader.swift */; };
 		BA60432422A7D41D00345259 /* HTTPPathConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60432322A7D41D00345259 /* HTTPPathConvertible.swift */; };
+		BA60432622A7D68700345259 /* AuthorizationHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60432522A7D68700345259 /* AuthorizationHeader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -154,6 +155,7 @@
 		BA60431F22A7D3C700345259 /* Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
 		BA60432122A7D3D400345259 /* HTTPHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPHeader.swift; sourceTree = "<group>"; };
 		BA60432322A7D41D00345259 /* HTTPPathConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPPathConvertible.swift; sourceTree = "<group>"; };
+		BA60432522A7D68700345259 /* AuthorizationHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationHeader.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -343,6 +345,7 @@
 			children = (
 				BA60430D22A7CE7E00345259 /* CoreAPIClient.swift */,
 				BA60431222A7CEBF00345259 /* APIRequest.swift */,
+				BA60432522A7D68700345259 /* AuthorizationHeader.swift */,
 				BA60432322A7D41D00345259 /* HTTPPathConvertible.swift */,
 				BA60432122A7D3D400345259 /* HTTPHeader.swift */,
 				BA60431F22A7D3C700345259 /* Query.swift */,
@@ -643,6 +646,7 @@
 				BA60431522A7D12900345259 /* URLEncoder.swift in Sources */,
 				BA60426E22A7409300345259 /* SceneDelegate.swift in Sources */,
 				BA60431C22A7D22900345259 /* GitHubAPI.swift in Sources */,
+				BA60432622A7D68700345259 /* AuthorizationHeader.swift in Sources */,
 				BA60432022A7D3C700345259 /* Query.swift in Sources */,
 				BA60427022A7409300345259 /* ContentView.swift in Sources */,
 				BA60429C22A740B000345259 /* APIClient.swift in Sources */,

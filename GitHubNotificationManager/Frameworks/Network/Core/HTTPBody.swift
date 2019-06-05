@@ -19,7 +19,7 @@ public enum HTTPBody {
             let data = try JSONSerialization.data(withJSONObject: object, options: .prettyPrinted)
             return (data, "application/json")
         case .url(let parameters):
-            let data = parameters.urlEncode?.data(using: String.Encoding.utf8)
+            let data = parameters.urlEncoded?.data(using: String.Encoding.utf8)
             return (data, "application/x-www-form-urlencoded")
         case .data(let data, let type):
             return (data, type)

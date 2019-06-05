@@ -8,20 +8,20 @@
 
 import Foundation
 
-protocol URLEncoder {
-    var urlEncode: String? { get }
+protocol URLEncodedValue {
+    var urlEncoded: String? { get }
 }
 
-extension String: URLEncoder {
-    var urlEncode: String? {
+extension String: URLEncodedValue {
+    var urlEncoded: String? {
         return addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
     }
 }
 
-extension Dictionary where Key == String {
-    var urlEncode: String? {
+extension Dictionary: URLEncodedValue where Key == String {
+    var urlEncoded: String? {
         return reduce(String()) { string, element in
-            guard let key = element.key.urlEncode, let value = String(describing: element.value).urlEncode else {
+            guard let key = element.key.urlEncoded, let value = String(describing: element.value).urlEncoded else {
                 return string
             }
             return string + (string.isEmpty ? "" : "&") + key + "=" + value
