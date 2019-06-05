@@ -11,5 +11,5 @@ import Foundation
 public struct NotificationsRequest: GitHubAPIRequest {
     public var path: URLPathConvertible { ["notifications"] }
     public var method: HTTPMethod { .GET }
-    public typealias Response = NotificationEntity
+    public typealias Response = Notification
 }
