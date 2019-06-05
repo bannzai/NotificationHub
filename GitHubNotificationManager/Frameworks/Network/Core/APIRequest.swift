@@ -21,6 +21,13 @@ public protocol APIRequest {
 }
 
 public extension APIRequest {
+    var authorizationHeader: AuthorizationHeader? { nil }
+    var query: Query? { nil }
+    var header: HTTPHeader? { nil }
+    var body: HTTPBody? { nil }
+}
+
+public extension APIRequest {
     func urlRequest() throws -> URLRequest {
         var request = URLRequest(url: url)
         request.httpMethod = method.rawValue

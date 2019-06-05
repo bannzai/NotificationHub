@@ -40,6 +40,8 @@
 		BA60432422A7D41D00345259 /* HTTPPathConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60432322A7D41D00345259 /* HTTPPathConvertible.swift */; };
 		BA60432622A7D68700345259 /* AuthorizationHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60432522A7D68700345259 /* AuthorizationHeader.swift */; };
 		BA60432822A7D91200345259 /* GitHubAPIAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60432722A7D91200345259 /* GitHubAPIAuthorization.swift */; };
+		BA60432B22A7D99B00345259 /* NotificationsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60432A22A7D99B00345259 /* NotificationsRequest.swift */; };
+		BA60432D22A7D9C500345259 /* NotificationEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60432C22A7D9C500345259 /* NotificationEntity.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -158,6 +160,8 @@
 		BA60432322A7D41D00345259 /* HTTPPathConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPPathConvertible.swift; sourceTree = "<group>"; };
 		BA60432522A7D68700345259 /* AuthorizationHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationHeader.swift; sourceTree = "<group>"; };
 		BA60432722A7D91200345259 /* GitHubAPIAuthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAPIAuthorization.swift; sourceTree = "<group>"; };
+		BA60432A22A7D99B00345259 /* NotificationsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsRequest.swift; sourceTree = "<group>"; };
+		BA60432C22A7D9C500345259 /* NotificationEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationEntity.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -361,11 +365,21 @@
 		BA60431A22A7D21800345259 /* GitHub */ = {
 			isa = PBXGroup;
 			children = (
+				BA60432922A7D98A00345259 /* Notifcation */,
 				BA60431B22A7D22900345259 /* GitHubAPI.swift */,
 				BA60431D22A7D2FF00345259 /* GitHubAPIRequest.swift */,
 				BA60432722A7D91200345259 /* GitHubAPIAuthorization.swift */,
 			);
 			path = GitHub;
+			sourceTree = "<group>";
+		};
+		BA60432922A7D98A00345259 /* Notifcation */ = {
+			isa = PBXGroup;
+			children = (
+				BA60432A22A7D99B00345259 /* NotificationsRequest.swift */,
+				BA60432C22A7D9C500345259 /* NotificationEntity.swift */,
+			);
+			path = Notifcation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -644,6 +658,7 @@
 				BA60430C22A7CE7200345259 /* GitHub.swift in Sources */,
 				BA60426C22A7409300345259 /* AppDelegate.swift in Sources */,
 				BA60429F22A7C91000345259 /* Secret.swift in Sources */,
+				BA60432D22A7D9C500345259 /* NotificationEntity.swift in Sources */,
 				BA60431922A7D1ED00345259 /* HTTPMethod.swift in Sources */,
 				BA60431E22A7D2FF00345259 /* GitHubAPIRequest.swift in Sources */,
 				BA60431522A7D12900345259 /* URLEncoder.swift in Sources */,
@@ -653,6 +668,7 @@
 				BA60432022A7D3C700345259 /* Query.swift in Sources */,
 				BA60427022A7409300345259 /* ContentView.swift in Sources */,
 				BA60432822A7D91200345259 /* GitHubAPIAuthorization.swift in Sources */,
+				BA60432B22A7D99B00345259 /* NotificationsRequest.swift in Sources */,
 				BA60429C22A740B000345259 /* APIClient.swift in Sources */,
 				BA60431322A7CEBF00345259 /* APIRequest.swift in Sources */,
 				BA60432222A7D3D400345259 /* HTTPHeader.swift in Sources */,

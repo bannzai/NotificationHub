@@ -13,10 +13,6 @@ public protocol GitHubAPIRequest: APIRequest {
 }
 
 extension GitHubAPIRequest {
-    public var host: String? {
-        return "https://api.github.com/"
-    }
-    public var authorizationHeader: AuthorizationHeader? {
-        return GitHubAPIAuthorizationHeader()
-    }
+    public var host: String { "https://api.github.com/" }
+    public var authorizationHeader: AuthorizationHeader? { GitHubAPIAuthorizationHeader()  }
 }
