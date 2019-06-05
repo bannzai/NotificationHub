@@ -17,5 +17,3 @@ extension GitHubAPIRequest {
     public var host: String { "https://api.github.com/" }
     public var authorizationHeader: AuthorizationHeader? { GitHubAPIAuthorizationHeader()  }
 }
-
-extension JSONDecoder: TopLevelDecoder { }

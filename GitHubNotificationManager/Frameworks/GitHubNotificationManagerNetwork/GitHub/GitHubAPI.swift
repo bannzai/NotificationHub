@@ -12,7 +12,5 @@ import Combine
 public struct GitHubAPI {
     public static func request<R: GitHubAPIRequest>(request: R) -> AnyPublisher<R.Response, RequestError> where R.Response: Decodable  {
         BaseAPIClient.request(request: request)
-            .map { try! JSONDecoder().decode(R.Response.self, from: $0.data) }
-            .eraseToAnyPublisher()
     }
 }

@@ -47,6 +47,7 @@
 		BAC127D422A8442A00B52862 /* URLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC127D222A8442200B52862 /* URLConvertible.swift */; };
 		BAC127D622A844BD00B52862 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC127D522A844BD00B52862 /* RootView.swift */; };
 		BAC127DB22A8539000B52862 /* NotificationVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC127DA22A8539000B52862 /* NotificationVIewModel.swift */; };
+		BAC127DE22A878B400B52862 /* Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC127DC22A8780300B52862 /* Decoder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -187,6 +188,7 @@
 		BAC127D222A8442200B52862 /* URLConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConvertible.swift; sourceTree = "<group>"; };
 		BAC127D522A844BD00B52862 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		BAC127DA22A8539000B52862 /* NotificationVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationVIewModel.swift; sourceTree = "<group>"; };
+		BAC127DC22A8780300B52862 /* Decoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -387,6 +389,7 @@
 				BA60431622A7D1D900345259 /* HTTPBody.swift */,
 				BA60431822A7D1ED00345259 /* HTTPMethod.swift */,
 				BA60431422A7D12900345259 /* URLEncoder.swift */,
+				BAC127DC22A8780300B52862 /* Decoder.swift */,
 			);
 			path = API;
 			sourceTree = "<group>";
@@ -762,6 +765,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAC127DE22A878B400B52862 /* Decoder.swift in Sources */,
 				BAC1276622A82F7C00B52862 /* APIRequest.swift in Sources */,
 				BAC1277222A82F8700B52862 /* GitHubAPIAuthorization.swift in Sources */,
 				BAC127D122A841B300B52862 /* ImageLoader.swift in Sources */,
