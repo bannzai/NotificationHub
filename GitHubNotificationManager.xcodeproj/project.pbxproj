@@ -50,6 +50,7 @@
 		BAC127BF22A83F8400B52862 /* GitHubNotificationManagerUIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC127AA22A83F8400B52862 /* GitHubNotificationManagerUIComponents.framework */; };
 		BAC127C022A83F8400B52862 /* GitHubNotificationManagerUIComponents.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BAC127AA22A83F8400B52862 /* GitHubNotificationManagerUIComponents.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BAC127D122A841B300B52862 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC1278122A83DBC00B52862 /* ImageLoader.swift */; };
+		BAC127D422A8442A00B52862 /* URLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC127D222A8442200B52862 /* URLConvertible.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -216,6 +217,7 @@
 		BAC127B222A83F8400B52862 /* GitHubNotificationManagerUIComponentsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubNotificationManagerUIComponentsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BAC127B922A83F8400B52862 /* GitHubNotificationManagerUIComponentsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubNotificationManagerUIComponentsTests.swift; sourceTree = "<group>"; };
 		BAC127BB22A83F8400B52862 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BAC127D222A8442200B52862 /* URLConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConvertible.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -470,6 +472,7 @@
 			isa = PBXGroup;
 			children = (
 				BAC1278122A83DBC00B52862 /* ImageLoader.swift */,
+				BAC127D222A8442200B52862 /* URLConvertible.swift */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -902,6 +905,7 @@
 				BAC1276A22A82F8000B52862 /* Query.swift in Sources */,
 				BAC1276522A82F7500B52862 /* CoreAPIClient.swift in Sources */,
 				BAC1276B22A82F8000B52862 /* HTTPBody.swift in Sources */,
+				BAC127D422A8442A00B52862 /* URLConvertible.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
