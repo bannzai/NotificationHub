@@ -29,18 +29,6 @@
       shouldUseLaunchSchemeArgsEnv = "YES">
       <TestPlans>
       </TestPlans>
-      <Testables>
-         <TestableReference
-            skipped = "NO">
-            <BuildableReference
-               BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BAC1278F22A83EDE00B52862"
-               BuildableName = "GitHubNotificationManagerDomainTests.xctest"
-               BlueprintName = "GitHubNotificationManagerDomainTests"
-               ReferencedContainer = "container:GitHubNotificationManager.xcodeproj">
-            </BuildableReference>
-         </TestableReference>
-      </Testables>
    </TestAction>
    <LaunchAction
       buildConfiguration = "Debug"
