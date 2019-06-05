@@ -19,7 +19,7 @@ public enum NetworkError: Error {
     case networkError(Swift.Error)
 }
 internal struct BaseAPIClient {
-    static func request<R: APIRequest> (request: R) -> APIPublisher {
+    private static func request<R: APIRequest> (request: R) -> APIPublisher {
         APIPublisher { subscriber in
             let session = URLSession(configuration: URLSessionConfiguration.default)
             let task = session.dataTask(with: request.url) { (data, response, error) in
