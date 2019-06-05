@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -43,6 +43,7 @@
 		BAC1277322A82F9200B52862 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60429E22A7C91000345259 /* Secret.swift */; };
 		BAC1277522A830CF00B52862 /* GitHubNotificationManagerCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA6042C922A7CAD500345259 /* GitHubNotificationManagerCore.framework */; };
 		BAC1277622A830CF00B52862 /* GitHubNotificationManagerCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA6042C922A7CAD500345259 /* GitHubNotificationManagerCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BAC1277F22A83D0900B52862 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = BAC1277E22A83D0900B52862 /* Nuke */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -226,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAC1277522A830CF00B52862 /* GitHubNotificationManagerCore.framework in Frameworks */,
+				BAC1277F22A83D0900B52862 /* Nuke in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,7 +350,8 @@
 		BA6042EF22A7CE1E00345259 /* GitHubNotificationManagerNetwork */ = {
 			isa = PBXGroup;
 			children = (
-				BA60430F22A7CE9100345259 /* Core */,
+				BAC1278022A83D2100B52862 /* Image */,
+				BA60430F22A7CE9100345259 /* API */,
 				BA60431A22A7D21800345259 /* GitHub */,
 				BA6042F022A7CE1E00345259 /* Network.h */,
 				BA6042F122A7CE1E00345259 /* Info.plist */,
@@ -365,7 +368,7 @@
 			path = NetworkTests;
 			sourceTree = "<group>";
 		};
-		BA60430F22A7CE9100345259 /* Core */ = {
+		BA60430F22A7CE9100345259 /* API */ = {
 			isa = PBXGroup;
 			children = (
 				BA60430D22A7CE7E00345259 /* CoreAPIClient.swift */,
@@ -378,7 +381,7 @@
 				BA60431822A7D1ED00345259 /* HTTPMethod.swift */,
 				BA60431422A7D12900345259 /* URLEncoder.swift */,
 			);
-			path = Core;
+			path = API;
 			sourceTree = "<group>";
 		};
 		BA60431A22A7D21800345259 /* GitHub */ = {
@@ -406,6 +409,13 @@
 			children = (
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BAC1278022A83D2100B52862 /* Image */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Image;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -500,6 +510,8 @@
 			dependencies = (
 			);
 			name = GitHubNotificationManagerCore;
+			packageProductDependencies = (
+			);
 			productName = Core;
 			productReference = BA6042C922A7CAD500345259 /* GitHubNotificationManagerCore.framework */;
 			productType = "com.apple.product-type.framework";
@@ -539,6 +551,9 @@
 				BAC1277822A830CF00B52862 /* PBXTargetDependency */,
 			);
 			name = GitHubNotificationManagerNetwork;
+			packageProductDependencies = (
+				BAC1277E22A83D0900B52862 /* Nuke */,
+			);
 			productName = Network;
 			productReference = BA6042EE22A7CE1E00345259 /* GitHubNotificationManagerNetwork.framework */;
 			productType = "com.apple.product-type.framework";
@@ -608,6 +623,9 @@
 				Base,
 			);
 			mainGroup = BA60425F22A7409300345259;
+			packageReferences = (
+				BAC1277D22A83D0900B52862 /* XCRemoteSwiftPackageReference "Nuke" */,
+			);
 			productRefGroup = BA60426922A7409300345259 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -1303,6 +1321,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		BAC1277D22A83D0900B52862 /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.6.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		BAC1277E22A83D0900B52862 /* Nuke */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BAC1277D22A83D0900B52862 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = Nuke;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = BA60426022A7409300345259 /* Project object */;
 }
