@@ -1,3 +1,4 @@
+SECRET_PATH?=./GitHubNotificationManager/Frameworks/Core/Secret/
 
 secret:
-	cp GitHubNotificationManager/Secret/Secret.swift.sample GitHubNotificationManager/Secret/Secret.swift
+	cp $(SECRET_PATH)GitHubNotificationManager/Secret/Secret.swift.sample $(SECRET_PATH)/GitHubNotificationManager/Secret/Secret.swift
