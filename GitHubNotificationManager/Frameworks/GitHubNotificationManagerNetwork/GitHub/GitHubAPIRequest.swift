@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import Combine
 
 public protocol GitHubAPIRequest: APIRequest {
 
@@ -17,9 +18,4 @@ extension GitHubAPIRequest {
     public var authorizationHeader: AuthorizationHeader? { GitHubAPIAuthorizationHeader()  }
 }
 
-extension GitHubAPIRequest where Response: Decodable {
-    public func decode(data: Data) throws -> Response {
-        let object = try JSONDecoder().decode(Response.self, from: data)
-        return object
-    }
-}
+extension JSONDecoder: TopLevelDecoder { }

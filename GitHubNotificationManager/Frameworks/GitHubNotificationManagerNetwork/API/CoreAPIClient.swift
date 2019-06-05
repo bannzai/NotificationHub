@@ -13,15 +13,12 @@ public typealias APIResponse = (data: Data, response: HTTPURLResponse)
 public typealias RequestError = NetworkError
 public typealias APIPublisher = AnyPublisher<APIResponse, RequestError>
 
-public protocol CoreAPIClient {
-    static func request<R: APIRequest> (request: R) -> APIPublisher
-}
 
 public enum NetworkError: Error {
     case noResponseData
     case networkError(Swift.Error)
 }
-internal struct BaseAPIClient: CoreAPIClient {
+internal struct BaseAPIClient {
     static func request<R: APIRequest> (request: R) -> APIPublisher {
         APIPublisher { subscriber in
             let session = URLSession(configuration: URLSessionConfiguration.default)
@@ -46,4 +43,5 @@ internal struct BaseAPIClient: CoreAPIClient {
             task.resume()
         }
     }
+    
 }

@@ -15,6 +15,4 @@ final public class NotificationViewModel: BindableObject {
     public let didChange = PassthroughSubject<GitHubNotificationManagerNetwork.Notification, Never>()
     
     func fetch() {
-        GitHubAPI.request(request: NotificationsRequest()).subscribe(on: Scheduler)
-    }
-}
+        GitHubAPI.request(request: NotificationsRequest())
