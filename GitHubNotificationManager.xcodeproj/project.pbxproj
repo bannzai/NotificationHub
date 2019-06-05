@@ -15,7 +15,6 @@
 		BA60427822A7409400345259 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA60427622A7409400345259 /* LaunchScreen.storyboard */; };
 		BA60428322A7409400345259 /* GitHubNotificationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60428222A7409400345259 /* GitHubNotificationManagerTests.swift */; };
 		BA60428E22A7409400345259 /* GitHubNotificationManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60428D22A7409400345259 /* GitHubNotificationManagerUITests.swift */; };
-		BA60429C22A740B000345259 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60429B22A740B000345259 /* APIClient.swift */; };
 		BA6042D222A7CAD500345259 /* GitHubNotificationManagerCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA6042C922A7CAD500345259 /* GitHubNotificationManagerCore.framework */; };
 		BA6042D922A7CAD500345259 /* CoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6042D822A7CAD500345259 /* CoreTests.swift */; };
 		BA6042DB22A7CAD500345259 /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = BA6042CB22A7CAD500345259 /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -157,7 +156,6 @@
 		BA60428922A7409400345259 /* GitHubNotificationManagerUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GitHubNotificationManagerUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA60428D22A7409400345259 /* GitHubNotificationManagerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubNotificationManagerUITests.swift; sourceTree = "<group>"; };
 		BA60428F22A7409400345259 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BA60429B22A740B000345259 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		BA60429E22A7C91000345259 /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		BA6042C922A7CAD500345259 /* GitHubNotificationManagerCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GitHubNotificationManagerCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA6042CB22A7CAD500345259 /* Core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Core.h; sourceTree = "<group>"; };
@@ -290,7 +288,6 @@
 				BA60427622A7409400345259 /* LaunchScreen.storyboard */,
 				BA60427922A7409400345259 /* Info.plist */,
 				BA60427322A7409400345259 /* Preview Content */,
-				BA60429B22A740B000345259 /* APIClient.swift */,
 			);
 			path = GitHubNotificationManager;
 			sourceTree = "<group>";
@@ -725,7 +722,6 @@
 				BAC127DB22A8539000B52862 /* NotificationVIewModel.swift in Sources */,
 				BA60426E22A7409300345259 /* SceneDelegate.swift in Sources */,
 				BA60427022A7409300345259 /* ContentView.swift in Sources */,
-				BA60429C22A740B000345259 /* APIClient.swift in Sources */,
 				BAC127D622A844BD00B52862 /* RootView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
