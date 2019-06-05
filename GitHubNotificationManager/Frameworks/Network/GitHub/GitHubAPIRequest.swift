@@ -16,4 +16,7 @@ extension GitHubAPIRequest {
     public var host: String? {
         return "https://api.github.com/"
     }
+    public var authorizationHeader: AuthorizationHeader? {
+        return GitHubAPIAuthorizationHeader()
+    }
 }

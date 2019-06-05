@@ -9,13 +9,5 @@
 import Foundation
 
 public protocol AuthorizationHeader {
-    var key: String { get }
-    var value: String { get }
     var header: String { get }
-}
-
-extension AuthorizationHeader {
-    public var header: String {
-        return "\(key): \(value)"
-    }
 }
