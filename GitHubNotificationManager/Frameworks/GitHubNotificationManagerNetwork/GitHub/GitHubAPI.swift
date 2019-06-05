@@ -8,6 +8,8 @@
 
 import Foundation
 
-public struct GitHubAPI {
-
+public struct GitHubAPI: CoreAPIClient {
+    public static func request<R: APIRequest>(request: R) -> APIPublisher {
+        return BaseAPIClient.request(request: request)
+    }
 }
