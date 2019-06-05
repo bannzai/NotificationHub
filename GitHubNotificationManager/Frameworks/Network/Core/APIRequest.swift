@@ -8,12 +8,11 @@
 
 import Foundation
 
-public typealias Query = [String: Any]
-public typealias HTTPHeader = [String: String]
-
 public protocol APIRequest {
     associatedtype Response
     
+    var host: String? { get }
+    var path: URLPathConvertible { get }
     var query: Query? { get }
     var header: HTTPHeader? { get }
     var body: HTTPBody? { get }

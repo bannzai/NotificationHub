@@ -1,5 +1,5 @@
 //
-//  GitHub.swift
+//  Query.swift
 //  GitHubNotificationManager
 //
 //  Created by Yudai.Hirose on 2019/06/05.
@@ -8,7 +8,4 @@
 
 import Foundation
 
-// MARK: - Namespace
-public enum GitHub {
-    
-}
+public typealias Query = [String: Any]

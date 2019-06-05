@@ -33,7 +33,11 @@
 		BA60431522A7D12900345259 /* URLEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431422A7D12900345259 /* URLEncoder.swift */; };
 		BA60431722A7D1D900345259 /* HTTPBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431622A7D1D900345259 /* HTTPBody.swift */; };
 		BA60431922A7D1ED00345259 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431822A7D1ED00345259 /* HTTPMethod.swift */; };
-		BA60431C22A7D22900345259 /* GitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431B22A7D22900345259 /* GitHub.swift */; };
+		BA60431C22A7D22900345259 /* GitHubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431B22A7D22900345259 /* GitHubAPI.swift */; };
+		BA60431E22A7D2FF00345259 /* GitHubAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431D22A7D2FF00345259 /* GitHubAPIRequest.swift */; };
+		BA60432022A7D3C700345259 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431F22A7D3C700345259 /* Query.swift */; };
+		BA60432222A7D3D400345259 /* HTTPHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60432122A7D3D400345259 /* HTTPHeader.swift */; };
+		BA60432422A7D41D00345259 /* HTTPPathConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60432322A7D41D00345259 /* HTTPPathConvertible.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,7 +149,11 @@
 		BA60431422A7D12900345259 /* URLEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLEncoder.swift; sourceTree = "<group>"; };
 		BA60431622A7D1D900345259 /* HTTPBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPBody.swift; sourceTree = "<group>"; };
 		BA60431822A7D1ED00345259 /* HTTPMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
-		BA60431B22A7D22900345259 /* GitHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHub.swift; sourceTree = "<group>"; };
+		BA60431B22A7D22900345259 /* GitHubAPI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAPI.swift; sourceTree = "<group>"; };
+		BA60431D22A7D2FF00345259 /* GitHubAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAPIRequest.swift; sourceTree = "<group>"; };
+		BA60431F22A7D3C700345259 /* Query.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Query.swift; sourceTree = "<group>"; };
+		BA60432122A7D3D400345259 /* HTTPHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPHeader.swift; sourceTree = "<group>"; };
+		BA60432322A7D41D00345259 /* HTTPPathConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPPathConvertible.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -335,6 +343,9 @@
 			children = (
 				BA60430D22A7CE7E00345259 /* CoreAPIClient.swift */,
 				BA60431222A7CEBF00345259 /* APIRequest.swift */,
+				BA60432322A7D41D00345259 /* HTTPPathConvertible.swift */,
+				BA60432122A7D3D400345259 /* HTTPHeader.swift */,
+				BA60431F22A7D3C700345259 /* Query.swift */,
 				BA60431622A7D1D900345259 /* HTTPBody.swift */,
 				BA60431822A7D1ED00345259 /* HTTPMethod.swift */,
 				BA60431422A7D12900345259 /* URLEncoder.swift */,
@@ -345,7 +356,8 @@
 		BA60431A22A7D21800345259 /* GitHub */ = {
 			isa = PBXGroup;
 			children = (
-				BA60431B22A7D22900345259 /* GitHub.swift */,
+				BA60431B22A7D22900345259 /* GitHubAPI.swift */,
+				BA60431D22A7D2FF00345259 /* GitHubAPIRequest.swift */,
 			);
 			path = GitHub;
 			sourceTree = "<group>";
@@ -627,13 +639,17 @@
 				BA60426C22A7409300345259 /* AppDelegate.swift in Sources */,
 				BA60429F22A7C91000345259 /* Secret.swift in Sources */,
 				BA60431922A7D1ED00345259 /* HTTPMethod.swift in Sources */,
+				BA60431E22A7D2FF00345259 /* GitHubAPIRequest.swift in Sources */,
 				BA60431522A7D12900345259 /* URLEncoder.swift in Sources */,
 				BA60426E22A7409300345259 /* SceneDelegate.swift in Sources */,
-				BA60431C22A7D22900345259 /* GitHub.swift in Sources */,
+				BA60431C22A7D22900345259 /* GitHubAPI.swift in Sources */,
+				BA60432022A7D3C700345259 /* Query.swift in Sources */,
 				BA60427022A7409300345259 /* ContentView.swift in Sources */,
 				BA60429C22A740B000345259 /* APIClient.swift in Sources */,
 				BA60431322A7CEBF00345259 /* APIRequest.swift in Sources */,
+				BA60432222A7D3D400345259 /* HTTPHeader.swift in Sources */,
 				BA60430E22A7CE7E00345259 /* CoreAPIClient.swift in Sources */,
+				BA60432422A7D41D00345259 /* HTTPPathConvertible.swift in Sources */,
 				BA60431722A7D1D900345259 /* HTTPBody.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
