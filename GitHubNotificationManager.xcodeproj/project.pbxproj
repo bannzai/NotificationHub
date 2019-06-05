@@ -47,6 +47,7 @@
 		BAC127D122A841B300B52862 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC1278122A83DBC00B52862 /* ImageLoader.swift */; };
 		BAC127D422A8442A00B52862 /* URLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC127D222A8442200B52862 /* URLConvertible.swift */; };
 		BAC127D622A844BD00B52862 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC127D522A844BD00B52862 /* RootView.swift */; };
+		BAC127DB22A8539000B52862 /* NotificationVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC127DA22A8539000B52862 /* NotificationVIewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -187,6 +188,7 @@
 		BAC1278122A83DBC00B52862 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		BAC127D222A8442200B52862 /* URLConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConvertible.swift; sourceTree = "<group>"; };
 		BAC127D522A844BD00B52862 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		BAC127DA22A8539000B52862 /* NotificationVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationVIewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -283,6 +285,7 @@
 				BA60426D22A7409300345259 /* SceneDelegate.swift */,
 				BA60426F22A7409300345259 /* ContentView.swift */,
 				BAC127D522A844BD00B52862 /* RootView.swift */,
+				BAC127D922A852B400B52862 /* Notification */,
 				BA60427122A7409400345259 /* Assets.xcassets */,
 				BA60427622A7409400345259 /* LaunchScreen.storyboard */,
 				BA60427922A7409400345259 /* Info.plist */,
@@ -425,6 +428,14 @@
 				BAC127D222A8442200B52862 /* URLConvertible.swift */,
 			);
 			path = Image;
+			sourceTree = "<group>";
+		};
+		BAC127D922A852B400B52862 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				BAC127DA22A8539000B52862 /* NotificationVIewModel.swift */,
+			);
+			path = Notification;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -711,6 +722,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA60426C22A7409300345259 /* AppDelegate.swift in Sources */,
+				BAC127DB22A8539000B52862 /* NotificationVIewModel.swift in Sources */,
 				BA60426E22A7409300345259 /* SceneDelegate.swift in Sources */,
 				BA60427022A7409300345259 /* ContentView.swift in Sources */,
 				BA60429C22A740B000345259 /* APIClient.swift in Sources */,
