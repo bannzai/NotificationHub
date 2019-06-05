@@ -27,7 +27,6 @@
 		BA60430022A7CE1E00345259 /* Network.h in Headers */ = {isa = PBXBuildFile; fileRef = BA6042F022A7CE1E00345259 /* Network.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BA60430322A7CE1E00345259 /* Network.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA6042EE22A7CE1E00345259 /* Network.framework */; };
 		BA60430422A7CE1E00345259 /* Network.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA6042EE22A7CE1E00345259 /* Network.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BA60430C22A7CE7200345259 /* GitHub.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60430B22A7CE7200345259 /* GitHub.swift */; };
 		BA60430E22A7CE7E00345259 /* CoreAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60430D22A7CE7E00345259 /* CoreAPIClient.swift */; };
 		BA60431322A7CEBF00345259 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431222A7CEBF00345259 /* APIRequest.swift */; };
 		BA60431522A7D12900345259 /* URLEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431422A7D12900345259 /* URLEncoder.swift */; };
@@ -147,7 +146,6 @@
 		BA6042F622A7CE1E00345259 /* NetworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA6042FD22A7CE1E00345259 /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
 		BA6042FF22A7CE1E00345259 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BA60430B22A7CE7200345259 /* GitHub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHub.swift; sourceTree = "<group>"; };
 		BA60430D22A7CE7E00345259 /* CoreAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreAPIClient.swift; sourceTree = "<group>"; };
 		BA60431222A7CEBF00345259 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		BA60431422A7D12900345259 /* URLEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLEncoder.swift; sourceTree = "<group>"; };
@@ -332,7 +330,6 @@
 				BA60431A22A7D21800345259 /* GitHub */,
 				BA6042F022A7CE1E00345259 /* Network.h */,
 				BA6042F122A7CE1E00345259 /* Info.plist */,
-				BA60430B22A7CE7200345259 /* GitHub.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -655,7 +652,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA60430C22A7CE7200345259 /* GitHub.swift in Sources */,
 				BA60426C22A7409300345259 /* AppDelegate.swift in Sources */,
 				BA60429F22A7C91000345259 /* Secret.swift in Sources */,
 				BA60431922A7D1ED00345259 /* HTTPMethod.swift in Sources */,
