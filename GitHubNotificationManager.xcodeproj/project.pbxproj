@@ -48,6 +48,7 @@
 		BAC127D622A844BD00B52862 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC127D522A844BD00B52862 /* RootView.swift */; };
 		BAC127DB22A8539000B52862 /* NotificationVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC127DA22A8539000B52862 /* NotificationVIewModel.swift */; };
 		BAC127DE22A878B400B52862 /* Decoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC127DC22A8780300B52862 /* Decoder.swift */; };
+		BAC127E222A8875000B52862 /* NotificationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC127E122A8875000B52862 /* NotificationListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -189,6 +190,7 @@
 		BAC127D522A844BD00B52862 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		BAC127DA22A8539000B52862 /* NotificationVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationVIewModel.swift; sourceTree = "<group>"; };
 		BAC127DC22A8780300B52862 /* Decoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Decoder.swift; sourceTree = "<group>"; };
+		BAC127E122A8875000B52862 /* NotificationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -285,6 +287,7 @@
 				BA60426D22A7409300345259 /* SceneDelegate.swift */,
 				BA60426F22A7409300345259 /* ContentView.swift */,
 				BAC127D522A844BD00B52862 /* RootView.swift */,
+				BAC127E122A8875000B52862 /* NotificationListView.swift */,
 				BAC127D922A852B400B52862 /* Notification */,
 				BA60427122A7409400345259 /* Assets.xcassets */,
 				BA60427622A7409400345259 /* LaunchScreen.storyboard */,
@@ -726,6 +729,7 @@
 				BA60426E22A7409300345259 /* SceneDelegate.swift in Sources */,
 				BA60427022A7409300345259 /* ContentView.swift in Sources */,
 				BAC127D622A844BD00B52862 /* RootView.swift in Sources */,
+				BAC127E222A8875000B52862 /* NotificationListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

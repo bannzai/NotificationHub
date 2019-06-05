@@ -12,11 +12,16 @@ import SwiftUI
 import GitHubNotificationManagerNetwork
 
 final public class NotificationViewModel: BindableObject {
-    public let didChange = PassthroughSubject<[GitHubNotificationManagerNetwork.Notification], Never>()
+    public typealias ContentType = [GitHubNotificationManagerNetwork.Notification]
+    var notifications: ContentType = [] {
+        didSet { didChange.send(notifications) }
+    }
+    public let didChange = PassthroughSubject<ContentType, Never>()
     
     func fetch() {
         _ = GitHubAPI.request(request: NotificationsRequest())
-            .replaceError(with: [])// FIXKE: How to convert for Failure type to Never
-            .subscribe(didChange)
+            .sink(receiveValue: { [weak self] (notifications) in
+                self?.notifications += notifications
+            })
         }
 }
