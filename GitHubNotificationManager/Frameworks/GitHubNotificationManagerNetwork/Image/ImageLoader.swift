@@ -6,7 +6,7 @@
 //  Copyright © 2019 bannzai. All rights reserved.
 //
 
-import Foundation
+import UIKit.UIImage
 import Combine
 import Nuke
 
@@ -26,12 +26,21 @@ extension String: URLConvertible {
     }
 }
 
-public class ImageLoader: BindableObject {
-    public var didChange = PassthroughSubject<UIImage?, Never>()
+public typealias ImageLoadPublisher = AnyPublisher<UIKit.UIImage?, Swift.Error>
+
+public protocol ImageLoader {
+    func load(url: URLConvertible) -> ImageLoadPublisher
+}
+public class SharedImageLoader: ImageLoader {
+    public static let shared = SharedImageLoader()
+    private init() { }
     
-    func load(url: URLConvertible) {
-        Nuke.ImagePipeline.shared.loadImage(with: url.url, progress: nil) { [weak self] (response, _) in
-            self?.didChange.send(response?.image)
+    public func load(url: URLConvertible) -> ImageLoadPublisher {
+        ImageLoadPublisher { subscriber in
+            Nuke.ImagePipeline.shared.loadImage(with: url.url, progress: nil) { (response, _) in
+                _ = subscriber.receive(response?.image)
+                subscriber.receive(completion: .finished)
+            }
         }
     }
 }

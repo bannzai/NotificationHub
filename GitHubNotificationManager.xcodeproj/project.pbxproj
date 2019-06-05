@@ -44,12 +44,12 @@
 		BAC1277522A830CF00B52862 /* GitHubNotificationManagerCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA6042C922A7CAD500345259 /* GitHubNotificationManagerCore.framework */; };
 		BAC1277622A830CF00B52862 /* GitHubNotificationManagerCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA6042C922A7CAD500345259 /* GitHubNotificationManagerCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BAC1277F22A83D0900B52862 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = BAC1277E22A83D0900B52862 /* Nuke */; };
-		BAC1278222A83DBC00B52862 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC1278122A83DBC00B52862 /* ImageLoader.swift */; };
 		BAC127B322A83F8400B52862 /* GitHubNotificationManagerUIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC127AA22A83F8400B52862 /* GitHubNotificationManagerUIComponents.framework */; };
 		BAC127BA22A83F8400B52862 /* GitHubNotificationManagerUIComponentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC127B922A83F8400B52862 /* GitHubNotificationManagerUIComponentsTests.swift */; };
 		BAC127BC22A83F8400B52862 /* GitHubNotificationManagerUIComponents.h in Headers */ = {isa = PBXBuildFile; fileRef = BAC127AC22A83F8400B52862 /* GitHubNotificationManagerUIComponents.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BAC127BF22A83F8400B52862 /* GitHubNotificationManagerUIComponents.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BAC127AA22A83F8400B52862 /* GitHubNotificationManagerUIComponents.framework */; };
 		BAC127C022A83F8400B52862 /* GitHubNotificationManagerUIComponents.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BAC127AA22A83F8400B52862 /* GitHubNotificationManagerUIComponents.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BAC127D122A841B300B52862 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC1278122A83DBC00B52862 /* ImageLoader.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -846,7 +846,6 @@
 			files = (
 				BA60426C22A7409300345259 /* AppDelegate.swift in Sources */,
 				BA60426E22A7409300345259 /* SceneDelegate.swift in Sources */,
-				BAC1278222A83DBC00B52862 /* ImageLoader.swift in Sources */,
 				BA60427022A7409300345259 /* ContentView.swift in Sources */,
 				BA60429C22A740B000345259 /* APIClient.swift in Sources */,
 			);
@@ -890,6 +889,7 @@
 			files = (
 				BAC1276622A82F7C00B52862 /* APIRequest.swift in Sources */,
 				BAC1277222A82F8700B52862 /* GitHubAPIAuthorization.swift in Sources */,
+				BAC127D122A841B300B52862 /* ImageLoader.swift in Sources */,
 				BAC1276722A82F8000B52862 /* AuthorizationHeader.swift in Sources */,
 				BAC1276F22A82F8700B52862 /* NotificationsRequest.swift in Sources */,
 				BAC1276922A82F8000B52862 /* HTTPHeader.swift in Sources */,
