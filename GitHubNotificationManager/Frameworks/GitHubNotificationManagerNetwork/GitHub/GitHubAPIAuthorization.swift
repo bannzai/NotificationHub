@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import GitHubNotificationManagerCore
 
 public struct GitHubAPIAuthorizationHeader: AuthorizationHeader { 
     public var header: String {

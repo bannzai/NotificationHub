@@ -16,31 +16,33 @@
 		BA60428322A7409400345259 /* GitHubNotificationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60428222A7409400345259 /* GitHubNotificationManagerTests.swift */; };
 		BA60428E22A7409400345259 /* GitHubNotificationManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60428D22A7409400345259 /* GitHubNotificationManagerUITests.swift */; };
 		BA60429C22A740B000345259 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60429B22A740B000345259 /* APIClient.swift */; };
-		BA60429F22A7C91000345259 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60429E22A7C91000345259 /* Secret.swift */; };
-		BA6042D222A7CAD500345259 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA6042C922A7CAD500345259 /* Core.framework */; };
+		BA6042D222A7CAD500345259 /* GitHubNotificationManagerCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA6042C922A7CAD500345259 /* GitHubNotificationManagerCore.framework */; };
 		BA6042D922A7CAD500345259 /* CoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6042D822A7CAD500345259 /* CoreTests.swift */; };
 		BA6042DB22A7CAD500345259 /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = BA6042CB22A7CAD500345259 /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BA6042DE22A7CAD500345259 /* Core.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA6042C922A7CAD500345259 /* Core.framework */; };
-		BA6042DF22A7CAD500345259 /* Core.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA6042C922A7CAD500345259 /* Core.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BA6042F722A7CE1E00345259 /* Network.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA6042EE22A7CE1E00345259 /* Network.framework */; };
+		BA6042DE22A7CAD500345259 /* GitHubNotificationManagerCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA6042C922A7CAD500345259 /* GitHubNotificationManagerCore.framework */; };
+		BA6042DF22A7CAD500345259 /* GitHubNotificationManagerCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA6042C922A7CAD500345259 /* GitHubNotificationManagerCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BA6042F722A7CE1E00345259 /* GitHubNotificationManagerNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA6042EE22A7CE1E00345259 /* GitHubNotificationManagerNetwork.framework */; };
 		BA6042FE22A7CE1E00345259 /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6042FD22A7CE1E00345259 /* NetworkTests.swift */; };
 		BA60430022A7CE1E00345259 /* Network.h in Headers */ = {isa = PBXBuildFile; fileRef = BA6042F022A7CE1E00345259 /* Network.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BA60430322A7CE1E00345259 /* Network.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA6042EE22A7CE1E00345259 /* Network.framework */; };
-		BA60430422A7CE1E00345259 /* Network.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA6042EE22A7CE1E00345259 /* Network.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BA60430E22A7CE7E00345259 /* CoreAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60430D22A7CE7E00345259 /* CoreAPIClient.swift */; };
-		BA60431322A7CEBF00345259 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431222A7CEBF00345259 /* APIRequest.swift */; };
-		BA60431522A7D12900345259 /* URLEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431422A7D12900345259 /* URLEncoder.swift */; };
-		BA60431722A7D1D900345259 /* HTTPBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431622A7D1D900345259 /* HTTPBody.swift */; };
-		BA60431922A7D1ED00345259 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431822A7D1ED00345259 /* HTTPMethod.swift */; };
-		BA60431C22A7D22900345259 /* GitHubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431B22A7D22900345259 /* GitHubAPI.swift */; };
-		BA60431E22A7D2FF00345259 /* GitHubAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431D22A7D2FF00345259 /* GitHubAPIRequest.swift */; };
-		BA60432022A7D3C700345259 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431F22A7D3C700345259 /* Query.swift */; };
-		BA60432222A7D3D400345259 /* HTTPHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60432122A7D3D400345259 /* HTTPHeader.swift */; };
-		BA60432422A7D41D00345259 /* HTTPPathConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60432322A7D41D00345259 /* HTTPPathConvertible.swift */; };
-		BA60432622A7D68700345259 /* AuthorizationHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60432522A7D68700345259 /* AuthorizationHeader.swift */; };
-		BA60432822A7D91200345259 /* GitHubAPIAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60432722A7D91200345259 /* GitHubAPIAuthorization.swift */; };
-		BA60432B22A7D99B00345259 /* NotificationsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60432A22A7D99B00345259 /* NotificationsRequest.swift */; };
-		BA60433522A82A0900345259 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60432F22A82A0900345259 /* Notification.swift */; };
+		BA60430322A7CE1E00345259 /* GitHubNotificationManagerNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA6042EE22A7CE1E00345259 /* GitHubNotificationManagerNetwork.framework */; };
+		BA60430422A7CE1E00345259 /* GitHubNotificationManagerNetwork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA6042EE22A7CE1E00345259 /* GitHubNotificationManagerNetwork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BAC1276522A82F7500B52862 /* CoreAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60430D22A7CE7E00345259 /* CoreAPIClient.swift */; };
+		BAC1276622A82F7C00B52862 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431222A7CEBF00345259 /* APIRequest.swift */; };
+		BAC1276722A82F8000B52862 /* AuthorizationHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60432522A7D68700345259 /* AuthorizationHeader.swift */; };
+		BAC1276822A82F8000B52862 /* HTTPPathConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60432322A7D41D00345259 /* HTTPPathConvertible.swift */; };
+		BAC1276922A82F8000B52862 /* HTTPHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60432122A7D3D400345259 /* HTTPHeader.swift */; };
+		BAC1276A22A82F8000B52862 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431F22A7D3C700345259 /* Query.swift */; };
+		BAC1276B22A82F8000B52862 /* HTTPBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431622A7D1D900345259 /* HTTPBody.swift */; };
+		BAC1276C22A82F8000B52862 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431822A7D1ED00345259 /* HTTPMethod.swift */; };
+		BAC1276D22A82F8000B52862 /* URLEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431422A7D12900345259 /* URLEncoder.swift */; };
+		BAC1276E22A82F8700B52862 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60432F22A82A0900345259 /* Notification.swift */; };
+		BAC1276F22A82F8700B52862 /* NotificationsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60432A22A7D99B00345259 /* NotificationsRequest.swift */; };
+		BAC1277022A82F8700B52862 /* GitHubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431B22A7D22900345259 /* GitHubAPI.swift */; };
+		BAC1277122A82F8700B52862 /* GitHubAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431D22A7D2FF00345259 /* GitHubAPIRequest.swift */; };
+		BAC1277222A82F8700B52862 /* GitHubAPIAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60432722A7D91200345259 /* GitHubAPIAuthorization.swift */; };
+		BAC1277322A82F9200B52862 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60429E22A7C91000345259 /* Secret.swift */; };
+		BAC1277522A830CF00B52862 /* GitHubNotificationManagerCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA6042C922A7CAD500345259 /* GitHubNotificationManagerCore.framework */; };
+		BAC1277622A830CF00B52862 /* GitHubNotificationManagerCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA6042C922A7CAD500345259 /* GitHubNotificationManagerCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -100,6 +102,13 @@
 			remoteGlobalIDString = BA6042ED22A7CE1E00345259;
 			remoteInfo = Network;
 		};
+		BAC1277722A830CF00B52862 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BA60426022A7409300345259 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA6042C822A7CAD500345259;
+			remoteInfo = GitHubNotificationManagerCore;
+		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -109,8 +118,19 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				BA6042DF22A7CAD500345259 /* Core.framework in Embed Frameworks */,
-				BA60430422A7CE1E00345259 /* Network.framework in Embed Frameworks */,
+				BA6042DF22A7CAD500345259 /* GitHubNotificationManagerCore.framework in Embed Frameworks */,
+				BA60430422A7CE1E00345259 /* GitHubNotificationManagerNetwork.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BAC1277922A830CF00B52862 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BAC1277622A830CF00B52862 /* GitHubNotificationManagerCore.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -134,13 +154,13 @@
 		BA60428F22A7409400345259 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA60429B22A740B000345259 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
 		BA60429E22A7C91000345259 /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
-		BA6042C922A7CAD500345259 /* Core.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Core.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA6042C922A7CAD500345259 /* GitHubNotificationManagerCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GitHubNotificationManagerCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA6042CB22A7CAD500345259 /* Core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Core.h; sourceTree = "<group>"; };
 		BA6042CC22A7CAD500345259 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA6042D122A7CAD500345259 /* CoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA6042D822A7CAD500345259 /* CoreTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreTests.swift; sourceTree = "<group>"; };
 		BA6042DA22A7CAD500345259 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BA6042EE22A7CE1E00345259 /* Network.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Network.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA6042EE22A7CE1E00345259 /* GitHubNotificationManagerNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GitHubNotificationManagerNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA6042F022A7CE1E00345259 /* Network.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Network.h; sourceTree = "<group>"; };
 		BA6042F122A7CE1E00345259 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA6042F622A7CE1E00345259 /* NetworkTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NetworkTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -167,8 +187,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA6042DE22A7CAD500345259 /* Core.framework in Frameworks */,
-				BA60430322A7CE1E00345259 /* Network.framework in Frameworks */,
+				BA6042DE22A7CAD500345259 /* GitHubNotificationManagerCore.framework in Frameworks */,
+				BA60430322A7CE1E00345259 /* GitHubNotificationManagerNetwork.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,7 +217,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA6042D222A7CAD500345259 /* Core.framework in Frameworks */,
+				BA6042D222A7CAD500345259 /* GitHubNotificationManagerCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,6 +225,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAC1277522A830CF00B52862 /* GitHubNotificationManagerCore.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,7 +233,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA6042F722A7CE1E00345259 /* Network.framework in Frameworks */,
+				BA6042F722A7CE1E00345259 /* GitHubNotificationManagerNetwork.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -228,6 +249,7 @@
 				BA6042D722A7CAD500345259 /* CoreTests */,
 				BA6042FC22A7CE1E00345259 /* NetworkTests */,
 				BA60426922A7409300345259 /* Products */,
+				BAC1277422A830CF00B52862 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -237,9 +259,9 @@
 				BA60426822A7409300345259 /* GitHubNotificationManager.app */,
 				BA60427E22A7409400345259 /* GitHubNotificationManagerTests.xctest */,
 				BA60428922A7409400345259 /* GitHubNotificationManagerUITests.xctest */,
-				BA6042C922A7CAD500345259 /* Core.framework */,
+				BA6042C922A7CAD500345259 /* GitHubNotificationManagerCore.framework */,
 				BA6042D122A7CAD500345259 /* CoreTests.xctest */,
-				BA6042EE22A7CE1E00345259 /* Network.framework */,
+				BA6042EE22A7CE1E00345259 /* GitHubNotificationManagerNetwork.framework */,
 				BA6042F622A7CE1E00345259 /* NetworkTests.xctest */,
 			);
 			name = Products;
@@ -295,14 +317,14 @@
 			path = Secret;
 			sourceTree = "<group>";
 		};
-		BA6042CA22A7CAD500345259 /* Core */ = {
+		BA6042CA22A7CAD500345259 /* GitHubNotificationManagerCore */ = {
 			isa = PBXGroup;
 			children = (
 				BA60429D22A7C90700345259 /* Secret */,
 				BA6042CB22A7CAD500345259 /* Core.h */,
 				BA6042CC22A7CAD500345259 /* Info.plist */,
 			);
-			path = Core;
+			path = GitHubNotificationManagerCore;
 			sourceTree = "<group>";
 		};
 		BA6042D722A7CAD500345259 /* CoreTests */ = {
@@ -317,13 +339,13 @@
 		BA6042E722A7CAF500345259 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BA6042CA22A7CAD500345259 /* Core */,
-				BA6042EF22A7CE1E00345259 /* Network */,
+				BA6042CA22A7CAD500345259 /* GitHubNotificationManagerCore */,
+				BA6042EF22A7CE1E00345259 /* GitHubNotificationManagerNetwork */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
 		};
-		BA6042EF22A7CE1E00345259 /* Network */ = {
+		BA6042EF22A7CE1E00345259 /* GitHubNotificationManagerNetwork */ = {
 			isa = PBXGroup;
 			children = (
 				BA60430F22A7CE9100345259 /* Core */,
@@ -331,7 +353,7 @@
 				BA6042F022A7CE1E00345259 /* Network.h */,
 				BA6042F122A7CE1E00345259 /* Info.plist */,
 			);
-			path = Network;
+			path = GitHubNotificationManagerNetwork;
 			sourceTree = "<group>";
 		};
 		BA6042FC22A7CE1E00345259 /* NetworkTests */ = {
@@ -377,6 +399,13 @@
 				BA60432A22A7D99B00345259 /* NotificationsRequest.swift */,
 			);
 			path = Notifcation;
+			sourceTree = "<group>";
+		};
+		BAC1277422A830CF00B52862 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -457,9 +486,9 @@
 			productReference = BA60428922A7409400345259 /* GitHubNotificationManagerUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
-		BA6042C822A7CAD500345259 /* Core */ = {
+		BA6042C822A7CAD500345259 /* GitHubNotificationManagerCore */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BA6042E522A7CAD500345259 /* Build configuration list for PBXNativeTarget "Core" */;
+			buildConfigurationList = BA6042E522A7CAD500345259 /* Build configuration list for PBXNativeTarget "GitHubNotificationManagerCore" */;
 			buildPhases = (
 				BA6042C422A7CAD500345259 /* Headers */,
 				BA6042C522A7CAD500345259 /* Sources */,
@@ -470,9 +499,9 @@
 			);
 			dependencies = (
 			);
-			name = Core;
+			name = GitHubNotificationManagerCore;
 			productName = Core;
-			productReference = BA6042C922A7CAD500345259 /* Core.framework */;
+			productReference = BA6042C922A7CAD500345259 /* GitHubNotificationManagerCore.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		BA6042D022A7CAD500345259 /* CoreTests */ = {
@@ -494,22 +523,24 @@
 			productReference = BA6042D122A7CAD500345259 /* CoreTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		BA6042ED22A7CE1E00345259 /* Network */ = {
+		BA6042ED22A7CE1E00345259 /* GitHubNotificationManagerNetwork */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BA60430522A7CE1E00345259 /* Build configuration list for PBXNativeTarget "Network" */;
+			buildConfigurationList = BA60430522A7CE1E00345259 /* Build configuration list for PBXNativeTarget "GitHubNotificationManagerNetwork" */;
 			buildPhases = (
 				BA6042E922A7CE1E00345259 /* Headers */,
 				BA6042EA22A7CE1E00345259 /* Sources */,
 				BA6042EB22A7CE1E00345259 /* Frameworks */,
 				BA6042EC22A7CE1E00345259 /* Resources */,
+				BAC1277922A830CF00B52862 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				BAC1277822A830CF00B52862 /* PBXTargetDependency */,
 			);
-			name = Network;
+			name = GitHubNotificationManagerNetwork;
 			productName = Network;
-			productReference = BA6042EE22A7CE1E00345259 /* Network.framework */;
+			productReference = BA6042EE22A7CE1E00345259 /* GitHubNotificationManagerNetwork.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		BA6042F522A7CE1E00345259 /* NetworkTests */ = {
@@ -584,9 +615,9 @@
 				BA60426722A7409300345259 /* GitHubNotificationManager */,
 				BA60427D22A7409400345259 /* GitHubNotificationManagerTests */,
 				BA60428822A7409400345259 /* GitHubNotificationManagerUITests */,
-				BA6042C822A7CAD500345259 /* Core */,
+				BA6042C822A7CAD500345259 /* GitHubNotificationManagerCore */,
 				BA6042D022A7CAD500345259 /* CoreTests */,
-				BA6042ED22A7CE1E00345259 /* Network */,
+				BA6042ED22A7CE1E00345259 /* GitHubNotificationManagerNetwork */,
 				BA6042F522A7CE1E00345259 /* NetworkTests */,
 			);
 		};
@@ -653,24 +684,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA60426C22A7409300345259 /* AppDelegate.swift in Sources */,
-				BA60429F22A7C91000345259 /* Secret.swift in Sources */,
-				BA60431922A7D1ED00345259 /* HTTPMethod.swift in Sources */,
-				BA60431E22A7D2FF00345259 /* GitHubAPIRequest.swift in Sources */,
-				BA60431522A7D12900345259 /* URLEncoder.swift in Sources */,
 				BA60426E22A7409300345259 /* SceneDelegate.swift in Sources */,
-				BA60431C22A7D22900345259 /* GitHubAPI.swift in Sources */,
-				BA60432622A7D68700345259 /* AuthorizationHeader.swift in Sources */,
-				BA60432022A7D3C700345259 /* Query.swift in Sources */,
 				BA60427022A7409300345259 /* ContentView.swift in Sources */,
-				BA60432822A7D91200345259 /* GitHubAPIAuthorization.swift in Sources */,
-				BA60432B22A7D99B00345259 /* NotificationsRequest.swift in Sources */,
 				BA60429C22A740B000345259 /* APIClient.swift in Sources */,
-				BA60431322A7CEBF00345259 /* APIRequest.swift in Sources */,
-				BA60432222A7D3D400345259 /* HTTPHeader.swift in Sources */,
-				BA60433522A82A0900345259 /* Notification.swift in Sources */,
-				BA60430E22A7CE7E00345259 /* CoreAPIClient.swift in Sources */,
-				BA60432422A7D41D00345259 /* HTTPPathConvertible.swift in Sources */,
-				BA60431722A7D1D900345259 /* HTTPBody.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -694,6 +710,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAC1277322A82F9200B52862 /* Secret.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -709,6 +726,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BAC1276622A82F7C00B52862 /* APIRequest.swift in Sources */,
+				BAC1277222A82F8700B52862 /* GitHubAPIAuthorization.swift in Sources */,
+				BAC1276722A82F8000B52862 /* AuthorizationHeader.swift in Sources */,
+				BAC1276F22A82F8700B52862 /* NotificationsRequest.swift in Sources */,
+				BAC1276922A82F8000B52862 /* HTTPHeader.swift in Sources */,
+				BAC1277122A82F8700B52862 /* GitHubAPIRequest.swift in Sources */,
+				BAC1276D22A82F8000B52862 /* URLEncoder.swift in Sources */,
+				BAC1276822A82F8000B52862 /* HTTPPathConvertible.swift in Sources */,
+				BAC1276C22A82F8000B52862 /* HTTPMethod.swift in Sources */,
+				BAC1277022A82F8700B52862 /* GitHubAPI.swift in Sources */,
+				BAC1276E22A82F8700B52862 /* Notification.swift in Sources */,
+				BAC1276A22A82F8000B52862 /* Query.swift in Sources */,
+				BAC1276522A82F7500B52862 /* CoreAPIClient.swift in Sources */,
+				BAC1276B22A82F8000B52862 /* HTTPBody.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -735,7 +766,7 @@
 		};
 		BA6042D422A7CAD500345259 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BA6042C822A7CAD500345259 /* Core */;
+			target = BA6042C822A7CAD500345259 /* GitHubNotificationManagerCore */;
 			targetProxy = BA6042D322A7CAD500345259 /* PBXContainerItemProxy */;
 		};
 		BA6042D622A7CAD500345259 /* PBXTargetDependency */ = {
@@ -745,12 +776,12 @@
 		};
 		BA6042DD22A7CAD500345259 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BA6042C822A7CAD500345259 /* Core */;
+			target = BA6042C822A7CAD500345259 /* GitHubNotificationManagerCore */;
 			targetProxy = BA6042DC22A7CAD500345259 /* PBXContainerItemProxy */;
 		};
 		BA6042F922A7CE1E00345259 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BA6042ED22A7CE1E00345259 /* Network */;
+			target = BA6042ED22A7CE1E00345259 /* GitHubNotificationManagerNetwork */;
 			targetProxy = BA6042F822A7CE1E00345259 /* PBXContainerItemProxy */;
 		};
 		BA6042FB22A7CE1E00345259 /* PBXTargetDependency */ = {
@@ -760,8 +791,13 @@
 		};
 		BA60430222A7CE1E00345259 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BA6042ED22A7CE1E00345259 /* Network */;
+			target = BA6042ED22A7CE1E00345259 /* GitHubNotificationManagerNetwork */;
 			targetProxy = BA60430122A7CE1E00345259 /* PBXContainerItemProxy */;
+		};
+		BAC1277822A830CF00B52862 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BA6042C822A7CAD500345259 /* GitHubNotificationManagerCore */;
+			targetProxy = BAC1277722A830CF00B52862 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -894,6 +930,7 @@
 		BA60429322A7409400345259 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "GitHubNotificationManager/Preview\\ Content";
@@ -914,6 +951,7 @@
 		BA60429422A7409400345259 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "GitHubNotificationManager/Preview\\ Content";
@@ -1018,7 +1056,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/GitHubNotificationManager/Frameworks/Core/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/GitHubNotificationManager/Frameworks/GitHubNotificationManagerCore/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1044,7 +1082,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/GitHubNotificationManager/Frameworks/Core/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/GitHubNotificationManager/Frameworks/GitHubNotificationManagerCore/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1108,7 +1146,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/GitHubNotificationManager/Frameworks/Network/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/GitHubNotificationManager/Frameworks/GitHubNotificationManagerNetwork/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1134,7 +1172,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/GitHubNotificationManager/Frameworks/Network/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/GitHubNotificationManager/Frameworks/GitHubNotificationManagerNetwork/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1228,7 +1266,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BA6042E522A7CAD500345259 /* Build configuration list for PBXNativeTarget "Core" */ = {
+		BA6042E522A7CAD500345259 /* Build configuration list for PBXNativeTarget "GitHubNotificationManagerCore" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BA6042E122A7CAD500345259 /* Debug */,
@@ -1246,7 +1284,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BA60430522A7CE1E00345259 /* Build configuration list for PBXNativeTarget "Network" */ = {
+		BA60430522A7CE1E00345259 /* Build configuration list for PBXNativeTarget "GitHubNotificationManagerNetwork" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BA60430622A7CE1E00345259 /* Debug */,
