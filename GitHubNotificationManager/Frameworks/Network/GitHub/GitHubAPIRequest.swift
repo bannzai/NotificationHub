@@ -16,3 +16,10 @@ extension GitHubAPIRequest {
     public var host: String { "https://api.github.com/" }
     public var authorizationHeader: AuthorizationHeader? { GitHubAPIAuthorizationHeader()  }
 }
+
+extension GitHubAPIRequest where Response: Decodable {
+    public func decode(data: Data) throws -> Response {
+        let object = try JSONDecoder().decode(Response.self, from: data)
+        return object
+    }
+}
