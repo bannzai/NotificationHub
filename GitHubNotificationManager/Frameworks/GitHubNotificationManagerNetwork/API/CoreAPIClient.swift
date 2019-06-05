@@ -19,7 +19,7 @@ public enum NetworkError: Error {
     case networkError(Swift.Error)
 }
 internal struct BaseAPIClient {
-    private static func request<R: APIRequest> (request: R) -> APIPublisher {
+     static func request<R: APIRequest> (request: R) -> APIPublisher {
         APIPublisher { subscriber in
             let session = URLSession(configuration: URLSessionConfiguration.default)
             let task = session.dataTask(with: request.url) { (data, response, error) in
@@ -44,11 +44,4 @@ internal struct BaseAPIClient {
         }
     }
     
-    static func request<R: APIRequest> (request: R) -> AnyPublisher<R.Response, RequestError> where R.Response: Decodable {
-        self.request(request: request)
-            .map { $0.data }
-            .decode(type: R.Response.self, decoder: JSONDecoder())
-            .mapError { $0 as! RequestError } // FIXME: when call decode function and to converted Publishers.Decode, Failure to generics error type.
-            .eraseToAnyPublisher()
-    }
 }
