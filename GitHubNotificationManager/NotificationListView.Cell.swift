@@ -12,12 +12,15 @@ import Combine
 extension NotificationListView {
     struct Cell: View {
         let notification: NotificationListViewModel.Notification
+        var repository: NotificationListViewModel.Notification.Repository {
+            return notification.repository
+        }
         var body: some View {
             HStack {
                 Image(systemName: "envelope.badge")
-                Text(Optional(notification.repository).map { $0.ownerName + "/" + $0.name }!).bold()
+                Text(repository.ownerName + "/" + repository.name).bold()
+                ThumbnailImageView(url: repository.avatarURL)
             }
-            
         }
     }
 }
@@ -25,7 +28,7 @@ extension NotificationListView {
 #if DEBUG
 struct NotificationListView_Cell_Previews : PreviewProvider {
     static var previews: some View {
-        NotificationListView.Cell(notification: NotificationListViewModel.Notification(id: "", reason: "reason", repository: NotificationListViewModel.Notification.Repository(id: 1, name: "name", ownerName: "owner name"), url: "https://github.com"))
+        NotificationListView.Cell(notification: NotificationListViewModel.Notification(id: "", reason: "reason", repository: NotificationListViewModel.Notification.Repository(id: 1, name: "name", ownerName: "owner name", avatarURL: "https://avatars0.githubusercontent.com/u/10897361?s=460&v=4"), url: "https://github.com"))
     }
 }
 #endif

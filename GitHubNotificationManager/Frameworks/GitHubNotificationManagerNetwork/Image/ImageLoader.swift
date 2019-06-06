@@ -10,7 +10,7 @@ import UIKit.UIImage
 import Combine
 import Nuke
 
-public typealias ImageLoadPublisher = AnyPublisher<UIKit.UIImage?, Swift.Error>
+public typealias ImageLoadPublisher = AnyPublisher<UIKit.UIImage?, Never>
 
 public protocol ImageLoader {
     func load(url: URLConvertible) -> ImageLoadPublisher

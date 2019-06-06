@@ -11,11 +11,10 @@ import GitHubNotificationManagerNetwork
 
 struct NotificationListView : View {
     @State private var viewModel = NotificationListViewModel()
+    
     var body: some View {
         List {
-            ForEach(viewModel.notifications) { n in
-                Cell(notification: n)
-            }
+            ForEach(viewModel.notifications) { n in Cell(notification: n) }
             }
             .onAppear {
                 self.viewModel.fetch()

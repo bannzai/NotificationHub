@@ -10,11 +10,12 @@ import SwiftUI
 
 struct RootView: View {
     @State private var text: String = ""
-    
+
     var body: some View {
         NavigationView {
             NotificationListView()
         }
+        .navigationBarTitle(Text("Notifications").color(.gray))
     }
 }
 

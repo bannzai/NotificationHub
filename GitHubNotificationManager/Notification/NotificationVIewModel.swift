@@ -17,6 +17,7 @@ final public class NotificationListViewModel: BindableObject {
             let id: Int
             let name: String
             let ownerName: String
+            let avatarURL: String
         }
         let id: String
         let reason: String
@@ -38,9 +39,9 @@ final public class NotificationListViewModel: BindableObject {
             .handleEvents(receiveOutput: { (notifications) in
                 print(notifications.count)
             })
-            .catch({ (_) in
+            .catch { (_) in
                 return Publishers.Just([NotificationElement]())
-            })
+            }
             .map { notifications in
                  notifications
                     .filter { !$0.repository.repositoryPrivate }
@@ -51,7 +52,8 @@ final public class NotificationListViewModel: BindableObject {
                             repository: Notification.Repository(
                                 id: $0.repository.id,
                                 name: $0.repository.name,
-                                ownerName: $0.repository.owner.login
+                                ownerName: $0.repository.owner.login,
+                                avatarURL: $0.repository.owner.avatarURL
                             ),
                             url: $0.url
                         )
