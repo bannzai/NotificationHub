@@ -20,11 +20,11 @@ struct ThumbnailImageView : View {
             } else {
                 EmptyView()
             }
-        }
+            }
             .onAppear {
                 self.viewModel.load(url: self.url)
-        }
-        .frame(width: 100, height: 100, alignment: .center)
+            }
+            .frame(width: 100, height: 100, alignment: .center)
     }
 }
 
