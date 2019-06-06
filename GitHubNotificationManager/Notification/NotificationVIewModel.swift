@@ -35,19 +35,17 @@ final public class NotificationViewModel: BindableObject {
                 print(notifications.count)
             })
             .sink(receiveValue: { [weak self] (notifications) in
-                DispatchQueue.main.async {
-                    self?.notifications += notifications.map {
-                        Notification(
-                            id: $0.id,
-                            reason: $0.reason,
-                            repository: NotificationViewModel.Notification.Repository(
-                                id: $0.repository.id,
-                                name: $0.repository.name,
-                                ownerName: $0.repository.owner.login
-                            ),
-                            url: $0.url
-                        )
-                    }
+                self?.notifications += notifications.map {
+                    Notification(
+                        id: $0.id,
+                        reason: $0.reason,
+                        repository: NotificationViewModel.Notification.Repository(
+                            id: $0.repository.id,
+                            name: $0.repository.name,
+                            ownerName: $0.repository.owner.login
+                        ),
+                        url: $0.url
+                    )
                 }
             }
         ) }

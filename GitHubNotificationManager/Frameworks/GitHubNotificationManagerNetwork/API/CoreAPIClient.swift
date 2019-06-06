@@ -20,10 +20,9 @@ public enum NetworkError: Error {
     case makeURLRequestFaield(Swift.Error)
 }
 internal struct BaseAPIClient {
-     static func request<R: APIRequest> (request: R) -> APIPublisher {
+    static func request<R: APIRequest> (request: R) -> APIPublisher {
         APIPublisher { subscriber in
             let session = URLSession(configuration: URLSessionConfiguration.default)
-            
             
             let urlRequest: URLRequest
             do {
@@ -34,21 +33,23 @@ internal struct BaseAPIClient {
             }
             
             let task = session.dataTask(with: urlRequest) { (data, response, error) in
-                if let error = error {
-                    return subscriber.receive(completion: .failure(.networkError(error)))
-                }
-                guard let data = data, let httpReponse = response as? HTTPURLResponse else {
-                    return subscriber.receive(completion: .failure(.noResponseData))
-                }
-                
-                switch subscriber.receive((data, httpReponse)) {
-                case .max(let count):
-                    if count == 0 { // FIXME: Not found reference for max.
-                        subscriber.receive(completion: .finished)
-                        session.invalidateAndCancel()
+                DispatchQueue.main.async { // FIXME: How to use receive(on: RunLoop.main)
+                    if let error = error {
+                        return subscriber.receive(completion: .failure(.networkError(error)))
                     }
-                case .unlimited:
-                    break
+                    guard let data = data, let httpReponse = response as? HTTPURLResponse else {
+                        return subscriber.receive(completion: .failure(.noResponseData))
+                    }
+                    
+                    switch subscriber.receive((data, httpReponse)) {
+                    case .max(let count):
+                        if count == 0 { // FIXME: Not found reference for max.
+                            subscriber.receive(completion: .finished)
+                            session.invalidateAndCancel()
+                        }
+                    case .unlimited:
+                        break
+                    }
                 }
             }
             task.resume()
