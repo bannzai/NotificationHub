@@ -7,12 +7,13 @@
 //
 
 import SwiftUI
+import GitHubNotificationManagerNetwork
 
 struct NotificationListView : View {
-    @State var viewModel: NotificationViewModel
     var body: some View {
-        List(viewModel)
-        Text(/*@START_MENU_TOKEN@*/"Hello World!"/*@END_MENU_TOKEN@*/)
+        List(NotificationViewModel().notifications) { (n: GitHubNotificationManagerNetwork.Notification) in
+            Text("")
+        }
     }
 }
 
