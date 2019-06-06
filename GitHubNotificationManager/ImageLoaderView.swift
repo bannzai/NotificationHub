@@ -10,7 +10,7 @@ import SwiftUI
 import GitHubNotificationManagerNetwork
 
 fileprivate typealias Container = VStack // FIXME: Group can not call onAppear
-struct ThumbnailImageView : View {
+struct ImageLoaderView : View {
     @State var viewModel = ImageLoaderViewModel()
     let url: URLConvertible
     var body: some View {
@@ -24,14 +24,13 @@ struct ThumbnailImageView : View {
             .onAppear {
                 self.viewModel.load(url: self.url)
             }
-            .frame(width: 100, height: 100, alignment: .center)
     }
 }
 
 #if DEBUG
-struct ThumbnailImageView_Previews : PreviewProvider {
+struct ImageLoaderView_Previews : PreviewProvider {
     static var previews: some View {
-        ThumbnailImageView(url: "https://avatars0.githubusercontent.com/u/10897361?s=460&v=4")
+        ImageLoaderView(url: "https://avatars0.githubusercontent.com/u/10897361?s=460&v=4")
     }
 }
 #endif

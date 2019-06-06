@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BA1D70E822A9D42F000F83A1 /* ThumbnailImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1D70E722A9D42F000F83A1 /* ThumbnailImageView.swift */; };
+		BA1D70E822A9D42F000F83A1 /* ImageLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1D70E722A9D42F000F83A1 /* ImageLoaderView.swift */; };
 		BA1D70EA22A9D5BE000F83A1 /* ImageLoaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1D70E922A9D5BE000F83A1 /* ImageLoaderViewModel.swift */; };
 		BA60426C22A7409300345259 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60426B22A7409300345259 /* AppDelegate.swift */; };
 		BA60426E22A7409300345259 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60426D22A7409300345259 /* SceneDelegate.swift */; };
@@ -147,7 +147,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		BA1D70E722A9D42F000F83A1 /* ThumbnailImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailImageView.swift; sourceTree = "<group>"; };
+		BA1D70E722A9D42F000F83A1 /* ImageLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderView.swift; sourceTree = "<group>"; };
 		BA1D70E922A9D5BE000F83A1 /* ImageLoaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderViewModel.swift; sourceTree = "<group>"; };
 		BA60426822A7409300345259 /* GitHubNotificationManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubNotificationManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA60426B22A7409300345259 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -295,7 +295,7 @@
 				BAC127D522A844BD00B52862 /* RootView.swift */,
 				BAC127E322A8911C00B52862 /* NotificationListView.swift */,
 				BAC1280B22A9B57700B52862 /* NotificationListView.Cell.swift */,
-				BA1D70E722A9D42F000F83A1 /* ThumbnailImageView.swift */,
+				BA1D70E722A9D42F000F83A1 /* ImageLoaderView.swift */,
 				BA1D70E922A9D5BE000F83A1 /* ImageLoaderViewModel.swift */,
 				BAC127D922A852B400B52862 /* Notification */,
 				BA60427122A7409400345259 /* Assets.xcassets */,
@@ -739,7 +739,7 @@
 				BA1D70EA22A9D5BE000F83A1 /* ImageLoaderViewModel.swift in Sources */,
 				BAC1280C22A9B57700B52862 /* NotificationListView.Cell.swift in Sources */,
 				BA60427022A7409300345259 /* ContentView.swift in Sources */,
-				BA1D70E822A9D42F000F83A1 /* ThumbnailImageView.swift in Sources */,
+				BA1D70E822A9D42F000F83A1 /* ImageLoaderView.swift in Sources */,
 				BAC127D622A844BD00B52862 /* RootView.swift in Sources */,
 				BAC127E422A8911C00B52862 /* NotificationListView.swift in Sources */,
 			);
