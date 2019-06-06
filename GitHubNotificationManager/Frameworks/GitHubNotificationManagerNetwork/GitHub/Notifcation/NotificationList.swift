@@ -2,16 +2,14 @@
 // To parse the JSON, add this file to your project and do:
 //
 //   let notification = try? newJSONDecoder().decode(Notification.self, from: jsonData)
-// See: https://app.quicktype.io/
 
 import Foundation
 
-// MARK: - Notification
-public struct Notification: Codable {
+// MARK: - NotificationElement
+public struct NotificationElement: Codable {
     public let id: String
     public let unread: Bool
-    public let reason: String
-    public let updatedAt: Date
+    public let reason, updatedAt: String
     public let lastReadAt: String?
     public let subject: Subject
     public let repository: Repository
@@ -25,7 +23,7 @@ public struct Notification: Codable {
         case subscriptionURL = "subscription_url"
     }
     
-    public init(id: String, unread: Bool, reason: String, updatedAt: Date, lastReadAt: String?, subject: Subject, repository: Repository, url: String, subscriptionURL: String) {
+    public init(id: String, unread: Bool, reason: String, updatedAt: String, lastReadAt: String?, subject: Subject, repository: Repository, url: String, subscriptionURL: String) {
         self.id = id
         self.unread = unread
         self.reason = reason
@@ -225,7 +223,8 @@ public struct Owner: Codable {
 // MARK: - Subject
 public struct Subject: Codable {
     public let title: String
-    public let url, latestCommentURL: String
+    public let url: String
+    public let latestCommentURL: String?
     public let type: String
     
     enum CodingKeys: String, CodingKey {
@@ -234,10 +233,12 @@ public struct Subject: Codable {
         case type
     }
     
-    public init(title: String, url: String, latestCommentURL: String, type: String) {
+    public init(title: String, url: String, latestCommentURL: String?, type: String) {
         self.title = title
         self.url = url
         self.latestCommentURL = latestCommentURL
         self.type = type
     }
 }
+
+public typealias Notification = [NotificationElement]

@@ -12,7 +12,7 @@ import SwiftUI
 import GitHubNotificationManagerNetwork
 
 final public class NotificationViewModel: BindableObject {
-    struct Notification {
+    struct Notification: Identifiable {
         struct Repository {
             let id: Int
             let name: String
@@ -26,23 +26,29 @@ final public class NotificationViewModel: BindableObject {
     var notifications: [Notification] = [] {
         didSet { didChange.send(self) }
     }
+    
     public let didChange = PassthroughSubject<NotificationViewModel, Never>()
     
     func fetch() {
         _ = GitHubAPI.request(request: NotificationsRequest())
-            .sink(receiveValue: { [weak self] (notifications) in
-                self?.notifications += notifications.map {
-                    Notification(
-                        id: $0.id,
-                        reason: $0.reason,
-                        repository: NotificationViewModel.Notification.Repository(
-                            id: $0.repository.id,
-                            name: $0.repository.name,
-                            ownerName: $0.repository.owner.login
-                        ),
-                        url: $0.url
-                    )
-                }
+            .handleEvents(receiveOutput: { (notifications) in
+                print(notifications.count)
             })
-        }
+            .sink(receiveValue: { [weak self] (notifications) in
+                DispatchQueue.main.async {
+                    self?.notifications += notifications.map {
+                        Notification(
+                            id: $0.id,
+                            reason: $0.reason,
+                            repository: NotificationViewModel.Notification.Repository(
+                                id: $0.repository.id,
+                                name: $0.repository.name,
+                                ownerName: $0.repository.owner.login
+                            ),
+                            url: $0.url
+                        )
+                    }
+                }
+            }
+        ) }
 }

@@ -17,17 +17,28 @@ public typealias APIPublisher = AnyPublisher<APIResponse, RequestError>
 public enum NetworkError: Error {
     case noResponseData
     case networkError(Swift.Error)
+    case makeURLRequestFaield(Swift.Error)
 }
 internal struct BaseAPIClient {
      static func request<R: APIRequest> (request: R) -> APIPublisher {
         APIPublisher { subscriber in
             let session = URLSession(configuration: URLSessionConfiguration.default)
-            let task = session.dataTask(with: request.url) { (data, response, error) in
-                guard let data = data, let httpReponse = response as? HTTPURLResponse else {
-                    return subscriber.receive(completion: .failure(.noResponseData))
-                }
+            
+            
+            let urlRequest: URLRequest
+            do {
+                urlRequest = try request.urlRequest() as URLRequest
+            } catch {
+                subscriber.receive(completion: .failure(.makeURLRequestFaield(error)))
+                return
+            }
+            
+            let task = session.dataTask(with: urlRequest) { (data, response, error) in
                 if let error = error {
                     return subscriber.receive(completion: .failure(.networkError(error)))
+                }
+                guard let data = data, let httpReponse = response as? HTTPURLResponse else {
+                    return subscriber.receive(completion: .failure(.noResponseData))
                 }
                 
                 switch subscriber.receive((data, httpReponse)) {
