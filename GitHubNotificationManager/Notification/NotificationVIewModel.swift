@@ -11,7 +11,7 @@ import Combine
 import SwiftUI
 import GitHubNotificationManagerNetwork
 
-final public class NotificationViewModel: BindableObject {
+final public class NotificationListViewModel: BindableObject {
     struct Notification: Identifiable {
         struct Repository {
             let id: Int
@@ -26,27 +26,40 @@ final public class NotificationViewModel: BindableObject {
     var notifications: [Notification] = [] {
         didSet { didChange.send(self) }
     }
+    var canceller: [Cancellable] = []
+    public let didChange = PassthroughSubject<NotificationListViewModel, Never>()
     
-    public let didChange = PassthroughSubject<NotificationViewModel, Never>()
+    deinit {
+        canceller.forEach { $0.cancel() }
+    }
     
     func fetch() {
-        _ = GitHubAPI.request(request: NotificationsRequest())
+        let fetcher = GitHubAPI.request(request: NotificationsRequest())
             .handleEvents(receiveOutput: { (notifications) in
                 print(notifications.count)
             })
-            .sink(receiveValue: { [weak self] (notifications) in
-                self?.notifications += notifications.map {
-                    Notification(
-                        id: $0.id,
-                        reason: $0.reason,
-                        repository: NotificationViewModel.Notification.Repository(
-                            id: $0.repository.id,
-                            name: $0.repository.name,
-                            ownerName: $0.repository.owner.login
-                        ),
-                        url: $0.url
-                    )
+            .catch({ (_) in
+                return Publishers.Just([NotificationElement]())
+            })
+            .map { notifications in
+                 notifications
+                    .filter { !$0.repository.repositoryPrivate }
+                    .map {
+                        Notification(
+                            id: $0.id,
+                            reason: $0.reason,
+                            repository: Notification.Repository(
+                                id: $0.repository.id,
+                                name: $0.repository.name,
+                                ownerName: $0.repository.owner.login
+                            ),
+                            url: $0.url
+                        )
                 }
             }
-        ) }
+        
+        canceller.append(fetcher.sink { [weak self] (notifications) in
+            self?.notifications += notifications
+        })
+    }
 }

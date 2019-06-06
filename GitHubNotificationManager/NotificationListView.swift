@@ -10,18 +10,19 @@ import SwiftUI
 import GitHubNotificationManagerNetwork
 
 struct NotificationListView : View {
-    @State private var viewModel = NotificationViewModel()
+    @State private var viewModel = NotificationListViewModel()
     var body: some View {
         List {
             ForEach(viewModel.notifications) { n in
-                Text("Hello world: \(n.id)")
+                Cell(notification: n)
             }
-        }
+            }
             .onAppear {
                 self.viewModel.fetch()
         }
     }
 }
+
 
 #if DEBUG
 struct NotificationListView_Previews : PreviewProvider {

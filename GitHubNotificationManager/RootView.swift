@@ -12,9 +12,8 @@ struct RootView: View {
     @State private var text: String = ""
     
     var body: some View {
-        
         NavigationView {
-            Text("Text")
+            NotificationListView()
         }
     }
 }
