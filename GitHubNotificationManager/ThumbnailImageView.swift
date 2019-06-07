@@ -13,7 +13,7 @@ struct ThumbnailImageView : View {
     var body: some View {
         image
             .frame(maxWidth: 20, maxHeight: 20, alignment: .center)
-            .aspectRatio(contentMode: .fill)
+            .aspectRatio(contentMode: .fit)
             .clipShape(Circle())
             .overlay(Circle().stroke(Color.gray, lineWidth: 1))
     }

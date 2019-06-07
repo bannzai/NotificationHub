@@ -15,23 +15,21 @@ import UIKit.UIImage
 final public class ImageLoaderViewModel: BindableObject {
     public typealias PublisherType = PassthroughSubject<UIImage?, Never>
     public var didChange = PublisherType()
-    private var cancellers: [Cancellable] = []
-    internal var image: UIImage?
+    private var canceller: Cancellable?
+    internal var image: UIImage? {
+        didSet { didChange.send(image) }
+    }
 
-    
     deinit {
-        cancellers.forEach { $0.cancel() }
+        canceller?.cancel()
     }
     
     func load(url: URLConvertible) {
-        let canceller = SharedImageLoader
+        canceller = SharedImageLoader
             .shared
             .load(url: url)
-            .handleEvents(receiveOutput: { (image) in
-                self.image = image
-            })
-            .subscribe(didChange)
-        
-        cancellers.append(canceller)
+            .sink { self.image = $0 }
+        // FIXME: Does not working for assign
+//                    .assign(to: \.image, on: self)
     }
 }

@@ -17,9 +17,10 @@ struct NotificationListView : View {
             ForEach(viewModel.notifications) { n in Cell(notification: n) }
             }
             .onReceive(viewModel.didChange, perform: {
-                
+                HUDPublisher.shared.send(.hide)
             })
             .onAppear {
+                HUDPublisher.shared.send(.show)
                 self.viewModel.fetch()
         }
     }

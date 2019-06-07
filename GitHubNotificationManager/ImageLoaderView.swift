@@ -9,9 +9,10 @@
 import SwiftUI
 import GitHubNotificationManagerNetwork
 
-fileprivate typealias Container = VStack // FIXME: Group can not call onAppear
+fileprivate typealias Container = VStack // FIXME: Group does not call onAppear
 struct ImageLoaderView : View {
     @State var viewModel = ImageLoaderViewModel()
+    
     let url: URLConvertible
     var body: some View {
         Container {

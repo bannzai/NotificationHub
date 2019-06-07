@@ -10,11 +10,16 @@ import SwiftUI
 import GitHubNotificationManagerNetwork
 
 struct RootView: View {
-    @State private var text: String = ""
-
     var body: some View {
         NavigationView {
-            NotificationListView()
+            ZStack {
+                if HUD.counter == 0 {
+                    EmptyView()
+                } else {
+                    HUD.shared
+                }
+                NotificationListView()
+            }
             }
             .onReceive(HUDPublisher.shared, perform: {
                 

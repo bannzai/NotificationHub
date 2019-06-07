@@ -10,24 +10,41 @@ import Foundation
 import SwiftUI
 import Combine
 
-final public class HUDPublisher: Subject {
-    public func send(_ value: HUDCounterType) {
-        
+final public class HUDPublisher {
+    private let publisher = PassthroughSubject<Output, Failure>()
+    
+    static let shared = HUDPublisher()
+    private init() {
+        handle()
+    }
+    
+    public typealias Output = HUDAppearanceType
+    public typealias Failure = Never
+    private var canceller: Cancellable?
+    deinit {
+        canceller?.cancel()
+    }
+    
+}
+private extension HUDPublisher {
+    func handle() {
+            canceller = sink(receiveValue: { (appearanceType) in
+                HUD.shared.call(for: appearanceType)
+            })
+    }
+}
+
+extension HUDPublisher: Subject {
+    public func send(_ value: Output) {
+        publisher.send(value)
     }
     
     public func send(completion: Subscribers.Completion<Never>) {
-        fatalError()
+        publisher.send(completion: completion)
     }
     
     public func receive<S>(subscriber: S) where S : Subscriber, Failure == S.Failure, Output == S.Input {
-        fatalError("I don't know when call this function")
+        publisher.receive(subscriber: subscriber)
     }
-    
-    static let shared = HUDPublisher()
-    private init() { }
-    
-    public typealias Output = HUDCounterType
-    public typealias Failure = Never
-    
     
 }
