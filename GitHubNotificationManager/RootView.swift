@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import GitHubNotificationManagerNetwork
 
 struct RootView: View {
     @State private var text: String = ""

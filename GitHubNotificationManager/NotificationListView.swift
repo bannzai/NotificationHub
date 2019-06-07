@@ -16,6 +16,9 @@ struct NotificationListView : View {
         List {
             ForEach(viewModel.notifications) { n in Cell(notification: n) }
             }
+            .onReceive(viewModel.didChange, perform: {
+                Command(#selector(hideHUD))
+            })
             .onAppear {
                 self.viewModel.fetch()
         }
