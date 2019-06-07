@@ -25,6 +25,13 @@ final public class HUDPublisher {
         canceller?.cancel()
     }
     
+    func show() {
+        send(.show)
+    }
+    
+    func hide() {
+        send(.hide)
+    }
 }
 private extension HUDPublisher {
     func handle() {

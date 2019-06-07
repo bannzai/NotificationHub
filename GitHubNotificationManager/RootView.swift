@@ -13,17 +13,10 @@ struct RootView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                if HUD.counter == 0 {
-                    EmptyView()
-                } else {
-                    HUD.shared
-                }
                 NotificationListView()
+                HUD.shared
             }
             }
-            .onReceive(HUDPublisher.shared, perform: {
-                
-            })
             .navigationBarTitle(Text("Notifications").color(.gray))
     }
 }
