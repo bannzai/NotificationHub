@@ -8,13 +8,19 @@
 
 import SwiftUI
 
+public enum HUDCounterType: Int {
+    case increment
+    case decrement
+}
+
 struct HUDAnimator: EnvironmentKey {
-    static var defaultValue: Bool = true
+    static var defaultValue: Value = .increment
     
-    typealias Value = Bool
+    typealias Value = HUDCounterType
 }
 
 struct HUD : UIViewRepresentable {
+    static var counter: Int = 0
     func makeUIView(context: UIViewRepresentableContext<HUD>) -> UIActivityIndicatorView {
         let view = UIActivityIndicatorView(style: .medium)
         view.color = .black
@@ -25,10 +31,19 @@ struct HUD : UIViewRepresentable {
     
     func updateUIView(_ uiView: UIActivityIndicatorView, context: UIViewRepresentableContext<HUD>) {
         switch context.environment[HUDAnimator.self] {
-        case true:
-            uiView.startAnimating()
-        case false:
+        case .increment:
+            HUD.counter += 1
+        case .decrement:
+            HUD.counter -= 1
+        }
+        
+        assert(HUD.counter > 0)
+        
+        switch HUD.counter {
+        case 0:
             uiView.stopAnimating()
+        case _:
+            uiView.startAnimating()
         }
     }
     

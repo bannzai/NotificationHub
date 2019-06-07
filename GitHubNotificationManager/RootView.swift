@@ -15,8 +15,11 @@ struct RootView: View {
     var body: some View {
         NavigationView {
             NotificationListView()
-        }
-        .navigationBarTitle(Text("Notifications").color(.gray))
+            }
+            .onReceive(HUDPublisher.shared, perform: {
+                
+            })
+            .navigationBarTitle(Text("Notifications").color(.gray))
     }
 }
 
