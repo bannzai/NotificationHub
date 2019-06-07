@@ -19,7 +19,8 @@ extension NotificationListView {
             HStack {
                 Image(systemName: "envelope.badge")
                 Text(repository.ownerName + "/" + repository.name).bold()
-                ThumbnailImageView(url: repository.avatarURL)
+                ThumbnailImageView(image: ImageLoaderView(url: repository.avatarURL))
+
             }
         }
     }

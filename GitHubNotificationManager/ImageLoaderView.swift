@@ -30,7 +30,7 @@ struct ImageLoaderView : View {
 #if DEBUG
 struct ImageLoaderView_Previews : PreviewProvider {
     static var previews: some View {
-        ImageLoaderView(url: "https://avatars0.githubusercontent.com/u/10897361?s=460&v=4")
+        ImageLoaderView(url: Debug.Const.avatarURL)
     }
 }
 #endif
