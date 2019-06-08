@@ -29,7 +29,7 @@ final public class NotificationListViewModel: BindableObject {
     }
     var canceller: [Cancellable] = []
     public let didChange = PassthroughSubject<NotificationListViewModel, Never>()
-    private let hud: HUDPublisher = .shared // TODO: Inejction
+    private let hud: HUDPublisher = .init() // TODO: Inejction
     
     deinit {
         canceller.forEach { $0.cancel() }

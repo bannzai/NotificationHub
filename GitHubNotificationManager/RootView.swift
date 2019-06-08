@@ -10,11 +10,17 @@ import SwiftUI
 import GitHubNotificationManagerNetwork
 
 struct RootView: View {
+    @EnvironmentObject var hud: ViewMode
+    
     var body: some View {
         NavigationView {
             ZStack {
                 NotificationListView()
-                HUD.shared
+                if hud.counter == 0 {
+                    EmptyView()
+                } else {
+                    HUD()
+                }
             }
             }
             .navigationBarTitle(Text("Notifications").color(.gray))
