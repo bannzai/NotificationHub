@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		BA056B2F22AC38DD00A0C3F1 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = BA056B2E22AC38DD00A0C3F1 /* Nuke */; };
 		BA1D70E822A9D42F000F83A1 /* ImageLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1D70E722A9D42F000F83A1 /* ImageLoaderView.swift */; };
 		BA1D70EA22A9D5BE000F83A1 /* ImageLoaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1D70E922A9D5BE000F83A1 /* ImageLoaderViewModel.swift */; };
 		BA417D0D22A9DE9C0041B3C3 /* ThumbnailImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA417D0C22A9DE9C0041B3C3 /* ThumbnailImageView.swift */; };
@@ -49,6 +48,7 @@
 		BAC1277322A82F9200B52862 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60429E22A7C91000345259 /* Secret.swift */; };
 		BAC1277522A830CF00B52862 /* GitHubNotificationManagerCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA6042C922A7CAD500345259 /* GitHubNotificationManagerCore.framework */; };
 		BAC1277622A830CF00B52862 /* GitHubNotificationManagerCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA6042C922A7CAD500345259 /* GitHubNotificationManagerCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BAC1277F22A83D0900B52862 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = BAC1277E22A83D0900B52862 /* Nuke */; };
 		BAC127D122A841B300B52862 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC1278122A83DBC00B52862 /* ImageLoader.swift */; };
 		BAC127D422A8442A00B52862 /* URLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC127D222A8442200B52862 /* URLConvertible.swift */; };
 		BAC127D622A844BD00B52862 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC127D522A844BD00B52862 /* RootView.swift */; };
@@ -253,7 +253,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BAC1277522A830CF00B52862 /* GitHubNotificationManagerCore.framework in Frameworks */,
-				BA056B2F22AC38DD00A0C3F1 /* Nuke in Frameworks */,
+				BAC1277F22A83D0900B52862 /* Nuke in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -599,7 +599,7 @@
 			);
 			name = GitHubNotificationManagerNetwork;
 			packageProductDependencies = (
-				BA056B2E22AC38DD00A0C3F1 /* Nuke */,
+				BAC1277E22A83D0900B52862 /* Nuke */,
 			);
 			productName = Network;
 			productReference = BA6042EE22A7CE1E00345259 /* GitHubNotificationManagerNetwork.framework */;
@@ -671,7 +671,7 @@
 			);
 			mainGroup = BA60425F22A7409300345259;
 			packageReferences = (
-				BA056B2D22AC38DD00A0C3F1 /* XCRemoteSwiftPackageReference "Nuke" */,
+				BAC1277D22A83D0900B52862 /* XCRemoteSwiftPackageReference "Nuke" */,
 			);
 			productRefGroup = BA60426922A7409300345259 /* Products */;
 			projectDirPath = "";
@@ -1383,7 +1383,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		BA056B2D22AC38DD00A0C3F1 /* XCRemoteSwiftPackageReference "Nuke" */ = {
+		BAC1277D22A83D0900B52862 /* XCRemoteSwiftPackageReference "Nuke" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kean/Nuke";
 			requirement = {
@@ -1394,9 +1394,9 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		BA056B2E22AC38DD00A0C3F1 /* Nuke */ = {
+		BAC1277E22A83D0900B52862 /* Nuke */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = BA056B2D22AC38DD00A0C3F1 /* XCRemoteSwiftPackageReference "Nuke" */;
+			package = BAC1277D22A83D0900B52862 /* XCRemoteSwiftPackageReference "Nuke" */;
 			productName = Nuke;
 		};
 /* End XCSwiftPackageProductDependency section */

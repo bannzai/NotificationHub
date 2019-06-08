@@ -29,12 +29,14 @@ final public class NotificationListViewModel: BindableObject {
     }
     var canceller: [Cancellable] = []
     public let didChange = PassthroughSubject<NotificationListViewModel, Never>()
+    private let hud: HUDPublisher = .init() // TODO: Inejction
     
     deinit {
         canceller.forEach { $0.cancel() }
     }
     
     func fetch() {
+        hud.show()
         let fetcher = GitHubAPI.request(request: NotificationsRequest())
              .catch { (_) in
                 return Publishers.Just([NotificationElement]())
@@ -59,6 +61,9 @@ final public class NotificationListViewModel: BindableObject {
         
         canceller.append(
             fetcher.sink(
+                receiveCompletion: { [weak self] _ in
+                    self?.hud.hide()
+                },
                 receiveValue: { [weak self] (notifications) in
                     self?.notifications += notifications
             })
