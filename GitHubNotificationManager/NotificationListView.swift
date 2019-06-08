@@ -11,17 +11,12 @@ import GitHubNotificationManagerNetwork
 
 struct NotificationListView : View {
     @State private var viewModel = NotificationListViewModel()
-    @EnvironmentObject var hud: HUDPublisher
     
     var body: some View {
         List {
             ForEach(viewModel.notifications) { n in Cell(notification: n) }
             }
-            .onReceive(hud.didChange, perform: {
-                self.hud.hide()
-            })
             .onAppear {
-                self.hud.show()
                 self.viewModel.fetch()
         }
     }
@@ -31,7 +26,7 @@ struct NotificationListView : View {
 #if DEBUG
 struct NotificationListView_Previews : PreviewProvider {
     static var previews: some View {
-        NotificationListView().environmentObject(HUDPublisher())
+        NotificationListView()
     }
 }
 #endif
