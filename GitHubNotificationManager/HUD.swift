@@ -9,7 +9,7 @@
 import SwiftUI
 import Combine
 
-public enum HUDAppearanceType {
+public enum HUDAppearanceType: Int, Equatable {
     case hide
     case show
 }
@@ -21,8 +21,6 @@ struct HUDAnimator: EnvironmentKey {
 
 struct HUD : UIViewRepresentable {
     static var counter: Int = 0
-    static let shared = HUD()
-    private init() { }
 
     func makeUIView(context: UIViewRepresentableContext<HUD>) -> UIActivityIndicatorView {
         let view: UIViewType = UIActivityIndicatorView(style: .medium)
@@ -39,6 +37,12 @@ struct HUD : UIViewRepresentable {
         case .hide:
             HUD.counter -= 1
         }
+        
+        assert(HUD.counter >= 0)
+        
+        if HUD.counter == 0 {
+            uiView.stopAnimating()
+        }
     }
     
     typealias UIViewType = UIActivityIndicatorView
@@ -47,7 +51,7 @@ struct HUD : UIViewRepresentable {
 #if DEBUG
 struct HUD_Previews : PreviewProvider {
     static var previews: some View {
-        HUD.shared
+        HUD()
     }
 }
 #endif

@@ -13,7 +13,6 @@ import Combine
 final public class HUDPublisher: BindableObject {
     public let didChange = PassthroughSubject<Output, Failure>()
     
-    static let shared = HUDPublisher()
     public typealias Output = HUDAppearanceType
     public typealias Failure = Never
     
@@ -22,11 +21,15 @@ final public class HUDPublisher: BindableObject {
         canceller?.cancel()
     }
     
+    var state: HUDAppearanceType = .hide {
+        didSet { didChange.send(state) }
+    }
+    
     func show() {
-        didChange.send(.show)
+        state = .show
     }
     
     func hide() {
-        didChange.send(.hide)
+        state = .hide
     }
 }
