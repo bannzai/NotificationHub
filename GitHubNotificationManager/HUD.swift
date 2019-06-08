@@ -21,12 +21,11 @@ struct HUDAnimator: EnvironmentKey {
 
 struct HUD : UIViewRepresentable {
     static var counter: Int = 0
-    let view: UIViewType = UIActivityIndicatorView(style: .medium)
-    
     static let shared = HUD()
     private init() { }
 
     func makeUIView(context: UIViewRepresentableContext<HUD>) -> UIActivityIndicatorView {
+        let view: UIViewType = UIActivityIndicatorView(style: .medium)
         view.color = .black
         view.hidesWhenStopped = true
         view.center = Optional(UIScreen.main.bounds.origin).map { CGPoint(x: $0.x / 2, y: $0.y / 2) }!
@@ -34,40 +33,15 @@ struct HUD : UIViewRepresentable {
     }
     
     func updateUIView(_ uiView: UIActivityIndicatorView, context: UIViewRepresentableContext<HUD>) {
-        call(for: context.environment[HUDAnimator.self])
-    }
-    
-    typealias UIViewType = UIActivityIndicatorView
-}
-
-internal extension HUD {
-    func call(for appearanceType: HUDAppearanceType) {
-        switch appearanceType {
+        switch context.environment[HUDAnimator.self] {
         case .show:
             HUD.counter += 1
         case .hide:
             HUD.counter -= 1
         }
-        
-        assert(HUD.counter >= 0)
-        
-        switch HUD.counter {
-        case 0:
-            hide()
-        case _:
-            show()
-        }
-    }
-}
-
-private extension HUD {
-    func show() {
-        view.startAnimating()
     }
     
-    func hide() {
-        view.stopAnimating()
-    }
+    typealias UIViewType = UIActivityIndicatorView
 }
 
 #if DEBUG
