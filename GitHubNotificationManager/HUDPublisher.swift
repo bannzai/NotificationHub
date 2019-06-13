@@ -22,7 +22,18 @@ final public class HUDPublisher: BindableObject {
     }
     
     var state: HUDAppearanceType = .hide {
-        didSet { didChange.send(state) }
+        didSet {
+            switch state {
+            case .hide:
+                HUD.counter -= 1
+            case .show:
+                HUD.counter += 1
+            }
+            if oldValue == state {
+                return
+            }
+            didChange.send(state)
+        }
     }
     
     func show() {

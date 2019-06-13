@@ -27,22 +27,12 @@ struct HUD : UIViewRepresentable {
         view.color = .black
         view.hidesWhenStopped = true
         view.center = Optional(UIScreen.main.bounds.origin).map { CGPoint(x: $0.x / 2, y: $0.y / 2) }!
+        view.startAnimating()
         return view
     }
     
     func updateUIView(_ uiView: UIActivityIndicatorView, context: UIViewRepresentableContext<HUD>) {
-        switch context.environment[HUDAnimator.self] {
-        case .show:
-            HUD.counter += 1
-        case .hide:
-            HUD.counter -= 1
-        }
-        
-        assert(HUD.counter >= 0)
-        
-        if HUD.counter == 0 {
-            uiView.stopAnimating()
-        }
+
     }
     
     typealias UIViewType = UIActivityIndicatorView
