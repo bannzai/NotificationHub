@@ -15,35 +15,21 @@ import UIKit.UIImage
 final public class ImageLoaderViewModel: BindableObject {
     public typealias PublisherType = PassthroughSubject<UIImage?, Never>
     public var didChange = PublisherType()
+    private var canceller: Cancellable?
     internal var image: UIImage? {
         didSet { didChange.send(image) }
     }
+
+    deinit {
+        canceller?.cancel()
+    }
     
     func load(url: URLConvertible) {
-        SharedImageLoader
+        canceller = SharedImageLoader
             .shared
             .load(url: url)
-            .receive(subscriber: self)
+            .sink { self.image = $0 }
         // FIXME: Does not working for assign
 //                    .assign(to: \.image, on: self)
     }
-}
-
-extension ImageLoaderViewModel: Subscriber {
-    public typealias Input = UIImage?
-    public typealias Failure = Never
-    
-    public func receive(subscription: Subscription) {
-        
-    }
-    
-    public func receive(_ input: UIImage?) -> Subscribers.Demand {
-        self.image = input
-        return .max(1)
-    }
-    
-    public func receive(completion: Subscribers.Completion<Never>) {
-        // NONE:
-    }
-    
 }
