@@ -12,7 +12,7 @@ struct ThumbnailImageView : View {
     var image: ImageLoaderView
     var body: some View {
         image
-            .frame(maxWidth: 20, maxHeight: 20, alignment: .center)
+            .frame(maxWidth: 28, maxHeight: 28, alignment: .center)
             .aspectRatio(contentMode: .fit)
             .clipShape(Circle())
             .overlay(Circle().stroke(Color.gray, lineWidth: 1))
