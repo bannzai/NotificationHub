@@ -19,21 +19,21 @@ public enum NetworkError: Error {
     case networkError(Swift.Error)
     case makeURLRequestFaield(Swift.Error)
 }
+
 internal struct BaseAPIClient {
     static func request<R: APIRequest> (request: R) -> APIPublisher {
         APIPublisher { subscriber in
-            let session = URLSession(configuration: URLSessionConfiguration.default)
+            let session = URLSession(configuration: .default)
             
             let urlRequest: URLRequest
             do {
                 urlRequest = try request.urlRequest() as URLRequest
             } catch {
-                subscriber.receive(completion: .failure(.makeURLRequestFaield(error)))
-                return
+                return subscriber.receive(completion: .failure(.makeURLRequestFaield(error)))
             }
             
             let task = session.dataTask(with: urlRequest) { (data, response, error) in
-                DispatchQueue.main.async { // FIXME: How to use receive(on: RunLoop.main)
+                DispatchQueue.main.async { // FIXME: How to use receive(on: DispatchQueue.main)
                     if let error = error {
                         return subscriber.receive(completion: .failure(.networkError(error)))
                     }
@@ -41,15 +41,9 @@ internal struct BaseAPIClient {
                         return subscriber.receive(completion: .failure(.noResponseData))
                     }
                     
-                    switch subscriber.receive((data, httpReponse)) {
-                    case .max(let count):
-                        if count == 0 { // FIXME: Not found reference for max.
-                            subscriber.receive(completion: .finished)
-                            session.invalidateAndCancel()
-                        }
-                    case .unlimited:
-                        break
-                    }
+                    _ = subscriber.receive((data, httpReponse))
+                    subscriber.receive(completion: .finished)
+                    session.invalidateAndCancel()
                 }
             }
             task.resume()

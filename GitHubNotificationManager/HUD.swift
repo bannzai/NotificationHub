@@ -20,8 +20,6 @@ struct HUDAnimator: EnvironmentKey {
 }
 
 struct HUD : UIViewRepresentable {
-    static var counter: Int = 0
-
     func makeUIView(context: UIViewRepresentableContext<HUD>) -> UIActivityIndicatorView {
         let view: UIViewType = UIActivityIndicatorView(style: .medium)
         view.color = .black

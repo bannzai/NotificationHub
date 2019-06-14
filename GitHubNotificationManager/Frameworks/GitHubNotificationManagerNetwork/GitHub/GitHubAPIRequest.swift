@@ -15,5 +15,5 @@ public protocol GitHubAPIRequest: APIRequest {
 
 extension GitHubAPIRequest {
     public var host: String { "api.github.com" }
-    public var authorizationHeader: AuthorizationHeader? { GitHubAPIAuthorizationHeader()  }
+    public var authorizationHeader: AuthorizationHeader? { GitHubAPIAuthorizationHeader() }
 }

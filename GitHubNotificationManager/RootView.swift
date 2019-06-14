@@ -10,15 +10,14 @@ import SwiftUI
 import GitHubNotificationManagerNetwork
 
 struct RootView: View {
-    @ObjectBinding(initialValue: HUDPublisher()) var hud: HUDPublisher
-
-    var loading: Bool {
-        return HUD.counter > 0
-    }
+    @EnvironmentObject var hud: HUDViewModel
+    
+    var loading: Bool { hud.counter > 0 }
+    
     var body: some View {
         NavigationView {
             ZStack {
-                NotificationListView(hud: hud)
+                NotificationListView()
                 if self.loading {
                     HUD()
                 } else {

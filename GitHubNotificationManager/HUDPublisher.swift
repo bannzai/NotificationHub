@@ -10,12 +10,13 @@ import Foundation
 import SwiftUI
 import Combine
 
-final public class HUDPublisher: BindableObject {
+final public class HUDViewModel: BindableObject {
     public let didChange = PassthroughSubject<Output, Failure>()
     
     public typealias Output = HUDAppearanceType
     public typealias Failure = Never
     
+    var counter: Int = 0
     private var canceller: Cancellable?
     deinit {
         canceller?.cancel()
@@ -25,9 +26,9 @@ final public class HUDPublisher: BindableObject {
         didSet {
             switch state {
             case .hide:
-                HUD.counter -= 1
+                counter -= 1
             case .show:
-                HUD.counter += 1
+                counter += 1
             }
             if oldValue == state {
                 return
