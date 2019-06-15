@@ -16,7 +16,9 @@ struct NotificationListView : View {
     var body: some View {
         List {
             ForEach(viewModel.notifications) { n in
-                Cell(notification: n)
+                NavigationButton(destination: Text("Hello")) {
+                    Cell(notification: n)
+                }
             }
             }
             .onReceive(viewModel.didChange, perform: {
