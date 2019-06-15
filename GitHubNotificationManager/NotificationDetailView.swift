@@ -12,7 +12,13 @@ struct NotificationDetailView : View {
     let notification: NotificationListViewModel.Notification
     
     var body: some View {
-        Text(notification.id)
+        VStack {
+            VStack(alignment: .leading) {
+                Text(notification.subject.title).font(.title)
+                Text(notification.repository.fullName)
+            }
+            ImageLoaderView(url: notification.repository.avatarURL)
+        }
     }
 }
 
