@@ -15,7 +15,10 @@ struct NotificationListView : View {
     
     var body: some View {
         List {
-            ForEach(viewModel.notifications) { n in Cell(notification: n) }
+            ForEach(viewModel.notifications) { n in
+                Cell(notification: n)
+                
+            }
             }
             .onReceive(viewModel.didChange, perform: {
                 self.hud.hide()

@@ -18,6 +18,7 @@ final public class NotificationListViewModel: BindableObject {
             let name: String
             let ownerName: String
             let avatarURL: String
+            let fullName: String
         }
         let id: String
         let reason: String
@@ -50,7 +51,8 @@ final public class NotificationListViewModel: BindableObject {
                                 id: $0.repository.id,
                                 name: $0.repository.name,
                                 ownerName: $0.repository.owner.login,
-                                avatarURL: $0.repository.owner.avatarURL
+                                avatarURL: $0.repository.owner.avatarURL,
+                                fullName: $0.repository.fullName
                             ),
                             url: $0.url
                         )

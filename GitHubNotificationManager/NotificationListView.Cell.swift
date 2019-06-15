@@ -18,7 +18,10 @@ extension NotificationListView {
         var body: some View {
             HStack {
                 ThumbnailImageView(image: ImageLoaderView(url: repository.avatarURL))
-                Text(repository.ownerName + "/" + repository.name).bold()
+                VStack(alignment: .leading) {
+                    Text(repository.fullName).font(.headline).lineLimit(1)
+                    Text(notification.url).font(.subheadline).lineLimit(1)
+                }
             }
         }
     }
@@ -27,7 +30,20 @@ extension NotificationListView {
 #if DEBUG
 struct NotificationListView_Cell_Previews : PreviewProvider {
     static var previews: some View {
-        NotificationListView.Cell(notification: NotificationListViewModel.Notification(id: "", reason: "reason", repository: NotificationListViewModel.Notification.Repository(id: 1, name: "name", ownerName: "owner name", avatarURL: "https://avatars0.githubusercontent.com/u/10897361?s=460&v=4"), url: "https://github.com"))
+        NotificationListView.Cell(
+            notification: NotificationListViewModel.Notification(
+                id: "",
+                reason: "reason",
+                repository: NotificationListViewModel.Notification.Repository(
+                    id: 1,
+                    name: "name",
+                    ownerName: "owner name",
+                    avatarURL: "https://avatars0.githubusercontent.com/u/10897361?s=460&v=4",
+                    fullName: "bannzai/GitHubNotificationManager"
+                ),
+                url: "https://github.com"
+            )
+        )
     }
 }
 #endif
