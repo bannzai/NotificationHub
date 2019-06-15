@@ -9,12 +9,34 @@
 import SwiftUI
 import SafariServices
 
+class SafariViewController: SFSafariViewController {
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        delegate = self
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+}
+
+extension SafariViewController: SFSafariViewControllerDelegate {
+    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
+        controller.navigationController?.popViewController(animated: true)
+    }
+}
+
 struct SafariView : UIViewControllerRepresentable {
     typealias UIViewControllerType = SFSafariViewController
     
     let url: URL
     func makeUIViewController(context: UIViewControllerRepresentableContext<SafariView>) -> SafariView.UIViewControllerType {
-        let viewController = SFSafariViewController(url: url)
+        let viewController = SafariViewController(url: url)
         return viewController
     }
     
