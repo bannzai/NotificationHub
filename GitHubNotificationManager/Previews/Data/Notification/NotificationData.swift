@@ -19,7 +19,10 @@ let notification = NotificationListViewModel.Notification(
         avatarURL: "d",
         fullName: "bannzai/GitHubNotificationManager"
     ),
-    subject: NotificationListViewModel.Notification.Subject(title: "Subject"),
+    subject: NotificationListViewModel.Notification.Subject(
+        title: "Subject",
+        url: "https://github.com/bannzai"
+    ),
     url: "https://github.com"
 )
 

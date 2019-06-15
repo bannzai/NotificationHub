@@ -22,6 +22,7 @@ final public class NotificationListViewModel: BindableObject {
         }
         struct Subject {
             let title: String
+            let url: String
         }
         let id: String
         let reason: String
@@ -58,7 +59,10 @@ final public class NotificationListViewModel: BindableObject {
                                 avatarURL: $0.repository.owner.avatarURL,
                                 fullName: $0.repository.fullName
                             ),
-                            subject: Notification.Subject(title: $0.subject.title),
+                            subject: Notification.Subject(
+                                title: $0.subject.title,
+                                url: $0.subject.url
+                            ),
                             url: $0.url
                         )
                 }
