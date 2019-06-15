@@ -10,9 +10,10 @@ import SwiftUI
 
 struct ThumbnailImageView : View {
     var image: ImageLoaderView
+    let edge: CGFloat = 44
     var body: some View {
         image
-            .frame(maxWidth: 28, maxHeight: 28, alignment: .center)
+            .frame(width: edge, height: edge, alignment: .center)
             .aspectRatio(contentMode: .fit)
             .clipShape(Circle())
             .overlay(Circle().stroke(Color.gray, lineWidth: 1))
