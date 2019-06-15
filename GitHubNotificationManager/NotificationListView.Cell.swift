@@ -31,18 +31,7 @@ extension NotificationListView {
 struct NotificationListView_Cell_Previews : PreviewProvider {
     static var previews: some View {
         NotificationListView.Cell(
-            notification: NotificationListViewModel.Notification(
-                id: "",
-                reason: "reason",
-                repository: NotificationListViewModel.Notification.Repository(
-                    id: 1,
-                    name: "name",
-                    ownerName: "owner name",
-                    avatarURL: "https://avatars0.githubusercontent.com/u/10897361?s=460&v=4",
-                    fullName: "bannzai/GitHubNotificationManager"
-                ),
-                url: "https://github.com"
-            )
+            notification: notification
         )
     }
 }
