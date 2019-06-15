@@ -15,9 +15,9 @@ struct NotificationListView : View {
     
     var body: some View {
         List {
-            ForEach(viewModel.notifications) { n in
-                NavigationButton(destination: NotificationDetailView(notification: n)) {
-                    Cell(notification: n)
+            ForEach(viewModel.notifications) { notification in
+                NavigationButton(destination: NotificationDetailView(notification: notification)) {
+                    Cell(notification: notification)
                 }
             }
             }
