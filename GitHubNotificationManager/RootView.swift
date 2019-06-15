@@ -17,7 +17,8 @@ struct RootView: View {
     var body: some View {
         NavigationView {
             ZStack {
-                NotificationListView()
+                NotificationListView()            .navigationBarTitle(Text("Notifications"))
+
                 if self.loading {
                     HUD()
                 } else {
@@ -25,7 +26,6 @@ struct RootView: View {
                 }
             }
             }
-            .navigationBarTitle(Text("Notifications").color(.gray))
     }
 }
 

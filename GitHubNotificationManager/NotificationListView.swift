@@ -17,7 +17,6 @@ struct NotificationListView : View {
         List {
             ForEach(viewModel.notifications) { n in
                 Cell(notification: n)
-                
             }
             }
             .onReceive(viewModel.didChange, perform: {
