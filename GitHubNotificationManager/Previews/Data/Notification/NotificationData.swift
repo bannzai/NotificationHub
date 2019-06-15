@@ -16,7 +16,7 @@ let notification = NotificationListViewModel.Notification(
         id: 1,
         name: "name",
         ownerName: "owner name",
-        avatarURL: "https://avatars0.githubusercontent.com/u/10897361?s=460&v=4",
+        avatarURL: "d",
         fullName: "bannzai/GitHubNotificationManager"
     ),
     url: "https://github.com"
