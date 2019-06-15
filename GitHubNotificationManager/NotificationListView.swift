@@ -16,7 +16,7 @@ struct NotificationListView : View {
     var body: some View {
         List {
             ForEach(viewModel.notifications) { notification in
-                NavigationButton(destination: SafariView(url: URL(string: notification.subject.url)!)) {
+                NavigationButton(destination: SafariView(url: notification.subject.destinationURL)) {
                     Cell(notification: notification)
                 }
             }
