@@ -15,12 +15,15 @@ extension NotificationListView {
         var repository: NotificationListViewModel.Notification.Repository {
             return notification.repository
         }
+        var subject: NotificationListViewModel.Notification.Subject {
+            return notification.subject
+        }
         var body: some View {
             HStack {
                 ThumbnailImageView(image: ImageLoaderView(url: repository.avatarURL))
                 VStack(alignment: .leading) {
                     Text(repository.fullName).font(.headline).lineLimit(1)
-                    Text(notification.url).font(.subheadline).lineLimit(1)
+                    Text(subject.title).font(.subheadline).lineLimit(1)
                 }
             }
         }
