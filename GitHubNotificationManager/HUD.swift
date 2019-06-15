@@ -13,11 +13,6 @@ public enum HUDAppearanceType: Int, Equatable {
     case hide
     case show
 }
-struct HUDAnimator: EnvironmentKey {
-    static var defaultValue: Value = .show
-    
-    typealias Value = HUDAppearanceType
-}
 
 struct HUD : UIViewRepresentable {
     func makeUIView(context: UIViewRepresentableContext<HUD>) -> UIActivityIndicatorView {
