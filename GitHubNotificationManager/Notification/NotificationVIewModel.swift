@@ -15,8 +15,16 @@ final public class NotificationListViewModel: BindableObject {
     public let didChange = PassthroughSubject<NotificationListViewModel, Never>()
     private var canceller: [Cancellable] = []
     
-    internal var notifications: [Notification] = [] {
+    private var allNotifications: [Notification] = [] {
         didSet { didChange.send(self) }
+    }
+    
+    private var filteredNotifications: [Notification] {
+        allNotifications.filter { $0.match(for: searchWord) }
+    }
+    
+    internal var notifications: [Notification] {
+        searchWord.isEmpty ? allNotifications : filteredNotifications
     }
 
     internal var searchWord: String = "" {
@@ -60,14 +68,8 @@ internal extension NotificationListViewModel {
         canceller.append(
             fetcher.sink(
                 receiveValue: { [weak self] (notifications) in
-                    self?.notifications += notifications
+                    self?.allNotifications += notifications
             })
         )
-    }
-}
-
-private extension NotificationListViewModel {
-    func filtering(with searchWord: String) {
-        
     }
 }
