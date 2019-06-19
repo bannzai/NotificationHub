@@ -12,29 +12,30 @@ import SwiftUI
 import GitHubNotificationManagerNetwork
 
 final public class NotificationListViewModel: BindableObject {
+    public let didChange = PassthroughSubject<NotificationListViewModel, Never>()
+    private var canceller: [Cancellable] = []
     
-    var notifications: [Notification] = [] {
+    internal var notifications: [Notification] = [] {
         didSet { didChange.send(self) }
     }
-    var canceller: [Cancellable] = []
-    public let didChange = PassthroughSubject<NotificationListViewModel, Never>()
-    var searchWord: String = "" {
-        didSet {
-            didChange.send(self)
-        }
+
+    internal var searchWord: String = "" {
+        didSet { didChange.send(self) }
     }
     
     deinit {
         canceller.forEach { $0.cancel() }
     }
-    
+}
+
+internal extension NotificationListViewModel {
     func fetch() {
         let fetcher = GitHubAPI.request(request: NotificationsRequest())
-             .catch { (_) in
+            .catch { (_) in
                 return Publishers.Just([NotificationElement]())
             }
             .map { notifications in
-                 notifications
+                notifications
                     .filter { !$0.repository.repositoryPrivate }
                     .map {
                         Notification(
