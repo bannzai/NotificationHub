@@ -10,7 +10,5 @@ import Foundation
 import GitHubNotificationManagerCore
 
 public struct GitHubAPIAuthorizationHeader: AuthorizationHeader { 
-    public var header: String {
-        return "token \(Secret.GitHub.token)"
-    }
+    public var header: String { "token \(Secret.GitHub.token)" }
 }

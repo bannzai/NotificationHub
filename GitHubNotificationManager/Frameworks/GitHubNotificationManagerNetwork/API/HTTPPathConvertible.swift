@@ -13,21 +13,17 @@ public protocol URLPathConvertible {
 }
 
 extension String: URLPathConvertible {
-    public var urlPath: String {
-        return self
-    }
+    public var urlPath: String { self }
 }
 
 extension URL: URLPathConvertible {
-    public var urlPath: String {
-        return path
-    }
+    public var urlPath: String { path }
 }
 
 extension Array: URLPathConvertible where Element == URLPathConvertible {
     public var urlPath: String {
-        return map { $0.urlPath }.reduce("") { (current, element) -> String in
-            return current + (current.isEmpty ? "" : "/") + element
+        map { $0.urlPath }.reduce("") { (current, element) -> String in
+            current + (current.isEmpty ? "" : "/") + element
         }
     }
 }

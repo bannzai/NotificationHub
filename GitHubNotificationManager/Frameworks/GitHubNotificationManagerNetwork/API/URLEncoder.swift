@@ -14,13 +14,13 @@ protocol URLEncodedValue {
 
 extension String: URLEncodedValue {
     var urlEncoded: String? {
-        return addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
+        addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed)
     }
 }
 
 extension Dictionary: URLEncodedValue where Key == String {
     var urlEncoded: String? {
-        return reduce(String()) { string, element in
+        reduce(String()) { string, element in
             guard let key = element.key.urlEncoded, let value = String(describing: element.value).urlEncoded else {
                 return string
             }

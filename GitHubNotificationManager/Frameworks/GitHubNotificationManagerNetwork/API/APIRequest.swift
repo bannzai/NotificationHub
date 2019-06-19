@@ -45,7 +45,7 @@ public extension APIRequest {
             request.setValue(type, forHTTPHeaderField: "Content-Type")
         }
         
-        return request as URLRequest
+        return request 
     }
     
     var url: URL {

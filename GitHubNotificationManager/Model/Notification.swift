@@ -54,7 +54,7 @@ struct Notification: Identifiable {
 
 extension Notification: FuzzyFindable {
     func fuzzyWords() -> [String] {
-        return [
+        [
             repository.name,
             repository.ownerName,
             repository.avatarURL,
