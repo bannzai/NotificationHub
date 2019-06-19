@@ -32,8 +32,11 @@ public struct Secret {
 ## Features
 - HTTP Request to use Combine.
 - Add dependency with Nuke via SwiftPackageManager.
-- Using @EnvironmentObject, @State, @Binding.
+- Using @EnvironmentObject for control HUD
+- Using @State and @Binding control for search notifications.
 - Transition screen.
+
+<img width="320px" src="https://user-images.githubusercontent.com/10897361/59778587-bd2b0e80-92f1-11e9-9202-d29f6df6ea9d.png" />
 
 ## LICENSE
 GitHubNotificationManager is available under the MIT license. See the LICENSE file for more info.
