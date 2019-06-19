@@ -13,12 +13,25 @@ struct SearchBar : View {
     
     var body: some View {
         HStack {
-            TextField($text, placeholder: Text(""))
-                .padding()
-                .frame(height: 44)
-                .background(Color.white.opacity(0.4))
-                .cornerRadius(8)
+            textField()
+            Button(
+                action: { self.cancel() },
+                label: { Text("Cancel") }
+                )
+                .foregroundColor(Color.gray)
         }
+    }
+    
+    private func cancel() {
+        endEditing()
+    }
+    
+    private func textField() -> some View {
+        TextField($text, placeholder: Text("Search text"))
+            .padding()
+            .frame(height: 44)
+            .background(Color.white.opacity(0.8))
+            .border(Color.black, width: 1, cornerRadius: 8)
     }
 }
 
