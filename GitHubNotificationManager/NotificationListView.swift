@@ -17,9 +17,7 @@ struct NotificationListView : View {
         List {
             SearchBar(text: $viewModel.searchWord)
             ForEach(viewModel.notifications) { notification in
-                NavigationButton(destination: SafariView(url: notification.subject.destinationURL)) {
-                    Cell(notification: notification)
-                }
+                self.navigationButtion()
             }
             }
             .onReceive(viewModel.didChange, perform: {
@@ -29,6 +27,18 @@ struct NotificationListView : View {
                 self.hud.show()
                 self.viewModel.fetch()
         }
+    }
+    
+    func navigationButtion() -> some View {
+        NavigationButton(destination: SafariView(url: notification.subject.destinationURL)) {
+            Cell(notification: notification)
+            }
+            .longPressAction(
+                minimumDuration: 1,
+                maximumDistance: 1,
+                { print("long pressed") }, // action:
+                pressing: { (pressing) in print(pressing) }
+        )
     }
 }
 
