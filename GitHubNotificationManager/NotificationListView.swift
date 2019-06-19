@@ -17,7 +17,7 @@ struct NotificationListView : View {
         List {
             SearchBar(text: $viewModel.searchWord)
             ForEach(viewModel.notifications) { notification in
-                self.navigationButtion()
+                self.navigationButtion(notification: notification)
             }
             }
             .onReceive(viewModel.didChange, perform: {
@@ -29,7 +29,7 @@ struct NotificationListView : View {
         }
     }
     
-    func navigationButtion() -> some View {
+    func navigationButtion(notification: Notification) -> some View {
         NavigationButton(destination: SafariView(url: notification.subject.destinationURL)) {
             Cell(notification: notification)
             }
