@@ -12,10 +12,10 @@ import Combine
 extension NotificationListView {
     struct Cell: View {
         let notification: Notification
-        var repository: Notification.Repository {
+        private var repository: Notification.Repository {
             return notification.repository
         }
-        var subject: Notification.Subject {
+        private var subject: Notification.Subject {
             return notification.subject
         }
         var body: some View {
