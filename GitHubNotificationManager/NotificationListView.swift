@@ -12,11 +12,10 @@ import GitHubNotificationManagerNetwork
 struct NotificationListView : View {
     @State private var viewModel = NotificationListViewModel()
     @EnvironmentObject var hud: HUDViewModel
-    @State var text: String = ""
     
     var body: some View {
         List {
-            SearchBar(text: $text)
+            SearchBar(text: $viewModel.searchWord)
             ForEach(viewModel.notifications) { notification in
                 NavigationButton(destination: SafariView(url: notification.subject.destinationURL)) {
                     Cell(notification: notification)
