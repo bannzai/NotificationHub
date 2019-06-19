@@ -65,3 +65,9 @@ internal extension NotificationListViewModel {
         )
     }
 }
+
+private extension NotificationListViewModel {
+    func filtering(with searchWord: String) {
+        
+    }
+}
