@@ -13,4 +13,3 @@ extension View {
         UIApplication.shared.keyWindow?.endEditing(true)
     }
 }
-

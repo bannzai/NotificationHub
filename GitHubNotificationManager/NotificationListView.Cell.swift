@@ -11,11 +11,11 @@ import Combine
 
 extension NotificationListView {
     struct Cell: View {
-        let notification: NotificationListViewModel.Notification
-        var repository: NotificationListViewModel.Notification.Repository {
+        let notification: Notification
+        var repository: Notification.Repository {
             return notification.repository
         }
-        var subject: NotificationListViewModel.Notification.Subject {
+        var subject: Notification.Subject {
             return notification.subject
         }
         var body: some View {

@@ -9,7 +9,7 @@
 import SwiftUI
 
 struct NotificationDetailView : View {
-    let notification: NotificationListViewModel.Notification
+    let notification: Notification
     
     var body: some View {
         VStack {
