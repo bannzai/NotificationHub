@@ -2,7 +2,7 @@
 This project work in progress.
 
 # GitHubNotificationManager
-GitHubNotificationManager is managed [GitHub notification](https://github.com/notifications) to use [SwiftUI](https://developer.apple.com/documentation/swiftui) and [Combine](https://developer.apple.com/documentation/combine).  
+GitHubNotificationManager is managed [GitHub notification](https://github.com/notifications) to use [SwiftUI](https://developer.apple.com/documentation/swiftui) and [Combine](https://developer.apple.com/documentation/combine) and [Swift Package Manager](https://github.com/apple/swift-package-manager) for iOS.  
 So, this project example for *New Apple Technologies*.
 
 ## Environment
