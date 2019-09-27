@@ -10,7 +10,7 @@ import UIKit.UIImage
 import Combine
 import Nuke
 
-public typealias ImageLoadPublisher = SharedImageLoader.Publisher
+public typealias ImageLoadPublisher = AnyPublisher<UIImage, Never>
 
 public protocol ImageLoader {
     func load(url: URLConvertible) -> ImageLoadPublisher
@@ -19,6 +19,10 @@ public protocol ImageLoader {
 public struct NeverErrorPublisher<T>: Publisher {
     public typealias Output = T
     public typealias Failure = Never
+    
+    public static func just(_ any: Any) -> NeverErrorPublisher {
+        NeverErrorPublisher()
+    }
     
     public func receive<S>(subscriber: S) where S : Subscriber, NeverErrorPublisher.Failure == S.Failure, NeverErrorPublisher.Output == S.Input {
         subscribe(subscriber)
@@ -40,13 +44,13 @@ public class SharedImageLoader: ImageLoader {
                 result.publisher
                     .map { $0.image }
                     .retry(3)
-                    .catch({ _ in return NeverErrorPublisher<UIImage>() })
+                    .catch(NeverErrorPublisher.just)
                     .subscribe(subscriber)
             }
         }
     }
     
     public func load(url: URLConvertible) -> ImageLoadPublisher {
-        Publisher(url: url)
+        Publisher(url: url).eraseToAnyPublisher()
     }
 }
