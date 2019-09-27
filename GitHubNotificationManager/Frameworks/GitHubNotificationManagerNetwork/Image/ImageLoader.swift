@@ -10,21 +10,43 @@ import UIKit.UIImage
 import Combine
 import Nuke
 
-public typealias ImageLoadPublisher = AnyPublisher<UIKit.UIImage?, Never>
+public typealias ImageLoadPublisher = SharedImageLoader.Publisher
 
 public protocol ImageLoader {
     func load(url: URLConvertible) -> ImageLoadPublisher
 }
+
+public struct NeverErrorPublisher<T>: Publisher {
+    public typealias Output = T
+    public typealias Failure = Never
+    
+    public func receive<S>(subscriber: S) where S : Subscriber, NeverErrorPublisher.Failure == S.Failure, NeverErrorPublisher.Output == S.Input {
+        subscribe(subscriber)
+    }
+}
+
 public class SharedImageLoader: ImageLoader {
     public static let shared = SharedImageLoader()
     private init() { }
     
-    public func load(url: URLConvertible) -> ImageLoadPublisher {
-        ImageLoadPublisher { subscriber in
-            Nuke.ImagePipeline.shared.loadImage(with: url.url, progress: nil) { (response, _) in
-                _ = subscriber.receive(response?.image)
-                subscriber.receive(completion: .finished)
+    public struct Publisher: Combine.Publisher {
+        public typealias Output = UIImage
+        public typealias Failure = Never
+        
+        let url: URLConvertible
+        
+        public func receive<S>(subscriber: S) where S : Subscriber, Publisher.Failure == S.Failure, Publisher.Output == S.Input {
+            Nuke.ImagePipeline.shared.loadImage(with: url.url, progress: nil) { result in
+                result.publisher
+                    .map { $0.image }
+                    .retry(3)
+                    .catch({ _ in return NeverErrorPublisher<UIImage>() })
+                    .subscribe(subscriber)
             }
         }
+    }
+    
+    public func load(url: URLConvertible) -> ImageLoadPublisher {
+        Publisher(url: url)
     }
 }
