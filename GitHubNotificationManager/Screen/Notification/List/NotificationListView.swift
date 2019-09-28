@@ -21,7 +21,7 @@ struct NotificationListView : View {
                     Cell(notification: notification)
                 }            }
         }
-        .onReceive(viewModel.didChange, perform: { (_) in
+        .onReceive(viewModel.objectWillChange, perform: { (_) in
             self.hud.hide()
         })
         .onAppear {
