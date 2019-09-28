@@ -27,11 +27,14 @@ struct SearchBar : View {
     }
     
     private func textField() -> some View {
-        TextField($text, placeholder: Text("Search text"))
+        TextField("Search Text", value: $text, formatter: Formatter())
             .padding()
             .frame(height: 44)
             .background(Color.white.opacity(0.8))
-            .border(Color.black, width: 0.5, cornerRadius: 8)
+            .overlay(
+                RoundedRectangle(cornerRadius: 8)
+                    .stroke(Color.black, lineWidth: 0.5)
+        )
     }
 }
 

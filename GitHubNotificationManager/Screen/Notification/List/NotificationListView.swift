@@ -17,16 +17,16 @@ struct NotificationListView : View {
         List {
             SearchBar(text: $viewModel.searchWord)
             ForEach(viewModel.notifications) { notification in
-                NavigationButton(destination: SafariView(url: notification.subject.destinationURL)) {
+                NavigationLink(destination: SafariView(url: notification.subject.destinationURL)) {
                     Cell(notification: notification)
                 }            }
-            }
-            .onReceive(viewModel.didChange, perform: {
-                self.hud.hide()
-            })
-            .onAppear {
-                self.hud.show()
-                self.viewModel.fetch()
+        }
+        .onReceive(viewModel.didChange, perform: { (_) in
+            self.hud.hide()
+        })
+        .onAppear {
+            self.hud.show()
+            self.viewModel.fetch()
         }
     }
 }

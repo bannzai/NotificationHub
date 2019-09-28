@@ -40,7 +40,7 @@ internal extension NotificationListViewModel {
     func fetch() {
         let fetcher = GitHubAPI.request(request: NotificationsRequest())
             .catch { (_) in
-                Publishers.Just([NotificationElement]())
+                Just([NotificationElement]())
             }
             .map { notifications in
                 notifications
