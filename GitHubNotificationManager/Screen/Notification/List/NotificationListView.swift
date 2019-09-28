@@ -10,7 +10,7 @@ import SwiftUI
 import GitHubNotificationManagerNetwork
 
 struct NotificationListView : View {
-    @State private var viewModel = NotificationListViewModel()
+    @ObservedObject private var viewModel = NotificationListViewModel()
     @EnvironmentObject var hud: HUDViewModel
     
     var body: some View {
