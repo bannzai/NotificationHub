@@ -27,33 +27,37 @@ final public class NotificationListViewModel: ObservableObject {
 }
 
 internal extension NotificationListViewModel {
+    private func mapToNotificationModel(entity: NotificationElement) -> Notification {
+        Notification(
+            id: entity.id,
+            reason: entity.reason,
+            repository: Notification.Repository(
+                id: entity.repository.id,
+                name: entity.repository.name,
+                ownerName: entity.repository.owner.login,
+                avatarURL: entity.repository.owner.avatarURL,
+                fullName: entity.repository.fullName
+            ),
+            subject: Notification.Subject(
+                title: entity.subject.title,
+                url: entity.subject.url
+            ),
+            url: entity.url
+        )
+    }
     func fetch() {
         GitHubAPI
             .request(request: NotificationsRequest())
             .catch { (_) in
                 Just([NotificationElement]())
         }
-        .map { notifications in
-            notifications
-                .filter { !$0.repository.repositoryPrivate }
-                .map {
-                    Notification(
-                        id: $0.id,
-                        reason: $0.reason,
-                        repository: Notification.Repository(
-                            id: $0.repository.id,
-                            name: $0.repository.name,
-                            ownerName: $0.repository.owner.login,
-                            avatarURL: $0.repository.owner.avatarURL,
-                            fullName: $0.repository.fullName
-                        ),
-                        subject: Notification.Subject(
-                            title: $0.subject.title,
-                            url: $0.subject.url
-                        ),
-                        url: $0.url
-                    )
+        .map { [weak self] notifications in
+            guard let self = self else {
+                return []
             }
+            return notifications
+                .filter { !$0.repository.repositoryPrivate }
+                .map(self.mapToNotificationModel(entity:))
         }
         .sink(receiveValue: { [weak self] (notifications) in
             self?.allNotifications += notifications
