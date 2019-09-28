@@ -27,7 +27,7 @@ struct SearchBar : View {
     }
     
     private func textField() -> some View {
-        TextField("Search Text", value: $text, formatter: Formatter())
+        TextField("Search Text", text: $text)
             .padding()
             .frame(height: 44)
             .background(Color.white.opacity(0.8))
