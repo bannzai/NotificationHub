@@ -10,7 +10,7 @@ import Foundation
 import Combine
 import SwiftUI
 
-final public class RootViewModel: BindableObject {
+final public class RootViewModel: ObservableObject {
     public let didChange = PassthroughSubject<RootViewModel, Never>()
 
     var hudAppearanceType: HUDAppearanceType?  {

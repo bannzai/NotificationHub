@@ -12,7 +12,7 @@ import SwiftUI
 import GitHubNotificationManagerNetwork
 import UIKit.UIImage
 
-final public class ImageLoaderViewModel: BindableObject {
+final public class ImageLoaderViewModel: ObservableObject {
     public typealias PublisherType = PassthroughSubject<UIImage?, Never>
     public var didChange = PublisherType()
     private var canceller: Cancellable?

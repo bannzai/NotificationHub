@@ -10,7 +10,7 @@ import Foundation
 import SwiftUI
 import Combine
 
-final public class HUDViewModel: BindableObject {
+final public class HUDViewModel: ObservableObject {
     public let didChange = PassthroughSubject<Output, Failure>()
     
     public typealias Output = HUDAppearanceType

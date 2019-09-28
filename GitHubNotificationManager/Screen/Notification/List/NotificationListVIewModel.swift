@@ -11,7 +11,7 @@ import Combine
 import SwiftUI
 import GitHubNotificationManagerNetwork
 
-final public class NotificationListViewModel: BindableObject {
+final public class NotificationListViewModel: ObservableObject {
     public let didChange = PassthroughSubject<NotificationListViewModel, Never>()
     private var canceller: [Cancellable] = []
     
