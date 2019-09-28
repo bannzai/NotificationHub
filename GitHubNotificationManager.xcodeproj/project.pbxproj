@@ -31,7 +31,6 @@
 		BA60430422A7CE1E00345259 /* GitHubNotificationManagerNetwork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA6042EE22A7CE1E00345259 /* GitHubNotificationManagerNetwork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BA6C828B22B49DC4006D2231 /* NotificationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6C828A22B49DC4006D2231 /* NotificationDetailView.swift */; };
 		BA6C829022B49E98006D2231 /* NotificationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6C828F22B49E98006D2231 /* NotificationData.swift */; };
-		BAC1276522A82F7500B52862 /* CoreAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60430D22A7CE7E00345259 /* CoreAPIClient.swift */; };
 		BAC1276622A82F7C00B52862 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431222A7CEBF00345259 /* APIRequest.swift */; };
 		BAC1276722A82F8000B52862 /* AuthorizationHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60432522A7D68700345259 /* AuthorizationHeader.swift */; };
 		BAC1276822A82F8000B52862 /* HTTPPathConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60432322A7D41D00345259 /* HTTPPathConvertible.swift */; };
@@ -155,7 +154,6 @@
 		BA6042EE22A7CE1E00345259 /* GitHubNotificationManagerNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = GitHubNotificationManagerNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA6042F022A7CE1E00345259 /* Network.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Network.h; sourceTree = "<group>"; };
 		BA6042F122A7CE1E00345259 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BA60430D22A7CE7E00345259 /* CoreAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreAPIClient.swift; sourceTree = "<group>"; };
 		BA60431222A7CEBF00345259 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		BA60431422A7D12900345259 /* URLEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLEncoder.swift; sourceTree = "<group>"; };
 		BA60431622A7D1D900345259 /* HTTPBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPBody.swift; sourceTree = "<group>"; };
@@ -337,7 +335,6 @@
 		BA60430F22A7CE9100345259 /* API */ = {
 			isa = PBXGroup;
 			children = (
-				BA60430D22A7CE7E00345259 /* CoreAPIClient.swift */,
 				BA60431222A7CEBF00345259 /* APIRequest.swift */,
 				BA60432522A7D68700345259 /* AuthorizationHeader.swift */,
 				BA60432322A7D41D00345259 /* HTTPPathConvertible.swift */,
@@ -829,7 +826,6 @@
 				BAC1276C22A82F8000B52862 /* HTTPMethod.swift in Sources */,
 				BAC1277022A82F8700B52862 /* GitHubAPI.swift in Sources */,
 				BAC1276A22A82F8000B52862 /* Query.swift in Sources */,
-				BAC1276522A82F7500B52862 /* CoreAPIClient.swift in Sources */,
 				BAC1276B22A82F8000B52862 /* HTTPBody.swift in Sources */,
 				BAC127D422A8442A00B52862 /* URLConvertible.swift in Sources */,
 			);
