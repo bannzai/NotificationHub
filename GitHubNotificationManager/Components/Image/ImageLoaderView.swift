@@ -18,9 +18,6 @@ struct ImageLoaderView : View {
         Container {
             Image(uiImage: viewModel.image)
         }
-        .onReceive(viewModel.objectWillChange, perform: { (_) in
-            
-        })
         .onAppear {
             self.viewModel.load(url: self.url)
         }
