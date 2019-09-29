@@ -21,10 +21,10 @@ struct ImageLoaderView : View {
             } else {
                 EmptyView()
             }
-            }
-            .onAppear {
-                self.viewModel.load(url: self.url)
-            }
+        }
+        .onAppear {
+            self.viewModel.load(url: self.url)
+        }
     }
 }
 
