@@ -9,24 +9,12 @@
 import UIKit.UIImage
 import Combine
 import Nuke
+import GitHubNotificationManagerCore
 
-public typealias ImageLoadPublisher = AnyPublisher<UIImage, Never>
+public typealias ImageLoadPublisher = AnyPublisher<UIImage?, ImagePipeline.Error>
 
 public protocol ImageLoader {
     func load(url: URLConvertible) -> ImageLoadPublisher
-}
-
-public struct NeverErrorPublisher<T>: Publisher {
-    public typealias Output = T
-    public typealias Failure = Never
-    
-    public static func just(_ any: Any) -> NeverErrorPublisher {
-        NeverErrorPublisher()
-    }
-    
-    public func receive<S>(subscriber: S) where S : Subscriber, NeverErrorPublisher.Failure == S.Failure, NeverErrorPublisher.Output == S.Input {
-        subscribe(subscriber)
-    }
 }
 
 public class SharedImageLoader: ImageLoader {
@@ -34,8 +22,8 @@ public class SharedImageLoader: ImageLoader {
     private init() { }
     
     public struct Publisher: Combine.Publisher {
-        public typealias Output = UIImage
-        public typealias Failure = Never
+        public typealias Output = UIImage?
+        public typealias Failure = ImagePipeline.Error
         
         let url: URLConvertible
         
@@ -44,7 +32,6 @@ public class SharedImageLoader: ImageLoader {
                 result.publisher
                     .map { $0.image }
                     .retry(3)
-                    .catch(NeverErrorPublisher.just)
                     .subscribe(subscriber)
             }
         }
