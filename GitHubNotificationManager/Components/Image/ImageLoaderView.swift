@@ -17,6 +17,7 @@ struct ImageLoaderView : View {
     var body: some View {
         Container {
             Image(uiImage: viewModel.image)
+                .resizable()
         }
         .onAppear {
             self.viewModel.load(url: self.url)
