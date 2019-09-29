@@ -12,14 +12,18 @@ import GitHubNotificationManagerNetwork
 struct NotificationListView : View {
     @ObservedObject private var viewModel = NotificationListViewModel()
     @EnvironmentObject var hud: HUDViewModel
-    
+    @State var selectedNotification: Notification? = nil
+
     var body: some View {
         List {
             SearchBar(text: $viewModel.searchWord)
             ForEach(viewModel.notifications) { notification in
-                NavigationLink(destination: SafariView(url: notification.subject.destinationURL)) {
+                Button(action: {
+                    self.selectedNotification = notification
+                }) {
                     Cell(notification: notification)
-                }            }
+                }
+            }
         }
         .onReceive(viewModel.objectWillChange, perform: { (_) in
             self.hud.hide()
@@ -27,6 +31,9 @@ struct NotificationListView : View {
         .onAppear {
             self.hud.show()
             self.viewModel.fetch()
+        }
+        .sheet(item: self.$selectedNotification) { (notification) in
+            SafariView(url: notification.subject.destinationURL)
         }
     }
 }
