@@ -9,7 +9,7 @@
 import Foundation
 import SwiftUI
 
-struct Notification: Identifiable {
+struct NotificationModel: Identifiable {
     struct Repository {
         let id: Int
         let name: String
@@ -52,7 +52,7 @@ struct Notification: Identifiable {
     let url: String
 }
 
-extension Notification: FuzzyFindable {
+extension NotificationModel: FuzzyFindable {
     func fuzzyWords() -> [String] {
         [
             repository.name,

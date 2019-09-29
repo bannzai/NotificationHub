@@ -9,18 +9,15 @@
 import SwiftUI
 import GitHubNotificationManagerNetwork
 
-fileprivate typealias Container = VStack // FIXME: Group does not call onAppear
 struct ImageLoaderView : View {
     @ObservedObject var viewModel = ImageLoaderViewModel()
     
     let url: URLConvertible
     var body: some View {
-        Container {
-            Image(uiImage: viewModel.image)
-                .resizable()
-        }
-        .onAppear {
-            self.viewModel.load(url: self.url)
+        Image(uiImage: viewModel.image)
+            .resizable()
+            .onAppear {
+                self.viewModel.load(url: self.url)
         }
     }
 }

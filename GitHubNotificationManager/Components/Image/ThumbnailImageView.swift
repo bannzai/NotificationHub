@@ -12,6 +12,7 @@ import GitHubNotificationManagerNetwork
 struct ThumbnailImageView : View {
     let url: URLConvertible
     let edge: CGFloat = 44
+    
     var body: some View {
         ImageLoaderView(url: url)
             .frame(width: edge, height: edge, alignment: .center)

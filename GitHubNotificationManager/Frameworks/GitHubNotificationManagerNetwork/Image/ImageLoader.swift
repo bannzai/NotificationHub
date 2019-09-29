@@ -26,7 +26,6 @@ public class SharedImageLoader: ImageLoader {
         public typealias Failure = ImagePipeline.Error
         
         let url: URLConvertible
-        
         public func receive<S>(subscriber: S) where S : Subscriber, Publisher.Failure == S.Failure, Publisher.Output == S.Input {
             Nuke.ImagePipeline.shared.loadImage(with: url.url, progress: nil) { result in
                 result.publisher

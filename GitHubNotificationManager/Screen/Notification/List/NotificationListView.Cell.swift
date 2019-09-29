@@ -11,9 +11,9 @@ import Combine
 
 extension NotificationListView {
     struct Cell: View {
-        let notification: Notification
-        private var repository: Notification.Repository { notification.repository }
-        private var subject: Notification.Subject { notification.subject }
+        let notification: NotificationModel
+        private var repository: NotificationModel.Repository { notification.repository }
+        private var subject: NotificationModel.Subject { notification.subject }
         var body: some View {
             HStack {
                 ThumbnailImageView(url: repository.avatarURL)

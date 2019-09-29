@@ -12,7 +12,7 @@ import GitHubNotificationManagerNetwork
 struct NotificationListView : View {
     @ObservedObject private var viewModel = NotificationListViewModel()
     @EnvironmentObject var hud: HUDViewModel
-    @State var selectedNotification: Notification? = nil
+    @State var selectedNotification: NotificationModel? = nil
 
     var body: some View {
         List {

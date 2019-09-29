@@ -239,5 +239,3 @@ public struct Subject: Codable {
         self.type = type
     }
 }
-
-public typealias Notification = [NotificationElement]

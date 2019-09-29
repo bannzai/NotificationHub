@@ -14,31 +14,31 @@ import GitHubNotificationManagerNetwork
 final public class NotificationListViewModel: ObservableObject {
     private var canceller: Set<AnyCancellable> = []
     
-    @Published private var allNotifications: [Notification] = []
+    @Published private var allNotifications: [NotificationModel] = []
     @Published internal var searchWord: String = ""
 
-    private var filteredNotifications: [Notification] {
+    private var filteredNotifications: [NotificationModel] {
         allNotifications.filter { $0.match(for: searchWord) }
     }
     
-    internal var notifications: [Notification] {
+    internal var notifications: [NotificationModel] {
         searchWord.isEmpty ? allNotifications : filteredNotifications
     }
 }
 
 internal extension NotificationListViewModel {
-    private func mapToNotificationModel(entity: NotificationElement) -> Notification {
-        Notification(
+    private func mapToNotificationModel(entity: NotificationElement) -> NotificationModel {
+        NotificationModel(
             id: entity.id,
             reason: entity.reason,
-            repository: Notification.Repository(
+            repository: NotificationModel.Repository(
                 id: entity.repository.id,
                 name: entity.repository.name,
                 ownerName: entity.repository.owner.login,
                 avatarURL: entity.repository.owner.avatarURL,
                 fullName: entity.repository.fullName
             ),
-            subject: Notification.Subject(
+            subject: NotificationModel.Subject(
                 title: entity.subject.title,
                 url: entity.subject.url
             ),
