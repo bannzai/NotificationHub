@@ -16,7 +16,7 @@ extension NotificationListView {
         private var subject: Notification.Subject { notification.subject }
         var body: some View {
             HStack {
-                ThumbnailImageView(image: ImageLoaderView(url: repository.avatarURL))
+                ThumbnailImageView(url: repository.avatarURL)
                 VStack(alignment: .leading) {
                     Text(repository.fullName).font(.headline).lineLimit(1)
                     Text(subject.title).font(.subheadline).lineLimit(1)
