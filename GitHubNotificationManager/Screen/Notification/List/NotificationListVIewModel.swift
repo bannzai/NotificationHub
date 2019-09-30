@@ -16,7 +16,7 @@ final public class NotificationListViewModel: ObservableObject {
     
     @Published private var allNotifications: [NotificationModel] = []
     @Published internal var searchWord: String = ""
-
+    
     private var filteredNotifications: [NotificationModel] {
         allNotifications.filter { $0.match(for: searchWord) }
     }
@@ -24,6 +24,8 @@ final public class NotificationListViewModel: ObservableObject {
     internal var notifications: [NotificationModel] {
         searchWord.isEmpty ? allNotifications : filteredNotifications
     }
+    
+    private var notificationListFetchStatus: NotificationListFetchStatus = .notYetLoad
 }
 
 internal extension NotificationListViewModel {
@@ -46,11 +48,23 @@ internal extension NotificationListViewModel {
         )
     }
     func fetch() {
+        fetchNext()
+    }
+    
+    func fetchNext() {
+        if case .loading = notificationListFetchStatus {
+            return
+        }
+        
+        notificationListFetchStatus = .loading
         GitHubAPI
             .request(request: NotificationsRequest())
             .catch { (_) in
                 Just([NotificationElement]())
         }
+        .handleEvents(receiveOutput: { [weak self] (elements) in
+            self?.notificationListFetchStatus = .loaded(elements)
+        })
         .map { [weak self] notifications in
             guard let self = self else {
                 return []
@@ -61,8 +75,15 @@ internal extension NotificationListViewModel {
         }
         .sink(receiveValue: { [weak self] (notifications) in
             self?.allNotifications += notifications
-            }
-        )
+        })
         .store(in: &canceller)
+    }
+}
+
+extension NotificationListViewModel {
+    enum NotificationListFetchStatus {
+        case notYetLoad
+        case loaded([NotificationElement])
+        case loading
     }
 }
