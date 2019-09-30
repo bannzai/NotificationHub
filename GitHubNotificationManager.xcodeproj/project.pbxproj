@@ -16,7 +16,6 @@
 		BA417D1122A9DF4E0041B3C3 /* DebugInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA417D1022A9DF4E0041B3C3 /* DebugInfo.swift */; };
 		BA417D1522A9E2BA0041B3C3 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA417D1422A9E2BA0041B3C3 /* HUD.swift */; };
 		BA417D1922A9E6FB0041B3C3 /* HUDViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA417D1822A9E6FB0041B3C3 /* HUDViewModel.swift */; };
-		BA417D1B22A9EA890041B3C3 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA417D1A22A9EA890041B3C3 /* RootViewModel.swift */; };
 		BA60426C22A7409300345259 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60426B22A7409300345259 /* AppDelegate.swift */; };
 		BA60426E22A7409300345259 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60426D22A7409300345259 /* SceneDelegate.swift */; };
 		BA60427222A7409400345259 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA60427122A7409400345259 /* Assets.xcassets */; };
@@ -31,6 +30,7 @@
 		BA60430322A7CE1E00345259 /* GitHubNotificationManagerNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA6042EE22A7CE1E00345259 /* GitHubNotificationManagerNetwork.framework */; };
 		BA60430422A7CE1E00345259 /* GitHubNotificationManagerNetwork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA6042EE22A7CE1E00345259 /* GitHubNotificationManagerNetwork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BA6C829022B49E98006D2231 /* NotificationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6C828F22B49E98006D2231 /* NotificationData.swift */; };
+		BA8A3735234200F800CB487B /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A3734234200F800CB487B /* PageView.swift */; };
 		BAC1276622A82F7C00B52862 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431222A7CEBF00345259 /* APIRequest.swift */; };
 		BAC1276722A82F8000B52862 /* AuthorizationHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60432522A7D68700345259 /* AuthorizationHeader.swift */; };
 		BAC1276822A82F8000B52862 /* HTTPPathConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60432322A7D41D00345259 /* HTTPPathConvertible.swift */; };
@@ -133,7 +133,6 @@
 		BA417D1022A9DF4E0041B3C3 /* DebugInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugInfo.swift; sourceTree = "<group>"; };
 		BA417D1422A9E2BA0041B3C3 /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
 		BA417D1822A9E6FB0041B3C3 /* HUDViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDViewModel.swift; sourceTree = "<group>"; };
-		BA417D1A22A9EA890041B3C3 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		BA60426822A7409300345259 /* GitHubNotificationManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubNotificationManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA60426B22A7409300345259 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA60426D22A7409300345259 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -167,6 +166,7 @@
 		BA60432722A7D91200345259 /* GitHubAPIAuthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAPIAuthorization.swift; sourceTree = "<group>"; };
 		BA60432A22A7D99B00345259 /* NotificationsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsRequest.swift; sourceTree = "<group>"; };
 		BA6C828F22B49E98006D2231 /* NotificationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationData.swift; sourceTree = "<group>"; };
+		BA8A3734234200F800CB487B /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		BAC1278122A83DBC00B52862 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		BAC127D222A8442200B52862 /* URLConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConvertible.swift; sourceTree = "<group>"; };
 		BAC127D522A844BD00B52862 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -406,6 +406,14 @@
 			path = Notification;
 			sourceTree = "<group>";
 		};
+		BA8A3733234200EC00CB487B /* Page */ = {
+			isa = PBXGroup;
+			children = (
+				BA8A3734234200F800CB487B /* PageView.swift */,
+			);
+			path = Page;
+			sourceTree = "<group>";
+		};
 		BAC1277422A830CF00B52862 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -453,6 +461,7 @@
 		BAEFFC4322BA7F72006D1549 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				BA8A3733234200EC00CB487B /* Page */,
 				BAEFFC4722BA7FAC006D1549 /* Notification */,
 				BAEFFC4622BA7F96006D1549 /* WebView */,
 				BAEFFC4422BA7F7F006D1549 /* Root */,
@@ -464,7 +473,6 @@
 			isa = PBXGroup;
 			children = (
 				BAC127D522A844BD00B52862 /* RootView.swift */,
-				BA417D1A22A9EA890041B3C3 /* RootViewModel.swift */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -771,12 +779,12 @@
 				BAEFFC4022B9DDBF006D1549 /* FuzzyFindable.swift in Sources */,
 				BA6C829022B49E98006D2231 /* NotificationData.swift in Sources */,
 				BA417D1922A9E6FB0041B3C3 /* HUDViewModel.swift in Sources */,
+				BA8A3735234200F800CB487B /* PageView.swift in Sources */,
 				BAC127DB22A8539000B52862 /* NotificationListVIewModel.swift in Sources */,
 				BA357A1622B56BA800549BA0 /* SearchBar.swift in Sources */,
 				BA60426E22A7409300345259 /* SceneDelegate.swift in Sources */,
 				BA1D70EA22A9D5BE000F83A1 /* ImageLoaderViewModel.swift in Sources */,
 				BAC1280C22A9B57700B52862 /* NotificationListView.Cell.swift in Sources */,
-				BA417D1B22A9EA890041B3C3 /* RootViewModel.swift in Sources */,
 				BA1D70E822A9D42F000F83A1 /* ImageLoaderView.swift in Sources */,
 				BA417D1122A9DF4E0041B3C3 /* DebugInfo.swift in Sources */,
 				BA417D1522A9E2BA0041B3C3 /* HUD.swift in Sources */,
