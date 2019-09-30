@@ -12,6 +12,12 @@ public struct NotificationsRequest: GitHubAPIRequest {
     public var path: URLPathConvertible { ["notifications"] }
     public var method: HTTPMethod { .GET }
     public typealias Response = [NotificationElement]
-    public init() { }
+    public var query: Query? { ["all": true, "page": page, "per_page": Self.perPage] }
+    
+    public static let perPage = 100
+    private let page: Int
+    public init(page: Int) {
+        self.page = page
+    }
 }
 
