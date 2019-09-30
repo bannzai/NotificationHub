@@ -27,7 +27,7 @@ struct NotificationListView : View {
             IndicatorView()
                 .frame(maxWidth: .infinity,  idealHeight: 44, alignment: .center)
                 .onAppear {
-                    self.viewModel.fetch()
+                    self.viewModel.fetchNext()
             }
         }
         .onReceive(viewModel.objectWillChange, perform: { (_) in
