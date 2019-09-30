@@ -14,7 +14,7 @@ public enum HUDAppearanceType: Int, Equatable {
     case show
 }
 
-struct HUD : UIViewRepresentable {
+struct IndicatorView : UIViewRepresentable {
     func makeUIView(context: UIViewRepresentableContext<HUD>) -> UIActivityIndicatorView {
         let view: UIViewType = UIActivityIndicatorView(style: .medium)
         view.color = .black
@@ -30,6 +30,8 @@ struct HUD : UIViewRepresentable {
     
     typealias UIViewType = UIActivityIndicatorView
 }
+
+typealias HUD = IndicatorView
 
 #if DEBUG
 struct HUD_Previews : PreviewProvider {
