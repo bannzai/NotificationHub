@@ -30,7 +30,7 @@ extension NotificationListView {
 struct NotificationListView_Cell_Previews : PreviewProvider {
     static var previews: some View {
         NotificationListView.Cell(
-            notification: notification
+            notification: debugNotification
         )
     }
 }

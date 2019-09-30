@@ -25,7 +25,7 @@ struct NotificationDetailView : View {
 #if DEBUG
 struct NotificationDetailView_Previews : PreviewProvider {
     static var previews: some View {
-        NotificationDetailView(notification: notification)
+        NotificationDetailView(notification: debugNotification)
     }
 }
 #endif
