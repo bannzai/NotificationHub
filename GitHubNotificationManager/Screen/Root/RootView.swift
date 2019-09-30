@@ -13,6 +13,7 @@ struct RootView: View {
     @EnvironmentObject var hud: HUDViewModel
     
     var loading: Bool { hud.counter > 0 }
+    @State var selectedAddNotificationList: Bool = false
     
     var body: some View {
         NavigationView {
@@ -28,8 +29,18 @@ struct RootView: View {
                 } else {
                     EmptyView()
                 }
+            }.navigationBarItems(
+                trailing: Button(action: {
+                    self.selectedAddNotificationList = true
+                }, label: {
+                    Image(systemName: "text.badge.plus")
+                        .renderingMode(.template)
+                        .background(Color.primary)
+                })
+            ).sheet(isPresented: $selectedAddNotificationList) { () in
+                WatchingListView().environmentObject(self.hud)
             }
-            }
+        }
     }
 }
 
