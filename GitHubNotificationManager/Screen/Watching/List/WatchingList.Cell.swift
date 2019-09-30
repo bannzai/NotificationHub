@@ -11,11 +11,11 @@ import Combine
 
 extension WatchingListView {
     struct Cell: View {
-        let watching: WatchingModel
+        @Binding var watching: WatchingModel
         var body: some View {
             HStack {
                 ThumbnailImageView(url: watching.owner.avatarURL)
-                VStack(alignment: .leading) {
+                Toggle(isOn: $watching.isReceiveNotification) { () in
                     Text(watching.owner.name).font(.headline).lineLimit(1)
                 }
             }
@@ -27,10 +27,11 @@ extension WatchingListView {
 struct WatchingListView_Cell_Previews : PreviewProvider {
     static var previews: some View {
         WatchingListView.Cell(
-            watching: WatchingModel(
+            watching: State(initialValue: WatchingModel(
                 id: 1,
-                owner: .init(name: "bannzai", avatarURL: Debug.Const.avatarURL)
-            )
+                owner: .init(name: "bannzai", avatarURL: Debug.Const.avatarURL),
+                isReceiveNotification: false
+            )).projectedValue
         )
     }
 }
