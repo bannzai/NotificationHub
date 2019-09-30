@@ -47,7 +47,7 @@ internal extension NotificationListViewModel {
         .handleEvents(receiveOutput: { [weak self] (elements) in
             self?.notificationListFetchStatus = .loaded
         })
-        .map { [weak self] notifications in
+        .map { notifications in
             return notifications
                 .filter { !$0.repository.repositoryPrivate }
                 .map(NotificationModel.create(entity:))
