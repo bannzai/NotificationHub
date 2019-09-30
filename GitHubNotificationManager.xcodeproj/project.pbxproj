@@ -62,7 +62,7 @@
 		BAC127FB22A9A82300B52862 /* NotificationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC127F922A9A7FB00B52862 /* NotificationList.swift */; };
 		BAC1280C22A9B57700B52862 /* NotificationListView.Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC1280B22A9B57700B52862 /* NotificationListView.Cell.swift */; };
 		BAEFFC3C22B9DB4E006D1549 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEFFC3B22B9DB4E006D1549 /* ViewExtension.swift */; };
-		BAEFFC3E22B9DBD3006D1549 /* Notification.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEFFC3D22B9DBD3006D1549 /* Notification.swift */; };
+		BAEFFC3E22B9DBD3006D1549 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEFFC3D22B9DBD3006D1549 /* NotificationModel.swift */; };
 		BAEFFC4022B9DDBF006D1549 /* FuzzyFindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEFFC3F22B9DDBF006D1549 /* FuzzyFindable.swift */; };
 /* End PBXBuildFile section */
 
@@ -189,7 +189,7 @@
 		BAC127F922A9A7FB00B52862 /* NotificationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationList.swift; sourceTree = "<group>"; };
 		BAC1280B22A9B57700B52862 /* NotificationListView.Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListView.Cell.swift; sourceTree = "<group>"; };
 		BAEFFC3B22B9DB4E006D1549 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
-		BAEFFC3D22B9DBD3006D1549 /* Notification.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Notification.swift; sourceTree = "<group>"; };
+		BAEFFC3D22B9DBD3006D1549 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		BAEFFC3F22B9DDBF006D1549 /* FuzzyFindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuzzyFindable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -267,7 +267,6 @@
 				BAEFFC4122BA7F3F006D1549 /* Components */,
 				BAEFFC4322BA7F72006D1549 /* Screen */,
 				BAEFFC4B22BA8014006D1549 /* Extension */,
-				BAC127D922A852B400B52862 /* Model */,
 				BA60426B22A7409300345259 /* AppDelegate.swift */,
 				BA60426D22A7409300345259 /* SceneDelegate.swift */,
 				BA417D1022A9DF4E0041B3C3 /* DebugInfo.swift */,
@@ -456,14 +455,6 @@
 			path = Image;
 			sourceTree = "<group>";
 		};
-		BAC127D922A852B400B52862 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-				BAEFFC3D22B9DBD3006D1549 /* Notification.swift */,
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		BAEFFC4122BA7F3F006D1549 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -534,6 +525,7 @@
 		BAEFFC4822BA7FB0006D1549 /* List */ = {
 			isa = PBXGroup;
 			children = (
+				BAEFFC3D22B9DBD3006D1549 /* NotificationModel.swift */,
 				BAC127DA22A8539000B52862 /* NotificationListVIewModel.swift */,
 				BAC127E322A8911C00B52862 /* NotificationListView.swift */,
 				BAC1280B22A9B57700B52862 /* NotificationListView.Cell.swift */,
@@ -822,7 +814,7 @@
 				BA417D1122A9DF4E0041B3C3 /* DebugInfo.swift in Sources */,
 				BA417D1522A9E2BA0041B3C3 /* HUD.swift in Sources */,
 				BAEFFC3C22B9DB4E006D1549 /* ViewExtension.swift in Sources */,
-				BAEFFC3E22B9DBD3006D1549 /* Notification.swift in Sources */,
+				BAEFFC3E22B9DBD3006D1549 /* NotificationModel.swift in Sources */,
 				BA8A374A23422EFA00CB487B /* WatchingListViewModel.swift in Sources */,
 				BAC127D622A844BD00B52862 /* RootView.swift in Sources */,
 				BA357A1422B4C41300549BA0 /* SafariView.swift in Sources */,
