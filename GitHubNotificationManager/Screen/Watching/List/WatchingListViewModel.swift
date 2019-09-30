@@ -15,10 +15,22 @@ final public class WatchingListViewModel: ObservableObject {
     private var canceller: Set<AnyCancellable> = []
     
     @Published var watchings: [WatchingModel] = []
+    
     private var watchingListFetchStatus: WatchingListFetchStatus = .notYetLoad
 }
 
 internal extension WatchingListViewModel {
+    private func distinct(watchings: [WatchingModel]) -> [WatchingModel] {
+        watchings.reduce(into: [WatchingModel]()) { (result, element) in
+            switch result.contains(where: { $0.owner.name == element.owner.name }) {
+            case true:
+                return
+            case false:
+                result.append(element)
+            }
+        }
+    }
+    
     func fetch() {
         if case .loading = watchingListFetchStatus {
             return
@@ -37,7 +49,10 @@ internal extension WatchingListViewModel {
             return watchings
                 .map { WatchingModel.create(entity: $0, isReceiveNotification: false) }
         }.sink(receiveValue: { [weak self] (watchings) in
-            self?.watchings += watchings
+            guard let self = self else {
+                return
+            }
+            self.watchings += self.distinct(watchings: watchings)
         }).store(in: &canceller)
     }
 }

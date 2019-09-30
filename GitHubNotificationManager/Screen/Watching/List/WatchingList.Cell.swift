@@ -29,6 +29,7 @@ struct WatchingListView_Cell_Previews : PreviewProvider {
         WatchingListView.Cell(
             watching: State(initialValue: WatchingModel(
                 id: 1,
+                name: "ABC",
                 owner: .init(name: "bannzai", avatarURL: Debug.Const.avatarURL),
                 isReceiveNotification: false
             )).projectedValue

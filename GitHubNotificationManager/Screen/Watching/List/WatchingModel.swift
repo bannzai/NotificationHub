@@ -17,6 +17,7 @@ struct WatchingModel: Identifiable {
     }
     
     let id: Int
+    let name: String
     let owner: Owner
     var isReceiveNotification: Bool
 
@@ -24,6 +25,7 @@ struct WatchingModel: Identifiable {
         WatchingModel(
             
             id: entity.id,
+            name: entity.name,
             owner: WatchingModel.Owner(
                 name: entity.owner.login ,
                 avatarURL: entity.owner.avatarURL
