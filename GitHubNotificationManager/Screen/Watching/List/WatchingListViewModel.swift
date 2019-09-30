@@ -9,23 +9,13 @@
 import Foundation
 import Combine
 import SwiftUI
-import GitHubWatchingManagerNetwork
+import GitHubNotificationManagerNetwork
 
 final public class WatchingListViewModel: ObservableObject {
     private var canceller: Set<AnyCancellable> = []
     
-    @Published private var allWatchings: [WatchingModel] = []
-    @Published internal var searchWord: String = ""
-    
-    private var filteredWatchings: [WatchingModel] {
-        allWatchings.filter { $0.match(for: searchWord) }
-    }
-    
-    internal var Watchings: [WatchingModel] {
-        searchWord.isEmpty ? allWatchings : filteredWatchings
-    }
-    
-    private var WatchingListFetchStatus: WatchingListFetchStatus = .notYetLoad
+    @Published var watchings: [WatchingModel] = []
+    private var watchingListFetchStatus: WatchingListFetchStatus = .notYetLoad
 }
 
 internal extension WatchingListViewModel {
@@ -34,26 +24,25 @@ internal extension WatchingListViewModel {
     }
     
     func fetchNext() {
-        if case .loading = WatchingListFetchStatus {
+        if case .loading = watchingListFetchStatus {
             return
         }
         
-        WatchingListFetchStatus = .loading
+        watchingListFetchStatus = .loading
         GitHubAPI
-            .request(request: WatchingsRequest(page: allWatchings.count / WatchingsRequest.perPage))
+            .request(request: WatchingsRequest())
             .catch { (_) in
                 Just([WatchingElement]())
         }
         .handleEvents(receiveOutput: { [weak self] (elements) in
-            self?.WatchingListFetchStatus = .loaded
+            self?.watchingListFetchStatus = .loaded
         })
-            .map { Watchings in
-                return Watchings
-                    .filter { !$0.repository.repositoryPrivate }
+            .map { watchings in
+                return watchings
                     .map(WatchingModel.create(entity:))
         }
-        .sink(receiveValue: { [weak self] (Watchings) in
-            self?.allWatchings += Watchings
+        .sink(receiveValue: { [weak self] (watchings) in
+            self?.watchings += watchings
         })
             .store(in: &canceller)
     }

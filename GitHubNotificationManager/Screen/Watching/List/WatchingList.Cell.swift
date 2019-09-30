@@ -14,10 +14,9 @@ extension WatchingListView {
         let watching: WatchingModel
         var body: some View {
             HStack {
-                ThumbnailImageView(url: repository.avatarURL)
+                ThumbnailImageView(url: watching.owner.avatarURL)
                 VStack(alignment: .leading) {
-                    Text(repository.fullName).font(.headline).lineLimit(1)
-                    Text(subject.title).font(.subheadline).lineLimit(1)
+                    Text(watching.owner.name).font(.headline).lineLimit(1)
                 }
             }
         }
@@ -28,7 +27,10 @@ extension WatchingListView {
 struct WatchingListView_Cell_Previews : PreviewProvider {
     static var previews: some View {
         WatchingListView.Cell(
-            Watching: debugWatching
+            watching: WatchingModel(
+                id: 1,
+                owner: .init(name: "bannzai", avatarURL: Debug.Const.avatarURL)
+            )
         )
     }
 }
