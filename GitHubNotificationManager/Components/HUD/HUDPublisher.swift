@@ -11,8 +11,6 @@ import SwiftUI
 import Combine
 
 final public class HUDViewModel: ObservableObject {
-    public let didChange = PassthroughSubject<Output, Failure>()
-    
     public typealias Output = HUDAppearanceType
     public typealias Failure = Never
     
@@ -30,10 +28,7 @@ final public class HUDViewModel: ObservableObject {
             case .show:
                 counter += 1
             }
-            if oldValue == state {
-                return
-            }
-            didChange.send(state)
+            objectWillChange.send()
         }
     }
     
