@@ -1010,6 +1010,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "GitHubNotificationManager/Preview\\ Content";
+				DEVELOPMENT_TEAM = TQPN82UBBY;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_PATH = "$(SRCROOT)/Frameworks/";
 				INFOPLIST_FILE = GitHubNotificationManager/Info.plist;
@@ -1031,6 +1032,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "GitHubNotificationManager/Preview\\ Content";
+				DEVELOPMENT_TEAM = TQPN82UBBY;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_PATH = "$(SRCROOT)/Frameworks/";
 				INFOPLIST_FILE = GitHubNotificationManager/Info.plist;
