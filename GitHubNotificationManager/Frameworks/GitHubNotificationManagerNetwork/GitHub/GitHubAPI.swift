@@ -31,8 +31,15 @@ public struct GitHubAPI {
                 URLSession.shared.dataTaskPublisher(for: try request.urlRequest())
                     .map { $0.data }
                     .decode(type: Output.self, decoder: JSONDecoder())
-//                    .print()
                     .receive(on: DispatchQueue.main)
+                    .handleEvents(receiveCompletion: { (completion) in
+                        switch completion {
+                        case .finished:
+                            Swift.print("[INFO] finished request \(self.request)")
+                        case .failure(let error):
+                            Swift.print("[ERROR] error request \(self.request), error: \(error)")
+                        }
+                    })
                     .subscribe(subscriber)
             } catch {
                 Fail<Output, Swift.Error>(error: error)
