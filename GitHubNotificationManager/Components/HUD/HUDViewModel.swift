@@ -11,9 +11,6 @@ import SwiftUI
 import Combine
 
 final public class HUDViewModel: ObservableObject {
-    public typealias Output = HUDAppearanceType
-    public typealias Failure = Never
-    
     var counter: Int = 0
     private var canceller: Cancellable?
     deinit {
