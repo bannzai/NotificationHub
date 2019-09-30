@@ -30,7 +30,6 @@
 		BA60430022A7CE1E00345259 /* Network.h in Headers */ = {isa = PBXBuildFile; fileRef = BA6042F022A7CE1E00345259 /* Network.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BA60430322A7CE1E00345259 /* GitHubNotificationManagerNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA6042EE22A7CE1E00345259 /* GitHubNotificationManagerNetwork.framework */; };
 		BA60430422A7CE1E00345259 /* GitHubNotificationManagerNetwork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA6042EE22A7CE1E00345259 /* GitHubNotificationManagerNetwork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BA6C828B22B49DC4006D2231 /* NotificationDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6C828A22B49DC4006D2231 /* NotificationDetailView.swift */; };
 		BA6C829022B49E98006D2231 /* NotificationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6C828F22B49E98006D2231 /* NotificationData.swift */; };
 		BAC1276622A82F7C00B52862 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431222A7CEBF00345259 /* APIRequest.swift */; };
 		BAC1276722A82F8000B52862 /* AuthorizationHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60432522A7D68700345259 /* AuthorizationHeader.swift */; };
@@ -167,7 +166,6 @@
 		BA60432522A7D68700345259 /* AuthorizationHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationHeader.swift; sourceTree = "<group>"; };
 		BA60432722A7D91200345259 /* GitHubAPIAuthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAPIAuthorization.swift; sourceTree = "<group>"; };
 		BA60432A22A7D99B00345259 /* NotificationsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsRequest.swift; sourceTree = "<group>"; };
-		BA6C828A22B49DC4006D2231 /* NotificationDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationDetailView.swift; sourceTree = "<group>"; };
 		BA6C828F22B49E98006D2231 /* NotificationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationData.swift; sourceTree = "<group>"; };
 		BAC1278122A83DBC00B52862 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		BAC127D222A8442200B52862 /* URLConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConvertible.swift; sourceTree = "<group>"; };
@@ -491,7 +489,6 @@
 		BAEFFC4722BA7FAC006D1549 /* Notification */ = {
 			isa = PBXGroup;
 			children = (
-				BAEFFC4922BA7FC7006D1549 /* Detail */,
 				BAEFFC4822BA7FB0006D1549 /* List */,
 			);
 			path = Notification;
@@ -505,14 +502,6 @@
 				BAC1280B22A9B57700B52862 /* NotificationListView.Cell.swift */,
 			);
 			path = List;
-			sourceTree = "<group>";
-		};
-		BAEFFC4922BA7FC7006D1549 /* Detail */ = {
-			isa = PBXGroup;
-			children = (
-				BA6C828A22B49DC4006D2231 /* NotificationDetailView.swift */,
-			);
-			path = Detail;
 			sourceTree = "<group>";
 		};
 		BAEFFC4A22BA7FE8006D1549 /* SearchBar */ = {
@@ -786,7 +775,6 @@
 				BA357A1622B56BA800549BA0 /* SearchBar.swift in Sources */,
 				BA60426E22A7409300345259 /* SceneDelegate.swift in Sources */,
 				BA1D70EA22A9D5BE000F83A1 /* ImageLoaderViewModel.swift in Sources */,
-				BA6C828B22B49DC4006D2231 /* NotificationDetailView.swift in Sources */,
 				BAC1280C22A9B57700B52862 /* NotificationListView.Cell.swift in Sources */,
 				BA417D1B22A9EA890041B3C3 /* RootViewModel.swift in Sources */,
 				BA1D70E822A9D42F000F83A1 /* ImageLoaderView.swift in Sources */,
