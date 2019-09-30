@@ -58,12 +58,12 @@ internal extension NotificationListViewModel {
         
         notificationListFetchStatus = .loading
         GitHubAPI
-            .request(request: NotificationsRequest())
+            .request(request: NotificationsRequest(page: allNotifications.count / NotificationsRequest.perPage))
             .catch { (_) in
                 Just([NotificationElement]())
         }
         .handleEvents(receiveOutput: { [weak self] (elements) in
-            self?.notificationListFetchStatus = .loaded(elements)
+            self?.notificationListFetchStatus = .loaded
         })
         .map { [weak self] notifications in
             guard let self = self else {
@@ -83,7 +83,7 @@ internal extension NotificationListViewModel {
 extension NotificationListViewModel {
     enum NotificationListFetchStatus {
         case notYetLoad
-        case loaded([NotificationElement])
+        case loaded
         case loading
     }
 }
