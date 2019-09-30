@@ -12,14 +12,12 @@ import Combine
 extension NotificationListView {
     struct Cell: View {
         let notification: NotificationModel
-        private var repository: NotificationModel.Repository { notification.repository }
-        private var subject: NotificationModel.Subject { notification.subject }
         var body: some View {
             HStack {
-                ThumbnailImageView(url: repository.avatarURL)
+                ThumbnailImageView(url: notification.repository.avatarURL)
                 VStack(alignment: .leading) {
-                    Text(repository.fullName).font(.headline).lineLimit(1)
-                    Text(subject.title).font(.subheadline).lineLimit(1)
+                    Text(notification.repository.fullName).font(.headline).lineLimit(1)
+                    Text(notification.subject.title).font(.subheadline).lineLimit(1)
                 }
             }
         }
