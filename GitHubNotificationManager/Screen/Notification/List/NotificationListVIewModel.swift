@@ -29,24 +29,6 @@ final public class NotificationListViewModel: ObservableObject {
 }
 
 internal extension NotificationListViewModel {
-    private func mapToNotificationModel(entity: NotificationElement) -> NotificationModel {
-        NotificationModel(
-            id: entity.id,
-            reason: entity.reason,
-            repository: NotificationModel.Repository(
-                id: entity.repository.id,
-                name: entity.repository.name,
-                ownerName: entity.repository.owner.login,
-                avatarURL: entity.repository.owner.avatarURL,
-                fullName: entity.repository.fullName
-            ),
-            subject: NotificationModel.Subject(
-                title: entity.subject.title,
-                url: entity.subject.url
-            ),
-            url: entity.url
-        )
-    }
     func fetch() {
         fetchNext()
     }
@@ -66,12 +48,9 @@ internal extension NotificationListViewModel {
             self?.notificationListFetchStatus = .loaded
         })
         .map { [weak self] notifications in
-            guard let self = self else {
-                return []
-            }
             return notifications
                 .filter { !$0.repository.repositoryPrivate }
-                .map(self.mapToNotificationModel(entity:))
+                .map(NotificationModel.create(entity:))
         }
         .sink(receiveValue: { [weak self] (notifications) in
             self?.allNotifications += notifications
