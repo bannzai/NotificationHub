@@ -20,10 +20,6 @@ final public class WatchingListViewModel: ObservableObject {
 
 internal extension WatchingListViewModel {
     func fetch() {
-        fetchNext()
-    }
-    
-    func fetchNext() {
         if case .loading = watchingListFetchStatus {
             return
         }
@@ -31,20 +27,18 @@ internal extension WatchingListViewModel {
         watchingListFetchStatus = .loading
         GitHubAPI
             .request(request: WatchingsRequest())
-            .catch { (_) in
+            .catch { (error) in
                 Just([WatchingElement]())
         }
         .handleEvents(receiveOutput: { [weak self] (elements) in
             self?.watchingListFetchStatus = .loaded
-        })
-            .map { watchings in
-                return watchings
-                    .map(WatchingModel.create(entity:))
-        }
-        .sink(receiveValue: { [weak self] (watchings) in
+        }).map { watchings in
+            // TODO: fetch isReceiveNotification
+            return watchings
+                .map { WatchingModel.create(entity: $0, isReceiveNotification: false) }
+        }.sink(receiveValue: { [weak self] (watchings) in
             self?.watchings += watchings
-        })
-            .store(in: &canceller)
+        }).store(in: &canceller)
     }
 }
 

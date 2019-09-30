@@ -9,19 +9,21 @@
 import SwiftUI
 
 struct WatchingListView: View {
-    @ObservedObject var viewModel = WatchingListViewModel()
+    private var viewModel = WatchingListViewModel()
+    @State var watchings: [WatchingModel] = []
     @EnvironmentObject var hud: HUDViewModel
-
+    
     var body: some View {
-        ForEach(viewModel.watchings) { watching in
-            Cell(watching: watching)
-        }
-        .onReceive(viewModel.objectWillChange, perform: { (_) in
+        List{
+            ForEach(watchings.enumerated().map { $0.offset }, id: \.self) { (index) in
+                Cell(watching: self.$watchings[index])
+            }
+        }.onReceive(viewModel.$watchings, perform: { (watchings) in
+            self.watchings = watchings
             self.hud.hide()
-        })
-            .onAppear {
-                self.hud.show()
-                self.viewModel.fetch()
+        }).onAppear {
+            self.hud.show()
+            self.viewModel.fetch()
         }
     }
 }

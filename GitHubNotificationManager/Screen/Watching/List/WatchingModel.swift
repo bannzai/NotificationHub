@@ -18,14 +18,17 @@ struct WatchingModel: Identifiable {
     
     let id: Int
     let owner: Owner
+    var isReceiveNotification: Bool
 
-    static func create(entity: WatchingElement) -> WatchingModel {
+    static func create(entity: WatchingElement, isReceiveNotification: Bool) -> WatchingModel {
         WatchingModel(
+            
             id: entity.id,
             owner: WatchingModel.Owner(
                 name: entity.owner.login ,
                 avatarURL: entity.owner.avatarURL
-            )
+            ),
+            isReceiveNotification: isReceiveNotification
         )
     }
 }
