@@ -33,6 +33,8 @@
 		BA8A37372342068500CB487B /* SafariViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A37362342068500CB487B /* SafariViewController.swift */; };
 		BA8A3739234206CF00CB487B /* SafariViewControllerWrapperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A3738234206CF00CB487B /* SafariViewControllerWrapperViewController.swift */; };
 		BA8A373B2342070500CB487B /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A373A2342070500CB487B /* PageViewController.swift */; };
+		BA8A37402342251800CB487B /* WatchingsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A373D2342250800CB487B /* WatchingsRequest.swift */; };
+		BA8A37442342259000CB487B /* WatchingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A37412342257000CB487B /* WatchingList.swift */; };
 		BAC1276622A82F7C00B52862 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431222A7CEBF00345259 /* APIRequest.swift */; };
 		BAC1276722A82F8000B52862 /* AuthorizationHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60432522A7D68700345259 /* AuthorizationHeader.swift */; };
 		BAC1276822A82F8000B52862 /* HTTPPathConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60432322A7D41D00345259 /* HTTPPathConvertible.swift */; };
@@ -171,6 +173,8 @@
 		BA8A37362342068500CB487B /* SafariViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariViewController.swift; sourceTree = "<group>"; };
 		BA8A3738234206CF00CB487B /* SafariViewControllerWrapperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariViewControllerWrapperViewController.swift; sourceTree = "<group>"; };
 		BA8A373A2342070500CB487B /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		BA8A373D2342250800CB487B /* WatchingsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchingsRequest.swift; sourceTree = "<group>"; };
+		BA8A37412342257000CB487B /* WatchingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchingList.swift; sourceTree = "<group>"; };
 		BAC1278122A83DBC00B52862 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		BAC127D222A8442200B52862 /* URLConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConvertible.swift; sourceTree = "<group>"; };
 		BAC127D522A844BD00B52862 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -352,6 +356,7 @@
 		BA60431A22A7D21800345259 /* GitHub */ = {
 			isa = PBXGroup;
 			children = (
+				BA8A373C2342249200CB487B /* Watching */,
 				BA60432922A7D98A00345259 /* Notifcation */,
 				BA60431B22A7D22900345259 /* GitHubAPI.swift */,
 				BA60431D22A7D2FF00345259 /* GitHubAPIRequest.swift */,
@@ -400,6 +405,15 @@
 				BA8A373A2342070500CB487B /* PageViewController.swift */,
 			);
 			path = Page;
+			sourceTree = "<group>";
+		};
+		BA8A373C2342249200CB487B /* Watching */ = {
+			isa = PBXGroup;
+			children = (
+				BA8A373D2342250800CB487B /* WatchingsRequest.swift */,
+				BA8A37412342257000CB487B /* WatchingList.swift */,
+			);
+			path = Watching;
 			sourceTree = "<group>";
 		};
 		BAC1277422A830CF00B52862 /* Frameworks */ = {
@@ -817,8 +831,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA8A37442342259000CB487B /* WatchingList.swift in Sources */,
 				BAC1276622A82F7C00B52862 /* APIRequest.swift in Sources */,
 				BAC1277222A82F8700B52862 /* GitHubAPIAuthorization.swift in Sources */,
+				BA8A37402342251800CB487B /* WatchingsRequest.swift in Sources */,
 				BAC127D122A841B300B52862 /* ImageLoader.swift in Sources */,
 				BAC127FB22A9A82300B52862 /* NotificationList.swift in Sources */,
 				BAC1276722A82F8000B52862 /* AuthorizationHeader.swift in Sources */,
