@@ -24,6 +24,11 @@ struct NotificationListView : View {
                     Cell(notification: notification)
                 }
             }
+            IndicatorView()
+                .frame(maxWidth: .infinity,  idealHeight: 44, alignment: .center)
+                .onAppear {
+                    print("Reach the bottom")
+            }
         }
         .onReceive(viewModel.objectWillChange, perform: { (_) in
             self.hud.hide()
