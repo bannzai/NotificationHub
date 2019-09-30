@@ -15,7 +15,7 @@
 		BA417D0D22A9DE9C0041B3C3 /* ThumbnailImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA417D0C22A9DE9C0041B3C3 /* ThumbnailImageView.swift */; };
 		BA417D1122A9DF4E0041B3C3 /* DebugInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA417D1022A9DF4E0041B3C3 /* DebugInfo.swift */; };
 		BA417D1522A9E2BA0041B3C3 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA417D1422A9E2BA0041B3C3 /* HUD.swift */; };
-		BA417D1922A9E6FB0041B3C3 /* HUDPublisher.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA417D1822A9E6FB0041B3C3 /* HUDPublisher.swift */; };
+		BA417D1922A9E6FB0041B3C3 /* HUDViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA417D1822A9E6FB0041B3C3 /* HUDViewModel.swift */; };
 		BA417D1B22A9EA890041B3C3 /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA417D1A22A9EA890041B3C3 /* RootViewModel.swift */; };
 		BA60426C22A7409300345259 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60426B22A7409300345259 /* AppDelegate.swift */; };
 		BA60426E22A7409300345259 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60426D22A7409300345259 /* SceneDelegate.swift */; };
@@ -133,7 +133,7 @@
 		BA417D0C22A9DE9C0041B3C3 /* ThumbnailImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailImageView.swift; sourceTree = "<group>"; };
 		BA417D1022A9DF4E0041B3C3 /* DebugInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugInfo.swift; sourceTree = "<group>"; };
 		BA417D1422A9E2BA0041B3C3 /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
-		BA417D1822A9E6FB0041B3C3 /* HUDPublisher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDPublisher.swift; sourceTree = "<group>"; };
+		BA417D1822A9E6FB0041B3C3 /* HUDViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDViewModel.swift; sourceTree = "<group>"; };
 		BA417D1A22A9EA890041B3C3 /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		BA60426822A7409300345259 /* GitHubNotificationManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubNotificationManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA60426B22A7409300345259 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -475,7 +475,7 @@
 			isa = PBXGroup;
 			children = (
 				BA417D1422A9E2BA0041B3C3 /* HUD.swift */,
-				BA417D1822A9E6FB0041B3C3 /* HUDPublisher.swift */,
+				BA417D1822A9E6FB0041B3C3 /* HUDViewModel.swift */,
 			);
 			path = HUD;
 			sourceTree = "<group>";
@@ -781,7 +781,7 @@
 				BA417D0D22A9DE9C0041B3C3 /* ThumbnailImageView.swift in Sources */,
 				BAEFFC4022B9DDBF006D1549 /* FuzzyFindable.swift in Sources */,
 				BA6C829022B49E98006D2231 /* NotificationData.swift in Sources */,
-				BA417D1922A9E6FB0041B3C3 /* HUDPublisher.swift in Sources */,
+				BA417D1922A9E6FB0041B3C3 /* HUDViewModel.swift in Sources */,
 				BAC127DB22A8539000B52862 /* NotificationListVIewModel.swift in Sources */,
 				BA357A1622B56BA800549BA0 /* SearchBar.swift in Sources */,
 				BA60426E22A7409300345259 /* SceneDelegate.swift in Sources */,
