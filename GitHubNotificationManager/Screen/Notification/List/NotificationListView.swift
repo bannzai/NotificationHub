@@ -12,6 +12,10 @@ import GitHubNotificationManagerNetwork
 struct NotificationListView : View {
     @ObservedObject private var viewModel = NotificationListViewModel()
     @State var selectedNotification: NotificationModel? = nil
+    
+    init() {
+        print("NotificationList init")
+    }
 
     var body: some View {
         List {
