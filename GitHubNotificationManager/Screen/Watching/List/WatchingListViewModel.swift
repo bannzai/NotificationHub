@@ -14,11 +14,8 @@ import GitHubNotificationManagerNetwork
 final public class WatchingListViewModel: ObservableObject {
     private var canceller: Set<AnyCancellable> = []
     
-    @Published var watchings: [WatchingModel]
-    init(watchings: [WatchingModel]) {
-        self.watchings = watchings
-    }
-    
+    @Published var watchings: [WatchingModel] = []
+
     private var watchingListFetchStatus: WatchingListFetchStatus = .notYetLoad
 }
 
@@ -34,11 +31,11 @@ internal extension WatchingListViewModel {
         }
     }
     
-    func fetch() {
-        if case .loading = watchingListFetchStatus {
+    func fetchFirst() {
+        guard case .notYetLoad = watchingListFetchStatus else {
             return
         }
-        
+
         watchingListFetchStatus = .loading
         GitHubAPI
             .request(request: WatchingsRequest())
