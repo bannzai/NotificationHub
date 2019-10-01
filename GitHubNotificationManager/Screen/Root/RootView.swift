@@ -16,10 +16,10 @@ struct RootView: View {
     @State var watchings: [WatchingModel] = []
     
     var pages: [NotificationListView] {
-        let main = NotificationListView()
+        let main = NotificationListView(listType: .all)
         let sub = watchings
             .filter { $0.isReceiveNotification }
-            .map { _ in NotificationListView() }
+            .map { NotificationListView(listType: .specify(notificationsUrl: $0.notificationsURL)) }
         return [main] + sub
     }
     

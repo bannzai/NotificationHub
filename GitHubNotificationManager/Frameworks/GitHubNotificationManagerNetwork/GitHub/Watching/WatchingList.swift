@@ -12,6 +12,7 @@ public struct WatchingElement: Codable {
     public let name: String
     public let fullName: String
     public let owner: Owner
+    public let notificationsUrl: String
 
     enum CodingKeys: String, CodingKey {
         case id
@@ -19,14 +20,16 @@ public struct WatchingElement: Codable {
         case name
         case fullName = "full_name"
         case owner
+        case notificationsUrl = "notifications_url"
     }
 
-    public init(id: Int, nodeID: String, name: String, fullName: String, owner: Owner) {
+    public init(id: Int, nodeID: String, name: String, fullName: String, owner: Owner, notificationsUrl: String) {
         self.id = id
         self.nodeID = nodeID
         self.name = name
         self.fullName = fullName
         self.owner = owner
+        self.notificationsUrl = notificationsUrl
     }
 }
 

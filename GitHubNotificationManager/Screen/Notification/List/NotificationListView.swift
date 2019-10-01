@@ -10,8 +10,17 @@ import SwiftUI
 import GitHubNotificationManagerNetwork
 
 struct NotificationListView : View {
+    enum ListType {
+        case all
+        case specify(notificationsUrl: String)
+    }
     @ObservedObject private var viewModel = NotificationListViewModel()
     @State var selectedNotification: NotificationModel? = nil
+    
+    let listType: ListType
+    init(listType: ListType) {
+        self.listType = listType
+    }
 
     var body: some View {
         List {
@@ -42,7 +51,7 @@ struct NotificationListView : View {
 #if DEBUG
 struct NotificationListView_Previews : PreviewProvider {
     static var previews: some View {
-        NotificationListView().environmentObject(HUDViewModel())
+        NotificationListView(listType: .all).environmentObject(HUDViewModel())
     }
 }
 #endif

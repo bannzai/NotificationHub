@@ -31,6 +31,7 @@ struct WatchingListView_Cell_Previews : PreviewProvider {
                 id: 1,
                 name: "ABC",
                 owner: .init(name: "bannzai", avatarURL: Debug.Const.avatarURL),
+                notificationsURL: "http://api.github.com/repos/octocat/Hello-World/notifications",
                 isReceiveNotification: false
             )).projectedValue
         )
