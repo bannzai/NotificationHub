@@ -12,6 +12,7 @@ import GitHubNotificationManagerNetwork
 struct RootView: View {
     @State private var selectedAddNotificationList: Bool = false
     
+    @ObservedObject private var viewModel = WatchingListViewModel()
     // FIXME: Keep data when presented this view
     @State var watchings: [WatchingModel] = []
     
@@ -37,15 +38,14 @@ struct RootView: View {
                 })
             ).sheet(isPresented: $selectedAddNotificationList) { () in
                 // FIXME: Keep data when presented this view
-                WatchingListView(
-                    watchings: self.watchings,
-                    fetched: { (watchings) in
-                        self.watchings = watchings
-                })
+                WatchingListView(watchings: self.$watchings)
             }
-            .onAppear {
-                print("RootView Appear")
-            }
+            .onReceive(viewModel.$watchings, perform: { (watchings) in
+                self.watchings = watchings
+            })
+            .onAppear(perform: {
+                self.viewModel.fetchFirst()
+            })
         }
     }
 }
