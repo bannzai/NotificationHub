@@ -9,9 +9,14 @@
 import UIKit
 import SwiftUI
 
-struct PageViewController: UIViewControllerRepresentable {
+struct PageViewController<Page: View>: UIViewControllerRepresentable {
     var viewControllers: [UIViewController]
-    @Binding var currentPage: Int
+    var currentPage: Binding<Int>
+    
+    init(pages: [Page], currentPage: Binding<Int>) {
+        self.viewControllers = pages.map { UIHostingController(rootView: $0) }
+        self.currentPage = currentPage
+    }
 
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
@@ -28,7 +33,7 @@ struct PageViewController: UIViewControllerRepresentable {
     }
 
     func updateUIViewController(_ pageViewController: UIPageViewController, context: Context) {
-        pageViewController.setViewControllers([viewControllers[currentPage]], direction: .forward, animated: true)
+        pageViewController.setViewControllers([viewControllers[currentPage.wrappedValue]], direction: .forward, animated: true)
     }
 
     class Coordinator: NSObject, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
@@ -67,7 +72,7 @@ struct PageViewController: UIViewControllerRepresentable {
                 let index = parent.viewControllers.firstIndex(of: visibleViewController) else {
                     return
             }
-            parent.currentPage = index
+            parent.currentPage.wrappedValue = index
         }
     }
 }

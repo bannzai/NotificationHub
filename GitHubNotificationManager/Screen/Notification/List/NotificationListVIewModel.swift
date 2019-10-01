@@ -29,33 +29,34 @@ final public class NotificationListViewModel: ObservableObject {
 }
 
 internal extension NotificationListViewModel {
-    func fetch() {
-        fetchNext()
-    }
-    
-    func fetchNext() {
+    private func fetch() {
         if case .loading = notificationListFetchStatus {
             return
         }
-        
         notificationListFetchStatus = .loading
         GitHubAPI
             .request(request: NotificationsRequest(page: allNotifications.count / NotificationsRequest.perPage))
             .catch { (_) in
                 Just([NotificationElement]())
-        }
-        .handleEvents(receiveOutput: { [weak self] (elements) in
+        }.handleEvents(receiveOutput: { [weak self] (elements) in
             self?.notificationListFetchStatus = .loaded
-        })
-        .map { notifications in
-            return notifications
-                .filter { !$0.repository.repositoryPrivate }
-                .map(NotificationModel.create(entity:))
-        }
-        .sink(receiveValue: { [weak self] (notifications) in
+        }).map { notifications in
+                return notifications
+                    .filter { !$0.repository.repositoryPrivate }
+                    .map(NotificationModel.create(entity:))
+        }.sink(receiveValue: { [weak self] (notifications) in
             self?.allNotifications += notifications
-        })
-        .store(in: &canceller)
+        }).store(in: &canceller)
+    }
+    func fetchFirst() {
+        guard case .notYetLoad = notificationListFetchStatus else {
+            return
+        }
+        fetch()
+    }
+    
+    func fetchNext() {
+        fetch()
     }
 }
 
