@@ -13,7 +13,6 @@ struct RootView: View {
     @State private var selectedAddNotificationList: Bool = false
     
     @ObservedObject private var viewModel = RootViewModel()
-    // FIXME: Keep data when presented this view
     @State var watchings: [WatchingModel] = []
     
     var pages: [NotificationListView] {
@@ -37,7 +36,6 @@ struct RootView: View {
                         .background(Color.primary)
                 })
             ).sheet(isPresented: $selectedAddNotificationList) { () in
-                // FIXME: Keep data when presented this view
                 WatchingListView(watchings: self.$watchings)
             }
             .onReceive(viewModel.$watchings, perform: { (watchings) in

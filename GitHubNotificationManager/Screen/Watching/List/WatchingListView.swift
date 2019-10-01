@@ -9,7 +9,6 @@
 import SwiftUI
 
 struct WatchingListView: View {
-    // FIXME: Keep data when presented this view
     @Binding var watchings: [WatchingModel]
 
     func watching(of index: Int) -> Binding<WatchingModel> {
