@@ -9,13 +9,24 @@
 import SwiftUI
 
 struct NotificationListPageView: View {
+    @Binding var watchings: [WatchingModel]
+    var pages: [NotificationListView] {
+        let main = NotificationListView()
+        let sub = watchings
+            .filter { $0.isReceiveNotification }
+            .map { _ in NotificationListView() }
+        return [main] + sub
+    }
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello World!"/*@END_MENU_TOKEN@*/)
+        PageView(views: pages)
     }
 }
 
+#if DEBUG
 struct NotificationListPageView_Previews: PreviewProvider {
     static var previews: some View {
-        NotificationListPageView()
+        NotificationListPageView(watchings: State(initialValue: [WatchingModel]()).projectedValue)
     }
 }
+#endif
