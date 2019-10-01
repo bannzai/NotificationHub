@@ -17,7 +17,10 @@ final public class NotificationListViewModel: ObservableObject {
     @Published private var allNotifications: [NotificationModel] = []
     @Published internal var searchWord: String = ""
     
-    var listType: NotificationListView.ListType!
+    let listType: NotificationListView.ListType
+    init(listType: NotificationListView.ListType) {
+        self.listType = listType
+    }
     
     private var filteredNotifications: [NotificationModel] {
         allNotifications.filter { $0.match(for: searchWord) }

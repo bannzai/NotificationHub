@@ -44,13 +44,11 @@ struct NotificationListView : View {
             }
         }
     }
-    @ObservedObject private var viewModel = NotificationListViewModel()
+    @ObservedObject private var viewModel: NotificationListViewModel
     @State var selectedNotification: NotificationModel? = nil
     
-    let listType: ListType
     init(listType: ListType) {
-        self.listType = listType
-        self.viewModel.listType = listType
+        viewModel = NotificationListViewModel(listType: listType)
     }
 
     var body: some View {
