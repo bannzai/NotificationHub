@@ -14,7 +14,10 @@ import GitHubNotificationManagerNetwork
 final public class WatchingListViewModel: ObservableObject {
     private var canceller: Set<AnyCancellable> = []
     
-    @Published var watchings: [WatchingModel] = []
+    @Published var watchings: [WatchingModel]
+    init(watchings: [WatchingModel]) {
+        self.watchings = watchings
+    }
     
     private var watchingListFetchStatus: WatchingListFetchStatus = .notYetLoad
 }

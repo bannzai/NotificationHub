@@ -12,8 +12,11 @@ import GitHubNotificationManagerNetwork
 struct RootView: View {
     @EnvironmentObject var hud: HUDViewModel
     
-    var loading: Bool { hud.counter > 0 }
-    @State var selectedAddNotificationList: Bool = false
+    private var loading: Bool { hud.counter > 0 }
+    @State private var selectedAddNotificationList: Bool = false
+    
+    // FIXME: Keep data when presented this view
+    @State var watchings: [WatchingModel] = []
     
     var body: some View {
         NavigationView {
@@ -38,7 +41,12 @@ struct RootView: View {
                         .background(Color.primary)
                 })
             ).sheet(isPresented: $selectedAddNotificationList) { () in
-                WatchingListView().environmentObject(self.hud)
+                // FIXME: Keep data when presented this view
+                WatchingListView(
+                    watchings: self.watchings,
+                    fetched: { (watchings) in
+                        self.watchings = watchings
+                }).environmentObject(self.hud)
             }
         }
     }

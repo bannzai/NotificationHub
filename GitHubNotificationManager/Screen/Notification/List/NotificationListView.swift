@@ -37,7 +37,7 @@ struct NotificationListView : View {
             self.hud.show()
             self.viewModel.fetch()
         }
-        .sheet(item: self.$selectedNotification) { (notification) in
+        .sheet(item: $selectedNotification) { (notification) in
             SafariView(url: notification.subject.destinationURL)
         }
     }
