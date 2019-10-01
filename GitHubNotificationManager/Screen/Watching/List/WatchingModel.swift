@@ -10,17 +10,6 @@ import Foundation
 import SwiftUI
 import GitHubNotificationManagerNetwork
 
-struct WatchingModelEnvironmentKey: EnvironmentKey {
-    static var defaultValue: [WatchingModel] = []
-}
-
-extension EnvironmentValues {
-    var watchings: [WatchingModel] {
-        get { self[WatchingModelEnvironmentKey.self] }
-        set { self[WatchingModelEnvironmentKey.self] = newValue }
-    }
-}
-
 struct WatchingModel: Identifiable {
     struct Owner {
         let name: String
