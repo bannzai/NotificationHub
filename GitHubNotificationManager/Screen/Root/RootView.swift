@@ -18,19 +18,13 @@ struct RootView: View {
     // FIXME: Keep data when presented this view
     @State var watchings: [WatchingModel] = []
     
-    var notificationListViews: [NotificationListView] {
-        let all = NotificationListView()
-        let filtered = watchings
-            .filter { $0.isReceiveNotification }
-            .map { _ in NotificationListView() }
-        return [all] + filtered
-    }
-    
     var body: some View {
         NavigationView {
             ZStack {
-                PageView(
-                    pages: notificationListViews
+                PageView(views: [
+                    NotificationListView(),
+                    NotificationListView()
+                    ]
                 ).navigationBarTitle(Text("Notifications"))
                 
                 if self.loading {

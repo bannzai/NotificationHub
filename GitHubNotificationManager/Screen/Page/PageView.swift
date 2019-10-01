@@ -10,16 +10,15 @@ import UIKit
 import SwiftUI
 
 struct PageView<Page: View>: View {
-//    var viewControllers: [UIHostingController<Page>]
-    let pages: [Page]
+    var viewControllers: [UIHostingController<Page>]
     @State var currentPage = 0
 
-    init(pages: [Page]) {
-        self.pages = pages
+    init(views: [Page]) {
+        self.viewControllers = views.map { UIHostingController(rootView: $0) }
     }
 
     var body: some View {
-        PageViewController(pages: pages, currentPage: $currentPage.projectedValue)
+        PageViewController(viewControllers: viewControllers, currentPage: $currentPage)
     }
 }
 
