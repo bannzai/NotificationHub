@@ -14,13 +14,11 @@ struct WatchingListView: View {
     
     // FIXME: Keep data when presented this view
     var fetched: ([WatchingModel]) -> ()
-    let defaultWatchings: [WatchingModel]
-    
+
     init(
         watchings defaultWatchings: [WatchingModel],
         fetched: @escaping ([WatchingModel]) -> ()
     ) {
-        self.defaultWatchings = defaultWatchings
         self.fetched = fetched
         self.viewModel = WatchingListViewModel(watchings: defaultWatchings)
     }
