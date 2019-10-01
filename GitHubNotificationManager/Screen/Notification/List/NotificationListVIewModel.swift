@@ -29,15 +29,28 @@ final public class NotificationListViewModel: ObservableObject {
 }
 
 internal extension NotificationListViewModel {
-    func fetch() {
-        fetchNext()
+    func fetchNext() {
+        if case .notYetLoad = notificationListFetchStatus {
+            return
+        }
+        if allNotifications.isEmpty {
+            return
+        }
+        fetch()
     }
     
-    func fetchNext() {
+    func fetchFirst() {
+        guard case .notYetLoad = notificationListFetchStatus else {
+            return
+        }
+        fetch()
+    }
+    
+    private func fetch() {
         if case .loading = notificationListFetchStatus {
             return
         }
-        
+
         notificationListFetchStatus = .loading
         GitHubAPI
             .request(request: NotificationsRequest(page: allNotifications.count / NotificationsRequest.perPage))

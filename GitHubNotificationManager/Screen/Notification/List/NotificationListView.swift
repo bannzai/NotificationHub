@@ -12,15 +12,11 @@ import GitHubNotificationManagerNetwork
 struct NotificationListView : View {
     @ObservedObject private var viewModel = NotificationListViewModel()
     @State var selectedNotification: NotificationModel? = nil
-    
-    init() {
-        print("NotificationList init")
-    }
 
     var body: some View {
         List {
             SearchBar(text: $viewModel.searchWord)
-            ForEach(viewModel.notifications) { notification in
+            ForEach(viewModel.notifications, id: \.id) { notification in
                 Button(action: {
                     self.selectedNotification = notification
                 }) {
@@ -33,11 +29,8 @@ struct NotificationListView : View {
                     self.viewModel.fetchNext()
             }
         }
-        .onReceive(viewModel.objectWillChange, perform: { (_) in
-            
-        })
         .onAppear {
-            self.viewModel.fetch()
+            self.viewModel.fetchFirst()
         }
         .sheet(item: $selectedNotification) { (notification) in
             SafariView(url: notification.subject.destinationURL)
