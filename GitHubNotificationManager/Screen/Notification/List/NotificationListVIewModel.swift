@@ -43,6 +43,9 @@ internal extension NotificationListViewModel {
         guard case .notYetLoad = notificationListFetchStatus else {
             return
         }
+        if !allNotifications.isEmpty {
+            return
+        }
         fetch()
     }
     
