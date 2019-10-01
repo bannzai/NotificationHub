@@ -11,7 +11,6 @@ import GitHubNotificationManagerNetwork
 
 struct NotificationListView : View {
     @ObservedObject private var viewModel = NotificationListViewModel()
-    @EnvironmentObject var hud: HUDViewModel
     @State var selectedNotification: NotificationModel? = nil
 
     var body: some View {
@@ -31,10 +30,9 @@ struct NotificationListView : View {
             }
         }
         .onReceive(viewModel.objectWillChange, perform: { (_) in
-            self.hud.hide()
+            
         })
         .onAppear {
-            self.hud.show()
             self.viewModel.fetch()
         }
         .sheet(item: $selectedNotification) { (notification) in

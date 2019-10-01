@@ -10,9 +10,6 @@ import SwiftUI
 import GitHubNotificationManagerNetwork
 
 struct RootView: View {
-    @EnvironmentObject var hud: HUDViewModel
-    
-    private var loading: Bool { hud.counter > 0 }
     @State private var selectedAddNotificationList: Bool = false
     
     // FIXME: Keep data when presented this view
@@ -27,11 +24,6 @@ struct RootView: View {
                     ]
                 ).navigationBarTitle(Text("Notifications"))
                 
-                if self.loading {
-                    HUD()
-                } else {
-                    EmptyView()
-                }
             }.navigationBarItems(
                 trailing: Button(action: {
                     self.selectedAddNotificationList = true
@@ -46,7 +38,10 @@ struct RootView: View {
                     watchings: self.watchings,
                     fetched: { (watchings) in
                         self.watchings = watchings
-                }).environmentObject(self.hud)
+                })
+            }
+            .onAppear {
+                print("RootView Appear")
             }
         }
     }

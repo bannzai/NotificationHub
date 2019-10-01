@@ -10,8 +10,7 @@ import SwiftUI
 
 struct WatchingListView: View {
     @ObservedObject private var viewModel: WatchingListViewModel
-    @EnvironmentObject var hud: HUDViewModel
-    
+
     // FIXME: Keep data when presented this view
     var fetched: ([WatchingModel]) -> ()
 
@@ -35,10 +34,8 @@ struct WatchingListView: View {
         List(viewModel.watchings.indices, id: \.self) { (index) in
             Cell(watching: self.watching(of: index))
         }.onReceive(viewModel.$watchings, perform: { (watchings) in
-            self.hud.hide()
             self.fetched(watchings)
         }).onAppear {
-            self.hud.show()
             self.viewModel.fetch()
         }
     }
