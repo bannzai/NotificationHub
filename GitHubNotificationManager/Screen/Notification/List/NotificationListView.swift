@@ -10,9 +10,39 @@ import SwiftUI
 import GitHubNotificationManagerNetwork
 
 struct NotificationListView : View {
-    enum ListType {
+    enum ListType: NotificationPath {
         case all
         case specify(notificationsUrl: String)
+        
+        var notificationPath: URLPathConvertible {
+            switch self {
+            case .all:
+                return "notifications"
+            case .specify(notificationsUrl: let url):
+                // e.g) https://api.github.com/repos/bannzai/vimrc/notifications{?since,all,participating}
+                // Drop {?since, all, participating}
+                return url
+                    .split(separator: "/")
+                    .reduce(into: "") { (result, element) in
+                        switch element {
+                        case "/":
+                            return
+                        case "https:", "api.github.com":
+                            return
+                        case _:
+                            break
+                        }
+                        
+                        switch element.contains("{") {
+                        case false:
+                            // repos bannzai vimrc
+                            result += element + "/"
+                        case true:
+                            result += element.split(separator: "{").dropLast().joined()
+                        }
+                }
+            }
+        }
     }
     @ObservedObject private var viewModel = NotificationListViewModel()
     @State var selectedNotification: NotificationModel? = nil
@@ -20,6 +50,7 @@ struct NotificationListView : View {
     let listType: ListType
     init(listType: ListType) {
         self.listType = listType
+        self.viewModel.listType = listType
     }
 
     var body: some View {

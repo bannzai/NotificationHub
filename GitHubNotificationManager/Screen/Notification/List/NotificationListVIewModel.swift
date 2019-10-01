@@ -17,6 +17,8 @@ final public class NotificationListViewModel: ObservableObject {
     @Published private var allNotifications: [NotificationModel] = []
     @Published internal var searchWord: String = ""
     
+    var listType: NotificationListView.ListType!
+    
     private var filteredNotifications: [NotificationModel] {
         allNotifications.filter { $0.match(for: searchWord) }
     }
@@ -56,7 +58,7 @@ internal extension NotificationListViewModel {
 
         notificationListFetchStatus = .loading
         GitHubAPI
-            .request(request: NotificationsRequest(page: allNotifications.count / NotificationsRequest.perPage))
+            .request(request: NotificationsRequest(page: allNotifications.count / NotificationsRequest.perPage, notificationsUrl: listType))
             .catch { (_) in
                 Just([NotificationElement]())
         }
