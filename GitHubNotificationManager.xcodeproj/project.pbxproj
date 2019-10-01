@@ -36,7 +36,7 @@
 		BA8A37402342251800CB487B /* WatchingsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A373D2342250800CB487B /* WatchingsRequest.swift */; };
 		BA8A37442342259000CB487B /* WatchingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A37412342257000CB487B /* WatchingList.swift */; };
 		BA8A374823422E5100CB487B /* WatchingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A374723422E5100CB487B /* WatchingListView.swift */; };
-		BA8A374A23422EFA00CB487B /* WatchingListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A374923422EFA00CB487B /* WatchingListViewModel.swift */; };
+		BA8A374A23422EFA00CB487B /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A374923422EFA00CB487B /* RootViewModel.swift */; };
 		BA8A374C23422F4600CB487B /* WatchingList.Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A374B23422F4600CB487B /* WatchingList.Cell.swift */; };
 		BA8A374E2342304200CB487B /* WatchingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A374D2342304200CB487B /* WatchingModel.swift */; };
 		BA8A37542342FAFA00CB487B /* NotificationListPageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A37532342FAFA00CB487B /* NotificationListPageView.swift */; };
@@ -181,7 +181,7 @@
 		BA8A373D2342250800CB487B /* WatchingsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchingsRequest.swift; sourceTree = "<group>"; };
 		BA8A37412342257000CB487B /* WatchingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchingList.swift; sourceTree = "<group>"; };
 		BA8A374723422E5100CB487B /* WatchingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchingListView.swift; sourceTree = "<group>"; };
-		BA8A374923422EFA00CB487B /* WatchingListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchingListViewModel.swift; sourceTree = "<group>"; };
+		BA8A374923422EFA00CB487B /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		BA8A374B23422F4600CB487B /* WatchingList.Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchingList.Cell.swift; sourceTree = "<group>"; };
 		BA8A374D2342304200CB487B /* WatchingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchingModel.swift; sourceTree = "<group>"; };
 		BA8A37532342FAFA00CB487B /* NotificationListPageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListPageView.swift; sourceTree = "<group>"; };
@@ -438,7 +438,6 @@
 			children = (
 				BA8A374723422E5100CB487B /* WatchingListView.swift */,
 				BA8A374B23422F4600CB487B /* WatchingList.Cell.swift */,
-				BA8A374923422EFA00CB487B /* WatchingListViewModel.swift */,
 				BA8A374D2342304200CB487B /* WatchingModel.swift */,
 			);
 			path = List;
@@ -496,6 +495,7 @@
 			isa = PBXGroup;
 			children = (
 				BAC127D522A844BD00B52862 /* RootView.swift */,
+				BA8A374923422EFA00CB487B /* RootViewModel.swift */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -822,7 +822,7 @@
 				BA417D1522A9E2BA0041B3C3 /* HUD.swift in Sources */,
 				BAEFFC3C22B9DB4E006D1549 /* ViewExtension.swift in Sources */,
 				BAEFFC3E22B9DBD3006D1549 /* NotificationModel.swift in Sources */,
-				BA8A374A23422EFA00CB487B /* WatchingListViewModel.swift in Sources */,
+				BA8A374A23422EFA00CB487B /* RootViewModel.swift in Sources */,
 				BAC127D622A844BD00B52862 /* RootView.swift in Sources */,
 				BA8A374E2342304200CB487B /* WatchingModel.swift in Sources */,
 				BA357A1422B4C41300549BA0 /* SafariView.swift in Sources */,

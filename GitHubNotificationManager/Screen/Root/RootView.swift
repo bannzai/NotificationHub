@@ -12,7 +12,7 @@ import GitHubNotificationManagerNetwork
 struct RootView: View {
     @State private var selectedAddNotificationList: Bool = false
     
-    @ObservedObject private var viewModel = WatchingListViewModel()
+    @ObservedObject private var viewModel = RootViewModel()
     // FIXME: Keep data when presented this view
     @State var watchings: [WatchingModel] = []
     

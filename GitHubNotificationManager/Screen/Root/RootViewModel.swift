@@ -1,5 +1,5 @@
 //
-//  WatchingListViewModel.swift
+//  RootViewModel.swift
 //  GitHubWatchingManager
 //
 //  Created by Yudai.Hirose on 2019/09/30.
@@ -11,7 +11,7 @@ import Combine
 import SwiftUI
 import GitHubNotificationManagerNetwork
 
-final public class WatchingListViewModel: ObservableObject {
+final public class RootViewModel: ObservableObject {
     private var canceller: Set<AnyCancellable> = []
     
     @Published var watchings: [WatchingModel] = []
@@ -19,7 +19,7 @@ final public class WatchingListViewModel: ObservableObject {
     private var watchingListFetchStatus: WatchingListFetchStatus = .notYetLoad
 }
 
-internal extension WatchingListViewModel {
+internal extension RootViewModel {
     private func distinct(watchings: [WatchingModel]) -> [WatchingModel] {
         watchings.reduce(into: [WatchingModel]()) { (result, element) in
             switch result.contains(where: { $0.owner.name == element.owner.name }) {
@@ -57,7 +57,7 @@ internal extension WatchingListViewModel {
     }
 }
 
-extension WatchingListViewModel {
+extension RootViewModel {
     enum WatchingListFetchStatus {
         case notYetLoad
         case loaded
