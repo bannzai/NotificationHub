@@ -10,22 +10,41 @@ import SwiftUI
 import GitHubNotificationManagerNetwork
 
 struct RootView: View {
-    @EnvironmentObject var hud: HUDViewModel
+    @State private var selectedAddNotificationList: Bool = false
     
-    var loading: Bool { hud.counter > 0 }
+    @ObservedObject private var viewModel = RootViewModel()
+    @State var watchings: [WatchingModel] = []
+    
+    var pages: [NotificationListView] {
+        let main = NotificationListView(listType: .all)
+        let sub = watchings
+            .filter { $0.isReceiveNotification }
+            .map { NotificationListView(listType: .specify(notificationsUrl: $0.notificationsURL)) }
+        return [main] + sub
+    }
     
     var body: some View {
         NavigationView {
             ZStack {
-                NotificationListView()            .navigationBarTitle(Text("Notifications"))
-
-                if self.loading {
-                    HUD()
-                } else {
-                    EmptyView()
-                }
+                PageView(views: pages).navigationBarTitle(Text("Notifications"))
+            }.navigationBarItems(
+                trailing: Button(action: {
+                    self.selectedAddNotificationList = true
+                }, label: {
+                    Image(systemName: "text.badge.plus")
+                        .renderingMode(.template)
+                        .background(Color.primary)
+                })
+            ).sheet(isPresented: $selectedAddNotificationList) { () in
+                WatchingListView(watchings: self.$watchings)
             }
-            }
+            .onReceive(viewModel.$watchings, perform: { (watchings) in
+                self.watchings = watchings
+            })
+            .onAppear(perform: {
+                self.viewModel.fetchFirst()
+            })
+        }
     }
 }
 

@@ -11,15 +11,13 @@ import Combine
 
 extension NotificationListView {
     struct Cell: View {
-        let notification: Notification
-        private var repository: Notification.Repository { notification.repository }
-        private var subject: Notification.Subject { notification.subject }
+        let notification: NotificationModel
         var body: some View {
             HStack {
-                ThumbnailImageView(image: ImageLoaderView(url: repository.avatarURL))
+                ThumbnailImageView(url: notification.repository.avatarURL)
                 VStack(alignment: .leading) {
-                    Text(repository.fullName).font(.headline).lineLimit(1)
-                    Text(subject.title).font(.subheadline).lineLimit(1)
+                    Text(notification.repository.fullName).font(.headline).lineLimit(1)
+                    Text(notification.subject.title).font(.subheadline).lineLimit(1)
                 }
             }
         }
@@ -30,7 +28,7 @@ extension NotificationListView {
 struct NotificationListView_Cell_Previews : PreviewProvider {
     static var previews: some View {
         NotificationListView.Cell(
-            notification: notification
+            notification: debugNotification
         )
     }
 }

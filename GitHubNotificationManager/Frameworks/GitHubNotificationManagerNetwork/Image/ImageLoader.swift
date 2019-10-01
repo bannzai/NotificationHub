@@ -9,22 +9,34 @@
 import UIKit.UIImage
 import Combine
 import Nuke
+import GitHubNotificationManagerCore
 
-public typealias ImageLoadPublisher = AnyPublisher<UIKit.UIImage?, Never>
+public typealias ImageLoadPublisher = AnyPublisher<UIImage?, ImagePipeline.Error>
 
 public protocol ImageLoader {
     func load(url: URLConvertible) -> ImageLoadPublisher
 }
+
 public class SharedImageLoader: ImageLoader {
     public static let shared = SharedImageLoader()
     private init() { }
     
-    public func load(url: URLConvertible) -> ImageLoadPublisher {
-        ImageLoadPublisher { subscriber in
-            Nuke.ImagePipeline.shared.loadImage(with: url.url, progress: nil) { (response, _) in
-                _ = subscriber.receive(response?.image)
-                subscriber.receive(completion: .finished)
+    public struct Publisher: Combine.Publisher {
+        public typealias Output = UIImage?
+        public typealias Failure = ImagePipeline.Error
+        
+        let url: URLConvertible
+        public func receive<S>(subscriber: S) where S : Subscriber, Publisher.Failure == S.Failure, Publisher.Output == S.Input {
+            Nuke.ImagePipeline.shared.loadImage(with: url.url, progress: nil) { result in
+                result.publisher
+                    .map { $0.image }
+                    .retry(3)
+                    .subscribe(subscriber)
             }
         }
+    }
+    
+    public func load(url: URLConvertible) -> ImageLoadPublisher {
+        Publisher(url: url).eraseToAnyPublisher()
     }
 }

@@ -8,10 +8,22 @@
 
 import Foundation
 
+public protocol NotificationPath {
+    var notificationPath: URLPathConvertible { get }
+}
+
 public struct NotificationsRequest: GitHubAPIRequest {
-    public var path: URLPathConvertible { ["notifications"] }
+    public var path: URLPathConvertible
     public var method: HTTPMethod { .GET }
     public typealias Response = [NotificationElement]
-    public init() { }
+    public var query: Query? { ["all": true, "page": page, "per_page": Self.perPage] }
+    
+    public static let perPage = 100
+    private let page: Int
+    
+    public init(page: Int, notificationsUrl: NotificationPath) {
+        self.page = page
+        self.path = notificationsUrl.notificationPath
+    }
 }
 

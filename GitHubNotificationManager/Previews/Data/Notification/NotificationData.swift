@@ -9,17 +9,17 @@
 import Foundation
 
 #if DEBUG
-let notification = Notification(
+let debugNotification = NotificationModel(
     id: "",
     reason: "reason",
-    repository: Notification.Repository(
+    repository: NotificationModel.Repository(
         id: 1,
         name: "name",
         ownerName: "owner name",
-        avatarURL: "d",
+        avatarURL: Debug.Const.avatarURL,
         fullName: "bannzai/GitHubNotificationManager"
     ),
-    subject: Notification.Subject(
+    subject: NotificationModel.Subject(
         title: "Subject",
         url: "https://github.com/bannzai"
     ),

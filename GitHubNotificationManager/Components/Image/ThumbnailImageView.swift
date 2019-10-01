@@ -7,12 +7,14 @@
 //
 
 import SwiftUI
+import GitHubNotificationManagerNetwork
 
 struct ThumbnailImageView : View {
-    var image: ImageLoaderView
+    let url: URLConvertible
     let edge: CGFloat = 44
+    
     var body: some View {
-        image
+        ImageLoaderView(url: url)
             .frame(width: edge, height: edge, alignment: .center)
             .aspectRatio(contentMode: .fit)
             .clipShape(Circle())
@@ -23,7 +25,7 @@ struct ThumbnailImageView : View {
 #if DEBUG
 struct CircleImageView_Previews : PreviewProvider {
     static var previews: some View {
-        ThumbnailImageView(image: ImageLoaderView(url: Debug.Const.avatarURL))
+        ThumbnailImageView(url: Debug.Const.avatarURL)
     }
 }
 #endif

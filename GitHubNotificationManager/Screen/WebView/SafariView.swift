@@ -9,41 +9,18 @@
 import SwiftUI
 import SafariServices
 
-class SafariViewController: SFSafariViewController {
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        delegate = self
-    }
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
-    }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        navigationController?.setNavigationBarHidden(true, animated: animated)
-    }
-}
-
-extension SafariViewController: SFSafariViewControllerDelegate {
-    func safariViewControllerDidFinish(_ controller: SFSafariViewController) {
-        controller.navigationController?.popViewController(animated: true)
-    }
-}
-
 struct SafariView : UIViewControllerRepresentable {
-    typealias UIViewControllerType = SFSafariViewController
-    
+    typealias UIViewControllerType = SafariViewControllerWrapperViewController
+
     let url: URL
     func makeUIViewController(context: UIViewControllerRepresentableContext<SafariView>) -> SafariView.UIViewControllerType {
-        let viewController = SafariViewController(url: url)
+        let viewController = SafariView.UIViewControllerType(url: url)
         return viewController
     }
     
-    func updateUIViewController(_ uiViewController: SFSafariViewController, context: UIViewControllerRepresentableContext<SafariView>) {
-        uiViewController.navigationController?.setNavigationBarHidden(true, animated: false)
+    func updateUIViewController(_ uiViewController: SafariView.UIViewControllerType, context: UIViewControllerRepresentableContext<SafariView>) {
+        uiViewController.url = url
     }
-    
 }
 
 #if DEBUG

@@ -8,8 +8,9 @@
 
 import Foundation
 import SwiftUI
+import GitHubNotificationManagerNetwork
 
-struct Notification: Identifiable {
+struct NotificationModel: Identifiable {
     struct Repository {
         let id: Int
         let name: String
@@ -50,9 +51,28 @@ struct Notification: Identifiable {
     let repository: Repository
     let subject: Subject
     let url: String
+    
+    static func create(entity: NotificationElement) -> NotificationModel {
+        NotificationModel(
+            id: entity.id,
+            reason: entity.reason,
+            repository: NotificationModel.Repository(
+                id: entity.repository.id,
+                name: entity.repository.name,
+                ownerName: entity.repository.owner.login,
+                avatarURL: entity.repository.owner.avatarURL,
+                fullName: entity.repository.fullName
+            ),
+            subject: NotificationModel.Subject(
+                title: entity.subject.title,
+                url: entity.subject.url
+            ),
+            url: entity.url
+        )
+    }
 }
 
-extension Notification: FuzzyFindable {
+extension NotificationModel: FuzzyFindable {
     func fuzzyWords() -> [String] {
         [
             repository.name,

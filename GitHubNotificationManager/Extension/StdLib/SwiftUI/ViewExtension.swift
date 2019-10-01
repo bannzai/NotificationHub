@@ -10,6 +10,11 @@ import SwiftUI
 
 extension View {
     func endEditing() {
-        UIApplication.shared.keyWindow?.endEditing(true)
+        UIApplication.shared.connectedScenes
+            .compactMap {$0 as? UIWindowScene}
+            .first { $0.activationState == .foregroundActive }?
+            .windows
+            .first {$0.isKeyWindow}?
+            .endEditing(true)
     }
 }

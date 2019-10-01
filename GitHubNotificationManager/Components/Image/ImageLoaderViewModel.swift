@@ -12,24 +12,18 @@ import SwiftUI
 import GitHubNotificationManagerNetwork
 import UIKit.UIImage
 
-final public class ImageLoaderViewModel: BindableObject {
-    public typealias PublisherType = PassthroughSubject<UIImage?, Never>
-    public var didChange = PublisherType()
-    private var canceller: Cancellable?
-    internal var image: UIImage? {
-        didSet { didChange.send(image) }
-    }
-
-    deinit {
-        canceller?.cancel()
-    }
+final public class ImageLoaderViewModel: ObservableObject {
+    private var canceller: Set<AnyCancellable> = []
+    @Published internal var image: UIImage = UIImage(systemName: "person")!
     
     func load(url: URLConvertible) {
-        canceller = SharedImageLoader
+        SharedImageLoader
             .shared
             .load(url: url)
-            .sink { self.image = $0 }
-        // FIXME: Does not working for assign
-//                    .assign(to: \.image, on: self)
+            .replaceError(with: UIImage(systemName: "person")!)
+            .replaceNil(with: UIImage(systemName: "person")!)
+            .assign(to: \.image, on: self)
+            .store(in: &canceller)
     }
 }
+

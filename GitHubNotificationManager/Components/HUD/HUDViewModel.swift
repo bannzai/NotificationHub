@@ -10,12 +10,7 @@ import Foundation
 import SwiftUI
 import Combine
 
-final public class HUDViewModel: BindableObject {
-    public let didChange = PassthroughSubject<Output, Failure>()
-    
-    public typealias Output = HUDAppearanceType
-    public typealias Failure = Never
-    
+final public class HUDViewModel: ObservableObject {
     var counter: Int = 0
     private var canceller: Cancellable?
     deinit {
@@ -30,10 +25,7 @@ final public class HUDViewModel: BindableObject {
             case .show:
                 counter += 1
             }
-            if oldValue == state {
-                return
-            }
-            didChange.send(state)
+            objectWillChange.send()
         }
     }
     
