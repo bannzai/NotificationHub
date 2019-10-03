@@ -12,11 +12,11 @@
       },
       {
         "package": "OAuthSwift",
-        "repositoryURL": "https://github.com/OAuthSwift/OAuthSwift",
+        "repositoryURL": "https://github.com/bannzai/OAuthSwift/",
         "state": {
-          "branch": null,
-          "revision": "a471698f0b200a9ffe5572662a7b7a411f2511fc",
-          "version": "2.0.0"
+          "branch": "escape/error/swift_package_manager",
+          "revision": "280115b605da1a83996617cbb7a946099abd67d7",
+          "version": null
         }
       }
     ]
