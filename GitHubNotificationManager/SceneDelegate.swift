@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftUI
+import OAuthSwift
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -56,6 +57,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
+    }
+    
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        URLContexts.first.map { context in
+            if (context.url.host == "oauth-callback") {
+                OAuthSwift.handle(url: context.url)
+            }
+        }
     }
 
 

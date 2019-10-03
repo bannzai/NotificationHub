@@ -10,5 +10,10 @@ import UIKit
 import OAuthSwift
 
 public class OAuthViewController: UIViewController {
-    
+    struct Const {
+        let callbackHost = "oauth-callback"
+    }
+    public override func viewDidLoad() {
+        super.viewDidLoad()
+    }
 }
