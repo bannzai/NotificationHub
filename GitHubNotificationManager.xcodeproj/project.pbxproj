@@ -62,6 +62,7 @@
 		BAC127E422A8911C00B52862 /* NotificationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC127E322A8911C00B52862 /* NotificationListView.swift */; };
 		BAC127FB22A9A82300B52862 /* NotificationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC127F922A9A7FB00B52862 /* NotificationList.swift */; };
 		BAC1280C22A9B57700B52862 /* NotificationListView.Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC1280B22A9B57700B52862 /* NotificationListView.Cell.swift */; };
+		BACDC7F72346467B00C4A1AE /* OAuthSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BACDC7F62346467B00C4A1AE /* OAuthSwift */; };
 		BAEFFC3C22B9DB4E006D1549 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEFFC3B22B9DB4E006D1549 /* ViewExtension.swift */; };
 		BAEFFC3E22B9DBD3006D1549 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEFFC3D22B9DBD3006D1549 /* NotificationModel.swift */; };
 		BAEFFC4022B9DDBF006D1549 /* FuzzyFindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEFFC3F22B9DDBF006D1549 /* FuzzyFindable.swift */; };
@@ -202,6 +203,7 @@
 			files = (
 				BA6042DE22A7CAD500345259 /* GitHubNotificationManagerCore.framework in Frameworks */,
 				BA60430322A7CE1E00345259 /* GitHubNotificationManagerNetwork.framework in Frameworks */,
+				BACDC7F72346467B00C4A1AE /* OAuthSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -615,6 +617,9 @@
 				BA60430222A7CE1E00345259 /* PBXTargetDependency */,
 			);
 			name = GitHubNotificationManager;
+			packageProductDependencies = (
+				BACDC7F62346467B00C4A1AE /* OAuthSwift */,
+			);
 			productName = GitHubNotificationManager;
 			productReference = BA60426822A7409300345259 /* GitHubNotificationManager.app */;
 			productType = "com.apple.product-type.application";
@@ -738,6 +743,7 @@
 			mainGroup = BA60425F22A7409300345259;
 			packageReferences = (
 				BAC1277D22A83D0900B52862 /* XCRemoteSwiftPackageReference "Nuke" */,
+				BACDC7F52346467B00C4A1AE /* XCRemoteSwiftPackageReference "OAuthSwift" */,
 			);
 			productRefGroup = BA60426922A7409300345259 /* Products */;
 			projectDirPath = "";
@@ -1325,6 +1331,14 @@
 				minimumVersion = 8.2.0;
 			};
 		};
+		BACDC7F52346467B00C4A1AE /* XCRemoteSwiftPackageReference "OAuthSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/OAuthSwift/OAuthSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1332,6 +1346,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = BAC1277D22A83D0900B52862 /* XCRemoteSwiftPackageReference "Nuke" */;
 			productName = Nuke;
+		};
+		BACDC7F62346467B00C4A1AE /* OAuthSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = BACDC7F52346467B00C4A1AE /* XCRemoteSwiftPackageReference "OAuthSwift" */;
+			productName = OAuthSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
