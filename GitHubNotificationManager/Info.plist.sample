@@ -25,7 +25,7 @@
 			<string>com.bannzai.githubnotificationmanager</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
-				<string>x</string>
+				<string>GITHUB_NOTIFICATION_MANAGER_URL_SCHEMA</string>
 			</array>
 		</dict>
 	</array>
