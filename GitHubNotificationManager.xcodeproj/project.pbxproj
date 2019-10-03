@@ -63,6 +63,7 @@
 		BAC127FB22A9A82300B52862 /* NotificationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC127F922A9A7FB00B52862 /* NotificationList.swift */; };
 		BAC1280C22A9B57700B52862 /* NotificationListView.Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC1280B22A9B57700B52862 /* NotificationListView.Cell.swift */; };
 		BACDC7F72346467B00C4A1AE /* OAuthSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BACDC7F62346467B00C4A1AE /* OAuthSwift */; };
+		BACDC7FA234647FC00C4A1AE /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACDC7F9234647FC00C4A1AE /* OAuthViewController.swift */; };
 		BAEFFC3C22B9DB4E006D1549 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEFFC3B22B9DB4E006D1549 /* ViewExtension.swift */; };
 		BAEFFC3E22B9DBD3006D1549 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEFFC3D22B9DBD3006D1549 /* NotificationModel.swift */; };
 		BAEFFC4022B9DDBF006D1549 /* FuzzyFindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEFFC3F22B9DDBF006D1549 /* FuzzyFindable.swift */; };
@@ -191,6 +192,7 @@
 		BAC127E322A8911C00B52862 /* NotificationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListView.swift; sourceTree = "<group>"; };
 		BAC127F922A9A7FB00B52862 /* NotificationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationList.swift; sourceTree = "<group>"; };
 		BAC1280B22A9B57700B52862 /* NotificationListView.Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListView.Cell.swift; sourceTree = "<group>"; };
+		BACDC7F9234647FC00C4A1AE /* OAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
 		BAEFFC3B22B9DB4E006D1549 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		BAEFFC3D22B9DBD3006D1549 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		BAEFFC3F22B9DDBF006D1549 /* FuzzyFindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuzzyFindable.swift; sourceTree = "<group>"; };
@@ -459,6 +461,14 @@
 			path = Image;
 			sourceTree = "<group>";
 		};
+		BACDC7F8234647EA00C4A1AE /* OAuth */ = {
+			isa = PBXGroup;
+			children = (
+				BACDC7F9234647FC00C4A1AE /* OAuthViewController.swift */,
+			);
+			path = OAuth;
+			sourceTree = "<group>";
+		};
 		BAEFFC4122BA7F3F006D1549 /* Components */ = {
 			isa = PBXGroup;
 			children = (
@@ -482,6 +492,7 @@
 		BAEFFC4322BA7F72006D1549 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				BACDC7F8234647EA00C4A1AE /* OAuth */,
 				BA8A374523422E3D00CB487B /* Watching */,
 				BA8A3733234200EC00CB487B /* Page */,
 				BAEFFC4722BA7FAC006D1549 /* Notification */,
@@ -823,6 +834,7 @@
 				BA417D1122A9DF4E0041B3C3 /* DebugInfo.swift in Sources */,
 				BA417D1522A9E2BA0041B3C3 /* HUD.swift in Sources */,
 				BAEFFC3C22B9DB4E006D1549 /* ViewExtension.swift in Sources */,
+				BACDC7FA234647FC00C4A1AE /* OAuthViewController.swift in Sources */,
 				BAEFFC3E22B9DBD3006D1549 /* NotificationModel.swift in Sources */,
 				BA8A374A23422EFA00CB487B /* RootViewModel.swift in Sources */,
 				BAC127D622A844BD00B52862 /* RootView.swift in Sources */,
@@ -1052,6 +1064,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "-DOAUTH_APP_EXTENSIONS";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bannzai.GitHubNotificationManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
@@ -1074,6 +1087,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				OTHER_SWIFT_FLAGS = "-DOAUTH_APP_EXTENSIONS";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bannzai.GitHubNotificationManager;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
