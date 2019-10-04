@@ -14,10 +14,17 @@ public class OAuthViewController: UIViewController {
     struct Const {
         static let callbackHost = "oauth-callback"
     }
+    
+    @IBOutlet weak var logoImageView: UIImageView!
+    
     public override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    @IBAction func authorizeButtonPressed(_ sender: Any) {
+        authorize()
+    }
+
     func authorize() {
         let oauth = OAuth2Swift(
             consumerKey: Secret.GitHub.clientId,
