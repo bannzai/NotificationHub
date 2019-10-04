@@ -65,6 +65,7 @@
 		BACDC7FD23464B9400C4A1AE /* OAuthSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BACDC7FC23464B9400C4A1AE /* OAuthSwift */; };
 		BACDC8002346C7F800C4A1AE /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACDC7FE2346C7F800C4A1AE /* OAuthViewController.swift */; };
 		BACDC8012346C7F800C4A1AE /* OAuthViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = BACDC7FF2346C7F800C4A1AE /* OAuthViewController.xib */; };
+		BACDC8032346CC1000C4A1AE /* OAuthView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACDC8022346CC1000C4A1AE /* OAuthView.swift */; };
 		BAEFFC3C22B9DB4E006D1549 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEFFC3B22B9DB4E006D1549 /* ViewExtension.swift */; };
 		BAEFFC3E22B9DBD3006D1549 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEFFC3D22B9DBD3006D1549 /* NotificationModel.swift */; };
 		BAEFFC4022B9DDBF006D1549 /* FuzzyFindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEFFC3F22B9DDBF006D1549 /* FuzzyFindable.swift */; };
@@ -195,6 +196,7 @@
 		BAC1280B22A9B57700B52862 /* NotificationListView.Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListView.Cell.swift; sourceTree = "<group>"; };
 		BACDC7FE2346C7F800C4A1AE /* OAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
 		BACDC7FF2346C7F800C4A1AE /* OAuthViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OAuthViewController.xib; sourceTree = "<group>"; };
+		BACDC8022346CC1000C4A1AE /* OAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthView.swift; sourceTree = "<group>"; };
 		BAEFFC3B22B9DB4E006D1549 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		BAEFFC3D22B9DBD3006D1549 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		BAEFFC3F22B9DDBF006D1549 /* FuzzyFindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuzzyFindable.swift; sourceTree = "<group>"; };
@@ -466,6 +468,7 @@
 		BACDC7F8234647EA00C4A1AE /* OAuth */ = {
 			isa = PBXGroup;
 			children = (
+				BACDC8022346CC1000C4A1AE /* OAuthView.swift */,
 				BACDC7FE2346C7F800C4A1AE /* OAuthViewController.swift */,
 				BACDC7FF2346C7F800C4A1AE /* OAuthViewController.xib */,
 			);
@@ -845,6 +848,7 @@
 				BA8A374E2342304200CB487B /* WatchingModel.swift in Sources */,
 				BA357A1422B4C41300549BA0 /* SafariView.swift in Sources */,
 				BAC127E422A8911C00B52862 /* NotificationListView.swift in Sources */,
+				BACDC8032346CC1000C4A1AE /* OAuthView.swift in Sources */,
 				BA8A374823422E5100CB487B /* WatchingListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
