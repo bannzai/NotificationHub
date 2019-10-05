@@ -14,10 +14,8 @@ struct RootView: View {
     
     @ObservedObject private var viewModel = RootViewModel()
     @State var watchings: [WatchingModel] = []
-    var isAuthorized: Bool {
-        UserDefaults.standard.bool(forKey: "isAutrhozied")
-    }
-    
+    @State var isAuthorized: Bool = UserDefaults.standard.bool(forKey: "isAutrhozied")
+
     var pages: [NotificationListView] {
         let main = NotificationListView(listType: .all)
         let sub = watchings
@@ -49,7 +47,7 @@ struct RootView: View {
                     })
                 }
             } else {
-                OAuthView()
+                OAuthView(isAuthorized: $isAuthorized)
             }
         }
     }

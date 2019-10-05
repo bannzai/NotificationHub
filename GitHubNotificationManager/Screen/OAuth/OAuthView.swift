@@ -9,10 +9,13 @@
 import SwiftUI
 struct OAuthView : UIViewControllerRepresentable {
     typealias UIViewControllerType = UINavigationController
+    @Binding var isAuthorized: Bool
 
     func makeUIViewController(context: UIViewControllerRepresentableContext<OAuthView>) -> OAuthView.UIViewControllerType {
         let viewController = UIStoryboard(name: "OAuthViewController", bundle: nil).instantiateInitialViewController { (coder) in
-            return OAuthViewController(coder: coder)
+            return OAuthViewController(coder: coder, callback: { _ in
+                self.isAuthorized = true
+            })
         }!
         let navigationController = UINavigationController(rootViewController: viewController)
         return navigationController
@@ -26,7 +29,7 @@ struct OAuthView : UIViewControllerRepresentable {
 #if DEBUG
 struct OAuthViewController_Previews : PreviewProvider {
     static var previews: some View {
-        OAuthView()
+        OAuthView(isAuthorized: State(initialValue: false).projectedValue)
     }
 }
 #endif

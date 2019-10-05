@@ -11,13 +11,30 @@ import OAuthSwift
 import GitHubNotificationManagerCore
 import AuthenticationServices
 
+public typealias OAuthCallBackType = (Result<OAuthSwift.TokenSuccess, OAuthSwiftError>) -> Void
 public class OAuthViewController: UIViewController {
     struct Const {
         static let callbackHost = "oauth-callback"
     }
     
     @IBOutlet weak var logoImageView: UIImageView!
-    var oauth: OAuth2Swift!
+    let oauth: OAuth2Swift = OAuth2Swift(
+        consumerKey: Secret.GitHub.clientId,
+        consumerSecret: Secret.GitHub.clientSecret,
+        authorizeUrl: "https://github.com/login/oauth/authorize",
+        accessTokenUrl: "https://github.com/login/oauth/access_token",
+        responseType: "code"
+    )
+    
+    let callback: OAuthCallBackType
+    init?(coder: NSCoder, callback: @escaping OAuthCallBackType) {
+        self.callback = callback
+        super.init(coder: coder)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,13 +45,6 @@ public class OAuthViewController: UIViewController {
     }
 
     func authorize() {
-        oauth = OAuth2Swift(
-            consumerKey: Secret.GitHub.clientId,
-            consumerSecret: Secret.GitHub.clientSecret,
-            authorizeUrl: "https://github.com/login/oauth/authorize",
-            accessTokenUrl: "https://github.com/login/oauth/access_token",
-            responseType: "code"
-        )
         oauth.authorizeURLHandler = SafariURLHandler(
             viewController: self,
             oauthSwift: oauth
@@ -42,13 +52,8 @@ public class OAuthViewController: UIViewController {
         oauth.authorize(
             withCallbackURL: URL(string: Secret.Application.callbackURLSchema + Const.callbackHost),
             scope: "notifications",
-            state: "\(Date().timeIntervalSince1970)") { (result: Result<OAuthSwift.TokenSuccess, OAuthSwiftError>) in
-                switch result {
-                case .success(let token):
-                    print(token)
-                case .failure(let error):
-                    print(error)
-                }
+            state: "\(Date().timeIntervalSince1970)") { [weak self] (result: Result<OAuthSwift.TokenSuccess, OAuthSwiftError>) in
+                self?.callback(result)
         }
     }
 }
