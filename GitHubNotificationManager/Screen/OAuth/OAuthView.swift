@@ -11,12 +11,15 @@ struct OAuthView : UIViewControllerRepresentable {
     typealias UIViewControllerType = UINavigationController
 
     func makeUIViewController(context: UIViewControllerRepresentableContext<OAuthView>) -> OAuthView.UIViewControllerType {
-        return UIStoryboard(name: "OAuthViewController", bundle: nil).instantiateInitialViewController { (coder) in
-            return UINavigationController(coder: coder)
+        let viewController = UIStoryboard(name: "OAuthViewController", bundle: nil).instantiateInitialViewController { (coder) in
+            return OAuthViewController(coder: coder)
         }!
+        let navigationController = UINavigationController(rootViewController: viewController)
+        return navigationController
     }
     
     func updateUIViewController(_ uiViewController: OAuthView.UIViewControllerType, context: UIViewControllerRepresentableContext<OAuthView>) {
+        
     }
 }
 
