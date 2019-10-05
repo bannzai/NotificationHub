@@ -14,7 +14,9 @@ struct RootView: View {
     
     @ObservedObject private var viewModel = RootViewModel()
     @State var watchings: [WatchingModel] = []
-    @Environment(\.isAuthorized) var isAuthorized: Bool
+    var isAuthorized: Bool {
+        UserDefaults.standard.bool(forKey: "isAutrhozied")
+    }
     
     var pages: [NotificationListView] {
         let main = NotificationListView(listType: .all)

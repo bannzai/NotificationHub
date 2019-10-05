@@ -19,11 +19,10 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
         // Use a UIHostingController as window root view controller
-        let isAuthorized = UserDefaults.standard.bool(forKey: "authorized")
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             window.rootViewController = UIHostingController(
-                rootView: RootView().environment(\.isAuthorized, isAuthorized)
+                rootView: RootView()
             )
             self.window = window
             window.makeKeyAndVisible()
