@@ -7,15 +7,17 @@
 //
 
 import SwiftUI
-struct OAuthView : UIViewControllerRepresentable {
-    typealias UIViewControllerType = OAuthViewController
-    
+struct OAuthView : UIViewControllerRepresentable {
+    typealias UIViewControllerType = UINavigationController
+
     func makeUIViewController(context: UIViewControllerRepresentableContext<OAuthView>) -> OAuthView.UIViewControllerType {
-        let viewController = OAuthView.UIViewControllerType()
-        return viewController
+        return UIStoryboard(name: "OAuthViewController", bundle: nil).instantiateInitialViewController { (coder) in
+            return UINavigationController(coder: coder)
+        }!
     }
     
     func updateUIViewController(_ uiViewController: OAuthView.UIViewControllerType, context: UIViewControllerRepresentableContext<OAuthView>) {
+        
     }
 }
 
