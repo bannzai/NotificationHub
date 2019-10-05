@@ -12,17 +12,35 @@ struct OAuthView : UIViewControllerRepresentable {
     @Binding var isAuthorized: Bool
 
     func makeUIViewController(context: UIViewControllerRepresentableContext<OAuthView>) -> OAuthView.UIViewControllerType {
+        let navigationController = UINavigationController()
         let viewController = UIStoryboard(name: "OAuthViewController", bundle: nil).instantiateInitialViewController { (coder) in
-            return OAuthViewController(coder: coder, callback: { _ in
-                self.isAuthorized = true
+            return OAuthViewController(coder: coder, callback: { [weak navigationController] result in
+                switch result {
+                case .success(let token):
+                    self.isAuthorized = true
+                case .failure(let error):
+                    navigationController?.present(self.buildAlertController(with: error), animated: true, completion: nil)
+                }
             })
         }!
-        let navigationController = UINavigationController(rootViewController: viewController)
+        navigationController.setViewControllers([viewController], animated: false)
         return navigationController
     }
     
     func updateUIViewController(_ uiViewController: OAuthView.UIViewControllerType, context: UIViewControllerRepresentableContext<OAuthView>) {
         
+    }
+    
+    func buildAlertController(with error: Error) -> UIAlertController {
+        let alertController = UIAlertController(
+            title: "Authorized Error",
+            message: error.localizedDescription,
+            preferredStyle: .alert
+        )
+        alertController.addAction(UIAlertAction(title: "OK", style: .default, handler: { (_) in
+            
+        }))
+        return alertController
     }
 }
 
