@@ -9,6 +9,7 @@
 import UIKit
 import OAuthSwift
 import GitHubNotificationManagerCore
+import AuthenticationServices
 
 public class OAuthViewController: UIViewController {
     struct Const {
@@ -16,6 +17,7 @@ public class OAuthViewController: UIViewController {
     }
     
     @IBOutlet weak var logoImageView: UIImageView!
+    var oauth: OAuth2Swift!
     
     public override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +28,7 @@ public class OAuthViewController: UIViewController {
     }
 
     func authorize() {
-        let oauth = OAuth2Swift(
+        oauth = OAuth2Swift(
             consumerKey: Secret.GitHub.clientId,
             consumerSecret: Secret.GitHub.clientSecret,
             authorizeUrl: "https://github.com/login/oauth/authorize",
