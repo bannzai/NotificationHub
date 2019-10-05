@@ -17,6 +17,7 @@ public class OAuthViewController: UIViewController {
         static let callbackHost = "oauth-callback"
     }
     
+    @IBOutlet weak var signupButton: UIButton!
     @IBOutlet weak var logoImageView: UIImageView!
     let oauth: OAuth2Swift = OAuth2Swift(
         consumerKey: Secret.GitHub.clientId,
@@ -38,9 +39,13 @@ public class OAuthViewController: UIViewController {
     
     public override func viewDidLoad() {
         super.viewDidLoad()
+        
+        signupButton.layer.cornerRadius = 6
+        signupButton.layer.borderWidth = 0.5
+        signupButton.layer.borderColor = UIColor.systemGray4.cgColor
     }
     
-    @IBAction func authorizeButtonPressed(_ sender: Any) {
+    @IBAction func signupButtonPressed(_ sender: Any) {
         authorize()
     }
 
