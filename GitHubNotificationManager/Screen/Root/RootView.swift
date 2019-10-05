@@ -11,9 +11,9 @@ import GitHubNotificationManagerNetwork
 
 struct RootView: View {
     @State private var selectedAddNotificationList: Bool = false
-    
+    @State private var watchings: [WatchingModel] = []
+
     @ObservedObject private var viewModel = RootViewModel()
-    @State var watchings: [WatchingModel] = []
 
     var pages: [NotificationListView] {
         let main = NotificationListView(listType: .all)
