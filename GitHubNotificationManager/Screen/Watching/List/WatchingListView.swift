@@ -12,7 +12,7 @@ struct WatchingListView: View {
     @Binding var watchings: [WatchingModel]
 
     func watching(of index: Int) -> Binding<WatchingModel> {
-        Binding(get: {
+        return Binding(get: {
             self.watchings[index]
         }) { (watching) in
             self.watchings[index] = watching

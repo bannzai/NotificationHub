@@ -12,23 +12,17 @@ import GitHubNotificationManagerNetwork
 struct RootView: View {
     @State private var selectedAddNotificationList: Bool = false
     @State private var watchings: [WatchingModel] = []
+    @State private var currentPage: Int = 0
 
     @ObservedObject private var viewModel = RootViewModel()
 
-    var pages: [NotificationListView] {
-        let main = NotificationListView(listType: .all)
-        let sub = watchings
-            .filter { $0.isReceiveNotification }
-            .map { NotificationListView(listType: .specify(notificationsUrl: $0.notificationsURL)) }
-        return [main] + sub
-    }
-    
     var body: some View {
         Group {
             if viewModel.isAuthorized {
                 NavigationView {
                     ZStack {
-                        PageView(views: pages).navigationBarTitle(Text("Notifications"))
+                        PageView(views: pages, page: $currentPage)
+                            .navigationBarTitle(Text(navigationTitle))
                     }.navigationBarItems(
                         trailing: Button(
                             action: {
@@ -52,6 +46,24 @@ struct RootView: View {
         }
         .onReceive(viewModel.$githubAccessToken) { (token) in
             NetworkConfig.Github.accessToken = token
+        }
+    }
+    
+    private var pages: [NotificationListView] {
+        let main = NotificationListView(listType: .all)
+        let sub = watchings
+            .filter { $0.isReceiveNotification }
+            .map { NotificationListView(listType: .specify(notificationsUrl: $0.notificationsURL)) }
+        return [main] + sub
+    }
+    
+    private var navigationTitle: String {
+        switch currentPage {
+        case 0:
+            return "Notifications"
+        case _:
+            return watchings
+                .filter { $0.isReceiveNotification }[currentPage - 1].owner.name
         }
     }
 }
