@@ -2,7 +2,29 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "github-icon.png",
+      "filename" : "GitHub-Mark-120px-plus.png",
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "GitHub-Mark-120px-plus-1.png",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "light"
+        }
+      ],
+      "scale" : "1x"
+    },
+    {
+      "idiom" : "universal",
+      "filename" : "GitHub-Mark-Light-64px.png",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ],
       "scale" : "1x"
     },
     {
@@ -11,7 +33,47 @@
     },
     {
       "idiom" : "universal",
+      "scale" : "2x",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "light"
+        }
+      ]
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "2x",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ]
+    },
+    {
+      "idiom" : "universal",
       "scale" : "3x"
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "light"
+        }
+      ]
+    },
+    {
+      "idiom" : "universal",
+      "scale" : "3x",
+      "appearances" : [
+        {
+          "appearance" : "luminosity",
+          "value" : "dark"
+        }
+      ]
     }
   ],
   "info" : {
