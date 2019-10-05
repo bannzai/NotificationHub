@@ -9,7 +9,7 @@
 import SwiftUI
 struct OAuthView : UIViewControllerRepresentable {
     typealias UIViewControllerType = UINavigationController
-    @Binding var isAuthorized: Bool
+    @Binding var githubAccessToken: String?
 
     func makeUIViewController(context: UIViewControllerRepresentableContext<OAuthView>) -> OAuthView.UIViewControllerType {
         let navigationController = UINavigationController()
@@ -17,7 +17,7 @@ struct OAuthView : UIViewControllerRepresentable {
             return OAuthViewController(coder: coder, callback: { [weak navigationController] result in
                 switch result {
                 case .success(let token):
-                    self.isAuthorized = true
+                    self.githubAccessToken = token.credential.oauthToken
                 case .failure(let error):
                     navigationController?.present(self.buildAlertController(with: error), animated: true, completion: nil)
                 }
@@ -47,7 +47,7 @@ struct OAuthView : UIViewControllerRepresentable {
 #if DEBUG
 struct OAuthViewController_Previews : PreviewProvider {
     static var previews: some View {
-        OAuthView(isAuthorized: State(initialValue: false).projectedValue)
+        OAuthView(githubAccessToken: State(initialValue: Optional<String>.none).projectedValue)
     }
 }
 #endif

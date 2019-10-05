@@ -25,7 +25,7 @@ struct RootView: View {
     
     var body: some View {
         Group {
-            if viewModel.isAuthorized.wrappedValue {
+            if viewModel.isAuthorized {
                 NavigationView {
                     ZStack {
                         PageView(views: pages).navigationBarTitle(Text("Notifications"))
@@ -46,7 +46,7 @@ struct RootView: View {
                     })
                 }
             } else {
-                OAuthView(isAuthorized: viewModel.isAuthorized)
+                OAuthView(githubAccessToken: viewModel.githubAccessToken)
             }
         }
     }
