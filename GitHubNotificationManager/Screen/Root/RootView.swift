@@ -30,8 +30,9 @@ struct RootView: View {
                     ZStack {
                         PageView(views: pages).navigationBarTitle(Text("Notifications"))
                     }.navigationBarItems(
-                        trailing: Button(action: {
-                            self.selectedAddNotificationList = true
+                        trailing: Button(
+                            action: {
+                                self.selectedAddNotificationList = true
                         }, label: {
                             Image(systemName: "text.badge.plus")
                                 .renderingMode(.template)
