@@ -47,8 +47,11 @@ struct RootView: View {
                     })
                 }
             } else {
-                OAuthView(githubAccessToken: viewModel.githubAccessToken)
+                OAuthView(githubAccessToken: viewModel.githubAccessTokenBinder)
             }
+        }
+        .onReceive(viewModel.$githubAccessToken) { (token) in
+            NetworkConfig.Github.accessToken = token
         }
     }
 }

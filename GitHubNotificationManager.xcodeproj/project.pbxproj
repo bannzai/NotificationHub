@@ -16,6 +16,7 @@
 		BA417D1522A9E2BA0041B3C3 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA417D1422A9E2BA0041B3C3 /* HUD.swift */; };
 		BA417D1922A9E6FB0041B3C3 /* HUDViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA417D1822A9E6FB0041B3C3 /* HUDViewModel.swift */; };
 		BA602C452348C8A0003C281C /* UserDefaultsGenerator.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA602C442348C8A0003C281C /* UserDefaultsGenerator.generated.swift */; };
+		BA602C482348E6C5003C281C /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA602C462348E68A003C281C /* NetworkConfig.swift */; };
 		BA60426C22A7409300345259 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60426B22A7409300345259 /* AppDelegate.swift */; };
 		BA60426E22A7409300345259 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60426D22A7409300345259 /* SceneDelegate.swift */; };
 		BA60427222A7409400345259 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA60427122A7409400345259 /* Assets.xcassets */; };
@@ -146,6 +147,7 @@
 		BA417D1422A9E2BA0041B3C3 /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
 		BA417D1822A9E6FB0041B3C3 /* HUDViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDViewModel.swift; sourceTree = "<group>"; };
 		BA602C442348C8A0003C281C /* UserDefaultsGenerator.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsGenerator.generated.swift; sourceTree = "<group>"; };
+		BA602C462348E68A003C281C /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
 		BA60426822A7409300345259 /* GitHubNotificationManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubNotificationManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA60426B22A7409300345259 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA60426D22A7409300345259 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -360,6 +362,7 @@
 				BA60431A22A7D21800345259 /* GitHub */,
 				BA6042F022A7CE1E00345259 /* Network.h */,
 				BA6042F122A7CE1E00345259 /* Info.plist */,
+				BA602C462348E68A003C281C /* NetworkConfig.swift */,
 			);
 			path = GitHubNotificationManagerNetwork;
 			sourceTree = "<group>";
@@ -909,6 +912,7 @@
 				BAC127FB22A9A82300B52862 /* NotificationList.swift in Sources */,
 				BAC1276722A82F8000B52862 /* AuthorizationHeader.swift in Sources */,
 				BAC1276F22A82F8700B52862 /* NotificationsRequest.swift in Sources */,
+				BA602C482348E6C5003C281C /* NetworkConfig.swift in Sources */,
 				BAC1276922A82F8000B52862 /* HTTPHeader.swift in Sources */,
 				BAC1277122A82F8700B52862 /* GitHubAPIRequest.swift in Sources */,
 				BAC1276D22A82F8000B52862 /* URLEncoder.swift in Sources */,

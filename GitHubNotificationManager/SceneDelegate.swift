@@ -10,6 +10,7 @@ import UIKit
 import SwiftUI
 import OAuthSwift
 import GitHubNotificationManagerCore
+import GitHubNotificationManagerNetwork
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -21,8 +22,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Use a UIHostingController as window root view controller
         #if DEBUG
-        UserDefaults.standard.set(Secret.GitHub.token, forKey: .GitHubAccessToken)
+        UserDefaults.standard.set(Secret.Debug.accessToken, forKey: .GitHubAccessToken)
         #endif
+        if let token = UserDefaults.standard.string(forKey: .GitHubAccessToken) {
+            NetworkConfig.Github.accessToken = token
+        }
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             window.rootViewController = UIHostingController(

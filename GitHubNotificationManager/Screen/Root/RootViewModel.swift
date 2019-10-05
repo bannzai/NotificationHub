@@ -15,20 +15,20 @@ final public class RootViewModel: ObservableObject {
     private var canceller: Set<AnyCancellable> = []
     
     @Published var watchings: [WatchingModel] = []
-    @Published private var _githubAccessToken: String? = UserDefaults.standard.string(forKey: .GitHubAccessToken) {
+    @Published var githubAccessToken: String? = UserDefaults.standard.string(forKey: .GitHubAccessToken) {
         didSet {
-            UserDefaults.standard.set(_githubAccessToken, forKey: .GitHubAccessToken)
+            UserDefaults.standard.set(githubAccessToken, forKey: .GitHubAccessToken)
         }
     }
-    var githubAccessToken: Binding<String?> {
+    var githubAccessTokenBinder: Binding<String?> {
         Binding(get: {
-            self._githubAccessToken
+            self.githubAccessToken
         }, set: {
-            self._githubAccessToken = $0
+            self.githubAccessToken = $0
         })
     }
     var isAuthorized: Bool {
-        _githubAccessToken != nil
+        githubAccessToken != nil
     }
 
     private var watchingListFetchStatus: WatchingListFetchStatus = .notYetLoad
