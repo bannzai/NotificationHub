@@ -45,6 +45,12 @@ public class OAuthViewController: UIViewController {
         signupButton.layer.borderColor = UIColor.systemGray4.cgColor
     }
     
+    public override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        navigationController?.setNavigationBarHidden(true, animated: animated)
+    }
+    
     @IBAction func signupButtonPressed(_ sender: Any) {
         authorize()
     }
