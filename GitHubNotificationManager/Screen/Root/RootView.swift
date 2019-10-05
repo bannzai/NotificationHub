@@ -14,6 +14,7 @@ struct RootView: View {
     
     @ObservedObject private var viewModel = RootViewModel()
     @State var watchings: [WatchingModel] = []
+    @Environment(\.isAuthorized) var isAuthorized: Bool
     
     var pages: [NotificationListView] {
         let main = NotificationListView(listType: .all)
@@ -24,26 +25,30 @@ struct RootView: View {
     }
     
     var body: some View {
-        NavigationView {
-            ZStack {
-                PageView(views: pages).navigationBarTitle(Text("Notifications"))
-            }.navigationBarItems(
-                trailing: Button(action: {
-                    self.selectedAddNotificationList = true
-                }, label: {
-                    Image(systemName: "text.badge.plus")
-                        .renderingMode(.template)
-                        .background(Color.primary)
-                })
-            ).sheet(isPresented: $selectedAddNotificationList) { () in
-                WatchingListView(watchings: self.$watchings)
+        Group {
+            if isAuthorized {
+                NavigationView {
+                    ZStack {
+                        PageView(views: pages).navigationBarTitle(Text("Notifications"))
+                    }.navigationBarItems(
+                        trailing: Button(action: {
+                            self.selectedAddNotificationList = true
+                        }, label: {
+                            Image(systemName: "text.badge.plus")
+                                .renderingMode(.template)
+                                .background(Color.primary)
+                        })
+                    ).sheet(isPresented: $selectedAddNotificationList) { () in
+                        WatchingListView(watchings: self.$watchings)
+                    }.onReceive(viewModel.$watchings, perform: { (watchings) in
+                        self.watchings = watchings
+                    }).onAppear(perform: {
+                        self.viewModel.fetchFirst()
+                    })
+                }
+            } else {
+                OAuthView()
             }
-            .onReceive(viewModel.$watchings, perform: { (watchings) in
-                self.watchings = watchings
-            })
-            .onAppear(perform: {
-                self.viewModel.fetchFirst()
-            })
         }
     }
 }
