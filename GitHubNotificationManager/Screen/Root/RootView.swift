@@ -14,7 +14,6 @@ struct RootView: View {
     
     @ObservedObject private var viewModel = RootViewModel()
     @State var watchings: [WatchingModel] = []
-    @State var isAuthorized: Bool = UserDefaults.standard.bool(forKey: "isAutrhozied")
 
     var pages: [NotificationListView] {
         let main = NotificationListView(listType: .all)
@@ -26,7 +25,7 @@ struct RootView: View {
     
     var body: some View {
         Group {
-            if isAuthorized {
+            if viewModel.isAuthorized.wrappedValue {
                 NavigationView {
                     ZStack {
                         PageView(views: pages).navigationBarTitle(Text("Notifications"))
@@ -47,7 +46,7 @@ struct RootView: View {
                     })
                 }
             } else {
-                OAuthView(isAuthorized: $isAuthorized)
+                OAuthView(isAuthorized: viewModel.isAuthorized)
             }
         }
     }

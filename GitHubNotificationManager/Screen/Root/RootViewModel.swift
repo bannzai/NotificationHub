@@ -15,6 +15,18 @@ final public class RootViewModel: ObservableObject {
     private var canceller: Set<AnyCancellable> = []
     
     @Published var watchings: [WatchingModel] = []
+    @Published private var _isAuthorized: Bool = UserDefaults.standard.bool(forKey: "isAutrhozied") {
+        didSet {
+            UserDefaults.standard.set(_isAuthorized, forKey: "isAutrhozied")
+        }
+    }
+    var isAuthorized: Binding<Bool> {
+        Binding(get: {
+            self._isAuthorized
+        }, set: {
+            self._isAuthorized = $0
+        })
+    }
 
     private var watchingListFetchStatus: WatchingListFetchStatus = .notYetLoad
 }
