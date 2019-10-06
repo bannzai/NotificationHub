@@ -46,7 +46,7 @@ struct NotificationListView : View {
             self.viewModel.fetchFirst()
         }
         .onReceive(viewModel.$requestError, perform: { (error) in
-            self.requestError = error
+            error.map { self.requestError = $0 }
         })
         .sheet(item: $selectedNotification) { (notification) in
             SafariView(url: notification.subject.destinationURL)
