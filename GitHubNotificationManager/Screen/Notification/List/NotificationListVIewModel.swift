@@ -16,7 +16,9 @@ final public class NotificationListViewModel: ObservableObject {
     
     @Published private var allNotifications: [NotificationModel] = []
     @Published internal var searchWord: String = ""
-    
+
+    private var notificationListFetchStatus: NotificationListFetchStatus = .notYetLoad
+
     let listType: NotificationListView.ListType
     init(listType: NotificationListView.ListType) {
         self.listType = listType
@@ -25,12 +27,13 @@ final public class NotificationListViewModel: ObservableObject {
     private var filteredNotifications: [NotificationModel] {
         allNotifications.filter { $0.match(for: searchWord) }
     }
-    
     internal var notifications: [NotificationModel] {
         searchWord.isEmpty ? allNotifications : filteredNotifications
     }
+    internal var isNoData: Bool {
+        allNotifications.isEmpty && notificationListFetchStatus == .loaded
+    }
     
-    private var notificationListFetchStatus: NotificationListFetchStatus = .notYetLoad
 }
 
 internal extension NotificationListViewModel {
@@ -38,17 +41,11 @@ internal extension NotificationListViewModel {
         if case .notYetLoad = notificationListFetchStatus {
             return
         }
-        if allNotifications.isEmpty {
-            return
-        }
         fetch()
     }
     
     func fetchFirst() {
         guard case .notYetLoad = notificationListFetchStatus else {
-            return
-        }
-        if !allNotifications.isEmpty {
             return
         }
         fetch()

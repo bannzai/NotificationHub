@@ -52,19 +52,27 @@ struct NotificationListView : View {
     }
 
     var body: some View {
-        List {
-            SearchBar(text: $viewModel.searchWord)
-            ForEach(viewModel.notifications, id: \.id) { notification in
-                Button(action: {
-                    self.selectedNotification = notification
-                }) {
-                    Cell(notification: notification)
-                }
-            }
-            IndicatorView()
-                .frame(maxWidth: .infinity,  idealHeight: 44, alignment: .center)
-                .onAppear {
+        Group {
+            if viewModel.isNoData {
+                RetryableNoDataView(message: "No Notifications", action: {
                     self.viewModel.fetchNext()
+                })
+            } else {
+                List {
+                    SearchBar(text: $viewModel.searchWord)
+                    ForEach(viewModel.notifications, id: \.id) { notification in
+                        Button(action: {
+                            self.selectedNotification = notification
+                        }) {
+                            Cell(notification: notification)
+                        }
+                    }
+                    IndicatorView()
+                        .frame(maxWidth: .infinity,  idealHeight: 44, alignment: .center)
+                        .onAppear {
+                            self.viewModel.fetchNext()
+                    }
+                }
             }
         }
         .onAppear {
