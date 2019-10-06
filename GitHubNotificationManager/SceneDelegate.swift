@@ -30,7 +30,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             window.rootViewController = UIHostingController(
-                rootView: RootView()
+                rootView: RootView(viewModel: RootViewModel(repository: WatchingsRepositoryImpl()))
             )
             self.window = window
             window.makeKeyAndVisible()
