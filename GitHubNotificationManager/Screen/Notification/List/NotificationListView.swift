@@ -61,18 +61,9 @@ struct NotificationListView : View {
 }
 
 extension NotificationListView {
-    enum ListType: NotificationPath, Identifiable {
+    enum ListType: NotificationPath {
         case all
         case specify(notificationsUrl: String)
-        
-        var id: String {
-            switch self {
-            case .all:
-                return ""
-            case .specify(notificationsUrl: let url):
-                return url
-            }
-        }
         
         var notificationPath: URLPathConvertible {
             switch self {

@@ -21,17 +21,12 @@ struct RootView: View {
         Group {
             if viewModel.isAuthorized {
                 NavigationView {
-                    PageView(
-                        identifiers: [NotificationListView.ListType.all] + watchings.map { NotificationListView.ListType.specify(notificationsUrl: $0.notificationsURL) },
-                        page: $currentPage
-                    ) {
-                        NotificationListView(listType: $0)
-                    }
-                    .navigationBarTitle(Text(navigationTitle), displayMode: .inline)
-                    .navigationBarItems(
-                        trailing: Button(
-                            action: {
-                                self.selectedAddNotificationList = true
+                    PageView(views: pages, page: $currentPage)
+                        .navigationBarTitle(Text(navigationTitle), displayMode: .inline)
+                        .navigationBarItems(
+                            trailing: Button(
+                                action: {
+                                    self.selectedAddNotificationList = true
                             }, label: {
                                 Image(systemName: "text.badge.plus")
                                     .barButtonItems()
