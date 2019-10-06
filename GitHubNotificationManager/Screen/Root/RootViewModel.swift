@@ -11,7 +11,7 @@ import Combine
 import SwiftUI
 import GitHubNotificationManagerNetwork
 
-final public class RootViewModel: ObservableObject {
+public class RootViewModel: ObservableObject {
     private var canceller: Set<AnyCancellable> = []
 
     @Published var watchings: [WatchingModel] = []
@@ -34,9 +34,7 @@ final public class RootViewModel: ObservableObject {
     }
 
     private var watchingListFetchStatus: WatchingListFetchStatus = .notYetLoad
-}
-
-internal extension RootViewModel {
+    
     func fetch() {
         watchingListFetchStatus = .loading
         GitHubAPI
