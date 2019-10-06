@@ -73,6 +73,9 @@
 		BAFE55EC23497B7F00A35674 /* ThumbnailImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE55EB23497B7F00A35674 /* ThumbnailImageView.swift */; };
 		BAFE55EE2349836000A35674 /* BarButtonImageModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE55ED2349836000A35674 /* BarButtonImageModifier.swift */; };
 		BAFE55F02349865800A35674 /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE55EF2349865800A35674 /* DeviceType.swift */; };
+		BAFE55F32349C27B00A35674 /* NoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE55F22349C27B00A35674 /* NoDataView.swift */; };
+		BAFE55F52349C3F100A35674 /* RetryableNoDataView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE55F42349C3F100A35674 /* RetryableNoDataView.swift */; };
+		BAFE55F82349C42000A35674 /* DecideButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE55F72349C42000A35674 /* DecideButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -208,6 +211,9 @@
 		BAFE55EB23497B7F00A35674 /* ThumbnailImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailImageView.swift; sourceTree = "<group>"; };
 		BAFE55ED2349836000A35674 /* BarButtonImageModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarButtonImageModifier.swift; sourceTree = "<group>"; };
 		BAFE55EF2349865800A35674 /* DeviceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
+		BAFE55F22349C27B00A35674 /* NoDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoDataView.swift; sourceTree = "<group>"; };
+		BAFE55F42349C3F100A35674 /* RetryableNoDataView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RetryableNoDataView.swift; sourceTree = "<group>"; };
+		BAFE55F72349C42000A35674 /* DecideButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DecideButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -504,6 +510,7 @@
 		BAEFFC4122BA7F3F006D1549 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				BAFE55F62349C41900A35674 /* Button */,
 				BAEFFC4A22BA7FE8006D1549 /* SearchBar */,
 				BAEFFC4522BA7F8E006D1549 /* HUD */,
 				BAEFFC4222BA7F4C006D1549 /* Image */,
@@ -525,6 +532,7 @@
 		BAEFFC4322BA7F72006D1549 /* Screen */ = {
 			isa = PBXGroup;
 			children = (
+				BAFE55F12349C27200A35674 /* NoData */,
 				BACDC7F8234647EA00C4A1AE /* OAuth */,
 				BA8A374523422E3D00CB487B /* Watching */,
 				BA8A3733234200EC00CB487B /* Page */,
@@ -622,6 +630,23 @@
 				BAFE55EF2349865800A35674 /* DeviceType.swift */,
 			);
 			path = Util;
+			sourceTree = "<group>";
+		};
+		BAFE55F12349C27200A35674 /* NoData */ = {
+			isa = PBXGroup;
+			children = (
+				BAFE55F22349C27B00A35674 /* NoDataView.swift */,
+				BAFE55F42349C3F100A35674 /* RetryableNoDataView.swift */,
+			);
+			path = NoData;
+			sourceTree = "<group>";
+		};
+		BAFE55F62349C41900A35674 /* Button */ = {
+			isa = PBXGroup;
+			children = (
+				BAFE55F72349C42000A35674 /* DecideButton.swift */,
+			);
+			path = Button;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -874,13 +899,16 @@
 				BAFE55EC23497B7F00A35674 /* ThumbnailImageView.swift in Sources */,
 				BAEFFC3E22B9DBD3006D1549 /* NotificationModel.swift in Sources */,
 				BA8A374A23422EFA00CB487B /* RootViewModel.swift in Sources */,
+				BAFE55F82349C42000A35674 /* DecideButton.swift in Sources */,
 				BACDC8002346C7F800C4A1AE /* OAuthViewController.swift in Sources */,
 				BAC127D622A844BD00B52862 /* RootView.swift in Sources */,
 				BA8A374E2342304200CB487B /* WatchingModel.swift in Sources */,
 				BA357A1422B4C41300549BA0 /* SafariView.swift in Sources */,
 				BAC127E422A8911C00B52862 /* NotificationListView.swift in Sources */,
+				BAFE55F32349C27B00A35674 /* NoDataView.swift in Sources */,
 				BACDC8032346CC1000C4A1AE /* OAuthView.swift in Sources */,
 				BA8A374823422E5100CB487B /* WatchingListView.swift in Sources */,
+				BAFE55F52349C3F100A35674 /* RetryableNoDataView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
