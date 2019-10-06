@@ -13,6 +13,7 @@ struct RootView: View {
     @State private var selectedAddNotificationList: Bool = false
     @State private var watchings: [WatchingModel] = []
     @State private var currentPage: Int = 0
+    @State private var requestError: RequestError? = nil
 
     @ObservedObject private var viewModel = RootViewModel()
 
@@ -36,7 +37,13 @@ struct RootView: View {
                         self.watchings = watchings
                     }).onAppear(perform: {
                         self.viewModel.fetch()
-                    })
+                    }).alert(item: $requestError) { (error) in
+                            Alert(
+                                title: Text("Fetched Error"),
+                                message: Text(error.localizedDescription),
+                                dismissButton: .default(Text("OK"))
+                            )
+                    }
                 }
             } else {
                 OAuthView(githubAccessToken: viewModel.githubAccessTokenBinder)

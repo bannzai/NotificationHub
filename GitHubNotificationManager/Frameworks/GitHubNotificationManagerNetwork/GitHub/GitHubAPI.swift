@@ -9,8 +9,15 @@
 import Foundation
 import Combine
 
-// TODO: Use NetworkError
-public typealias RequestError = Swift.Error
+public struct RequestError: Identifiable, Error {
+    // TODO: Use NetworkError
+    public let error: Swift.Error
+    public init(error: Swift.Error) {
+        self.error = error
+    }
+    
+    public var id: String { error.localizedDescription }
+}
 
 public enum NetworkError: Error {
     case noResponseData
@@ -40,9 +47,11 @@ public struct GitHubAPI {
                             Swift.print("[ERROR] error request \(self.request), error: \(error)")
                         }
                     })
+                    .mapError(RequestError.init(error:))
                     .subscribe(subscriber)
             } catch {
                 Fail<Output, Swift.Error>(error: error)
+                    .mapError(RequestError.init(error:))
                     .subscribe(subscriber)
             }
         }

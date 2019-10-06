@@ -20,7 +20,7 @@ final public class RootViewModel: ObservableObject {
             UserDefaults.standard.set(githubAccessToken, forKey: .GitHubAccessToken)
         }
     }
-    @Published var fetchedError: RequestError? = nil
+    @Published var requestError: RequestError? = nil
     
     var githubAccessTokenBinder: Binding<String?> {
         Binding(get: {
@@ -48,7 +48,7 @@ internal extension RootViewModel {
                 case .finished:
                     break
                 case .failure(let error):
-                    self?.fetchedError = error
+                    self?.requestError = error
                 }
             })
             .catch { (error) in
