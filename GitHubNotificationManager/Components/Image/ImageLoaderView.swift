@@ -26,7 +26,10 @@ struct ImageLoaderView : View {
 #if DEBUG
 struct ImageLoaderView_Previews : PreviewProvider {
     static var previews: some View {
-        ImageLoaderView(url: Debug.Const.avatarURL)
+        Group {
+            ImageLoaderView(url: Debug.Const.avatarURL)
+                .modifier(ThumbnailImageViewModifier())
+        }
     }
 }
 #endif
