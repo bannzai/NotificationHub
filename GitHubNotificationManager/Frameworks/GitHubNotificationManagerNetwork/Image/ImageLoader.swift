@@ -31,6 +31,7 @@ public class SharedImageLoader: ImageLoader {
                 result.publisher
                     .map { $0.image }
                     .retry(3)
+                    .receive(on: DispatchQueue.main)
                     .subscribe(subscriber)
             }
         }
