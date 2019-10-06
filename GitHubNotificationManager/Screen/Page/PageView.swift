@@ -12,11 +12,16 @@ import SwiftUI
 struct PageView<Page: View>: View {
     var viewControllers: [UIHostingController<Page>]
     var currentPage: Binding<Int>
-
-    init(views: [Page], page: Binding<Int>) {
-        self.viewControllers = views.map { UIHostingController(rootView: $0) }
+    
+    init<I: Identifiable>(identifiers: [I], page: Binding<Int>, closure: (I) -> Page) {
+        self.viewControllers = identifiers.map { closure($0) }.map { UIHostingController(rootView: $0) }
         self.currentPage = page
     }
+
+//    init(views: [Page], page: Binding<Int>) {
+//        self.viewControllers = views.map { UIHostingController(rootView: $0) }
+//        self.currentPage = page
+//    }
 
     var body: some View {
         PageViewController(
@@ -27,10 +32,10 @@ struct PageView<Page: View>: View {
 }
 
 #if DEBUG
-struct PageView_Preview: PreviewProvider {
-    @State static var currentPage: Int = 0
-    static var previews: some View {
-        PageView(views: [EmptyView()], page: $currentPage)
-    }
-}
+//struct PageView_Preview: PreviewProvider {
+//    @State static var currentPage: Int = 0
+//    static var previews: some View {
+//        PageView(views: [EmptyView()], page: $currentPage)
+//    }
+//}
 #endif
