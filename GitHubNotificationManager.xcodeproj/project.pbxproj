@@ -72,6 +72,7 @@
 		BAEFFC4022B9DDBF006D1549 /* FuzzyFindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEFFC3F22B9DDBF006D1549 /* FuzzyFindable.swift */; };
 		BAFE55EC23497B7F00A35674 /* ThumbnailImageViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE55EB23497B7F00A35674 /* ThumbnailImageViewModifier.swift */; };
 		BAFE55EE2349836000A35674 /* BarButtonImageModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE55ED2349836000A35674 /* BarButtonImageModifier.swift */; };
+		BAFE55F02349865800A35674 /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE55EF2349865800A35674 /* DeviceType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -206,6 +207,7 @@
 		BAEFFC3F22B9DDBF006D1549 /* FuzzyFindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuzzyFindable.swift; sourceTree = "<group>"; };
 		BAFE55EB23497B7F00A35674 /* ThumbnailImageViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailImageViewModifier.swift; sourceTree = "<group>"; };
 		BAFE55ED2349836000A35674 /* BarButtonImageModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarButtonImageModifier.swift; sourceTree = "<group>"; };
+		BAFE55EF2349865800A35674 /* DeviceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -291,6 +293,7 @@
 				BA6042E722A7CAF500345259 /* Frameworks */,
 				BAEFFC4122BA7F3F006D1549 /* Components */,
 				BAEFFC4322BA7F72006D1549 /* Screen */,
+				BAEFFC4E22BA8027006D1549 /* Util */,
 				BAEFFC4B22BA8014006D1549 /* Extension */,
 				BA60426B22A7409300345259 /* AppDelegate.swift */,
 				BA60426D22A7409300345259 /* SceneDelegate.swift */,
@@ -590,7 +593,6 @@
 		BAEFFC4B22BA8014006D1549 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				BAEFFC4E22BA8027006D1549 /* Util */,
 				BAEFFC4C22BA801A006D1549 /* StdLib */,
 			);
 			path = Extension;
@@ -617,6 +619,7 @@
 			isa = PBXGroup;
 			children = (
 				BAEFFC3F22B9DDBF006D1549 /* FuzzyFindable.swift */,
+				BAFE55EF2349865800A35674 /* DeviceType.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -857,6 +860,7 @@
 				BA8A3735234200F800CB487B /* PageView.swift in Sources */,
 				BA8A3739234206CF00CB487B /* SafariViewControllerWrapperViewController.swift in Sources */,
 				BAC127DB22A8539000B52862 /* NotificationListVIewModel.swift in Sources */,
+				BAFE55F02349865800A35674 /* DeviceType.swift in Sources */,
 				BA357A1622B56BA800549BA0 /* SearchBar.swift in Sources */,
 				BA60426E22A7409300345259 /* SceneDelegate.swift in Sources */,
 				BA1D70EA22A9D5BE000F83A1 /* ImageLoaderViewModel.swift in Sources */,
