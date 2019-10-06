@@ -24,3 +24,12 @@ struct BarButtonImageModifier: ViewModifier {
             .frame(width: edge, height: edge, alignment: .center)
     }
 }
+
+#if DEBUG
+struct BarButtonImageModifier_Previews : PreviewProvider {
+    static var previews: some View {
+        Image(systemName: "person")
+            .barButtonItems()
+    }
+}
+#endif
