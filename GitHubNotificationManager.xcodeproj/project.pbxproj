@@ -71,6 +71,7 @@
 		BAEFFC3E22B9DBD3006D1549 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEFFC3D22B9DBD3006D1549 /* NotificationModel.swift */; };
 		BAEFFC4022B9DDBF006D1549 /* FuzzyFindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEFFC3F22B9DDBF006D1549 /* FuzzyFindable.swift */; };
 		BAFE55EC23497B7F00A35674 /* ThumbnailImageViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE55EB23497B7F00A35674 /* ThumbnailImageViewModifier.swift */; };
+		BAFE55EE2349836000A35674 /* BarButtonImageModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE55ED2349836000A35674 /* BarButtonImageModifier.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -204,6 +205,7 @@
 		BAEFFC3D22B9DBD3006D1549 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		BAEFFC3F22B9DDBF006D1549 /* FuzzyFindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuzzyFindable.swift; sourceTree = "<group>"; };
 		BAFE55EB23497B7F00A35674 /* ThumbnailImageViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailImageViewModifier.swift; sourceTree = "<group>"; };
+		BAFE55ED2349836000A35674 /* BarButtonImageModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarButtonImageModifier.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -512,6 +514,7 @@
 				BA1D70E922A9D5BE000F83A1 /* ImageLoaderViewModel.swift */,
 				BA1D70E722A9D42F000F83A1 /* ImageLoaderView.swift */,
 				BAFE55EB23497B7F00A35674 /* ThumbnailImageViewModifier.swift */,
+				BAFE55ED2349836000A35674 /* BarButtonImageModifier.swift */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -862,6 +865,7 @@
 				BA1D70E822A9D42F000F83A1 /* ImageLoaderView.swift in Sources */,
 				BA417D1122A9DF4E0041B3C3 /* DebugInfo.swift in Sources */,
 				BA417D1522A9E2BA0041B3C3 /* HUD.swift in Sources */,
+				BAFE55EE2349836000A35674 /* BarButtonImageModifier.swift in Sources */,
 				BAEFFC3C22B9DB4E006D1549 /* ViewExtension.swift in Sources */,
 				BAFE55EC23497B7F00A35674 /* ThumbnailImageViewModifier.swift in Sources */,
 				BAEFFC3E22B9DBD3006D1549 /* NotificationModel.swift in Sources */,
