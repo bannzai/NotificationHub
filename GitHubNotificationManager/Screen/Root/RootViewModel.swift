@@ -32,12 +32,16 @@ final public class RootViewModel: ObservableObject {
     var isAuthorized: Bool {
         githubAccessToken != nil
     }
+    var hasNotWatching: Bool { watchings.isEmpty }
 
     private var watchingListFetchStatus: WatchingListFetchStatus = .notYetLoad
 }
 
 internal extension RootViewModel {
-    func fetch() {
+    func fetchIfHasNotWatching() {
+        if !hasNotWatching {
+            return
+        }
         watchingListFetchStatus = .loading
         GitHubAPI
             .request(request: WatchingsRequest())

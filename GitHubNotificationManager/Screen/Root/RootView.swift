@@ -32,7 +32,7 @@ struct RootView: View {
                                     .barButtonItems()
                             })
                     ).onAppear(perform: {
-                        self.viewModel.fetch()
+                        self.viewModel.fetchIfHasNotWatching()
                     }).onReceive(viewModel.$watchings, perform: { (watchings) in
                         self.watchings = watchings
                     }).onReceive(viewModel.$requestError, perform: { (error) in
