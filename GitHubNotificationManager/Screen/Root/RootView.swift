@@ -31,20 +31,20 @@ struct RootView: View {
                                 Image(systemName: "text.badge.plus")
                                     .barButtonItems()
                             })
-                    ).sheet(isPresented: $selectedAddNotificationList) { () in
-                        WatchingListView(watchings: self.$watchings)
-                    }.onReceive(viewModel.$watchings, perform: { (watchings) in
+                    ).onAppear(perform: {
+                        self.viewModel.fetch()
+                    }).onReceive(viewModel.$watchings, perform: { (watchings) in
                         self.watchings = watchings
                     }).onReceive(viewModel.$requestError, perform: { (error) in
                         self.requestError = error
-                    }).onAppear(perform: {
-                        self.viewModel.fetch()
                     }).alert(item: $requestError) { (error) in
                         Alert(
                             title: Text("Fetched Error"),
                             message: Text(error.localizedDescription),
                             dismissButton: .default(Text("OK"))
                         )
+                    }.sheet(isPresented: $selectedAddNotificationList) { () in
+                        WatchingListView(watchings: self.$watchings)
                     }
                 }
             } else {
