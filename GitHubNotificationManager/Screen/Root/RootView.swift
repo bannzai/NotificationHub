@@ -36,7 +36,7 @@ struct RootView: View {
                     }).onReceive(viewModel.$watchings, perform: { (watchings) in
                         self.watchings = watchings
                     }).onReceive(viewModel.$requestError, perform: { (error) in
-                        self.requestError = error
+                        error.map { self.requestError = $0 }
                     }).alert(item: $requestError) { (error) in
                         Alert(
                             title: Text("Fetched Error"),
