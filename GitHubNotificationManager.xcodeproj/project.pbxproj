@@ -148,7 +148,7 @@
 		BA417D1822A9E6FB0041B3C3 /* HUDViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDViewModel.swift; sourceTree = "<group>"; };
 		BA602C442348C8A0003C281C /* UserDefaultsGenerator.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsGenerator.generated.swift; sourceTree = "<group>"; };
 		BA602C462348E68A003C281C /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
-		BA60426822A7409300345259 /* GitHubNotificationManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GitHubNotificationManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA60426822A7409300345259 /* NotificationHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotificationHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA60426B22A7409300345259 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA60426D22A7409300345259 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		BA60427122A7409400345259 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -272,7 +272,7 @@
 		BA60426922A7409300345259 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BA60426822A7409300345259 /* GitHubNotificationManager.app */,
+				BA60426822A7409300345259 /* NotificationHub.app */,
 				BA60427E22A7409400345259 /* GitHubNotificationManagerTests.xctest */,
 				BA60428922A7409400345259 /* GitHubNotificationManagerUITests.xctest */,
 				BA6042C922A7CAD500345259 /* GitHubNotificationManagerCore.framework */,
@@ -660,7 +660,7 @@
 				BACDC7FC23464B9400C4A1AE /* OAuthSwift */,
 			);
 			productName = GitHubNotificationManager;
-			productReference = BA60426822A7409300345259 /* GitHubNotificationManager.app */;
+			productReference = BA60426822A7409300345259 /* NotificationHub.app */;
 			productType = "com.apple.product-type.application";
 		};
 		BA60427D22A7409400345259 /* GitHubNotificationManagerTests */ = {
@@ -1097,8 +1097,8 @@
 					"@executable_path/Frameworks",
 				);
 				OTHER_SWIFT_FLAGS = "-DOAUTH_APP_EXTENSIONS";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bannzai.GitHubNotificationManager;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bannzai.NotificationHub;
+				PRODUCT_NAME = NotificationHub;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -1120,8 +1120,8 @@
 					"@executable_path/Frameworks",
 				);
 				OTHER_SWIFT_FLAGS = "-DOAUTH_APP_EXTENSIONS";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bannzai.GitHubNotificationManager;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.bannzai.NotificationHub;
+				PRODUCT_NAME = NotificationHub;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
