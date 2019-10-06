@@ -11,11 +11,44 @@ import GitHubNotificationManagerNetwork
 
 struct RootView: View {
     @State private var selectedAddNotificationList: Bool = false
-    
+    @State private var watchings: [WatchingModel] = []
+    @State private var currentPage: Int = 0
+
     @ObservedObject private var viewModel = RootViewModel()
-    @State var watchings: [WatchingModel] = []
+
+    var body: some View {
+        Group {
+            if viewModel.isAuthorized {
+                NavigationView {
+                    PageView(views: pages, page: $currentPage)
+                        .navigationBarTitle(Text(navigationTitle), displayMode: .inline)
+                        .navigationBarItems(
+                            trailing: Button(
+                                action: {
+                                    self.selectedAddNotificationList = true
+                            }, label: {
+                                Image(systemName: "text.badge.plus")
+                                    .renderingMode(.template)
+                                    .background(Color.primary)
+                            })
+                    ).sheet(isPresented: $selectedAddNotificationList) { () in
+                        WatchingListView(watchings: self.$watchings)
+                    }.onReceive(viewModel.$watchings, perform: { (watchings) in
+                        self.watchings = watchings
+                    }).onAppear(perform: {
+                        self.viewModel.fetchFirst()
+                    })
+                }
+            } else {
+                OAuthView(githubAccessToken: viewModel.githubAccessTokenBinder)
+            }
+        }
+        .onReceive(viewModel.$githubAccessToken) { (token) in
+            NetworkConfig.Github.accessToken = token
+        }
+    }
     
-    var pages: [NotificationListView] {
+    private var pages: [NotificationListView] {
         let main = NotificationListView(listType: .all)
         let sub = watchings
             .filter { $0.isReceiveNotification }
@@ -23,27 +56,13 @@ struct RootView: View {
         return [main] + sub
     }
     
-    var body: some View {
-        NavigationView {
-            ZStack {
-                PageView(views: pages).navigationBarTitle(Text("Notifications"))
-            }.navigationBarItems(
-                trailing: Button(action: {
-                    self.selectedAddNotificationList = true
-                }, label: {
-                    Image(systemName: "text.badge.plus")
-                        .renderingMode(.template)
-                        .background(Color.primary)
-                })
-            ).sheet(isPresented: $selectedAddNotificationList) { () in
-                WatchingListView(watchings: self.$watchings)
-            }
-            .onReceive(viewModel.$watchings, perform: { (watchings) in
-                self.watchings = watchings
-            })
-            .onAppear(perform: {
-                self.viewModel.fetchFirst()
-            })
+    private var navigationTitle: String {
+        switch currentPage {
+        case 0:
+            return "Notifications"
+        case _:
+            return watchings
+                .filter { $0.isReceiveNotification }[currentPage - 1].owner.name
         }
     }
 }

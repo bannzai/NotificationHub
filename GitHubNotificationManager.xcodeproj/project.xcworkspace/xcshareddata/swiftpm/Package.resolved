@@ -9,6 +9,15 @@
           "revision": "a7b63bfd0825d91c67f2d23b6c476337235444c6",
           "version": "8.2.0"
         }
+      },
+      {
+        "package": "OAuthSwift",
+        "repositoryURL": "https://github.com/bannzai/OAuthSwift/",
+        "state": {
+          "branch": "escape/error/swift_package_manager",
+          "revision": "280115b605da1a83996617cbb7a946099abd67d7",
+          "version": null
+        }
       }
     ]
   },

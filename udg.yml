@@ -1,0 +1,2 @@
+- name: GitHubAccessToken
+  type: String
