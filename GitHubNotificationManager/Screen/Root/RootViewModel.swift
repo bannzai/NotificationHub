@@ -46,11 +46,7 @@ internal extension RootViewModel {
         }
     }
     
-    func fetchFirst() {
-        guard case .notYetLoad = watchingListFetchStatus else {
-            return
-        }
-
+    func fetch() {
         watchingListFetchStatus = .loading
         GitHubAPI
             .request(request: WatchingsRequest())
@@ -67,7 +63,7 @@ internal extension RootViewModel {
             guard let self = self else {
                 return
             }
-            self.watchings += self.distinct(watchings: watchings)
+            self.watchings = self.distinct(watchings: watchings)
         }).store(in: &canceller)
     }
 }

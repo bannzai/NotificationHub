@@ -35,7 +35,7 @@ struct RootView: View {
                     }.onReceive(viewModel.$watchings, perform: { (watchings) in
                         self.watchings = watchings
                     }).onAppear(perform: {
-                        self.viewModel.fetchFirst()
+                        self.viewModel.fetch()
                     })
                 }
             } else {
