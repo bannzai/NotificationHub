@@ -80,7 +80,7 @@ struct NotificationListView : View {
 #if DEBUG
 struct NotificationListView_Previews : PreviewProvider {
     static var previews: some View {
-        NotificationListView(listType: .all).environmentObject(HUDViewModel())
+        NotificationListView(listType: .all)
     }
 }
 #endif

@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BA60426722A7409300345259"
-               BuildableName = "GitHubNotificationManager.app"
+               BuildableName = "NotificationHub.app"
                BlueprintName = "GitHubNotificationManager"
                ReferencedContainer = "container:GitHubNotificationManager.xcodeproj">
             </BuildableReference>
@@ -57,7 +57,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BA60426722A7409300345259"
-            BuildableName = "GitHubNotificationManager.app"
+            BuildableName = "NotificationHub.app"
             BlueprintName = "GitHubNotificationManager"
             ReferencedContainer = "container:GitHubNotificationManager.xcodeproj">
          </BuildableReference>
@@ -74,7 +74,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BA60426722A7409300345259"
-            BuildableName = "GitHubNotificationManager.app"
+            BuildableName = "NotificationHub.app"
             BlueprintName = "GitHubNotificationManager"
             ReferencedContainer = "container:GitHubNotificationManager.xcodeproj">
          </BuildableReference>

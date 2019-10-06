@@ -28,8 +28,7 @@ struct RootView: View {
                                     self.selectedAddNotificationList = true
                             }, label: {
                                 Image(systemName: "text.badge.plus")
-                                    .renderingMode(.template)
-                                    .background(Color.primary)
+                                    .barButtonItems()
                             })
                     ).sheet(isPresented: $selectedAddNotificationList) { () in
                         WatchingListView(watchings: self.$watchings)
@@ -70,7 +69,11 @@ struct RootView: View {
 #if DEBUG
 struct RootView_Previews : PreviewProvider {
     static var previews: some View {
-        RootView()
+        ForEach(DeviceType.previewDevices, id: \.self) { device in
+            RootView()
+                .previewDevice(device.preview)
+                .previewDisplayName(device.name)
+        }
     }
 }
 #endif

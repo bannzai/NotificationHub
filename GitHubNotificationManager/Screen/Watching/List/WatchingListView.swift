@@ -27,9 +27,10 @@ struct WatchingListView: View {
 }
 
 #if DEBUG
-//struct WatchingListView_Previews: PreviewProvider {
-//    static var previews: some View {
-//        WatchingListView(watchings: [], fetched: { _ in })
-//    }
-//}
+struct WatchingListView_Previews: PreviewProvider {
+    @State static var watchings: [WatchingModel] = []
+    static var previews: some View {
+        WatchingListView(watchings: $watchings)
+    }
+}
 #endif
