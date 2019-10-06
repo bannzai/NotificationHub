@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import GitHubNotificationManagerNetwork
 
 struct ThumbnailImageViewModifier: ViewModifier {
     let edge: CGFloat = 44
@@ -19,3 +20,21 @@ struct ThumbnailImageViewModifier: ViewModifier {
             .overlay(Circle().stroke(Color.gray, lineWidth: 1))
     }
 }
+
+struct ThumbnailImageView: View {
+    let url: URLConvertible
+    let edge: CGFloat = 44
+    
+    var body: some View {
+        ImageLoaderView(url: url)
+            .modifier(ThumbnailImageViewModifier())
+    }
+}
+
+#if DEBUG
+struct ThumbnailImageView_Previews : PreviewProvider {
+    static var previews: some View {
+        ThumbnailImageView(url: Debug.Const.avatarURL)
+    }
+}
+#endif

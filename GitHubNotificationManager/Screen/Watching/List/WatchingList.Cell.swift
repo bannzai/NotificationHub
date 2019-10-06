@@ -8,14 +8,14 @@
 
 import SwiftUI
 import Combine
+import GitHubNotificationManagerNetwork
 
 extension WatchingListView {
     struct Cell: View {
         @Binding var watching: WatchingModel
         var body: some View {
             HStack {
-                ImageLoaderView(url: watching.owner.avatarURL)
-                    .modifier(ThumbnailImageViewModifier())
+                ThumbnailImageView(url: watching.owner.avatarURL)
                 Toggle(isOn: $watching.isReceiveNotification) { () in
                     Text(watching.owner.name).font(.headline).lineLimit(1)
                 }

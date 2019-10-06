@@ -70,7 +70,7 @@
 		BAEFFC3C22B9DB4E006D1549 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEFFC3B22B9DB4E006D1549 /* ViewExtension.swift */; };
 		BAEFFC3E22B9DBD3006D1549 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEFFC3D22B9DBD3006D1549 /* NotificationModel.swift */; };
 		BAEFFC4022B9DDBF006D1549 /* FuzzyFindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEFFC3F22B9DDBF006D1549 /* FuzzyFindable.swift */; };
-		BAFE55EC23497B7F00A35674 /* ThumbnailImageViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE55EB23497B7F00A35674 /* ThumbnailImageViewModifier.swift */; };
+		BAFE55EC23497B7F00A35674 /* ThumbnailImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE55EB23497B7F00A35674 /* ThumbnailImageView.swift */; };
 		BAFE55EE2349836000A35674 /* BarButtonImageModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE55ED2349836000A35674 /* BarButtonImageModifier.swift */; };
 		BAFE55F02349865800A35674 /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE55EF2349865800A35674 /* DeviceType.swift */; };
 /* End PBXBuildFile section */
@@ -205,7 +205,7 @@
 		BAEFFC3B22B9DB4E006D1549 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		BAEFFC3D22B9DBD3006D1549 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		BAEFFC3F22B9DDBF006D1549 /* FuzzyFindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuzzyFindable.swift; sourceTree = "<group>"; };
-		BAFE55EB23497B7F00A35674 /* ThumbnailImageViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailImageViewModifier.swift; sourceTree = "<group>"; };
+		BAFE55EB23497B7F00A35674 /* ThumbnailImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailImageView.swift; sourceTree = "<group>"; };
 		BAFE55ED2349836000A35674 /* BarButtonImageModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarButtonImageModifier.swift; sourceTree = "<group>"; };
 		BAFE55EF2349865800A35674 /* DeviceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -516,7 +516,7 @@
 			children = (
 				BA1D70E922A9D5BE000F83A1 /* ImageLoaderViewModel.swift */,
 				BA1D70E722A9D42F000F83A1 /* ImageLoaderView.swift */,
-				BAFE55EB23497B7F00A35674 /* ThumbnailImageViewModifier.swift */,
+				BAFE55EB23497B7F00A35674 /* ThumbnailImageView.swift */,
 				BAFE55ED2349836000A35674 /* BarButtonImageModifier.swift */,
 			);
 			path = Image;
@@ -871,7 +871,7 @@
 				BA417D1522A9E2BA0041B3C3 /* HUD.swift in Sources */,
 				BAFE55EE2349836000A35674 /* BarButtonImageModifier.swift in Sources */,
 				BAEFFC3C22B9DB4E006D1549 /* ViewExtension.swift in Sources */,
-				BAFE55EC23497B7F00A35674 /* ThumbnailImageViewModifier.swift in Sources */,
+				BAFE55EC23497B7F00A35674 /* ThumbnailImageView.swift in Sources */,
 				BAEFFC3E22B9DBD3006D1549 /* NotificationModel.swift in Sources */,
 				BA8A374A23422EFA00CB487B /* RootViewModel.swift in Sources */,
 				BACDC8002346C7F800C4A1AE /* OAuthViewController.swift in Sources */,

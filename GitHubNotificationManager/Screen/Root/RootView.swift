@@ -40,11 +40,11 @@ struct RootView: View {
                 }
             } else {
                 OAuthView(githubAccessToken: viewModel.githubAccessTokenBinder)
-            }
+                    .onReceive(viewModel.$githubAccessToken) { (token) in
+                        NetworkConfig.Github.accessToken = token
+                }}
         }
-        .onReceive(viewModel.$githubAccessToken) { (token) in
-            NetworkConfig.Github.accessToken = token
-        }
+        
     }
     
     private var pages: [NotificationListView] {
