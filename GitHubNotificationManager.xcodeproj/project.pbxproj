@@ -70,8 +70,6 @@
 		BAEFFC3C22B9DB4E006D1549 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEFFC3B22B9DB4E006D1549 /* ViewExtension.swift */; };
 		BAEFFC3E22B9DBD3006D1549 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEFFC3D22B9DBD3006D1549 /* NotificationModel.swift */; };
 		BAEFFC4022B9DDBF006D1549 /* FuzzyFindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEFFC3F22B9DDBF006D1549 /* FuzzyFindable.swift */; };
-		BAF4FD2C234A40AC005BEFA8 /* WatchingsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF4FD2A234A4076005BEFA8 /* WatchingsRepository.swift */; };
-		BAF4FD31234A443A005BEFA8 /* NotificationsRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAF4FD2E234A4416005BEFA8 /* NotificationsRepository.swift */; };
 		BAFE55EC23497B7F00A35674 /* ThumbnailImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE55EB23497B7F00A35674 /* ThumbnailImageView.swift */; };
 		BAFE55EE2349836000A35674 /* BarButtonImageModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE55ED2349836000A35674 /* BarButtonImageModifier.swift */; };
 		BAFE55F02349865800A35674 /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE55EF2349865800A35674 /* DeviceType.swift */; };
@@ -210,8 +208,6 @@
 		BAEFFC3B22B9DB4E006D1549 /* ViewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewExtension.swift; sourceTree = "<group>"; };
 		BAEFFC3D22B9DBD3006D1549 /* NotificationModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationModel.swift; sourceTree = "<group>"; };
 		BAEFFC3F22B9DDBF006D1549 /* FuzzyFindable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FuzzyFindable.swift; sourceTree = "<group>"; };
-		BAF4FD2A234A4076005BEFA8 /* WatchingsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchingsRepository.swift; sourceTree = "<group>"; };
-		BAF4FD2E234A4416005BEFA8 /* NotificationsRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsRepository.swift; sourceTree = "<group>"; };
 		BAFE55EB23497B7F00A35674 /* ThumbnailImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThumbnailImageView.swift; sourceTree = "<group>"; };
 		BAFE55ED2349836000A35674 /* BarButtonImageModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarButtonImageModifier.swift; sourceTree = "<group>"; };
 		BAFE55EF2349865800A35674 /* DeviceType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceType.swift; sourceTree = "<group>"; };
@@ -412,7 +408,6 @@
 		BA60432922A7D98A00345259 /* Notifcation */ = {
 			isa = PBXGroup;
 			children = (
-				BAF4FD2D234A440E005BEFA8 /* Repository */,
 				BA60432A22A7D99B00345259 /* NotificationsRequest.swift */,
 				BAC127F922A9A7FB00B52862 /* NotificationList.swift */,
 			);
@@ -455,7 +450,6 @@
 		BA8A373C2342249200CB487B /* Watching */ = {
 			isa = PBXGroup;
 			children = (
-				BAF4FD29234A405F005BEFA8 /* Repository */,
 				BA8A373D2342250800CB487B /* WatchingsRequest.swift */,
 				BA8A37412342257000CB487B /* WatchingList.swift */,
 			);
@@ -636,22 +630,6 @@
 				BAFE55EF2349865800A35674 /* DeviceType.swift */,
 			);
 			path = Util;
-			sourceTree = "<group>";
-		};
-		BAF4FD29234A405F005BEFA8 /* Repository */ = {
-			isa = PBXGroup;
-			children = (
-				BAF4FD2A234A4076005BEFA8 /* WatchingsRepository.swift */,
-			);
-			path = Repository;
-			sourceTree = "<group>";
-		};
-		BAF4FD2D234A440E005BEFA8 /* Repository */ = {
-			isa = PBXGroup;
-			children = (
-				BAF4FD2E234A4416005BEFA8 /* NotificationsRepository.swift */,
-			);
-			path = Repository;
 			sourceTree = "<group>";
 		};
 		BAFE55F12349C27200A35674 /* NoData */ = {
@@ -964,7 +942,6 @@
 			files = (
 				BA8A37442342259000CB487B /* WatchingList.swift in Sources */,
 				BAC1276622A82F7C00B52862 /* APIRequest.swift in Sources */,
-				BAF4FD31234A443A005BEFA8 /* NotificationsRepository.swift in Sources */,
 				BAC1277222A82F8700B52862 /* GitHubAPIAuthorization.swift in Sources */,
 				BA8A37402342251800CB487B /* WatchingsRequest.swift in Sources */,
 				BAC127D122A841B300B52862 /* ImageLoader.swift in Sources */,
@@ -977,7 +954,6 @@
 				BAC1276D22A82F8000B52862 /* URLEncoder.swift in Sources */,
 				BAC1276822A82F8000B52862 /* HTTPPathConvertible.swift in Sources */,
 				BAC1276C22A82F8000B52862 /* HTTPMethod.swift in Sources */,
-				BAF4FD2C234A40AC005BEFA8 /* WatchingsRepository.swift in Sources */,
 				BAC1277022A82F8700B52862 /* GitHubAPI.swift in Sources */,
 				BAC1276A22A82F8000B52862 /* Query.swift in Sources */,
 				BAC1276B22A82F8000B52862 /* HTTPBody.swift in Sources */,

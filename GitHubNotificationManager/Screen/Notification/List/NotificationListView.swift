@@ -8,7 +8,6 @@
 
 import SwiftUI
 import GitHubNotificationManagerNetwork
-import Combine
 
 struct NotificationListView : View {
     enum ListType: NotificationPath {
@@ -48,8 +47,8 @@ struct NotificationListView : View {
     @ObservedObject private var viewModel: NotificationListViewModel
     @State var selectedNotification: NotificationModel? = nil
     
-    init(viewModel: NotificationListViewModel) {
-        self.viewModel = viewModel
+    init(listType: ListType) {
+        viewModel = NotificationListViewModel(listType: listType)
     }
 
     var body: some View {
@@ -87,15 +86,9 @@ struct NotificationListView : View {
 
 
 #if DEBUG
-struct ErrorRepository: NotificationsRepository {
-    init() { }
-    func fetch(page: Int) -> AnyPublisher<NotificationsRequest.Response, RequestError> {
-        Fail(error: RequestError(error: NSError(domain: "com.preview.bannzai.notificationhub", code: 999, userInfo: nil))).eraseToAnyPublisher()
-    }
-}
 struct NotificationListView_Previews : PreviewProvider {
     static var previews: some View {
-        NotificationListView(viewModel: NotificationListViewModel(repository: NotificationsRepositoryImpl(pathType: NotificationListView.ListType.all)))
+        NotificationListView(listType: .all)
     }
 }
 #endif

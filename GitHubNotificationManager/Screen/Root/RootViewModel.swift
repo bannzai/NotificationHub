@@ -32,20 +32,15 @@ final public class RootViewModel: ObservableObject {
     var isAuthorized: Bool {
         githubAccessToken != nil
     }
-    
+
     private var watchingListFetchStatus: WatchingListFetchStatus = .notYetLoad
-    
-    let repository: WatchingsRepository
-    init(repository: WatchingsRepository) {
-        self.repository = repository
-    }
 }
 
 internal extension RootViewModel {
     func fetch() {
         watchingListFetchStatus = .loading
-        repository
-            .fetch()
+        GitHubAPI
+            .request(request: WatchingsRequest())
             .handleEvents(receiveCompletion: { [weak self] completion in
                 self?.watchingListFetchStatus = .loaded
                 
@@ -56,7 +51,6 @@ internal extension RootViewModel {
                     self?.requestError = error
                 }
             })
-            .retry(3)
             .catch { (error) in
                 Just([WatchingElement]())
         }

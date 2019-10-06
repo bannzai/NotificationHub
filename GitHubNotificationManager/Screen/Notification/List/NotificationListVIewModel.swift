@@ -19,9 +19,9 @@ final public class NotificationListViewModel: ObservableObject {
 
     private var notificationListFetchStatus: NotificationListFetchStatus = .notYetLoad
 
-    let repository: NotificationsRepository
-    init(repository: NotificationsRepository) {
-        self.repository = repository
+    let listType: NotificationListView.ListType
+    init(listType: NotificationListView.ListType) {
+        self.listType = listType
     }
     
     private var filteredNotifications: [NotificationModel] {
@@ -33,7 +33,7 @@ final public class NotificationListViewModel: ObservableObject {
     internal var isNoData: Bool {
         allNotifications.isEmpty && notificationListFetchStatus == .loaded
     }
-
+    
 }
 
 internal extension NotificationListViewModel {
@@ -57,8 +57,8 @@ internal extension NotificationListViewModel {
         }
 
         notificationListFetchStatus = .loading
-        repository
-            .fetch(page: allNotifications.count / NotificationsRequest.perPage)
+        GitHubAPI
+            .request(request: NotificationsRequest(page: allNotifications.count / NotificationsRequest.perPage, notificationsUrl: listType))
             .catch { (_) in
                 Just([NotificationElement]())
         }

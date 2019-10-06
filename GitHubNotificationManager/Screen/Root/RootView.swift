@@ -8,7 +8,6 @@
 
 import SwiftUI
 import GitHubNotificationManagerNetwork
-import Combine
 
 struct RootView: View {
     @State private var selectedAddNotificationList: Bool = false
@@ -16,10 +15,7 @@ struct RootView: View {
     @State private var currentPage: Int = 0
     @State private var requestError: RequestError? = nil
 
-    @ObservedObject private var viewModel: RootViewModel
-    init(viewModel: RootViewModel) {
-        self.viewModel = viewModel
-    }
+    @ObservedObject private var viewModel = RootViewModel()
 
     var body: some View {
         Group {
@@ -83,7 +79,7 @@ struct RootView: View {
 struct RootView_Previews : PreviewProvider {
     static var previews: some View {
         ForEach(DeviceType.previewDevices, id: \.self) { device in
-            RootView(viewModel: RootViewModel(repository: ErrorRepository()))
+            RootView()
                 .previewDevice(device.preview)
                 .previewDisplayName(device.name)
         }
