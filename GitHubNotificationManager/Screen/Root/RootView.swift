@@ -20,18 +20,17 @@ struct RootView: View {
         Group {
             if viewModel.isAuthorized {
                 NavigationView {
-                    ZStack {
-                        PageView(views: pages, page: $currentPage)
-                            .navigationBarTitle(Text(navigationTitle))
-                    }.navigationBarItems(
-                        trailing: Button(
-                            action: {
-                                self.selectedAddNotificationList = true
-                        }, label: {
-                            Image(systemName: "text.badge.plus")
-                                .renderingMode(.template)
-                                .background(Color.primary)
-                        })
+                    PageView(views: pages, page: $currentPage)
+                        .navigationBarTitle(Text(navigationTitle), displayMode: .inline)
+                        .navigationBarItems(
+                            trailing: Button(
+                                action: {
+                                    self.selectedAddNotificationList = true
+                            }, label: {
+                                Image(systemName: "text.badge.plus")
+                                    .renderingMode(.template)
+                                    .background(Color.primary)
+                            })
                     ).sheet(isPresented: $selectedAddNotificationList) { () in
                         WatchingListView(watchings: self.$watchings)
                     }.onReceive(viewModel.$watchings, perform: { (watchings) in
