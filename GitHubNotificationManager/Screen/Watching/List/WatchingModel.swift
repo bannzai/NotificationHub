@@ -10,8 +10,8 @@ import Foundation
 import SwiftUI
 import GitHubNotificationManagerNetwork
 
-struct WatchingModel: Identifiable {
-    struct Owner {
+struct WatchingModel: Identifiable, Equatable {
+    struct Owner: Equatable {
         let name: String
         let avatarURL: String
     }

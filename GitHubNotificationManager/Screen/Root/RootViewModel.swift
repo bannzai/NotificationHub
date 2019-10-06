@@ -13,13 +13,15 @@ import GitHubNotificationManagerNetwork
 
 final public class RootViewModel: ObservableObject {
     private var canceller: Set<AnyCancellable> = []
-    
+
     @Published var watchings: [WatchingModel] = []
     @Published var githubAccessToken: String? = UserDefaults.standard.string(forKey: .GitHubAccessToken) {
         didSet {
             UserDefaults.standard.set(githubAccessToken, forKey: .GitHubAccessToken)
         }
     }
+    @Published var fetchedError: RequestError? = nil
+    
     var githubAccessTokenBinder: Binding<String?> {
         Binding(get: {
             self.githubAccessToken
@@ -39,18 +41,27 @@ internal extension RootViewModel {
         watchingListFetchStatus = .loading
         GitHubAPI
             .request(request: WatchingsRequest())
+            .handleEvents(receiveCompletion: { [weak self] completion in
+                self?.watchingListFetchStatus = .loaded
+                
+                switch completion {
+                case .finished:
+                    break
+                case .failure(let error):
+                    self?.fetchedError = error
+                }
+            })
             .catch { (error) in
                 Just([WatchingElement]())
         }
-        .handleEvents(receiveOutput: { [weak self] (elements) in
-            self?.watchingListFetchStatus = .loaded
-        }).map { watchings in
+        .map { watchings in
             // TODO: fetch isReceiveNotification
             return watchings
                 .map { WatchingModel.create(entity: $0, isReceiveNotification: false) }
-        }.sink(receiveValue: { [weak self] (watchings) in
-            self?.watchings = watchings.distinct()
-        }).store(in: &canceller)
+                .distinct()
+        }
+        .assign(to: \.watchings, on: self)
+        .store(in: &canceller)
     }
 }
 
