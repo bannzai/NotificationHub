@@ -35,14 +35,16 @@ struct RootView: View {
                         WatchingListView(watchings: self.$watchings)
                     }.onReceive(viewModel.$watchings, perform: { (watchings) in
                         self.watchings = watchings
+                    }).onReceive(viewModel.$requestError, perform: { (error) in
+                        self.requestError = error
                     }).onAppear(perform: {
                         self.viewModel.fetch()
                     }).alert(item: $requestError) { (error) in
-                            Alert(
-                                title: Text("Fetched Error"),
-                                message: Text(error.localizedDescription),
-                                dismissButton: .default(Text("OK"))
-                            )
+                        Alert(
+                            title: Text("Fetched Error"),
+                            message: Text(error.localizedDescription),
+                            dismissButton: .default(Text("OK"))
+                        )
                     }
                 }
             } else {
