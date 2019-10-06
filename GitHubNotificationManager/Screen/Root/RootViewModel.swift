@@ -35,17 +35,6 @@ final public class RootViewModel: ObservableObject {
 }
 
 internal extension RootViewModel {
-    private func distinct(watchings: [WatchingModel]) -> [WatchingModel] {
-        watchings.reduce(into: [WatchingModel]()) { (result, element) in
-            switch result.contains(where: { $0.owner.name == element.owner.name }) {
-            case true:
-                return
-            case false:
-                result.append(element)
-            }
-        }
-    }
-    
     func fetch() {
         watchingListFetchStatus = .loading
         GitHubAPI
@@ -60,10 +49,7 @@ internal extension RootViewModel {
             return watchings
                 .map { WatchingModel.create(entity: $0, isReceiveNotification: false) }
         }.sink(receiveValue: { [weak self] (watchings) in
-            guard let self = self else {
-                return
-            }
-            self.watchings = self.distinct(watchings: watchings)
+            self?.watchings = watchings.distinct()
         }).store(in: &canceller)
     }
 }

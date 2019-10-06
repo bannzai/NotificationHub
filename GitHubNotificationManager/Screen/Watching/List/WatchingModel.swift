@@ -35,3 +35,16 @@ struct WatchingModel: Identifiable {
         )
     }
 }
+
+extension Array where Element == WatchingModel {
+    func distinct() -> [WatchingModel] {
+        reduce(into: [WatchingModel]()) { (result, element) in
+            switch result.contains(where: { $0.owner.name == element.owner.name }) {
+            case true:
+                return
+            case false:
+                result.append(element)
+            }
+        }
+    }
+}
