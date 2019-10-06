@@ -10,6 +10,57 @@ import SwiftUI
 import GitHubNotificationManagerNetwork
 
 struct NotificationListView : View {
+    @ObservedObject private var viewModel: NotificationListViewModel
+    @State private var selectedNotification: NotificationModel? = nil
+    @State private var requestError: RequestError? = nil
+
+    init(listType: ListType) {
+        viewModel = NotificationListViewModel(listType: listType)
+    }
+
+    var body: some View {
+        Group {
+            if viewModel.isNoData {
+                RetryableNoDataView(message: "No Notifications", action: {
+                    self.viewModel.fetchNext()
+                })
+            } else {
+                List {
+                    SearchBar(text: $viewModel.searchWord)
+                    ForEach(viewModel.notifications, id: \.id) { notification in
+                        Button(action: {
+                            self.selectedNotification = notification
+                        }) {
+                            Cell(notification: notification)
+                        }
+                    }
+                    IndicatorView()
+                        .frame(maxWidth: .infinity,  idealHeight: 44, alignment: .center)
+                        .onAppear {
+                            self.viewModel.fetchNext()
+                    }
+                }
+            }
+        }
+        .onAppear {
+            self.viewModel.fetchFirst()
+        }
+        .onReceive(viewModel.$requestError, perform: { (error) in
+            self.requestError = error
+        })
+        .sheet(item: $selectedNotification) { (notification) in
+            SafariView(url: notification.subject.destinationURL)
+        }
+        .alert(item: $requestError) { (error) in
+            Alert(
+                title: Text("Fetched Error"),
+                message: Text(error.localizedDescription),
+                dismissButton: .default(Text("OK"))
+            )
+        }}
+}
+
+extension NotificationListView {
     enum ListType: NotificationPath {
         case all
         case specify(notificationsUrl: String)
@@ -42,44 +93,6 @@ struct NotificationListView : View {
                         }
                 }
             }
-        }
-    }
-    @ObservedObject private var viewModel: NotificationListViewModel
-    @State var selectedNotification: NotificationModel? = nil
-    
-    init(listType: ListType) {
-        viewModel = NotificationListViewModel(listType: listType)
-    }
-
-    var body: some View {
-        Group {
-            if viewModel.isNoData {
-                RetryableNoDataView(message: "No Notifications", action: {
-                    self.viewModel.fetchNext()
-                })
-            } else {
-                List {
-                    SearchBar(text: $viewModel.searchWord)
-                    ForEach(viewModel.notifications, id: \.id) { notification in
-                        Button(action: {
-                            self.selectedNotification = notification
-                        }) {
-                            Cell(notification: notification)
-                        }
-                    }
-                    IndicatorView()
-                        .frame(maxWidth: .infinity,  idealHeight: 44, alignment: .center)
-                        .onAppear {
-                            self.viewModel.fetchNext()
-                    }
-                }
-            }
-        }
-        .onAppear {
-            self.viewModel.fetchFirst()
-        }
-        .sheet(item: $selectedNotification) { (notification) in
-            SafariView(url: notification.subject.destinationURL)
         }
     }
 }

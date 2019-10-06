@@ -13,6 +13,7 @@ struct RootView: View {
     @State private var selectedAddNotificationList: Bool = false
     @State private var watchings: [WatchingModel] = []
     @State private var currentPage: Int = 0
+    @State private var requestError: RequestError? = nil
 
     @ObservedObject private var viewModel = RootViewModel()
 
@@ -30,13 +31,21 @@ struct RootView: View {
                                 Image(systemName: "text.badge.plus")
                                     .barButtonItems()
                             })
-                    ).sheet(isPresented: $selectedAddNotificationList) { () in
-                        WatchingListView(watchings: self.$watchings)
-                    }.onReceive(viewModel.$watchings, perform: { (watchings) in
+                    ).onAppear(perform: {
+                        self.viewModel.fetch()
+                    }).onReceive(viewModel.$watchings, perform: { (watchings) in
                         self.watchings = watchings
-                    }).onAppear(perform: {
-                        self.viewModel.fetchFirst()
-                    })
+                    }).onReceive(viewModel.$requestError, perform: { (error) in
+                        self.requestError = error
+                    }).alert(item: $requestError) { (error) in
+                        Alert(
+                            title: Text("Fetched Error"),
+                            message: Text(error.localizedDescription),
+                            dismissButton: .default(Text("OK"))
+                        )
+                    }.sheet(isPresented: $selectedAddNotificationList) { () in
+                        WatchingListView(watchings: self.$watchings)
+                    }
                 }
             } else {
                 OAuthView(githubAccessToken: viewModel.githubAccessTokenBinder)

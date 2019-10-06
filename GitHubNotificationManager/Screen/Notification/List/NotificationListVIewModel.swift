@@ -16,6 +16,7 @@ final public class NotificationListViewModel: ObservableObject {
     
     @Published private var allNotifications: [NotificationModel] = []
     @Published internal var searchWord: String = ""
+    @Published var requestError: RequestError? = nil
 
     private var notificationListFetchStatus: NotificationListFetchStatus = .notYetLoad
 
@@ -59,12 +60,19 @@ internal extension NotificationListViewModel {
         notificationListFetchStatus = .loading
         GitHubAPI
             .request(request: NotificationsRequest(page: allNotifications.count / NotificationsRequest.perPage, notificationsUrl: listType))
+            .handleEvents(receiveCompletion: { [weak self] completion in
+                self?.notificationListFetchStatus = .loaded
+                
+                switch completion {
+                case .finished:
+                    break
+                case .failure(let error):
+                    self?.requestError = error
+                }
+            })
             .catch { (_) in
                 Just([NotificationElement]())
         }
-        .handleEvents(receiveOutput: { [weak self] (elements) in
-            self?.notificationListFetchStatus = .loaded
-        })
         .map { notifications in
             return notifications
                 .filter { !$0.repository.repositoryPrivate }

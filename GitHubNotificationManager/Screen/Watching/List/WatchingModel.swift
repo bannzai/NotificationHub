@@ -10,8 +10,8 @@ import Foundation
 import SwiftUI
 import GitHubNotificationManagerNetwork
 
-struct WatchingModel: Identifiable {
-    struct Owner {
+struct WatchingModel: Identifiable, Equatable {
+    struct Owner: Equatable {
         let name: String
         let avatarURL: String
     }
@@ -33,5 +33,18 @@ struct WatchingModel: Identifiable {
             notificationsURL: entity.notificationsUrl,
             isReceiveNotification: isReceiveNotification
         )
+    }
+}
+
+extension Array where Element == WatchingModel {
+    func distinct() -> [WatchingModel] {
+        reduce(into: [WatchingModel]()) { (result, element) in
+            switch result.contains(where: { $0.owner.name == element.owner.name }) {
+            case true:
+                return
+            case false:
+                result.append(element)
+            }
+        }
     }
 }
