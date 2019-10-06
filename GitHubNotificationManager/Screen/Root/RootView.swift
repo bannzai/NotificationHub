@@ -15,7 +15,7 @@ struct RootView: View {
     @State private var currentPage: Int = 0
     @State private var requestError: RequestError? = nil
 
-    @ObservedObject var viewModel: RootViewModel = RootViewModel()
+    @ObservedObject private var viewModel = RootViewModel()
 
     var body: some View {
         Group {
@@ -76,23 +76,12 @@ struct RootView: View {
 }
 
 #if DEBUG
-class ErrorViewModel: RootViewModel {
-    override func fetch() {
-        requestError = RequestError(error: NSError(domain: "com.bannzai.notificationhub", code: 999, userInfo: nil))
-    }
-}
-
 struct RootView_Previews : PreviewProvider {
-    static func view(device: DeviceType) -> some View {
-        var view = RootView()
-        view.viewModel = ErrorViewModel()
-        return view
-            .previewDevice(device.preview)
-            .previewDisplayName(device.name)
-    }
     static var previews: some View {
         ForEach(DeviceType.previewDevices, id: \.self) { device in
-            view(device: device)
+            RootView()
+                .previewDevice(device.preview)
+                .previewDisplayName(device.name)
         }
     }
 }
