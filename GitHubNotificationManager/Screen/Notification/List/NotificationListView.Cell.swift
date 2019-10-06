@@ -14,7 +14,8 @@ extension NotificationListView {
         let notification: NotificationModel
         var body: some View {
             HStack {
-                ThumbnailImageView(url: notification.repository.avatarURL)
+                ImageLoaderView(url: notification.repository.avatarURL)
+                    .modifier(ThumbnailImageViewModifier())
                 VStack(alignment: .leading) {
                     Text(notification.repository.fullName).font(.headline).lineLimit(1)
                     Text(notification.subject.title).font(.subheadline).lineLimit(1)

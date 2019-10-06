@@ -31,11 +31,11 @@ struct SearchBar : View {
 }
 
 
-// FIXME: Can not pass required value
-//#if DEBUG
-//struct SearchBar_Previews : PreviewProvider {
-//    static var previews: some View {
-//        SearchBar(text: "")
-//    }
-//}
-//#endif
+#if DEBUG
+struct SearchBar_Previews : PreviewProvider {
+    @State static var text: String = ""
+    static var previews: some View {
+        SearchBar(text: $text)
+    }
+}
+#endif

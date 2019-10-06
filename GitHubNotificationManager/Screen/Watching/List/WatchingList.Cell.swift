@@ -14,7 +14,8 @@ extension WatchingListView {
         @Binding var watching: WatchingModel
         var body: some View {
             HStack {
-                ThumbnailImageView(url: watching.owner.avatarURL)
+                ImageLoaderView(url: watching.owner.avatarURL)
+                    .modifier(ThumbnailImageViewModifier())
                 Toggle(isOn: $watching.isReceiveNotification) { () in
                     Text(watching.owner.name).font(.headline).lineLimit(1)
                 }
