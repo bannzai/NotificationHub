@@ -296,7 +296,6 @@
 		BA60426A22A7409300345259 /* GitHubNotificationManager */ = {
 			isa = PBXGroup;
 			children = (
-				BACDC8042346CC9700C4A1AE /* Environment */,
 				BA6C828C22B49E6B006D2231 /* Previews */,
 				BA6042E722A7CAF500345259 /* Frameworks */,
 				BAEFFC4122BA7F3F006D1549 /* Components */,
@@ -500,13 +499,6 @@
 				BACDC8072348612000C4A1AE /* OAuthViewController.storyboard */,
 			);
 			path = OAuth;
-			sourceTree = "<group>";
-		};
-		BACDC8042346CC9700C4A1AE /* Environment */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Environment;
 			sourceTree = "<group>";
 		};
 		BAEFFC4122BA7F3F006D1549 /* Components */ = {
