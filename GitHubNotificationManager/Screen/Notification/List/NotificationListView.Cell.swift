@@ -44,7 +44,7 @@ extension NotificationListView {
         }
         
         var body: some View {
-            return HStack {
+            HStack {
                 HStack {
                     ImageLoaderView(url: notification.repository.avatarURL)
                         .modifier(ThumbnailImageViewModifier())
