@@ -22,7 +22,6 @@ final public class ImageLoaderViewModel: ObservableObject {
             .replaceError(with: UIImage(systemName: "person")!)
             .replaceNil(with: UIImage(systemName: "person")!)
             .sink(receiveValue: { closure($0) })
-//            .assign(to: \.image, on: self)
             .store(in: &canceller)
     }
 }
