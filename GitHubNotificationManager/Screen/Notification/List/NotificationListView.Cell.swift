@@ -9,23 +9,6 @@
 import SwiftUI
 import Combine
 
-struct CheckMarkButton: View {
-    @Binding var isChecked: Bool
-    
-    let edge: CGFloat = 44
-    var body: some View {
-        Button(action: {
-            self.isChecked.toggle()
-        }) {
-            if isChecked {
-                Image(systemName: "eye")
-            } else {
-                Image(systemName: "eye.fill")
-            }
-        }.frame(width: edge, height: edge, alignment: .center)
-    }
-}
-
 extension NotificationListView {
     struct Cell: View {
         let binding: Binding<NotificationModel>
@@ -55,7 +38,7 @@ extension NotificationListView {
                     Spacer()
                 }
                 .gesture(cellGestuer)
-                CheckMarkButton(isChecked: binding.unread)
+                ReadButton(read: binding.unread)
             }
         }
     }
