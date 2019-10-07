@@ -17,7 +17,7 @@ struct NotificationListView : View {
     init(listType: ListType) {
         viewModel = NotificationListViewModel(listType: listType)
     }
-
+    
     var body: some View {
         Group {
             if viewModel.isNoData {
@@ -28,10 +28,8 @@ struct NotificationListView : View {
                 List {
                     SearchBar(text: $viewModel.searchWord)
                     ForEach(viewModel.notifications, id: \.id) { notification in
-                        Button(action: {
-                            self.selectedNotification = notification
-                        }) {
-                            Cell(notification: notification)
+                        Cell(binding: self.viewModel.binding(notification: notification)) {
+                            self.selectedNotification = $0
                         }
                     }
                     IndicatorView()

@@ -51,7 +51,7 @@ struct NotificationModel: Identifiable {
     let repository: Repository
     let subject: Subject
     let url: String
-    let unread: Bool
+    var unread: Bool
     
     static func create(entity: NotificationElement) -> NotificationModel {
         NotificationModel(

@@ -34,6 +34,18 @@ final public class NotificationListViewModel: ObservableObject {
     internal var isNoData: Bool {
         allNotifications.isEmpty && notificationListFetchStatus == .loaded
     }
+    func binding(notification: NotificationModel) -> Binding<NotificationModel> {
+        Binding(get: {
+            notification
+        }) { bindingNotification in
+            guard let notificationIndex = self.allNotifications
+                .firstIndex(where: { $0.id == bindingNotification.id })
+                else {
+                    return
+            }
+            self.allNotifications[notificationIndex] = bindingNotification
+        }
+    }
     
 }
 
