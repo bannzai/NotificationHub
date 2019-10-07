@@ -23,10 +23,11 @@ struct ThumbnailImageViewModifier: ViewModifier {
 
 struct ThumbnailImageView: View {
     let url: URLConvertible
+    let defaultImage: UIImage
     let edge: CGFloat = 44
     
     var body: some View {
-        ImageLoaderView(url: url)
+        ImageLoaderView(url: url, defaultImage: defaultImage)
             .modifier(ThumbnailImageViewModifier())
     }
 }
@@ -34,7 +35,7 @@ struct ThumbnailImageView: View {
 #if DEBUG
 struct ThumbnailImageView_Previews : PreviewProvider {
     static var previews: some View {
-        ThumbnailImageView(url: Debug.Const.avatarURL)
+        ThumbnailImageView(url: Debug.Const.avatarURL, defaultImage: UIImage(systemName: "person")!)
     }
 }
 #endif
