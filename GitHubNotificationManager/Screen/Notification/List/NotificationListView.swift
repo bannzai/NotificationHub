@@ -13,6 +13,7 @@ struct NotificationListView : View {
     @ObservedObject private var viewModel: NotificationListViewModel
     @State private var selectedNotification: NotificationModel? = nil
     @State private var requestError: RequestError? = nil
+    @State private var reload: Void = ()
 
     init(listType: ListType) {
         viewModel = NotificationListViewModel(listType: listType)

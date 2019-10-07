@@ -46,7 +46,7 @@ extension NotificationListView {
         var body: some View {
             HStack {
                 HStack {
-                    ImageLoaderView(url: notification.repository.avatarURL)
+                    ImageLoaderView(url: notification.repository.avatarURL, defaultImage: UIImage(systemName: "person")!)
                         .modifier(ThumbnailImageViewModifier())
                     VStack(alignment: .leading) {
                         Text(notification.repository.fullName).font(.headline).lineLimit(1)
