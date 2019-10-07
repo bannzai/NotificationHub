@@ -22,7 +22,7 @@ struct SearchBar : View {
                         .stroke(Color.black, lineWidth: 0.5)
             )
             Button(
-                action: { self.endEditing() },
+                action: endEditing,
                 label: { Text("Cancel") }
                 )
                 .foregroundColor(Color.gray)
