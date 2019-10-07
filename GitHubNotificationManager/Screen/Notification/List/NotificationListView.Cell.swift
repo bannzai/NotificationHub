@@ -9,6 +9,22 @@
 import SwiftUI
 import Combine
 
+struct CheckMarkButton: View {
+    @Binding var isChecked: Bool
+
+    var body: some View {
+        Button(action: {
+            self.isChecked.toggle()
+        }) { () in
+            if isChecked {
+                Image(systemName: "eye")
+            } else {
+                Image(systemName: "eye.fill")
+            }
+        }
+    }
+}
+
 extension NotificationListView {
     struct Cell: View {
         let notification: NotificationModel

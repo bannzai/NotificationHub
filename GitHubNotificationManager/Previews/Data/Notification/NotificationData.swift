@@ -23,7 +23,8 @@ let debugNotification = NotificationModel(
         title: "Subject",
         url: "https://github.com/bannzai"
     ),
-    url: "https://github.com"
+    url: "https://github.com",
+    unread: false
 )
 
 
