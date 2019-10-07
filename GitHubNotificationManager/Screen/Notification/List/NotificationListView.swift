@@ -28,7 +28,7 @@ struct NotificationListView : View {
             } else {
                 List {
                     SearchBar(text: $viewModel.searchWord)
-                    ForEach(viewModel.notifications, id: \.id) { notification in
+                    ForEach(viewModel.notifications) { notification in
                         Cell(binding: self.viewModel.binding(notification: notification)) {
                             self.selectedNotification = $0
                         }
