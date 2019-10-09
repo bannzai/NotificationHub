@@ -9,13 +9,25 @@
 import UIKit
 import SwiftUI
 
+struct NotificationListPageView: View {
+    var views: [NotificationListView]
+
+    init(views: [NotificationListView]) {
+        self.views = views
+    }
+    
+    var body: some View {
+        PageView(views: views)
+    }
+}
+
+var _currentPage: Int = 0
 struct PageView<Page: View>: View {
     var viewControllers: [UIHostingController<Page>]
-    var currentPage: Binding<Int>
+    var currentPage: Binding<Int> = Binding<Int>(get: { _currentPage }, set: { _currentPage = $0 })
 
-    init(views: [Page], page: Binding<Int>) {
+    init(views: [Page]) {
         self.viewControllers = views.map { UIHostingController(rootView: $0) }
-        self.currentPage = page
     }
 
     var body: some View {
@@ -30,7 +42,7 @@ struct PageView<Page: View>: View {
 struct PageView_Preview: PreviewProvider {
     @State static var currentPage: Int = 0
     static var previews: some View {
-        PageView(views: [EmptyView()], page: $currentPage)
+        PageView(views: [EmptyView()])
     }
 }
 #endif

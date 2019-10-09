@@ -19,7 +19,7 @@ struct RootView: View {
         Group {
             if viewModel.isAuthorized {
                 NavigationView {
-                    PageView(views: pages, page: $currentPage)
+                    PageView(views: pages)
                         .navigationBarTitle(Text(navigationTitle), displayMode: .inline)
                         .navigationBarItems(
                             trailing: Button(
