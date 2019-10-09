@@ -39,9 +39,6 @@ struct NotificationListView : View {
                 }
             }
         }
-        .onAppear {
-            self.viewModel.fetchFirst()
-        }
         .sheet(item: $selectedNotification) { (notification) in
             SafariView(url: notification.subject.destinationURL)
         }

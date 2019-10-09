@@ -51,16 +51,6 @@ final public class NotificationListViewModel: ObservableObject {
 
 internal extension NotificationListViewModel {
     func fetchNext() {
-        if case .notYetLoad = notificationListFetchStatus {
-            return
-        }
-        fetch()
-    }
-    
-    func fetchFirst() {
-        guard case .notYetLoad = notificationListFetchStatus else {
-            return
-        }
         fetch()
     }
     
