@@ -12,7 +12,6 @@ import GitHubNotificationManagerNetwork
 struct RootView: View {
     @State private var selectedAddNotificationList: Bool = false
     @State private var currentPage: Int = 0
-    @State private var requestError: RequestError? = nil
 
     @ObservedObject private var viewModel = RootViewModel()
 
@@ -32,9 +31,7 @@ struct RootView: View {
                             })
                     ).onAppear(perform: {
                         self.viewModel.fetchIfHasNotWatching()
-                    }).onReceive(viewModel.$requestError, perform: { (error) in
-                        error.map { self.requestError = $0 }
-                    }).alert(item: $requestError) { (error) in
+                    }).alert(item: $viewModel.requestError) { (error) in
                         Alert(
                             title: Text("Fetched Error"),
                             message: Text(error.localizedDescription),
