@@ -9,6 +9,16 @@
 import UIKit
 import SwiftUI
 
+struct PageViewDataContainer<Page: View, IDObject: Identifiable>: Identifiable, View {
+    let object: IDObject
+    let view: Page
+    
+    typealias ID = IDObject.ID
+    var id: ID { object.id }
+    
+    var body: some View { view }
+}
+
 struct PageView<Page: View>: View {
     var viewControllers: [UIHostingController<Page>]
     var currentPage: Binding<Int>
