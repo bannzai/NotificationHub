@@ -13,9 +13,10 @@ struct PageView<Page: View>: View {
     var viewControllers: [UIHostingController<Page>]
     var currentPage: Binding<Int>
 
-    init(views: [Page], page: Binding<Int>) {
+    init(views: [Page], page: Binding<Int>?) {
         self.viewControllers = views.map { UIHostingController(rootView: $0) }
-        self.currentPage = page
+        // FIXME: Initialized Binding
+        self.currentPage = page ?? State(initialValue: 0).projectedValue
     }
 
     var body: some View {
