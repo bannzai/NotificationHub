@@ -70,8 +70,9 @@ internal extension NotificationListViewModel {
         }
 
         notificationListFetchStatus = .loading
+        let page = (allNotifications.count + NotificationsRequest.elementPerPage) / NotificationsRequest.elementPerPage - 1
         GitHubAPI
-            .request(request: NotificationsRequest(page: allNotifications.count / NotificationsRequest.perPage, notificationsUrl: listType))
+            .request(request: NotificationsRequest(page: page, notificationsUrl: listType))
             .handleEvents(receiveCompletion: { [weak self] completion in
                 self?.notificationListFetchStatus = .loaded
                 
@@ -86,12 +87,14 @@ internal extension NotificationListViewModel {
                 Just([NotificationElement]())
         }
         .map { notifications in
-            return notifications
-                .filter { !$0.repository.repositoryPrivate }
-                .map(NotificationModel.create(entity:))
+            notifications.map(NotificationModel.create(entity:))
+        }
+        .map { [weak self] notifications in
+            let before = self?.allNotifications ?? []
+            return before + notifications
         }
         .sink(receiveValue: { [weak self] (notifications) in
-            self?.allNotifications += notifications
+            self?.allNotifications = notifications
         })
         .store(in: &canceller)
     }
