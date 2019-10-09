@@ -42,6 +42,7 @@
 		BA8A374E2342304200CB487B /* WatchingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A374D2342304200CB487B /* WatchingModel.swift */; };
 		BABB9A83234B936F0067B767 /* ReadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABB9A82234B936F0067B767 /* ReadButton.swift */; };
 		BABB9A85234CB8A10067B767 /* LayoutPriorityExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABB9A84234CB8A10067B767 /* LayoutPriorityExtension.swift */; };
+		BABB9A88234CB9C80067B767 /* GitHubNotificationManager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BABB9A86234CB9C80067B767 /* GitHubNotificationManager.xcdatamodeld */; };
 		BAC1276622A82F7C00B52862 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431222A7CEBF00345259 /* APIRequest.swift */; };
 		BAC1276722A82F8000B52862 /* AuthorizationHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60432522A7D68700345259 /* AuthorizationHeader.swift */; };
 		BAC1276822A82F8000B52862 /* HTTPPathConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60432322A7D41D00345259 /* HTTPPathConvertible.swift */; };
@@ -199,6 +200,7 @@
 		BA8A374D2342304200CB487B /* WatchingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchingModel.swift; sourceTree = "<group>"; };
 		BABB9A82234B936F0067B767 /* ReadButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadButton.swift; sourceTree = "<group>"; };
 		BABB9A84234CB8A10067B767 /* LayoutPriorityExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutPriorityExtension.swift; sourceTree = "<group>"; };
+		BABB9A87234CB9C80067B767 /* WatchingEntity.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WatchingEntity.xcdatamodel; sourceTree = "<group>"; };
 		BAC1278122A83DBC00B52862 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		BAC127D222A8442200B52862 /* URLConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConvertible.swift; sourceTree = "<group>"; };
 		BAC127D522A844BD00B52862 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -299,6 +301,7 @@
 		BA60426A22A7409300345259 /* GitHubNotificationManager */ = {
 			isa = PBXGroup;
 			children = (
+				BABB9A89234CB9D10067B767 /* CoreData */,
 				BA6C828C22B49E6B006D2231 /* Previews */,
 				BA6042E722A7CAF500345259 /* Frameworks */,
 				BAEFFC4122BA7F3F006D1549 /* Components */,
@@ -476,6 +479,14 @@
 				BA8A374D2342304200CB487B /* WatchingModel.swift */,
 			);
 			path = List;
+			sourceTree = "<group>";
+		};
+		BABB9A89234CB9D10067B767 /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				BABB9A86234CB9C80067B767 /* GitHubNotificationManager.xcdatamodeld */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		BAC1277422A830CF00B52862 /* Frameworks */ = {
@@ -908,6 +919,7 @@
 				BAFE55F32349C27B00A35674 /* NoDataView.swift in Sources */,
 				BACDC8032346CC1000C4A1AE /* OAuthView.swift in Sources */,
 				BA8A374823422E5100CB487B /* WatchingListView.swift in Sources */,
+				BABB9A88234CB9C80067B767 /* GitHubNotificationManager.xcdatamodeld in Sources */,
 				BAFE55F52349C3F100A35674 /* RetryableNoDataView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1435,6 +1447,19 @@
 			productName = OAuthSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
+
+/* Begin XCVersionGroup section */
+		BABB9A86234CB9C80067B767 /* GitHubNotificationManager.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				BABB9A87234CB9C80067B767 /* WatchingEntity.xcdatamodel */,
+			);
+			currentVersion = BABB9A87234CB9C80067B767 /* WatchingEntity.xcdatamodel */;
+			path = GitHubNotificationManager.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = BA60426022A7409300345259 /* Project object */;
 }
