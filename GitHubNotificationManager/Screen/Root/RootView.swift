@@ -11,7 +11,6 @@ import GitHubNotificationManagerNetwork
 
 struct RootView: View {
     @State private var selectedAddNotificationList: Bool = false
-    @State private var currentPage: Int = 0
 
     @ObservedObject private var viewModel = RootViewModel()
 
@@ -20,7 +19,7 @@ struct RootView: View {
             if viewModel.isAuthorized {
                 NavigationView {
                     PageView(views: pages)
-                        .navigationBarTitle(Text(navigationTitle), displayMode: .inline)
+                        .navigationBarTitle(Text("Notifications"), displayMode: .inline)
                         .navigationBarItems(
                             trailing: Button(
                                 action: {
@@ -57,16 +56,6 @@ struct RootView: View {
             .filter { $0.isReceiveNotification }
             .map { NotificationListView(listType: .specify(notificationsUrl: $0.notificationsURL)) }
         return [main] + sub
-    }
-    
-    private var navigationTitle: String {
-        switch currentPage {
-        case 0:
-            return "Notifications"
-        case _:
-            return viewModel.watchings
-                .filter { $0.isReceiveNotification }[currentPage - 1].owner.name
-        }
     }
 }
 
