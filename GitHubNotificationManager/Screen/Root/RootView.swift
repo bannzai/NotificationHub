@@ -48,15 +48,15 @@ struct RootView: View {
         
     }
     
-    private var pages: [PageViewDataContainer<NotificationListView, WatchingModel>] {
+    private var pages: [NotificationListView] {
         if viewModel.isNotYetLoad {
             return []
         }
-//        let main: PageViewDataContainer = PageViewDataContainer(object: 0, view: NotificationListView(listType: .all))
-        let sub: [PageViewDataContainer] = viewModel.watchings
+        let main = NotificationListView(listType: .all)
+        let sub = viewModel.watchings
             .filter { $0.isReceiveNotification }
-            .map { PageViewDataContainer(object: $0, view: NotificationListView(listType: .specify(notificationsUrl: $0.notificationsURL))) }
-        return sub
+            .map { NotificationListView(listType: .specify(notificationsUrl: $0.notificationsURL)) }
+        return [main] + sub
     }
     
     private var navigationTitle: String {
