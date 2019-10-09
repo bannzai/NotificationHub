@@ -12,7 +12,6 @@ import GitHubNotificationManagerNetwork
 struct NotificationListView : View {
     @ObservedObject private var viewModel: NotificationListViewModel
     @State private var selectedNotification: NotificationModel? = nil
-    @State private var requestError: RequestError? = nil
 
     init(listType: ListType) {
         viewModel = NotificationListViewModel(listType: listType)
@@ -43,13 +42,10 @@ struct NotificationListView : View {
         .onAppear {
             self.viewModel.fetchFirst()
         }
-        .onReceive(viewModel.$requestError, perform: { (error) in
-            error.map { self.requestError = $0 }
-        })
         .sheet(item: $selectedNotification) { (notification) in
             SafariView(url: notification.subject.destinationURL)
         }
-        .alert(item: $requestError) { (error) in
+        .alert(item: $viewModel.requestError) { (error) in
             Alert(
                 title: Text("Fetched Error"),
                 message: Text(error.localizedDescription),
