@@ -44,6 +44,7 @@
 		BABB9A85234CB8A10067B767 /* LayoutPriorityExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABB9A84234CB8A10067B767 /* LayoutPriorityExtension.swift */; };
 		BABB9A88234CB9C80067B767 /* GitHubNotificationManager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BABB9A86234CB9C80067B767 /* GitHubNotificationManager.xcdatamodeld */; };
 		BABB9AAE234D5BA60067B767 /* CoreDataAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABB9AAD234D5BA60067B767 /* CoreDataAccessor.swift */; };
+		BABB9AB9234E296A0067B767 /* CurrentPage.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABB9AB8234E296A0067B767 /* CurrentPage.swift */; };
 		BAC1276622A82F7C00B52862 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431222A7CEBF00345259 /* APIRequest.swift */; };
 		BAC1276722A82F8000B52862 /* AuthorizationHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60432522A7D68700345259 /* AuthorizationHeader.swift */; };
 		BAC1276822A82F8000B52862 /* HTTPPathConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60432322A7D41D00345259 /* HTTPPathConvertible.swift */; };
@@ -203,6 +204,7 @@
 		BABB9A84234CB8A10067B767 /* LayoutPriorityExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutPriorityExtension.swift; sourceTree = "<group>"; };
 		BABB9A87234CB9C80067B767 /* WatchingEntity.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WatchingEntity.xcdatamodel; sourceTree = "<group>"; };
 		BABB9AAD234D5BA60067B767 /* CoreDataAccessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataAccessor.swift; sourceTree = "<group>"; };
+		BABB9AB8234E296A0067B767 /* CurrentPage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrentPage.swift; sourceTree = "<group>"; };
 		BAC1278122A83DBC00B52862 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		BAC127D222A8442200B52862 /* URLConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConvertible.swift; sourceTree = "<group>"; };
 		BAC127D522A844BD00B52862 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
@@ -303,6 +305,7 @@
 		BA60426A22A7409300345259 /* GitHubNotificationManager */ = {
 			isa = PBXGroup;
 			children = (
+				BABB9AB7234E29600067B767 /* Environment */,
 				BABB9A89234CB9D10067B767 /* CoreData */,
 				BA6C828C22B49E6B006D2231 /* Previews */,
 				BA6042E722A7CAF500345259 /* Frameworks */,
@@ -490,6 +493,14 @@
 				BABB9AAD234D5BA60067B767 /* CoreDataAccessor.swift */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		BABB9AB7234E29600067B767 /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				BABB9AB8234E296A0067B767 /* CurrentPage.swift */,
+			);
+			path = Environment;
 			sourceTree = "<group>";
 		};
 		BAC1277422A830CF00B52862 /* Frameworks */ = {
@@ -907,6 +918,7 @@
 				BAC1280C22A9B57700B52862 /* NotificationListView.Cell.swift in Sources */,
 				BA8A373B2342070500CB487B /* PageViewController.swift in Sources */,
 				BA1D70E822A9D42F000F83A1 /* ImageLoaderView.swift in Sources */,
+				BABB9AB9234E296A0067B767 /* CurrentPage.swift in Sources */,
 				BA417D1122A9DF4E0041B3C3 /* DebugInfo.swift in Sources */,
 				BA417D1522A9E2BA0041B3C3 /* HUD.swift in Sources */,
 				BAFE55EE2349836000A35674 /* BarButtonImageModifier.swift in Sources */,

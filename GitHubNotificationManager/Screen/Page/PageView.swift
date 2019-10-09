@@ -9,31 +9,33 @@
 import UIKit
 import SwiftUI
 
-struct NotificationListPageView: View {
-    var views: [NotificationListView]
-
-    init(views: [NotificationListView]) {
-        self.views = views
+final class PageViewModel {
+    // Dummy state
+    private var _currentPage: Int = 0 {
+        didSet {
+            didChangeCurrentPage(_currentPage)
+        }
     }
-    
-    var body: some View {
-        PageView(views: views)
+    var didChangeCurrentPage: ((Int) -> Void)!
+    func currentPage() -> Binding<Int> {
+        Binding<Int>(get: { self._currentPage },
+                     set: { self._currentPage = $0 })
     }
 }
 
-var _currentPage: Int = 0
 struct PageView<Page: View>: View {
     var viewControllers: [UIHostingController<Page>]
-    var currentPage: Binding<Int> = Binding<Int>(get: { _currentPage }, set: { _currentPage = $0 })
+    var viewModel: PageViewModel = PageViewModel()
 
-    init(views: [Page]) {
+    init(views: [Page], didChangeCurrentPage: @escaping (Int) -> Void) {
         self.viewControllers = views.map { UIHostingController(rootView: $0) }
+        viewModel.didChangeCurrentPage = didChangeCurrentPage
     }
 
     var body: some View {
         PageViewController(
             viewControllers: viewControllers,
-            currentPage: currentPage
+            currentPage: viewModel.currentPage()
         )
     }
 }
@@ -42,7 +44,9 @@ struct PageView<Page: View>: View {
 struct PageView_Preview: PreviewProvider {
     @State static var currentPage: Int = 0
     static var previews: some View {
-        PageView(views: [EmptyView()])
+        PageView(views: [EmptyView()]) {
+            print($0)
+        }
     }
 }
 #endif
