@@ -11,7 +11,6 @@ import GitHubNotificationManagerNetwork
 
 struct RootView: View {
     @State private var selectedAddNotificationList: Bool = false
-    @State private var watchings: [WatchingModel] = []
     @State private var currentPage: Int = 0
     @State private var requestError: RequestError? = nil
 
@@ -33,8 +32,6 @@ struct RootView: View {
                             })
                     ).onAppear(perform: {
                         self.viewModel.fetchIfHasNotWatching()
-                    }).onReceive(viewModel.$watchings, perform: { (watchings) in
-                        self.watchings = watchings
                     }).onReceive(viewModel.$requestError, perform: { (error) in
                         error.map { self.requestError = $0 }
                     }).alert(item: $requestError) { (error) in
@@ -44,7 +41,7 @@ struct RootView: View {
                             dismissButton: .default(Text("OK"))
                         )
                     }.sheet(isPresented: $selectedAddNotificationList) { () in
-                        WatchingListView(watchings: self.$watchings)
+                        WatchingListView(watchings: self.$viewModel.watchings)
                     }
                 }
             } else {
@@ -58,7 +55,7 @@ struct RootView: View {
     
     private var pages: [NotificationListView] {
         let main = NotificationListView(listType: .all)
-        let sub = watchings
+        let sub = viewModel.watchings
             .filter { $0.isReceiveNotification }
             .map { NotificationListView(listType: .specify(notificationsUrl: $0.notificationsURL)) }
         return [main] + sub
@@ -69,7 +66,7 @@ struct RootView: View {
         case 0:
             return "Notifications"
         case _:
-            return watchings
+            return viewModel.watchings
                 .filter { $0.isReceiveNotification }[currentPage - 1].owner.name
         }
     }
