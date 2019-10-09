@@ -14,14 +14,23 @@ import GitHubNotificationManagerNetwork
 final public class RootViewModel: ObservableObject {
     private var canceller: Set<AnyCancellable> = []
 
-    @Published var watchings: [WatchingModel] = []
+    @Published var watchings: [WatchingModel] = [] {
+        didSet {
+            print("watchings")
+        }
+    }
     @Published var githubAccessToken: String? = UserDefaults.standard.string(forKey: .GitHubAccessToken) {
         didSet {
+            print("token")
             NetworkConfig.Github.accessToken = githubAccessToken
             UserDefaults.standard.set(githubAccessToken, forKey: .GitHubAccessToken)
         }
     }
-    @Published var requestError: RequestError? = nil
+    @Published var requestError: RequestError? = nil {
+        didSet {
+            print("requestError")
+        }
+    }
     
     var githubAccessTokenBinder: Binding<String?> {
         Binding(get: {
@@ -34,6 +43,7 @@ final public class RootViewModel: ObservableObject {
         githubAccessToken != nil
     }
     var hasNotWatching: Bool { watchings.isEmpty }
+    var isNotYetLoad: Bool { watchingListFetchStatus == .notYetLoad }
 
     private var watchingListFetchStatus: WatchingListFetchStatus = .notYetLoad
 }

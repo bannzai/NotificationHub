@@ -49,6 +49,9 @@ struct RootView: View {
     }
     
     private var pages: [NotificationListView] {
+        if viewModel.isNotYetLoad {
+            return []
+        }
         let main = NotificationListView(listType: .all)
         let sub = viewModel.watchings
             .filter { $0.isReceiveNotification }
