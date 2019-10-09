@@ -11,6 +11,7 @@ import GitHubNotificationManagerNetwork
 
 struct NotificationListView : View {
     @ObservedObject private var viewModel: NotificationListViewModel
+    @State private var selectedAddNotificationList: Bool = false
     @State private var selectedNotification: NotificationModel? = nil
 
     init(listType: ListType) {
@@ -24,19 +25,31 @@ struct NotificationListView : View {
                     self.viewModel.fetchNext()
                 })
             } else {
-                List {
-                    SearchBar(text: $viewModel.searchWord)
-                    ForEach(viewModel.notifications) { notification in
-                        Cell(binding: self.viewModel.binding(notification: notification)) {
-                            self.selectedNotification = $0
+                NavigationView {
+                    List {
+                        SearchBar(text: $viewModel.searchWord)
+                        ForEach(viewModel.notifications) { notification in
+                            Cell(binding: self.viewModel.binding(notification: notification)) {
+                                self.selectedNotification = $0
+                            }
+                        }
+                        IndicatorView()
+                            .frame(maxWidth: .infinity,  idealHeight: 44, alignment: .center)
+                            .onAppear {
+                                self.viewModel.fetchNext()
                         }
                     }
-                    IndicatorView()
-                        .frame(maxWidth: .infinity,  idealHeight: 44, alignment: .center)
-                        .onAppear {
-                            self.viewModel.fetchNext()
-                    }
                 }
+                .navigationBarTitle(Text(viewModel.listType.notificationPath.urlPath), displayMode: .inline)
+                .navigationBarItems(
+                    trailing: Button(
+                        action: {
+                            self.selectedAddNotificationList = true
+                    }, label: {
+                        Image(systemName: "text.badge.plus")
+                            .barButtonItems()
+                    })
+                )
             }
         }
         .sheet(item: $selectedNotification) { (notification) in

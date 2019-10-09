@@ -18,20 +18,10 @@ struct RootView: View {
     var body: some View {
         Group {
             if viewModel.isAuthorized {
-                NavigationView {
                     PageView(views: pages) {
                         self.currentPage = $0
                     }
-                        .navigationBarTitle(Text(navigationTitle), displayMode: .inline)
-                        .navigationBarItems(
-                            trailing: Button(
-                                action: {
-                                    self.selectedAddNotificationList = true
-                            }, label: {
-                                Image(systemName: "text.badge.plus")
-                                    .barButtonItems()
-                            })
-                    ).onAppear(perform: {
+                    .onAppear(perform: {
                         self.viewModel.fetchIfHasNotWatching()
                     }).alert(item: $viewModel.requestError) { (error) in
                         Alert(
@@ -42,7 +32,6 @@ struct RootView: View {
                     }.sheet(isPresented: $selectedAddNotificationList) { () in
                         WatchingListView(watchings: self.$viewModel.watchings)
                     }
-                }
             } else {
                 OAuthView(githubAccessToken: viewModel.githubAccessTokenBinder)
             }
