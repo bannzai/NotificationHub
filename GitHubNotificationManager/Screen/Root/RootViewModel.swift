@@ -17,6 +17,7 @@ final public class RootViewModel: ObservableObject {
     @Published var watchings: [WatchingModel] = []
     @Published var githubAccessToken: String? = UserDefaults.standard.string(forKey: .GitHubAccessToken) {
         didSet {
+            NetworkConfig.Github.accessToken = githubAccessToken
             UserDefaults.standard.set(githubAccessToken, forKey: .GitHubAccessToken)
         }
     }
