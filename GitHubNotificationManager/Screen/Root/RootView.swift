@@ -19,6 +19,7 @@ struct RootView: View {
             if viewModel.isAuthorized {
                 NavigationView {
                     PageView(views: pages)
+                        .navigationBarTitle(Text("Notifications"), displayMode: .inline)
                         .navigationBarItems(
                             trailing: Button(
                                 action: {
@@ -53,7 +54,7 @@ struct RootView: View {
         let main = NotificationListView(listType: .all)
         let sub = viewModel.watchings
             .filter { $0.isReceiveNotification }
-            .map { NotificationListView(listType: .specify(watching: $0)) }
+            .map { NotificationListView(listType: .specify(notificationsUrl: $0.notificationsURL)) }
         return [main] + sub
     }
 }

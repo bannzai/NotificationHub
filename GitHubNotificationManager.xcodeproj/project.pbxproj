@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		33B929472351980A00CBD088 /* NavigationBarTitleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B929462351980A00CBD088 /* NavigationBarTitleModifier.swift */; };
 		BA1D70E822A9D42F000F83A1 /* ImageLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1D70E722A9D42F000F83A1 /* ImageLoaderView.swift */; };
 		BA1D70EA22A9D5BE000F83A1 /* ImageLoaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1D70E922A9D5BE000F83A1 /* ImageLoaderViewModel.swift */; };
 		BA357A1422B4C41300549BA0 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA357A1322B4C41300549BA0 /* SafariView.swift */; };
@@ -148,7 +147,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		33B929462351980A00CBD088 /* NavigationBarTitleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarTitleModifier.swift; sourceTree = "<group>"; };
 		BA1D70E722A9D42F000F83A1 /* ImageLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderView.swift; sourceTree = "<group>"; };
 		BA1D70E922A9D5BE000F83A1 /* ImageLoaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderViewModel.swift; sourceTree = "<group>"; };
 		BA357A1322B4C41300549BA0 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
@@ -270,14 +268,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		33B92945235197FA00CBD088 /* NavigationBar */ = {
-			isa = PBXGroup;
-			children = (
-				33B929462351980A00CBD088 /* NavigationBarTitleModifier.swift */,
-			);
-			path = NavigationBar;
-			sourceTree = "<group>";
-		};
 		BA602C432348C75B003C281C /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
@@ -531,7 +521,6 @@
 		BAEFFC4122BA7F3F006D1549 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				33B92945235197FA00CBD088 /* NavigationBar */,
 				BAFE55F62349C41900A35674 /* Button */,
 				BAEFFC4A22BA7FE8006D1549 /* SearchBar */,
 				BAEFFC4522BA7F8E006D1549 /* HUD */,
@@ -919,7 +908,6 @@
 				BA8A373B2342070500CB487B /* PageViewController.swift in Sources */,
 				BA1D70E822A9D42F000F83A1 /* ImageLoaderView.swift in Sources */,
 				BA417D1122A9DF4E0041B3C3 /* DebugInfo.swift in Sources */,
-				33B929472351980A00CBD088 /* NavigationBarTitleModifier.swift in Sources */,
 				BA417D1522A9E2BA0041B3C3 /* HUD.swift in Sources */,
 				BAFE55EE2349836000A35674 /* BarButtonImageModifier.swift in Sources */,
 				BAEFFC3C22B9DB4E006D1549 /* ViewExtension.swift in Sources */,

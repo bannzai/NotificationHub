@@ -39,7 +39,6 @@ struct NotificationListView : View {
                 }
             }
         }
-        .modifier(NavigationBarTitleModifier(title: viewModel.navigationBarTitle))
         .sheet(item: $selectedNotification) { (notification) in
             SafariView(url: notification.subject.destinationURL)
         }
@@ -55,25 +54,16 @@ struct NotificationListView : View {
 extension NotificationListView {
     enum ListType: NotificationPath {
         case all
-        case specify(watching: WatchingModel)
-        
-        var title: String {
-            switch self {
-            case .all:
-                return "Notifications"
-            case .specify(let watching):
-                return watching.name
-            }
-        }
+        case specify(notificationsUrl: String)
         
         var notificationPath: URLPathConvertible {
             switch self {
             case .all:
                 return "notifications"
-            case .specify(watching: let watching):
+            case .specify(notificationsUrl: let url):
                 // e.g) https://api.github.com/repos/bannzai/vimrc/notifications{?since,all,participating}
                 // Drop {?since, all, participating}
-                return watching.notificationsURL
+                return url
                     .split(separator: "/")
                     .reduce(into: "") { (result, element) in
                         switch element {

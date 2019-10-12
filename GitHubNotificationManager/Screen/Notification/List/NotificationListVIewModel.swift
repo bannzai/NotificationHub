@@ -19,7 +19,6 @@ final public class NotificationListViewModel: ObservableObject {
     @Published var requestError: RequestError? = nil
 
     private var notificationListFetchStatus: NotificationListFetchStatus = .notYetLoad
-    var navigationBarTitle: String { listType.title }
 
     let listType: NotificationListView.ListType
     init(listType: NotificationListView.ListType) {
