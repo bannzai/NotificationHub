@@ -7,11 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		33953C00235247AD000AED79 /* GitHubNotificationManager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 33953BFE235247AD000AED79 /* GitHubNotificationManager.xcdatamodeld */; };
 		33B929472351980A00CBD088 /* NavigationBarTitleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B929462351980A00CBD088 /* NavigationBarTitleModifier.swift */; };
-		33B9294D2351DB2400CBD088 /* WatchingEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B9294B2351DB2400CBD088 /* WatchingEntity+CoreDataClass.swift */; };
-		33B9294E2351DB2400CBD088 /* WatchingEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B9294C2351DB2400CBD088 /* WatchingEntity+CoreDataProperties.swift */; };
-		33B929512351DC9300CBD088 /* WatchingOwnerEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B9294F2351DC9300CBD088 /* WatchingOwnerEntity+CoreDataClass.swift */; };
-		33B929522351DC9300CBD088 /* WatchingOwnerEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B929502351DC9300CBD088 /* WatchingOwnerEntity+CoreDataProperties.swift */; };
+		33B92955235219D100CBD088 /* WatchingEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B9294B2351DB2400CBD088 /* WatchingEntity+CoreDataClass.swift */; };
+		33B9295623521AF600CBD088 /* WatchingOwnerEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B9294F2351DC9300CBD088 /* WatchingOwnerEntity+CoreDataClass.swift */; };
+		33B9295B2352391600CBD088 /* WatchingOwnerEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B929592352391600CBD088 /* WatchingOwnerEntity+CoreDataProperties.swift */; };
+		33B9295C2352391600CBD088 /* WatchingEntity+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B9295A2352391600CBD088 /* WatchingEntity+CoreDataProperties.swift */; };
+		33B9295E23523A9700CBD088 /* NSManagedObjectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B9295D23523A9700CBD088 /* NSManagedObjectExtensions.swift */; };
 		BA1D70E822A9D42F000F83A1 /* ImageLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1D70E722A9D42F000F83A1 /* ImageLoaderView.swift */; };
 		BA1D70EA22A9D5BE000F83A1 /* ImageLoaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1D70E922A9D5BE000F83A1 /* ImageLoaderViewModel.swift */; };
 		BA357A1422B4C41300549BA0 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA357A1322B4C41300549BA0 /* SafariView.swift */; };
@@ -47,7 +49,6 @@
 		BA8A374E2342304200CB487B /* WatchingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A374D2342304200CB487B /* WatchingModel.swift */; };
 		BABB9A83234B936F0067B767 /* ReadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABB9A82234B936F0067B767 /* ReadButton.swift */; };
 		BABB9A85234CB8A10067B767 /* LayoutPriorityExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABB9A84234CB8A10067B767 /* LayoutPriorityExtension.swift */; };
-		BABB9A88234CB9C80067B767 /* GitHubNotificationManager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BABB9A86234CB9C80067B767 /* GitHubNotificationManager.xcdatamodeld */; };
 		BABB9AAE234D5BA60067B767 /* CoreDataAccessor.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABB9AAD234D5BA60067B767 /* CoreDataAccessor.swift */; };
 		BAC1276622A82F7C00B52862 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431222A7CEBF00345259 /* APIRequest.swift */; };
 		BAC1276722A82F8000B52862 /* AuthorizationHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60432522A7D68700345259 /* AuthorizationHeader.swift */; };
@@ -152,11 +153,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		33953BFF235247AD000AED79 /* GitHubNotificationManager.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GitHubNotificationManager.xcdatamodel; sourceTree = "<group>"; };
 		33B929462351980A00CBD088 /* NavigationBarTitleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarTitleModifier.swift; sourceTree = "<group>"; };
 		33B9294B2351DB2400CBD088 /* WatchingEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WatchingEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		33B9294C2351DB2400CBD088 /* WatchingEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WatchingEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		33B9294F2351DC9300CBD088 /* WatchingOwnerEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WatchingOwnerEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
-		33B929502351DC9300CBD088 /* WatchingOwnerEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WatchingOwnerEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		33B929592352391600CBD088 /* WatchingOwnerEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WatchingOwnerEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		33B9295A2352391600CBD088 /* WatchingEntity+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WatchingEntity+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		33B9295D23523A9700CBD088 /* NSManagedObjectExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSManagedObjectExtensions.swift; sourceTree = "<group>"; };
 		BA1D70E722A9D42F000F83A1 /* ImageLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderView.swift; sourceTree = "<group>"; };
 		BA1D70E922A9D5BE000F83A1 /* ImageLoaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderViewModel.swift; sourceTree = "<group>"; };
 		BA357A1322B4C41300549BA0 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
@@ -211,7 +214,6 @@
 		BA8A374D2342304200CB487B /* WatchingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchingModel.swift; sourceTree = "<group>"; };
 		BABB9A82234B936F0067B767 /* ReadButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadButton.swift; sourceTree = "<group>"; };
 		BABB9A84234CB8A10067B767 /* LayoutPriorityExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutPriorityExtension.swift; sourceTree = "<group>"; };
-		BABB9A87234CB9C80067B767 /* WatchingEntity.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WatchingEntity.xcdatamodel; sourceTree = "<group>"; };
 		BABB9AAD234D5BA60067B767 /* CoreDataAccessor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataAccessor.swift; sourceTree = "<group>"; };
 		BAC1278122A83DBC00B52862 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		BAC127D222A8442200B52862 /* URLConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConvertible.swift; sourceTree = "<group>"; };
@@ -504,12 +506,13 @@
 		BABB9A89234CB9D10067B767 /* CoreData */ = {
 			isa = PBXGroup;
 			children = (
+				33B929592352391600CBD088 /* WatchingOwnerEntity+CoreDataProperties.swift */,
+				33B9295A2352391600CBD088 /* WatchingEntity+CoreDataProperties.swift */,
 				33B9294F2351DC9300CBD088 /* WatchingOwnerEntity+CoreDataClass.swift */,
-				33B929502351DC9300CBD088 /* WatchingOwnerEntity+CoreDataProperties.swift */,
-				BABB9A86234CB9C80067B767 /* GitHubNotificationManager.xcdatamodeld */,
 				BABB9AAD234D5BA60067B767 /* CoreDataAccessor.swift */,
 				33B9294B2351DB2400CBD088 /* WatchingEntity+CoreDataClass.swift */,
-				33B9294C2351DB2400CBD088 /* WatchingEntity+CoreDataProperties.swift */,
+				33B9295D23523A9700CBD088 /* NSManagedObjectExtensions.swift */,
+				33953BFE235247AD000AED79 /* GitHubNotificationManager.xcdatamodeld */,
 			);
 			path = CoreData;
 			sourceTree = "<group>";
@@ -912,6 +915,7 @@
 			files = (
 				BA60426C22A7409300345259 /* AppDelegate.swift in Sources */,
 				BABB9A85234CB8A10067B767 /* LayoutPriorityExtension.swift in Sources */,
+				33B9295C2352391600CBD088 /* WatchingEntity+CoreDataProperties.swift in Sources */,
 				BA8A37372342068500CB487B /* SafariViewController.swift in Sources */,
 				BAEFFC4022B9DDBF006D1549 /* FuzzyFindable.swift in Sources */,
 				BA8A374C23422F4600CB487B /* WatchingList.Cell.swift in Sources */,
@@ -920,28 +924,29 @@
 				BA417D1922A9E6FB0041B3C3 /* HUDViewModel.swift in Sources */,
 				BA8A3735234200F800CB487B /* PageView.swift in Sources */,
 				BA8A3739234206CF00CB487B /* SafariViewControllerWrapperViewController.swift in Sources */,
+				33953C00235247AD000AED79 /* GitHubNotificationManager.xcdatamodeld in Sources */,
 				BABB9A83234B936F0067B767 /* ReadButton.swift in Sources */,
 				BAC127DB22A8539000B52862 /* NotificationListVIewModel.swift in Sources */,
 				BAFE55F02349865800A35674 /* DeviceType.swift in Sources */,
-				33B929512351DC9300CBD088 /* WatchingOwnerEntity+CoreDataClass.swift in Sources */,
 				BA357A1622B56BA800549BA0 /* SearchBar.swift in Sources */,
 				BA60426E22A7409300345259 /* SceneDelegate.swift in Sources */,
+				33B9295623521AF600CBD088 /* WatchingOwnerEntity+CoreDataClass.swift in Sources */,
 				BABB9AAE234D5BA60067B767 /* CoreDataAccessor.swift in Sources */,
 				BA1D70EA22A9D5BE000F83A1 /* ImageLoaderViewModel.swift in Sources */,
 				BAC1280C22A9B57700B52862 /* NotificationListView.Cell.swift in Sources */,
+				33B9295E23523A9700CBD088 /* NSManagedObjectExtensions.swift in Sources */,
 				BA8A373B2342070500CB487B /* PageViewController.swift in Sources */,
 				BA1D70E822A9D42F000F83A1 /* ImageLoaderView.swift in Sources */,
 				BA417D1122A9DF4E0041B3C3 /* DebugInfo.swift in Sources */,
 				33B929472351980A00CBD088 /* NavigationBarTitleModifier.swift in Sources */,
 				BA417D1522A9E2BA0041B3C3 /* HUD.swift in Sources */,
 				BAFE55EE2349836000A35674 /* BarButtonImageModifier.swift in Sources */,
+				33B9295B2352391600CBD088 /* WatchingOwnerEntity+CoreDataProperties.swift in Sources */,
 				BAEFFC3C22B9DB4E006D1549 /* ViewExtension.swift in Sources */,
 				BAFE55EC23497B7F00A35674 /* ThumbnailImageView.swift in Sources */,
 				BAEFFC3E22B9DBD3006D1549 /* NotificationModel.swift in Sources */,
 				BA8A374A23422EFA00CB487B /* RootViewModel.swift in Sources */,
-				33B929522351DC9300CBD088 /* WatchingOwnerEntity+CoreDataProperties.swift in Sources */,
 				BAFE55F82349C42000A35674 /* DecideButton.swift in Sources */,
-				33B9294E2351DB2400CBD088 /* WatchingEntity+CoreDataProperties.swift in Sources */,
 				BACDC8002346C7F800C4A1AE /* OAuthViewController.swift in Sources */,
 				BAC127D622A844BD00B52862 /* RootView.swift in Sources */,
 				BA8A374E2342304200CB487B /* WatchingModel.swift in Sources */,
@@ -950,9 +955,8 @@
 				BAFE55F32349C27B00A35674 /* NoDataView.swift in Sources */,
 				BACDC8032346CC1000C4A1AE /* OAuthView.swift in Sources */,
 				BA8A374823422E5100CB487B /* WatchingListView.swift in Sources */,
-				BABB9A88234CB9C80067B767 /* GitHubNotificationManager.xcdatamodeld in Sources */,
 				BAFE55F52349C3F100A35674 /* RetryableNoDataView.swift in Sources */,
-				33B9294D2351DB2400CBD088 /* WatchingEntity+CoreDataClass.swift in Sources */,
+				33B92955235219D100CBD088 /* WatchingEntity+CoreDataClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1481,12 +1485,12 @@
 /* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
-		BABB9A86234CB9C80067B767 /* GitHubNotificationManager.xcdatamodeld */ = {
+		33953BFE235247AD000AED79 /* GitHubNotificationManager.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				BABB9A87234CB9C80067B767 /* WatchingEntity.xcdatamodel */,
+				33953BFF235247AD000AED79 /* GitHubNotificationManager.xcdatamodel */,
 			);
-			currentVersion = BABB9A87234CB9C80067B767 /* WatchingEntity.xcdatamodel */;
+			currentVersion = 33953BFF235247AD000AED79 /* GitHubNotificationManager.xcdatamodel */;
 			path = GitHubNotificationManager.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

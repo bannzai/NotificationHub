@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="14903" systemVersion="18E226" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="WatchingEntity" representedClassName=".WatchingEntity" syncable="YES">
+        <attribute name="id" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="isReceiveNotification" attributeType="Boolean" usesScalarValueType="YES"/>
+        <attribute name="name" attributeType="String" defaultValueString=""/>
+        <attribute name="notificationsURL" attributeType="String" defaultValueString=""/>
+        <relationship name="owner" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WatchingOwnerEntity" inverseName="watching" inverseEntity="WatchingOwnerEntity"/>
+    </entity>
+    <entity name="WatchingOwnerEntity" representedClassName=".WatchingOwnerEntity" syncable="YES">
+        <attribute name="avatarURL" attributeType="String" defaultValueString=""/>
+        <attribute name="name" attributeType="String" defaultValueString=""/>
+        <relationship name="watching" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="WatchingEntity" inverseName="owner" inverseEntity="WatchingEntity"/>
+    </entity>
+    <elements>
+        <element name="WatchingEntity" positionX="-63" positionY="-18" width="128" height="118"/>
+        <element name="WatchingOwnerEntity" positionX="-54" positionY="27" width="128" height="88"/>
+    </elements>
+</model>

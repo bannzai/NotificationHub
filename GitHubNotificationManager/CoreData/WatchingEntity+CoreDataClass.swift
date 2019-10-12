@@ -14,8 +14,9 @@ import GitHubNotificationManagerNetwork
 @objc(WatchingEntity)
 public class WatchingEntity: NSManagedObject {
     static func create(element: WatchingElement, isReceiveNotification: Bool) -> WatchingEntity {
-        let entity = WatchingEntity(context: CoreDataAccessor.shared.persistentContainer.viewContext)
-        let owner = WatchingOwnerEntity(context: CoreDataAccessor.shared.persistentContainer.viewContext)
+        print(WatchingEntity.className())
+        let entity = NSEntityDescription.insertNewObject(forEntityName: WatchingEntity.className(), into: context) as! WatchingEntity
+        let owner = NSEntityDescription.insertNewObject(forEntityName: WatchingOwnerEntity.className(), into: context) as! WatchingOwnerEntity
         owner.name = element.owner.login
         owner.avatarURL = element.owner.avatarURL
         entity.id = element.id
