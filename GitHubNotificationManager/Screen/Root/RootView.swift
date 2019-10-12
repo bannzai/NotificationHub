@@ -11,6 +11,7 @@ import GitHubNotificationManagerNetwork
 
 struct RootView: View {
     @State private var selectedAddNotificationList: Bool = false
+    @State var currentPage: Int = 0
 
     @ObservedObject private var viewModel = RootViewModel()
 
@@ -18,7 +19,8 @@ struct RootView: View {
         Group {
             if viewModel.isAuthorized {
                 NavigationView {
-                    PageView(views: pages)
+                    NotificationListPageView(watchings: viewModel.watchings, didChangePage: { self.currentPage = $0 })
+                        .navigationBarTitle(title)
                         .navigationBarItems(
                             trailing: Button(
                                 action: {
@@ -42,6 +44,15 @@ struct RootView: View {
             } else {
                 OAuthView(githubAccessToken: viewModel.githubAccessTokenBinder)
             }
+        }
+    }
+    
+    var title: String {
+        switch currentPage == 0 {
+        case true:
+            return "Notifications"
+        case false:
+            return viewModel.watchings[currentPage].name
         }
         
     }

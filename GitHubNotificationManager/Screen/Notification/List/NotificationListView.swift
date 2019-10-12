@@ -39,7 +39,6 @@ struct NotificationListView : View {
                 }
             }
         }
-        .modifier(NavigationBarTitleModifier(title: viewModel.navigationBarTitle))
         .sheet(item: $selectedNotification) { (notification) in
             SafariView(url: notification.subject.destinationURL)
         }
