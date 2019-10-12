@@ -11,6 +11,7 @@ import SwiftUI
 import OAuthSwift
 import GitHubNotificationManagerCore
 import GitHubNotificationManagerNetwork
+import CoreData
 
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
@@ -22,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Use a UIHostingController as window root view controller
         #if DEBUG
-        UserDefaults.standard.set(Secret.Debug.accessToken, forKey: .GitHubAccessToken)
+//        UserDefaults.standard.set(Secret.Debug.accessToken, forKey: .GitHubAccessToken)
         #endif
         if let token = UserDefaults.standard.string(forKey: .GitHubAccessToken) {
             NetworkConfig.Github.accessToken = token
@@ -63,6 +64,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
+        CoreDataAccessor.shared.saveContext()
     }
     
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {

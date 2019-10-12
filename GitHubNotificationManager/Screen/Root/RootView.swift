@@ -11,18 +11,14 @@ import GitHubNotificationManagerNetwork
 
 struct RootView: View {
     @State private var selectedAddNotificationList: Bool = false
-    @State private var watchings: [WatchingModel] = []
-    @State private var currentPage: Int = 0
-    @State private var requestError: RequestError? = nil
-
     @ObservedObject private var viewModel = RootViewModel()
 
     var body: some View {
         Group {
             if viewModel.isAuthorized {
                 NavigationView {
-                    PageView(views: pages, page: $currentPage)
-                        .navigationBarTitle(Text(navigationTitle), displayMode: .inline)
+                    PageView(views: pages, currentPage: $viewModel.currentPage)
+                        .navigationBarTitle(Text(viewModel.title), displayMode: .inline)
                         .navigationBarItems(
                             trailing: Button(
                                 action: {
@@ -33,45 +29,32 @@ struct RootView: View {
                             })
                     ).onAppear(perform: {
                         self.viewModel.fetchIfHasNotWatching()
-                    }).onReceive(viewModel.$watchings, perform: { (watchings) in
-                        self.watchings = watchings
-                    }).onReceive(viewModel.$requestError, perform: { (error) in
-                        error.map { self.requestError = $0 }
-                    }).alert(item: $requestError) { (error) in
+                    }).alert(item: $viewModel.requestError) { (error) in
                         Alert(
                             title: Text("Fetched Error"),
                             message: Text(error.localizedDescription),
                             dismissButton: .default(Text("OK"))
                         )
                     }.sheet(isPresented: $selectedAddNotificationList) { () in
-                        WatchingListView(watchings: self.$watchings)
+                        WatchingListView(watchings: self.$viewModel.watchings)
                     }
                 }
             } else {
                 OAuthView(githubAccessToken: viewModel.githubAccessTokenBinder)
-                    .onReceive(viewModel.$githubAccessToken) { (token) in
-                        NetworkConfig.Github.accessToken = token
-                }}
+            }
+        }
+    }
+    
+    var pages: [AnyView] {
+        if viewModel.isNotYetLoad {
+            return []
         }
         
-    }
-    
-    private var pages: [NotificationListView] {
-        let main = NotificationListView(listType: .all)
-        let sub = watchings
-            .filter { $0.isReceiveNotification }
-            .map { NotificationListView(listType: .specify(notificationsUrl: $0.notificationsURL)) }
-        return [main] + sub
-    }
-    
-    private var navigationTitle: String {
-        switch currentPage {
-        case 0:
-            return "Notifications"
-        case _:
-            return watchings
-                .filter { $0.isReceiveNotification }[currentPage - 1].owner.name
+        let main = AnyView(NotificationListView().environmentObject(viewModel.allNotificationViewModel))
+        let filtered = viewModel.activateNotificationViewModels.map {
+            AnyView(NotificationListView().environmentObject($0))
         }
+        return [main] + filtered
     }
 }
 

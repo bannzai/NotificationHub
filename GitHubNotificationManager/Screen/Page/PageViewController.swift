@@ -28,6 +28,9 @@ struct PageViewController: UIViewControllerRepresentable {
     }
 
     func updateUIViewController(_ pageViewController: UIPageViewController, context: Context) {
+        if viewControllers.isEmpty {
+            return
+        }
         context.coordinator.parent = self
         pageViewController.setViewControllers([viewControllers[currentPage]], direction: .forward, animated: false)
     }

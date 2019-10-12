@@ -9,13 +9,26 @@
 import UIKit
 import SwiftUI
 
+final class PageViewModel: ObservableObject {
+    var currentPage: Int = 0 {
+        didSet {
+            didChangePage(currentPage)
+        }
+    }
+    var didChangePage: (Int) -> Void
+    
+    init(didChangePage: @escaping (Int) -> Void) {
+        self.didChangePage = didChangePage
+    }
+}
+
 struct PageView<Page: View>: View {
     var viewControllers: [UIHostingController<Page>]
     var currentPage: Binding<Int>
 
-    init(views: [Page], page: Binding<Int>) {
+    init(views: [Page], currentPage: Binding<Int>) {
         self.viewControllers = views.map { UIHostingController(rootView: $0) }
-        self.currentPage = page
+        self.currentPage = currentPage
     }
 
     var body: some View {
@@ -30,7 +43,7 @@ struct PageView<Page: View>: View {
 struct PageView_Preview: PreviewProvider {
     @State static var currentPage: Int = 0
     static var previews: some View {
-        PageView(views: [EmptyView()], page: $currentPage)
+        PageView(views: [EmptyView()], currentPage: $currentPage)
     }
 }
 #endif

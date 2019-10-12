@@ -28,16 +28,17 @@ extension NotificationListView {
         
         var body: some View {
             HStack {
-                HStack {
+                Group {
                     ImageLoaderView(url: notification.repository.avatarURL, defaultImage: UIImage(systemName: "person")!)
                         .modifier(ThumbnailImageViewModifier())
                     VStack(alignment: .leading) {
                         Text(notification.repository.fullName).font(.headline).lineLimit(1)
                         Text(notification.subject.title).font(.subheadline).lineLimit(1)
                     }
-                    Spacer()
                 }
+                .layoutPriority(DefaultLayoutPriority + 1)
                 .gesture(cellGestuer)
+                Spacer()
                 ReadButton(read: binding.unread)
             }
         }

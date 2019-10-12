@@ -10,14 +10,9 @@ import SwiftUI
 import GitHubNotificationManagerNetwork
 
 struct NotificationListView : View {
-    @ObservedObject private var viewModel: NotificationListViewModel
+    @EnvironmentObject private var viewModel: NotificationListViewModel
     @State private var selectedNotification: NotificationModel? = nil
-    @State private var requestError: RequestError? = nil
 
-    init(listType: ListType) {
-        viewModel = NotificationListViewModel(listType: listType)
-    }
-    
     var body: some View {
         Group {
             if viewModel.isNoData {
@@ -40,16 +35,10 @@ struct NotificationListView : View {
                 }
             }
         }
-        .onAppear {
-            self.viewModel.fetchFirst()
-        }
-        .onReceive(viewModel.$requestError, perform: { (error) in
-            error.map { self.requestError = $0 }
-        })
         .sheet(item: $selectedNotification) { (notification) in
             SafariView(url: notification.subject.destinationURL)
         }
-        .alert(item: $requestError) { (error) in
+        .alert(item: $viewModel.requestError) { (error) in
             Alert(
                 title: Text("Fetched Error"),
                 message: Text(error.localizedDescription),
@@ -61,16 +50,16 @@ struct NotificationListView : View {
 extension NotificationListView {
     enum ListType: NotificationPath {
         case all
-        case specify(notificationsUrl: String)
+        case specify(watching: WatchingModel)
         
         var notificationPath: URLPathConvertible {
             switch self {
             case .all:
                 return "notifications"
-            case .specify(notificationsUrl: let url):
+            case .specify(watching: let watching):
                 // e.g) https://api.github.com/repos/bannzai/vimrc/notifications{?since,all,participating}
                 // Drop {?since, all, participating}
-                return url
+                return watching.notificationsURL
                     .split(separator: "/")
                     .reduce(into: "") { (result, element) in
                         switch element {
@@ -99,7 +88,7 @@ extension NotificationListView {
 #if DEBUG
 struct NotificationListView_Previews : PreviewProvider {
     static var previews: some View {
-        NotificationListView(listType: .all)
+        NotificationListView()
     }
 }
 #endif
