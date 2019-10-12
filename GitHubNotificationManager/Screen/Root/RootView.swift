@@ -36,7 +36,7 @@ struct RootView: View {
                             dismissButton: .default(Text("OK"))
                         )
                     }.sheet(isPresented: $selectedAddNotificationList) { () in
-                        WatchingListView(watchings: self.$viewModel.watchings)
+                        WatchingListView(watchings: self.viewModel.watchings)
                     }
                 }
             } else {

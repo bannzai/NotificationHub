@@ -12,11 +12,11 @@ import GitHubNotificationManagerNetwork
 
 extension WatchingListView {
     struct Cell: View {
-        @Binding var watching: WatchingEntity
+        var watching: WatchingEntity
         var body: some View {
             HStack {
                 ThumbnailImageView(url: watching.owner.avatarURL, defaultImage: UIImage(systemName: "person")!)
-                Toggle(isOn: $watching.isReceiveNotification) { () in
+                Toggle(isOn: watching.bindingReceiveNotification) { () in
                     Text(watching.owner.name).font(.headline).lineLimit(1)
                 }
             }
