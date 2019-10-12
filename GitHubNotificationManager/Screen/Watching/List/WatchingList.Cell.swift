@@ -12,7 +12,7 @@ import GitHubNotificationManagerNetwork
 
 extension WatchingListView {
     struct Cell: View {
-        @Binding var watching: WatchingModel
+        @Binding var watching: WatchingEntity
         var body: some View {
             HStack {
                 ThumbnailImageView(url: watching.owner.avatarURL, defaultImage: UIImage(systemName: "person")!)
@@ -25,17 +25,17 @@ extension WatchingListView {
 }
 
 #if DEBUG
-struct WatchingListView_Cell_Previews : PreviewProvider {
-    static var previews: some View {
-        WatchingListView.Cell(
-            watching: State(initialValue: WatchingModel(
-                id: .init(id: 1),
-                name: "ABC",
-                owner: .init(name: "bannzai", avatarURL: Debug.Const.avatarURL),
-                notificationsURL: "https://api.github.com/repos/bannzai/vimrc/notifications{?since,all,participating}",
-                isReceiveNotification: false
-            )).projectedValue
-        )
-    }
-}
+//struct WatchingListView_Cell_Previews : PreviewProvider {
+//    static var previews: some View {
+//        WatchingListView.Cell(
+//            watching: State(initialValue: WatchingEntity(
+//                id: .init(id: 1),
+//                name: "ABC",
+//                owner: .init(name: "bannzai", avatarURL: Debug.Const.avatarURL),
+//                notificationsURL: "https://api.github.com/repos/bannzai/vimrc/notifications{?since,all,participating}",
+//                isReceiveNotification: false
+//            )).projectedValue
+//        )
+//    }
+//}
 #endif

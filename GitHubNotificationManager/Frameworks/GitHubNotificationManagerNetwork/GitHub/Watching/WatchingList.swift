@@ -7,7 +7,7 @@ import Foundation
 
 // MARK: - WatchingElement
 public struct WatchingElement: Codable {
-    public let id: Int
+    public let id: Int64
     public let nodeID: String
     public let name: String
     public let fullName: String
@@ -23,7 +23,7 @@ public struct WatchingElement: Codable {
         case notificationsUrl = "notifications_url"
     }
 
-    public init(id: Int, nodeID: String, name: String, fullName: String, owner: Owner, notificationsUrl: String) {
+    public init(id: Int64, nodeID: String, name: String, fullName: String, owner: Owner, notificationsUrl: String) {
         self.id = id
         self.nodeID = nodeID
         self.name = name

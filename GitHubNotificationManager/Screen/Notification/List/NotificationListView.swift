@@ -50,7 +50,7 @@ struct NotificationListView : View {
 extension NotificationListView {
     enum ListType: NotificationPath {
         case all
-        case specify(watching: WatchingModel)
+        case specify(watching: WatchingEntity)
         
         var notificationPath: URLPathConvertible {
             switch self {

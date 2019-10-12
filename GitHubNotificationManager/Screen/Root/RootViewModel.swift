@@ -14,9 +14,9 @@ import GitHubNotificationManagerNetwork
 final public class RootViewModel: ObservableObject {
     private var canceller: Set<AnyCancellable> = []
 
-    @Published var watchings: [WatchingModel] = []
+    @Published var watchings: [WatchingEntity] = []
     let allNotificationViewModel = NotificationListViewModel(listType: .all)
-    @Published var notificationViewModelForWatching: [WatchingModel: NotificationListViewModel] = [:]
+    @Published var notificationViewModelForWatching: [WatchingEntity: NotificationListViewModel] = [:]
     var activateNotificationViewModels: [NotificationListViewModel] {
         notificationViewModelForWatching
             .map { (key: $0.key, value: $0.value)}
@@ -69,7 +69,7 @@ internal extension RootViewModel {
             .map ({ watchings in
                 // TODO: fetch isReceiveNotification
                 return watchings
-                    .map { WatchingModel.create(entity: $0, isReceiveNotification: false) }
+                    .map { WatchingEntity.create(element: $0, isReceiveNotification: false) }
                     .distinct()
             })
         
@@ -92,7 +92,7 @@ internal extension RootViewModel {
         ).store(in: &canceller)
         
         mappedRequest
-            .catch { _ in Just([WatchingModel]()) }
+            .catch { _ in Just([WatchingEntity]()) }
             .sink(
                 receiveValue: { [weak self] watchings in
                     watchings.forEach {
