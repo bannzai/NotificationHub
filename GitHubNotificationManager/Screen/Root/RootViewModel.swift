@@ -13,7 +13,7 @@ import GitHubNotificationManagerNetwork
 
 final public class RootViewModel: ObservableObject {
     private var canceller: Set<AnyCancellable> = []
-
+    
     @Published var watchings: [WatchingModel] = []
     @Published var githubAccessToken: String? = UserDefaults.standard.string(forKey: .GitHubAccessToken) {
         didSet {
