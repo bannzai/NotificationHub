@@ -11,13 +11,26 @@ import SwiftUI
 
 struct NotificationListPageView: View {
     var watchings: [WatchingModel]
-    var didChangePage: (Int) -> Void
+    @State var currentPage: Int = 0
 
     var body: some View {
-        PageView(views: pages, didChangePage: didChangePage)
+        PageView(views: pages, currentPage: $currentPage)
+            .navigationBarTitle(Text(title), displayMode: .inline)
+    }
+
+    private var title: String {
+        switch currentPage == 0 {
+        case true:
+            return "Notifications"
+        case false:
+            return watchings[currentPage].owner.name
+        }
     }
     
     private var pages: [NotificationListView] {
+        if watchings.isEmpty {
+            return []
+        }
         let main = NotificationListView(listType: .all)
         let sub = watchings
             .filter { $0.isReceiveNotification }
@@ -42,16 +55,10 @@ final class PageViewModel: ObservableObject {
 struct PageView<Page: View>: View {
     var viewControllers: [UIHostingController<Page>]
     var currentPage: Binding<Int>
-    var viewModel: PageViewModel
 
-    init(views: [Page], didChangePage: @escaping (Int) -> Void) {
+    init(views: [Page], currentPage: Binding<Int>) {
         self.viewControllers = views.map { UIHostingController(rootView: $0) }
-        let viewModel = PageViewModel(didChangePage: didChangePage)
-        currentPage = Binding<Int>(
-            get: { [weak viewModel] in viewModel?.currentPage ?? 0 },
-            set: { [weak viewModel] in viewModel?.currentPage = $0 }
-        )
-        self.viewModel = viewModel
+        self.currentPage = currentPage
     }
 
     var body: some View {
@@ -66,9 +73,7 @@ struct PageView<Page: View>: View {
 struct PageView_Preview: PreviewProvider {
     @State static var currentPage: Int = 0
     static var previews: some View {
-        PageView(views: [EmptyView()], didChangePage: { _ in
-            
-        })
+        PageView(views: [EmptyView()], currentPage: $currentPage)
     }
 }
 #endif

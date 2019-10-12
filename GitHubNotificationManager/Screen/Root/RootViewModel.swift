@@ -47,27 +47,28 @@ internal extension RootViewModel {
         watchingListFetchStatus = .loading
         GitHubAPI
             .request(request: WatchingsRequest())
-            .handleEvents(receiveCompletion: { [weak self] completion in
-                self?.watchingListFetchStatus = .loaded
-                
-                switch completion {
-                case .finished:
-                    break
-                case .failure(let error):
-                    self?.requestError = error
-                }
+            .map ({ watchings in
+                // TODO: fetch isReceiveNotification
+                return watchings
+                    .map { WatchingModel.create(entity: $0, isReceiveNotification: false) }
+                    .distinct()
             })
-            .catch { (error) in
-                Just([WatchingElement]())
-        }
-        .map { watchings in
-            // TODO: fetch isReceiveNotification
-            return watchings
-                .map { WatchingModel.create(entity: $0, isReceiveNotification: false) }
-                .distinct()
-        }
-        .assign(to: \.watchings, on: self)
-        .store(in: &canceller)
+            .sink(
+                receiveCompletion: { [weak self] completion in
+                    self?.watchingListFetchStatus = .loaded
+                    
+                    switch completion {
+                    case .finished:
+                        break
+                    case .failure(let error):
+                        self?.requestError = error
+                    }
+                },
+                receiveValue: { [weak self] watchings in
+                    self?.watchings = watchings
+                }
+                
+        ).store(in: &canceller)
     }
 }
 

@@ -56,15 +56,6 @@ extension NotificationListView {
         case all
         case specify(watching: WatchingModel)
         
-        var title: String {
-            switch self {
-            case .all:
-                return "Notifications"
-            case .specify(let watching):
-                return watching.name
-            }
-        }
-        
         var notificationPath: URLPathConvertible {
             switch self {
             case .all:

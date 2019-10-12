@@ -19,7 +19,6 @@ final public class NotificationListViewModel: ObservableObject {
     @Published var requestError: RequestError? = nil
 
     private var notificationListFetchStatus: NotificationListFetchStatus = .notYetLoad
-    var navigationBarTitle: String { listType.title }
 
     let listType: NotificationListView.ListType
     init(listType: NotificationListView.ListType) {
@@ -48,6 +47,25 @@ final public class NotificationListViewModel: ObservableObject {
         }
     }
     
+    private var isAlreadyReadLatestContent: Bool {
+        allNotifications.count < NotificationsRequest.elementPerPage
+    }
+    
+    private var nextPage: Int? {
+        if allNotifications.isEmpty {
+            return 0
+        }
+        if isAlreadyReadLatestContent {
+            return nil
+        }
+        
+        return (allNotifications.count + NotificationsRequest.elementPerPage) / NotificationsRequest.elementPerPage - 1
+    }
+}
+
+
+func address(_ o: NotificationListViewModel) -> Int {
+    unsafeBitCast(o, to: Int.self)
 }
 
 internal extension NotificationListViewModel {
@@ -59,35 +77,42 @@ internal extension NotificationListViewModel {
         if case .loading = notificationListFetchStatus {
             return
         }
-
+        guard let page = nextPage else {
+            return
+        }
+        
         notificationListFetchStatus = .loading
-        let page = (allNotifications.count + NotificationsRequest.elementPerPage) / NotificationsRequest.elementPerPage - 1
+        print("before :\(address(self))")
         GitHubAPI
             .request(request: NotificationsRequest(page: page, notificationsUrl: listType))
-            .handleEvents(receiveCompletion: { [weak self] completion in
-                self?.notificationListFetchStatus = .loaded
-                
-                switch completion {
-                case .finished:
-                    break
-                case .failure(let error):
-                    self?.requestError = error
+            .handleEvents(receiveCompletion: { [weak self] (_) in
+                // FIXME: This parameter should be change after notify changing to View via @Published
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    self.map {
+                        print("handle completion address :\(address($0))")
+                    }
+                    self?.notificationListFetchStatus = .loaded
                 }
             })
-            .catch { (_) in
-                Just([NotificationElement]())
-        }
-        .map { notifications in
-            notifications.map(NotificationModel.create(entity:))
-        }
-        .map { [weak self] notifications in
-            let before = self?.allNotifications ?? []
-            return before + notifications
-        }
-        .sink(receiveValue: { [weak self] (notifications) in
-            self?.allNotifications = notifications
-        })
-        .store(in: &canceller)
+            .map ({ notifications in
+                notifications.map(NotificationModel.create(entity:))
+            })
+            .sink(
+                receiveCompletion: { [weak self] (completion) in
+                    switch completion {
+                    case .finished:
+                        break
+                    case .failure(let error):
+                        self?.requestError = error
+                    }
+                },
+                receiveValue: { [weak self] (notifications) in
+                    self.map {
+                        print("receive value :\(address($0))")
+                    }
+                    self?.allNotifications += notifications
+            })
+            .store(in: &canceller)
     }
 }
 
