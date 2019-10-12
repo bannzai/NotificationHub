@@ -23,7 +23,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
         // Use a UIHostingController as window root view controller
         #if DEBUG
-        UserDefaults.standard.set(Secret.Debug.accessToken, forKey: .GitHubAccessToken)
+//        UserDefaults.standard.set(Secret.Debug.accessToken, forKey: .GitHubAccessToken)
         #endif
         if let token = UserDefaults.standard.string(forKey: .GitHubAccessToken) {
             NetworkConfig.Github.accessToken = token
