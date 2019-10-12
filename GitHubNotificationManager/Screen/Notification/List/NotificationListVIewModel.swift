@@ -110,7 +110,7 @@ internal extension NotificationListViewModel {
                     self.map {
                         print("receive value :\(address($0))")
                     }
-                    self?.allNotifications += notifications
+                    self?.allNotifications = notifications
             })
             .store(in: &canceller)
     }

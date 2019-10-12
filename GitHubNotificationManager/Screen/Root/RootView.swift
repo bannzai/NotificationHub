@@ -11,14 +11,14 @@ import GitHubNotificationManagerNetwork
 
 struct RootView: View {
     @State private var selectedAddNotificationList: Bool = false
-
     @ObservedObject private var viewModel = RootViewModel()
 
     var body: some View {
         Group {
             if viewModel.isAuthorized {
                 NavigationView {
-                    NotificationListPageView(watchings: viewModel.watchings)
+                    PageView(views: pages, currentPage: $viewModel.currentPage)
+                        .navigationBarTitle(Text(viewModel.title), displayMode: .inline)
                         .navigationBarItems(
                             trailing: Button(
                                 action: {
@@ -43,6 +43,18 @@ struct RootView: View {
                 OAuthView(githubAccessToken: viewModel.githubAccessTokenBinder)
             }
         }
+    }
+    
+    var pages: [AnyView] {
+        if viewModel.isNotYetLoad {
+            return []
+        }
+        
+        let main = AnyView(NotificationListView().environmentObject(viewModel.allNotificationViewModel))
+        let filtered = viewModel.activateNotificationViewModels.map {
+            AnyView(NotificationListView().environmentObject($0))
+        }
+        return [main] + filtered
     }
 }
 

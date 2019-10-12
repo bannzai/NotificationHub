@@ -10,13 +10,25 @@ import Foundation
 import SwiftUI
 import GitHubNotificationManagerNetwork
 
-struct WatchingModel: Identifiable, Equatable {
+struct WatchingModel: Identifiable, Equatable, Comparable, Hashable {
     struct Owner: Equatable {
         let name: String
         let avatarURL: String
     }
     
-    let id: Int
+    struct WatchingId: Identifiable, Equatable, Hashable {
+        let id: Int
+    }
+    
+    static func < (lhs: WatchingModel, rhs: WatchingModel) -> Bool {
+        lhs.id.id < rhs.id.id
+    }
+    
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+    }
+
+    let id: WatchingId
     let name: String
     let owner: Owner
     let notificationsURL: String
@@ -24,7 +36,7 @@ struct WatchingModel: Identifiable, Equatable {
 
     static func create(entity: WatchingElement, isReceiveNotification: Bool) -> WatchingModel {
         WatchingModel(
-            id: entity.id,
+            id: .init(id: entity.id),
             name: entity.name,
             owner: WatchingModel.Owner(
                 name: entity.owner.login ,

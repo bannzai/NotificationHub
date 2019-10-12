@@ -10,13 +10,9 @@ import SwiftUI
 import GitHubNotificationManagerNetwork
 
 struct NotificationListView : View {
-    @ObservedObject private var viewModel: NotificationListViewModel
+    @EnvironmentObject private var viewModel: NotificationListViewModel
     @State private var selectedNotification: NotificationModel? = nil
 
-    init(listType: ListType) {
-        viewModel = NotificationListViewModel(listType: listType)
-    }
-    
     var body: some View {
         Group {
             if viewModel.isNoData {
@@ -92,7 +88,7 @@ extension NotificationListView {
 #if DEBUG
 struct NotificationListView_Previews : PreviewProvider {
     static var previews: some View {
-        NotificationListView(listType: .all)
+        NotificationListView()
     }
 }
 #endif

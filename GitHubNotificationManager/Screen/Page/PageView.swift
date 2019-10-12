@@ -9,36 +9,6 @@
 import UIKit
 import SwiftUI
 
-struct NotificationListPageView: View {
-    var watchings: [WatchingModel]
-    @State var currentPage: Int = 0
-
-    var body: some View {
-        PageView(views: pages, currentPage: $currentPage)
-            .navigationBarTitle(Text(title), displayMode: .inline)
-    }
-
-    private var title: String {
-        switch currentPage == 0 {
-        case true:
-            return "Notifications"
-        case false:
-            return watchings[currentPage].owner.name
-        }
-    }
-    
-    private var pages: [NotificationListView] {
-        if watchings.isEmpty {
-            return []
-        }
-        let main = NotificationListView(listType: .all)
-        let sub = watchings
-            .filter { $0.isReceiveNotification }
-            .map { NotificationListView(listType: .specify(watching: $0)) }
-        return [main] + sub
-    }
-}
-
 final class PageViewModel: ObservableObject {
     var currentPage: Int = 0 {
         didSet {

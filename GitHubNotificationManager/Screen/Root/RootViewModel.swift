@@ -13,8 +13,17 @@ import GitHubNotificationManagerNetwork
 
 final public class RootViewModel: ObservableObject {
     private var canceller: Set<AnyCancellable> = []
-    
+
     @Published var watchings: [WatchingModel] = []
+    let allNotificationViewModel = NotificationListViewModel(listType: .all)
+    @Published var notificationViewModelForWatching: [WatchingModel: NotificationListViewModel] = [:]
+    var activateNotificationViewModels: [NotificationListViewModel] {
+        notificationViewModelForWatching
+            .map { (key: $0.key, value: $0.value)}
+            .sorted { $0.key < $1.key }
+            .filter { $0.key.isReceiveNotification }
+            .map { $0.value }
+    }
     @Published var githubAccessToken: String? = UserDefaults.standard.string(forKey: .GitHubAccessToken) {
         didSet {
             NetworkConfig.Github.accessToken = githubAccessToken
@@ -22,7 +31,17 @@ final public class RootViewModel: ObservableObject {
         }
     }
     @Published var requestError: RequestError? = nil
-
+    @Published var currentPage: Int = 0
+    
+    var title: String {
+        switch currentPage == 0 {
+        case true:
+            return "Notifications"
+        case false:
+            return watchings.filter { $0.isReceiveNotification }[currentPage - 1].owner.name
+        }
+    }
+    
     var githubAccessTokenBinder: Binding<String?> {
         Binding(get: {
             self.githubAccessToken
@@ -45,7 +64,7 @@ internal extension RootViewModel {
             return
         }
         watchingListFetchStatus = .loading
-        GitHubAPI
+        let mappedRequest = GitHubAPI
             .request(request: WatchingsRequest())
             .map ({ watchings in
                 // TODO: fetch isReceiveNotification
@@ -53,6 +72,8 @@ internal extension RootViewModel {
                     .map { WatchingModel.create(entity: $0, isReceiveNotification: false) }
                     .distinct()
             })
+        
+        mappedRequest
             .sink(
                 receiveCompletion: { [weak self] completion in
                     self?.watchingListFetchStatus = .loaded
@@ -68,6 +89,16 @@ internal extension RootViewModel {
                     self?.watchings = watchings
                 }
                 
+        ).store(in: &canceller)
+        
+        mappedRequest
+            .catch { _ in Just([WatchingModel]()) }
+            .sink(
+                receiveValue: { [weak self] watchings in
+                    watchings.forEach {
+                        self?.notificationViewModelForWatching[$0] = NotificationListViewModel(listType: .specify(watching: $0))
+                    }
+                }
         ).store(in: &canceller)
     }
 }

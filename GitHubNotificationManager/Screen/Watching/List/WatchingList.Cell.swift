@@ -29,7 +29,7 @@ struct WatchingListView_Cell_Previews : PreviewProvider {
     static var previews: some View {
         WatchingListView.Cell(
             watching: State(initialValue: WatchingModel(
-                id: 1,
+                id: .init(id: 1),
                 name: "ABC",
                 owner: .init(name: "bannzai", avatarURL: Debug.Const.avatarURL),
                 notificationsURL: "https://api.github.com/repos/bannzai/vimrc/notifications{?since,all,participating}",
