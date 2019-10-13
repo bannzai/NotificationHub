@@ -12,6 +12,9 @@
 		33498AAE2352D50F00D1A8BC /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AAD2352D50F00D1A8BC /* Reducer.swift */; };
 		33498AB02352D56000D1A8BC /* AsyncAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AAF2352D56000D1A8BC /* AsyncAction.swift */; };
 		33498AB22352D5A700D1A8BC /* Dispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AB12352D5A700D1A8BC /* Dispatch.swift */; };
+		33498AB42352D65400D1A8BC /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AB32352D65400D1A8BC /* Store.swift */; };
+		33498AB62352D78000D1A8BC /* Middleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AB52352D78000D1A8BC /* Middleware.swift */; };
+		33498ABA2352D82100D1A8BC /* AsyncMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AB92352D82100D1A8BC /* AsyncMiddleware.swift */; };
 		33953C00235247AD000AED79 /* GitHubNotificationManager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 33953BFE235247AD000AED79 /* GitHubNotificationManager.xcdatamodeld */; };
 		33B929472351980A00CBD088 /* NavigationBarTitleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B929462351980A00CBD088 /* NavigationBarTitleModifier.swift */; };
 		33B92955235219D100CBD088 /* WatchingEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B9294B2351DB2400CBD088 /* WatchingEntity+CoreDataClass.swift */; };
@@ -163,6 +166,9 @@
 		33498AAD2352D50F00D1A8BC /* Reducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reducer.swift; sourceTree = "<group>"; };
 		33498AAF2352D56000D1A8BC /* AsyncAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncAction.swift; sourceTree = "<group>"; };
 		33498AB12352D5A700D1A8BC /* Dispatch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dispatch.swift; sourceTree = "<group>"; };
+		33498AB32352D65400D1A8BC /* Store.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Store.swift; sourceTree = "<group>"; };
+		33498AB52352D78000D1A8BC /* Middleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Middleware.swift; sourceTree = "<group>"; };
+		33498AB92352D82100D1A8BC /* AsyncMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncMiddleware.swift; sourceTree = "<group>"; };
 		33953BFF235247AD000AED79 /* GitHubNotificationManager.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GitHubNotificationManager.xcdatamodel; sourceTree = "<group>"; };
 		33B929462351980A00CBD088 /* NavigationBarTitleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarTitleModifier.swift; sourceTree = "<group>"; };
 		33B9294B2351DB2400CBD088 /* WatchingEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WatchingEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -298,8 +304,26 @@
 				33498AAB2352D50000D1A8BC /* ReduxState.swift */,
 				33498AAD2352D50F00D1A8BC /* Reducer.swift */,
 				33498AB12352D5A700D1A8BC /* Dispatch.swift */,
+				33498AB52352D78000D1A8BC /* Middleware.swift */,
 			);
 			path = Redux;
+			sourceTree = "<group>";
+		};
+		33498AB72352D80F00D1A8BC /* ReduxImpl */ = {
+			isa = PBXGroup;
+			children = (
+				33498AB82352D81900D1A8BC /* Middleware */,
+				33498AB32352D65400D1A8BC /* Store.swift */,
+			);
+			path = ReduxImpl;
+			sourceTree = "<group>";
+		};
+		33498AB82352D81900D1A8BC /* Middleware */ = {
+			isa = PBXGroup;
+			children = (
+				33498AB92352D82100D1A8BC /* AsyncMiddleware.swift */,
+			);
+			path = Middleware;
 			sourceTree = "<group>";
 		};
 		33B92945235197FA00CBD088 /* NavigationBar */ = {
@@ -345,6 +369,7 @@
 		BA60426A22A7409300345259 /* GitHubNotificationManager */ = {
 			isa = PBXGroup;
 			children = (
+				33498AB72352D80F00D1A8BC /* ReduxImpl */,
 				33498AA82352B42E00D1A8BC /* Redux */,
 				BABB9A89234CB9D10067B767 /* CoreData */,
 				BA6C828C22B49E6B006D2231 /* Previews */,
@@ -940,7 +965,9 @@
 				BABB9A85234CB8A10067B767 /* LayoutPriorityExtension.swift in Sources */,
 				33B9295C2352391600CBD088 /* WatchingEntity+CoreDataProperties.swift in Sources */,
 				BA8A37372342068500CB487B /* SafariViewController.swift in Sources */,
+				33498ABA2352D82100D1A8BC /* AsyncMiddleware.swift in Sources */,
 				BAEFFC4022B9DDBF006D1549 /* FuzzyFindable.swift in Sources */,
+				33498AB42352D65400D1A8BC /* Store.swift in Sources */,
 				BA8A374C23422F4600CB487B /* WatchingList.Cell.swift in Sources */,
 				BA602C452348C8A0003C281C /* UserDefaultsGenerator.generated.swift in Sources */,
 				BA6C829022B49E98006D2231 /* NotificationData.swift in Sources */,
@@ -968,6 +995,7 @@
 				BA417D1522A9E2BA0041B3C3 /* HUD.swift in Sources */,
 				BAFE55EE2349836000A35674 /* BarButtonImageModifier.swift in Sources */,
 				33498AAA2352D4F500D1A8BC /* Action.swift in Sources */,
+				33498AB62352D78000D1A8BC /* Middleware.swift in Sources */,
 				33B9295B2352391600CBD088 /* WatchingOwnerEntity+CoreDataProperties.swift in Sources */,
 				BAEFFC3C22B9DB4E006D1549 /* ViewExtension.swift in Sources */,
 				BAFE55EC23497B7F00A35674 /* ThumbnailImageView.swift in Sources */,
