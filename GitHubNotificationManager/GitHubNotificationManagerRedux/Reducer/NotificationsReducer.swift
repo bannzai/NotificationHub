@@ -20,10 +20,10 @@ let notificationsReducer: Reducer<NotificationPageState> = { state, action in
         case true:
             return state
         }
-    case let action as SetNotificationListAction:
+    case let action as AddNotificationListAction:
         let index = state.currentNotificationPage
         var notificationsState = state.notificationsStatuses[index]
-        notificationsState.notifications = action.elements
+        notificationsState.notifications += action.elements
         notificationsState.nextFetchPage += 1
         var state = state
         state.notificationsStatuses[index] = notificationsState
@@ -48,13 +48,6 @@ let notificationsReducer: Reducer<NotificationPageState> = { state, action in
         var notificationsState = state.currentState
         notificationsState.searchWord = action.text
         state.notificationsStatuses[state.currentNotificationPage] = notificationsState
-        return state
-    case let action as ToggleWatchingAction:
-        var state = state
-        guard let index = state.notificationsStatuses.firstIndex(where: { $0.watching?.owner.login == action.watcihng.owner.login }) else {
-            fatalError("Unexpected watching \(action.watcihng)")
-        }
-        state.notificationsStatuses[index].isVisible.toggle()
         return state
     case _:
         return state

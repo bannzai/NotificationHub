@@ -13,7 +13,7 @@ import Combine
 struct CreateNotificationsAction: Action {
     let watching: WatchingElement
 }
-struct SetNotificationListAction: Action {
+struct AddNotificationListAction: Action {
     let elements: [NotificationElement]
 }
 
@@ -34,12 +34,15 @@ struct NotificationsFetchAction: AsyncAction {
     var canceller: Canceller
 
     func async(state: ReduxState?, dispatch: @escaping DispatchFunction) {
-        dispatch(NetworkRequestAction.start)
-        
+
         let state = appState(state).notificationPageState.currentState
+        if state.fetchStatus == .loading {
+            return
+        }
+        dispatch(NetworkRequestAction.start)
         GitHubAPI
             .request(request: NotificationsRequest(page: state.nextFetchPage, notificationsUrl: state))
-            .map(SetNotificationListAction.init(elements:))
+            .map(AddNotificationListAction.init(elements:))
             .sink(receiveCompletion: { (completion) in
                 switch completion {
                 case .finished:

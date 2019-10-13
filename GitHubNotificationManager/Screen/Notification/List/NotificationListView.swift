@@ -26,7 +26,7 @@ struct NotificationListView : RenderableView {
                 set: { self.store.dispatch(action: SearchRequestAction(text: $0)) }
             ),
             notifications: state.notificationPageState.currentState.visiblyNotifications,
-            isNoData: state.notificationPageState.currentState.visiblyNotifications.isEmpty && state.notificationPageState.currentState.fetchStatus != .notYetLoad,
+            isNoData: state.notificationPageState.currentState.visiblyNotifications.isEmpty && state.notificationPageState.currentState.fetchStatus == .loaded,
             watchingOwnerName: state.notificationPageState.currentState.watching?.owner.login
         )
     }
