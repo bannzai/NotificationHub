@@ -10,4 +10,5 @@ import Foundation
 
 public struct AppState: ReduxState, Codable {
     public init() { }
+    var watchingListState = WatchingListState()
 }

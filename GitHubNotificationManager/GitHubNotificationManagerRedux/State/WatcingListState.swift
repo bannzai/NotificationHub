@@ -7,13 +7,14 @@
 //
 
 import Foundation
+import GitHubNotificationManagerNetwork
 
-struct WatchingListState: ReduxState {
-    enum FetchStatus {
+struct WatchingListState: ReduxState, Codable {
+    enum FetchStatus: Int, Codable {
         case notYetLoad
         case loaded
         case loading
     }
-    var watchings: [WatchingEntity] = []
+    var watchings: [WatchingElement] = []
     var fetchStatus: FetchStatus = .notYetLoad
 }

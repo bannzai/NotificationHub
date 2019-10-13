@@ -12,7 +12,7 @@ import CoreData
 import GitHubNotificationManagerNetwork
 
 @objc(WatchingEntity)
-public class WatchingEntity: NSManagedObject, Action {
+public class WatchingEntity: NSManagedObject {
     static func create(element: WatchingElement, isReceiveNotification: Bool) -> WatchingEntity {
         let entity = WatchingEntity.create()
         let owner = WatchingOwnerEntity.create()

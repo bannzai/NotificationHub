@@ -13,6 +13,8 @@ public struct WatchingElement: Codable {
     public let fullName: String
     public let owner: Owner
     public let notificationsUrl: String
+    
+    public var isReceiveNotification: Bool = false
 
     enum CodingKeys: String, CodingKey {
         case id
