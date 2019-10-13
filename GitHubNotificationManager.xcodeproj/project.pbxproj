@@ -18,10 +18,10 @@
 		33498ABD2352DA9100D1A8BC /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498ABC2352DA9100D1A8BC /* AppState.swift */; };
 		33498AC02352DAD400D1A8BC /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498ABF2352DAD400D1A8BC /* AppReducer.swift */; };
 		33498AC22352DD6400D1A8BC /* WatchingsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AC12352DD6400D1A8BC /* WatchingsState.swift */; };
-		33498AC52352DDC700D1A8BC /* WatchingListAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AC42352DDC700D1A8BC /* WatchingListAction.swift */; };
+		33498AC52352DDC700D1A8BC /* WatchingsAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AC42352DDC700D1A8BC /* WatchingsAction.swift */; };
 		33498AC72352E45400D1A8BC /* NetworkActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AC62352E45400D1A8BC /* NetworkActions.swift */; };
 		33498ACA2352E48000D1A8BC /* Canceller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AC92352E48000D1A8BC /* Canceller.swift */; };
-		33498ACC2352E75000D1A8BC /* WatchingListReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498ACB2352E75000D1A8BC /* WatchingListReducer.swift */; };
+		33498ACC2352E75000D1A8BC /* WatchingsReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498ACB2352E75000D1A8BC /* WatchingsReducer.swift */; };
 		33498ACE2352EBCF00D1A8BC /* HUDState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498ACD2352EBCF00D1A8BC /* HUDState.swift */; };
 		33498AD02352EC3F00D1A8BC /* HUDReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498ACF2352EC3F00D1A8BC /* HUDReducer.swift */; };
 		33498AD22352ED2E00D1A8BC /* NotificationstState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AD12352ED2E00D1A8BC /* NotificationstState.swift */; };
@@ -182,10 +182,10 @@
 		33498ABC2352DA9100D1A8BC /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		33498ABF2352DAD400D1A8BC /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
 		33498AC12352DD6400D1A8BC /* WatchingsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchingsState.swift; sourceTree = "<group>"; };
-		33498AC42352DDC700D1A8BC /* WatchingListAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchingListAction.swift; sourceTree = "<group>"; };
+		33498AC42352DDC700D1A8BC /* WatchingsAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchingsAction.swift; sourceTree = "<group>"; };
 		33498AC62352E45400D1A8BC /* NetworkActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkActions.swift; sourceTree = "<group>"; };
 		33498AC92352E48000D1A8BC /* Canceller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canceller.swift; sourceTree = "<group>"; };
-		33498ACB2352E75000D1A8BC /* WatchingListReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchingListReducer.swift; sourceTree = "<group>"; };
+		33498ACB2352E75000D1A8BC /* WatchingsReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchingsReducer.swift; sourceTree = "<group>"; };
 		33498ACD2352EBCF00D1A8BC /* HUDState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDState.swift; sourceTree = "<group>"; };
 		33498ACF2352EC3F00D1A8BC /* HUDReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDReducer.swift; sourceTree = "<group>"; };
 		33498AD12352ED2E00D1A8BC /* NotificationstState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationstState.swift; sourceTree = "<group>"; };
@@ -366,7 +366,7 @@
 			children = (
 				33498ABF2352DAD400D1A8BC /* AppReducer.swift */,
 				33498ACF2352EC3F00D1A8BC /* HUDReducer.swift */,
-				33498ACB2352E75000D1A8BC /* WatchingListReducer.swift */,
+				33498ACB2352E75000D1A8BC /* WatchingsReducer.swift */,
 			);
 			path = Reducer;
 			sourceTree = "<group>";
@@ -374,7 +374,7 @@
 		33498AC32352DDBE00D1A8BC /* Action */ = {
 			isa = PBXGroup;
 			children = (
-				33498AC42352DDC700D1A8BC /* WatchingListAction.swift */,
+				33498AC42352DDC700D1A8BC /* WatchingsAction.swift */,
 				33498AC62352E45400D1A8BC /* NetworkActions.swift */,
 			);
 			path = Action;
@@ -1030,7 +1030,7 @@
 				33498AC22352DD6400D1A8BC /* WatchingsState.swift in Sources */,
 				33498ABA2352D82100D1A8BC /* AsyncMiddleware.swift in Sources */,
 				BAEFFC4022B9DDBF006D1549 /* FuzzyFindable.swift in Sources */,
-				33498ACC2352E75000D1A8BC /* WatchingListReducer.swift in Sources */,
+				33498ACC2352E75000D1A8BC /* WatchingsReducer.swift in Sources */,
 				33498AB42352D65400D1A8BC /* Store.swift in Sources */,
 				BA8A374C23422F4600CB487B /* WatchingList.Cell.swift in Sources */,
 				BA602C452348C8A0003C281C /* UserDefaultsGenerator.generated.swift in Sources */,
@@ -1051,7 +1051,7 @@
 				BABB9AAE234D5BA60067B767 /* CoreDataAccessor.swift in Sources */,
 				33498AD22352ED2E00D1A8BC /* NotificationstState.swift in Sources */,
 				BA1D70EA22A9D5BE000F83A1 /* ImageLoaderViewModel.swift in Sources */,
-				33498AC52352DDC700D1A8BC /* WatchingListAction.swift in Sources */,
+				33498AC52352DDC700D1A8BC /* WatchingsAction.swift in Sources */,
 				BAC1280C22A9B57700B52862 /* NotificationListView.Cell.swift in Sources */,
 				33B9295E23523A9700CBD088 /* NSManagedObjectExtensions.swift in Sources */,
 				33498ABD2352DA9100D1A8BC /* AppState.swift in Sources */,

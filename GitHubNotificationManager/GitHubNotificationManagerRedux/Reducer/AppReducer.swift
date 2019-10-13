@@ -10,7 +10,7 @@ import Foundation
 
 public let appReducer: Reducer<AppState> = { state, action in
     var state = state
-    state.watchingListState = watchingListReducer(state.watchingListState, action)
+    state.watchingListState = watchingsReducer(state.watchingListState, action)
     state.hudState = hudReducer(state.hudState, action)
     
     switch action {

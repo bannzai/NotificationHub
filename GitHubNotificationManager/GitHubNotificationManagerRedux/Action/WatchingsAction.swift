@@ -14,7 +14,7 @@ struct SetWatchingList: Action {
     let elements: [WatchingElement]
 }
 
-struct WatchingFetchAction: AsyncAction {
+struct WatchingsFetchAction: AsyncAction {
     var canceller: Canceller
 
     func async(state: ReduxState?, dispatch: @escaping DispatchFunction) {
