@@ -16,9 +16,11 @@ final public class Store<State: ReduxState>: ObservableObject {
     private var dispatchFunction: DispatchFunction!
     private let reducer: Reducer<State>
     
-    public init(reducer: @escaping Reducer<State>,
-                middlewares: [Middleware<State>],
-                state: State) {
+    public init(
+        reducer: @escaping Reducer<State>,
+        middlewares: [Middleware<State>],
+        state: State
+    ) {
         self.reducer = reducer
         self.state = state
         
