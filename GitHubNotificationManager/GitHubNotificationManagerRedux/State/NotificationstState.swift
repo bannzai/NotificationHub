@@ -26,6 +26,7 @@ struct NotificationsState: ReduxState, Codable {
     var watching: WatchingElement?
     var searchWord: String = ""
     var nextFetchPage: Int = 0
+    var isVisible: Bool = false
     var notifications: [NotificationElement] = []
     var fetchStatus: FetchStatus = .notYetLoad
 }
