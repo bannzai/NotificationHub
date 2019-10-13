@@ -15,7 +15,8 @@ public struct AppState: ReduxState, Codable {
     var watchingListState = WatchingsState()
     var hudState: HUDState = HUDState()
     var notificationPageState: NotificationPageState = NotificationPageState()
-    
+    var authentificationState: AuthenfiicationState = AuthenfiicationState()
+
     private enum CodingKeys: String, CodingKey {
         case watchingListState
     }
