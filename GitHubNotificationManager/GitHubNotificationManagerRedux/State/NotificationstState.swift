@@ -11,8 +11,9 @@ import GitHubNotificationManagerNetwork
 
 struct NotificationPageState: ReduxState, Codable {
     static let allNotificationsState: NotificationsState = NotificationsState(watching: nil)
+    static let allNotificationsPage: Int = 0
     var notificationsStatuses: [NotificationsState] = [Self.allNotificationsState]
-    var currentNotificationPage: Int = 0
+    var currentNotificationPage: Int = Self.allNotificationsPage
     var currentState: NotificationsState { notificationsStatuses[currentNotificationPage] }
 }
 struct NotificationsState: ReduxState, Codable {
