@@ -15,6 +15,7 @@ extension WatchingListView {
         @EnvironmentObject var store: Store<AppState>
         let watching: WatchingElement
         
+        // Dummy Value for animated toggle
         class DummyValue {
             var toggleValue: Bool = false
         }
