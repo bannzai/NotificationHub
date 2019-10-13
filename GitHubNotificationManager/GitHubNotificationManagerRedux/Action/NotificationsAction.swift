@@ -25,6 +25,11 @@ struct SearchRequestAction: Action {
     let text: String
 }
 
+struct UnReadNotificationAction: Action {
+    let notification: NotificationElement
+    let unread: Bool
+}
+
 struct NotificationsFetchAction: AsyncAction {
     var canceller: Canceller
     var watchingId: WatchingElement.ID?

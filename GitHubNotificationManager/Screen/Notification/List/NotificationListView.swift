@@ -41,8 +41,11 @@ struct NotificationListView : RenderableView {
                 List {
                     SearchBar(text: props.searchWord)
                     ForEach(props.notifications) { notification in
-                        Cell(notification: notification) {
-                            self.selectedNotification = $0
+                        StoreProvider(store: self.store) {
+                            Cell(
+                                notification: notification,
+                                didSelectCell: { self.selectedNotification = $0 }
+                            )
                         }
                     }
                     IndicatorView()
