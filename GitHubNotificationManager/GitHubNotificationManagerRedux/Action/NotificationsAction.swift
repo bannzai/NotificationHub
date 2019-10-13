@@ -14,7 +14,6 @@ struct CreateNotifications: Action {
     let watching: WatchingElement
 }
 struct SetNotificationList: Action {
-    let watchingId: WatchingElement.ID?
     let elements: [NotificationElement]
 }
 
@@ -33,21 +32,10 @@ struct NotificationsFetchAction: AsyncAction {
     func async(state: ReduxState?, dispatch: @escaping DispatchFunction) {
         dispatch(NetworkRequestAction.start)
         
-        guard let state = appState(state)
-            .notificationPageState
-            .notificationsStatuses
-            .first(where: { $0.watching?.id == watchingId })
-            else {
-                return
-        }
-        
-        let mapper: ([NotificationElement]) -> SetNotificationList = {
-            SetNotificationList.init(watchingId: self.watchingId, elements: $0)
-        }
-        
+        let state = appState(state).notificationPageState.currentState
         GitHubAPI
             .request(request: NotificationsRequest(page: state.nextFetchPage, notificationsUrl: state))
-            .map(mapper)
+            .map(SetNotificationList.init(elements:))
             .sink(receiveCompletion: { (completion) in
                 switch completion {
                 case .finished:
