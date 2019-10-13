@@ -10,7 +10,7 @@ import Foundation
 import GitHubNotificationManagerNetwork
 import Combine
 
-struct SetWatchingList: Action {
+struct SetWatchingListAction: Action {
     let elements: [WatchingElement]
 }
 
@@ -22,7 +22,7 @@ struct WatchingsFetchAction: AsyncAction {
         
         GitHubAPI
             .request(request: WatchingsRequest())
-            .map(SetWatchingList.init(elements:))
+            .map(SetWatchingListAction.init(elements:))
             .sink(receiveCompletion: { (completion) in
                 switch completion {
                 case .finished:
