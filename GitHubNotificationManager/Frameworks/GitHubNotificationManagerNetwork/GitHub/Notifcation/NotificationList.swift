@@ -7,7 +7,7 @@ import Foundation
 import GitHubNotificationManagerCore
 
 // MARK: - NotificationElement
-public struct NotificationElement: Codable {
+public struct NotificationElement: Codable, Identifiable {
     public let id: String
     public let unread: Bool
     public let reason, updatedAt: String

@@ -8,18 +8,13 @@
 
 import SwiftUI
 import Combine
+import GitHubNotificationManagerNetwork
 
 extension NotificationListView {
     struct Cell: View {
-        let binding: Binding<NotificationModel>
-        let didSelectCell: (NotificationModel) -> Void
-        var notification: NotificationModel { binding.wrappedValue }
-        
-        init(binding: Binding<NotificationModel>, didSelectCell: @escaping (NotificationModel) -> Void) {
-            self.binding = binding
-            self.didSelectCell = didSelectCell
-        }
-        
+        let notification: NotificationElement
+        let didSelectCell: (NotificationElement) -> Void
+
         var cellGestuer: some Gesture {
             TapGesture().onEnded {
                 self.didSelectCell(self.notification)
@@ -29,7 +24,7 @@ extension NotificationListView {
         var body: some View {
             HStack {
                 Group {
-                    ImageLoaderView(url: notification.repository.avatarURL, defaultImage: UIImage(systemName: "person")!)
+                    ImageLoaderView(url: notification.repository.owner.avatarURL, defaultImage: UIImage(systemName: "person")!)
                         .modifier(ThumbnailImageViewModifier())
                     VStack(alignment: .leading) {
                         Text(notification.repository.fullName).font(.headline).lineLimit(1)
@@ -39,19 +34,17 @@ extension NotificationListView {
                 .layoutPriority(DefaultLayoutPriority + 1)
                 .gesture(cellGestuer)
                 Spacer()
-                ReadButton(read: binding.unread)
+//                ReadButton(read: binding.unread)
             }
         }
     }
 }
 
-#if DEBUG
-struct NotificationListView_Cell_Previews : PreviewProvider {
-    static var previews: some View {
-        NotificationListView.Cell(
-            binding: State(initialValue: debugNotification).projectedValue,
-            didSelectCell: { _ in }
-        )
-    }
-}
-#endif
+// TODO:
+//#if DEBUG
+//struct NotificationListView_Cell_Previews : PreviewProvider {
+//    static var previews: some View {
+//        fatalError("TODO:")
+//    }
+//}
+//#endif
