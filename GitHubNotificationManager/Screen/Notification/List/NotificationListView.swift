@@ -17,7 +17,7 @@ struct NotificationListView : RenderableView {
         let searchWord: Binding<String>
         let notifications: [NotificationElement]
         let isNoData: Bool
-        let watchingId: WatchingElement.ID?
+        let watchingOwnerName: String?
     }
     func map(state: AppState, dispatch: @escaping DispatchFunction) -> Props {
         Props(
@@ -25,9 +25,9 @@ struct NotificationListView : RenderableView {
                 get: { state.notificationPageState.currentState.searchWord },
                 set: { self.store.dispatch(action: SearchRequestAction(text: $0)) }
             ),
-            notifications: state.notificationPageState.currentState.notifications,
-            isNoData: state.notificationPageState.currentState.notifications.isEmpty && state.notificationPageState.currentState.fetchStatus != .notYetLoad,
-            watchingId: state.notificationPageState.currentState.watching?.id
+            notifications: state.notificationPageState.currentState.visiblyNotifications,
+            isNoData: state.notificationPageState.currentState.visiblyNotifications.isEmpty && state.notificationPageState.currentState.fetchStatus != .notYetLoad,
+            watchingOwnerName: state.notificationPageState.currentState.watching?.owner.login
         )
     }
     
@@ -64,7 +64,7 @@ struct NotificationListView : RenderableView {
 
 private extension NotificationListView {
     private func fetch(props: Props) {
-        store.dispatch(action: NotificationsFetchAction(canceller: sharedStore, watchingId: props.watchingId))
+        store.dispatch(action: NotificationsFetchAction(canceller: sharedStore))
     }
     
     // FIXME: from https://api.github.com/repos/{Owner}/{RepoName}/pulls/{Number}

@@ -18,9 +18,6 @@ struct WatchingListView: View {
                 Cell(watching: watching)
             }
         }
-        .onAppear {
-            self.store.dispatch(action: WatchingsFetchAction(canceller: sharedStore))
-        }
     }
 }
 

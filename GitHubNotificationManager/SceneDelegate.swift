@@ -34,7 +34,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        UserDefaults.standard.set(Secret.Debug.accessToken, forKey: .GitHubAccessToken)
         #endif
         if let token = UserDefaults.standard.string(forKey: .GitHubAccessToken) {
-            NetworkConfig.Github.accessToken = token
+            sharedStore.dispatch(action: SignupAction(githubAccessToken: token))
         }
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)

@@ -53,6 +53,9 @@ struct RootView: RenderableView {
                         StoreProvider(store: self.store) { WatchingListView() }
                     }
                 }
+                .onAppear {
+                    self.store.dispatch(action: WatchingsFetchAction(canceller: sharedStore))
+                }
             } else {
                 OAuthView()
             }

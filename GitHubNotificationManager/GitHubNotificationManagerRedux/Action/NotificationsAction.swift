@@ -32,8 +32,7 @@ struct UnReadNotificationAction: Action {
 
 struct NotificationsFetchAction: AsyncAction {
     var canceller: Canceller
-    var watchingId: WatchingElement.ID?
-    
+
     func async(state: ReduxState?, dispatch: @escaping DispatchFunction) {
         dispatch(NetworkRequestAction.start)
         

@@ -12,7 +12,7 @@ import GitHubNotificationManagerNetwork
 let notificationsReducer: Reducer<NotificationPageState> = { state, action in
     switch action {
     case let action as CreateNotificationsAction:
-        switch state.notificationsStatuses.contains(where: { $0.watching?.id == action.watching.id }) {
+        switch state.notificationsStatuses.contains(where: { $0.watching?.owner.login == action.watching.owner.login }) {
         case false:
             var state = state
             state.notificationsStatuses.append(NotificationsState(watching: action.watching))
@@ -51,7 +51,7 @@ let notificationsReducer: Reducer<NotificationPageState> = { state, action in
         return state
     case let action as ToggleWatchingAction:
         var state = state
-        guard let index = state.notificationsStatuses.firstIndex(where: { $0.watching?.id == action.watcihng.id }) else {
+        guard let index = state.notificationsStatuses.firstIndex(where: { $0.watching?.owner.login == action.watcihng.owner.login }) else {
             fatalError("Unexpected watching \(action.watcihng)")
         }
         state.notificationsStatuses[index].isVisible.toggle()

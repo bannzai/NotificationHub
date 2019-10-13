@@ -15,18 +15,27 @@ extension WatchingListView {
         @EnvironmentObject var store: Store<AppState>
         let watching: WatchingElement
         
+        class DummyValue {
+            var toggleValue: Bool = false
+        }
+        let dummy = DummyValue()
+
         struct Props {
             let watching: WatchingElement
             let isReceiveNotification: Binding<Bool>
         }
         
         func map(state: AppState, dispatch: @escaping DispatchFunction) -> Props {
-            Props(
+            dummy.toggleValue = state.watchingListState.watchings.first(where: { $0.owner.login == self.watching.owner.login })!.isReceiveNotification
+            return Props(
                 watching: watching,
                 isReceiveNotification: Binding<Bool>(
-                    get: { state.watchingListState.watchings.first(where: { $0.id == self.watching.id })!.isReceiveNotification },
-                    set: { _ in self.store.dispatch(action: ToggleWatchingAction(watcihng: self.watching)) }
-                )
+                    get: { self.dummy.toggleValue },
+                    set: { value in
+                        self.dummy.toggleValue = value
+                        self.store.dispatch(action: CreateNotificationsAction(watching: self.watching))
+                        self.store.dispatch(action: ToggleWatchingAction(watcihng: self.watching))
+                })
             )
         }
         

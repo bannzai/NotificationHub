@@ -7,12 +7,27 @@
 //
 
 import Foundation
+import GitHubNotificationManagerNetwork
+
+extension Array where Element == WatchingElement {
+    func distinct() -> [WatchingElement] {
+        reduce(into: [WatchingElement]()) { (result, element) in
+            switch result.contains(where: { $0.owner.login == element.owner.login }) {
+            case true:
+                return
+            case false:
+                result.append(element)
+            }
+        }
+    }
+}
+
 
 let watchingsReducer: Reducer<WatchingsState> = { state, action in
     var state = state
     switch action {
     case let action as SetWatchingListAction:
-        state.watchings = action.elements
+        state.watchings = action.elements.distinct()
     case let action as ToggleWatchingAction:
         guard let index = state
             .watchings
