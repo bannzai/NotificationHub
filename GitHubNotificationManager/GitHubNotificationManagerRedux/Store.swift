@@ -24,6 +24,7 @@ final public class Store<State: ReduxState>: ObservableObject {
         
         var middlewares = middlewares
         middlewares.append(asyncActionsMiddleware)
+        middlewares.append(signupMiddleware)
         self.dispatchFunction = middlewares
             .reversed()
             .reduce(
