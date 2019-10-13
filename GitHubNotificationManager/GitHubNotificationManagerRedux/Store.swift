@@ -17,14 +17,11 @@ final public class Store<State: ReduxState>: ObservableObject {
     private let reducer: Reducer<State>
     
     public init(reducer: @escaping Reducer<State>,
-                middlewares: [Middleware<State>] = [],
+                middlewares: [Middleware<State>],
                 state: State) {
         self.reducer = reducer
         self.state = state
         
-        var middlewares = middlewares
-        middlewares.append(asyncActionsMiddleware)
-        middlewares.append(signupMiddleware)
         self.dispatchFunction = middlewares
             .reversed()
             .reduce(
