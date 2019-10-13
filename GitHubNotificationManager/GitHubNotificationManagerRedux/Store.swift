@@ -19,7 +19,7 @@ final public class Store<State: ReduxState>: ObservableObject {
     public init(
         reducer: @escaping Reducer<State>,
         middlewares: [Middleware<State>],
-        state: State
+        initialState state: State
     ) {
         self.reducer = reducer
         self.state = state

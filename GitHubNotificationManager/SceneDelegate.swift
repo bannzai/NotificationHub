@@ -13,6 +13,14 @@ import GitHubNotificationManagerCore
 import GitHubNotificationManagerNetwork
 import CoreData
 
+let store = Store<AppState>(
+    reducer: appReducer,
+    middlewares: [
+        asyncActionsMiddleware,
+        signupMiddleware,
+    ],
+    initialState: AppState()
+)
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -31,7 +39,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             window.rootViewController = UIHostingController(
-                rootView: RootView()
+                rootView: StoreProvider(store: store, content: {
+                    RootView()
+                })
             )
             self.window = window
             window.makeKeyAndVisible()
