@@ -61,19 +61,6 @@ struct RootView: RenderableView {
             }
         }
     }
-    
-    var pages: [AnyView] {
-        if store.state.watchingListState.fetchStatus == .notYetLoad {
-            return []
-        }
-        
-        return []
-//        let main = AnyView(NotificationListView().environmentObject(viewModel.allNotificationViewModel))
-//        let filtered = viewModel.activateNotificationViewModels.map {
-//            AnyView(NotificationListView().environmentObject($0))
-//        }
-//        return [main] + filtered
-    }
 }
 
 #if DEBUG
