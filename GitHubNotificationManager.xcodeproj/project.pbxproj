@@ -32,6 +32,7 @@
 		33498ADD2353558000D1A8BC /* AuthentificationReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498ADC2353558000D1A8BC /* AuthentificationReducer.swift */; };
 		33498ADF235355E400D1A8BC /* AuthentificationAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498ADE235355E400D1A8BC /* AuthentificationAction.swift */; };
 		33498AE32353656600D1A8BC /* SignupMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AE22353656600D1A8BC /* SignupMiddleware.swift */; };
+		334FB93523536D8B006441E7 /* FuzzyFindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEFFC3F22B9DDBF006D1549 /* FuzzyFindable.swift */; };
 		33953C00235247AD000AED79 /* GitHubNotificationManager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 33953BFE235247AD000AED79 /* GitHubNotificationManager.xcdatamodeld */; };
 		33B929472351980A00CBD088 /* NavigationBarTitleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B929462351980A00CBD088 /* NavigationBarTitleModifier.swift */; };
 		33B92955235219D100CBD088 /* WatchingEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B9294B2351DB2400CBD088 /* WatchingEntity+CoreDataClass.swift */; };
@@ -104,7 +105,6 @@
 		BACDC8082348612000C4A1AE /* OAuthViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BACDC8072348612000C4A1AE /* OAuthViewController.storyboard */; };
 		BAEFFC3C22B9DB4E006D1549 /* ViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEFFC3B22B9DB4E006D1549 /* ViewExtension.swift */; };
 		BAEFFC3E22B9DBD3006D1549 /* NotificationModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEFFC3D22B9DBD3006D1549 /* NotificationModel.swift */; };
-		BAEFFC4022B9DDBF006D1549 /* FuzzyFindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEFFC3F22B9DDBF006D1549 /* FuzzyFindable.swift */; };
 		BAFE55EC23497B7F00A35674 /* ThumbnailImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE55EB23497B7F00A35674 /* ThumbnailImageView.swift */; };
 		BAFE55EE2349836000A35674 /* BarButtonImageModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE55ED2349836000A35674 /* BarButtonImageModifier.swift */; };
 		BAFE55F02349865800A35674 /* DeviceType.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAFE55EF2349865800A35674 /* DeviceType.swift */; };
@@ -1051,8 +1051,8 @@
 				BA8A37372342068500CB487B /* SafariViewController.swift in Sources */,
 				33498AC22352DD6400D1A8BC /* WatchingsState.swift in Sources */,
 				33498ABA2352D82100D1A8BC /* AsyncMiddleware.swift in Sources */,
-				BAEFFC4022B9DDBF006D1549 /* FuzzyFindable.swift in Sources */,
 				33498ACC2352E75000D1A8BC /* WatchingsReducer.swift in Sources */,
+				334FB93523536D8B006441E7 /* FuzzyFindable.swift in Sources */,
 				33498AB42352D65400D1A8BC /* Store.swift in Sources */,
 				BA8A374C23422F4600CB487B /* WatchingList.Cell.swift in Sources */,
 				33498AD42353083700D1A8BC /* NotificationsAction.swift in Sources */,

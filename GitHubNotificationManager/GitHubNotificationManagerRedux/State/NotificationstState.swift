@@ -29,6 +29,13 @@ struct NotificationsState: ReduxState, Codable {
     var isVisible: Bool = false
     var notifications: [NotificationElement] = []
     var fetchStatus: FetchStatus = .notYetLoad
+    
+    private var filteredNotifications: [NotificationElement] {
+        notifications.filter { $0.match(for: searchWord) }
+    }
+    internal var visiblyNotifications: [NotificationElement] {
+        searchWord.isEmpty ? notifications : filteredNotifications
+    }
 }
 
 extension NotificationsState: NotificationPath {

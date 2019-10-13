@@ -9,6 +9,7 @@
 import Foundation
 import SwiftUI
 import GitHubNotificationManagerNetwork
+import GitHubNotificationManagerCore
 
 struct NotificationModel: Identifiable {
     struct Repository {

@@ -4,6 +4,8 @@
 //   let notification = try? newJSONDecoder().decode(Notification.self, from: jsonData)
 
 import Foundation
+import GitHubNotificationManagerCore
+
 // MARK: - NotificationElement
 public struct NotificationElement: Codable {
     public let id: String
