@@ -13,6 +13,16 @@ let watchingsReducer: Reducer<WatchingsState> = { state, action in
     switch action {
     case let action as SetWatchingListAction:
         state.watchings = action.elements
+    case let action as ToggleWatchingAction:
+        guard let index = state
+            .watchings
+            .firstIndex(where: { $0.id == action.watcihng.id })
+            else {
+                fatalError("Unexpected watching \(action.watcihng)")
+        }
+        
+        state.watchings[index].isReceiveNotification.toggle()
+        return state
     case let action as NetworkRequestAction:
         switch action {
         case .start:

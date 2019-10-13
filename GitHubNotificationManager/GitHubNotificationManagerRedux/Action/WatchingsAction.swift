@@ -14,6 +14,10 @@ struct SetWatchingListAction: Action {
     let elements: [WatchingElement]
 }
 
+struct ToggleWatchingAction: Action {
+    let watcihng: WatchingElement
+}
+
 struct WatchingsFetchAction: AsyncAction {
     var canceller: Canceller
 
