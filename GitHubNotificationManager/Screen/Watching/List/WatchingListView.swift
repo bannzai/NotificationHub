@@ -26,7 +26,6 @@ struct WatchingListView: View {
 
 #if DEBUG
 struct WatchingListView_Previews: PreviewProvider {
-    @State static var watchings: [WatchingEntity] = []
     static var previews: some View {
         WatchingListView()
     }
