@@ -1,5 +1,5 @@
 //
-//  WatcingListState.swift
+//  WatchingsState.swift
 //  GitHubNotificationManager
 //
 //  Created by Yudai Hirose on 2019/10/13.
@@ -9,7 +9,7 @@
 import Foundation
 import GitHubNotificationManagerNetwork
 
-struct WatchingListState: ReduxState, Codable {
+struct WatchingsState: ReduxState, Codable {
     enum FetchStatus: Int, Codable {
         case notYetLoad
         case loaded

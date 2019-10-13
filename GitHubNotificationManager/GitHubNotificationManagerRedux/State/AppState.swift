@@ -12,7 +12,7 @@ import GitHubNotificationManagerNetwork
 public struct AppState: ReduxState, Codable {
     public init() { }
     var requestError: RequestError? = nil
-    var watchingListState = WatchingListState()
+    var watchingListState = WatchingsState()
     var hudState: HUDState = HUDState()
     
     private enum CodingKeys: String, CodingKey {

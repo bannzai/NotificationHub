@@ -8,7 +8,7 @@
 
 import Foundation
 
-let watchingListReducer: Reducer<WatchingListState> = { state, action in
+let watchingListReducer: Reducer<WatchingsState> = { state, action in
     var state = state
     switch action {
     case let action as SetWatchingList:

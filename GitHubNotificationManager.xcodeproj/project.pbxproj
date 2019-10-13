@@ -17,13 +17,14 @@
 		33498ABA2352D82100D1A8BC /* AsyncMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AB92352D82100D1A8BC /* AsyncMiddleware.swift */; };
 		33498ABD2352DA9100D1A8BC /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498ABC2352DA9100D1A8BC /* AppState.swift */; };
 		33498AC02352DAD400D1A8BC /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498ABF2352DAD400D1A8BC /* AppReducer.swift */; };
-		33498AC22352DD6400D1A8BC /* WatcingListState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AC12352DD6400D1A8BC /* WatcingListState.swift */; };
+		33498AC22352DD6400D1A8BC /* WatchingsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AC12352DD6400D1A8BC /* WatchingsState.swift */; };
 		33498AC52352DDC700D1A8BC /* WatchingListAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AC42352DDC700D1A8BC /* WatchingListAction.swift */; };
 		33498AC72352E45400D1A8BC /* NetworkActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AC62352E45400D1A8BC /* NetworkActions.swift */; };
 		33498ACA2352E48000D1A8BC /* Canceller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AC92352E48000D1A8BC /* Canceller.swift */; };
 		33498ACC2352E75000D1A8BC /* WatchingListReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498ACB2352E75000D1A8BC /* WatchingListReducer.swift */; };
 		33498ACE2352EBCF00D1A8BC /* HUDState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498ACD2352EBCF00D1A8BC /* HUDState.swift */; };
 		33498AD02352EC3F00D1A8BC /* HUDReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498ACF2352EC3F00D1A8BC /* HUDReducer.swift */; };
+		33498AD22352ED2E00D1A8BC /* NotificationstState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AD12352ED2E00D1A8BC /* NotificationstState.swift */; };
 		33953C00235247AD000AED79 /* GitHubNotificationManager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 33953BFE235247AD000AED79 /* GitHubNotificationManager.xcdatamodeld */; };
 		33B929472351980A00CBD088 /* NavigationBarTitleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B929462351980A00CBD088 /* NavigationBarTitleModifier.swift */; };
 		33B92955235219D100CBD088 /* WatchingEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B9294B2351DB2400CBD088 /* WatchingEntity+CoreDataClass.swift */; };
@@ -180,13 +181,14 @@
 		33498AB92352D82100D1A8BC /* AsyncMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncMiddleware.swift; sourceTree = "<group>"; };
 		33498ABC2352DA9100D1A8BC /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		33498ABF2352DAD400D1A8BC /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
-		33498AC12352DD6400D1A8BC /* WatcingListState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatcingListState.swift; sourceTree = "<group>"; };
+		33498AC12352DD6400D1A8BC /* WatchingsState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchingsState.swift; sourceTree = "<group>"; };
 		33498AC42352DDC700D1A8BC /* WatchingListAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchingListAction.swift; sourceTree = "<group>"; };
 		33498AC62352E45400D1A8BC /* NetworkActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkActions.swift; sourceTree = "<group>"; };
 		33498AC92352E48000D1A8BC /* Canceller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canceller.swift; sourceTree = "<group>"; };
 		33498ACB2352E75000D1A8BC /* WatchingListReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchingListReducer.swift; sourceTree = "<group>"; };
 		33498ACD2352EBCF00D1A8BC /* HUDState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDState.swift; sourceTree = "<group>"; };
 		33498ACF2352EC3F00D1A8BC /* HUDReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDReducer.swift; sourceTree = "<group>"; };
+		33498AD12352ED2E00D1A8BC /* NotificationstState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationstState.swift; sourceTree = "<group>"; };
 		33953BFF235247AD000AED79 /* GitHubNotificationManager.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GitHubNotificationManager.xcdatamodel; sourceTree = "<group>"; };
 		33B929462351980A00CBD088 /* NavigationBarTitleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarTitleModifier.swift; sourceTree = "<group>"; };
 		33B9294B2351DB2400CBD088 /* WatchingEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WatchingEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -353,7 +355,8 @@
 			children = (
 				33498ABC2352DA9100D1A8BC /* AppState.swift */,
 				33498ACD2352EBCF00D1A8BC /* HUDState.swift */,
-				33498AC12352DD6400D1A8BC /* WatcingListState.swift */,
+				33498AC12352DD6400D1A8BC /* WatchingsState.swift */,
+				33498AD12352ED2E00D1A8BC /* NotificationstState.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -1024,7 +1027,7 @@
 				BABB9A85234CB8A10067B767 /* LayoutPriorityExtension.swift in Sources */,
 				33B9295C2352391600CBD088 /* WatchingEntity+CoreDataProperties.swift in Sources */,
 				BA8A37372342068500CB487B /* SafariViewController.swift in Sources */,
-				33498AC22352DD6400D1A8BC /* WatcingListState.swift in Sources */,
+				33498AC22352DD6400D1A8BC /* WatchingsState.swift in Sources */,
 				33498ABA2352D82100D1A8BC /* AsyncMiddleware.swift in Sources */,
 				BAEFFC4022B9DDBF006D1549 /* FuzzyFindable.swift in Sources */,
 				33498ACC2352E75000D1A8BC /* WatchingListReducer.swift in Sources */,
@@ -1046,6 +1049,7 @@
 				BA60426E22A7409300345259 /* SceneDelegate.swift in Sources */,
 				33B9295623521AF600CBD088 /* WatchingOwnerEntity+CoreDataClass.swift in Sources */,
 				BABB9AAE234D5BA60067B767 /* CoreDataAccessor.swift in Sources */,
+				33498AD22352ED2E00D1A8BC /* NotificationstState.swift in Sources */,
 				BA1D70EA22A9D5BE000F83A1 /* ImageLoaderViewModel.swift in Sources */,
 				33498AC52352DDC700D1A8BC /* WatchingListAction.swift in Sources */,
 				BAC1280C22A9B57700B52862 /* NotificationListView.Cell.swift in Sources */,
