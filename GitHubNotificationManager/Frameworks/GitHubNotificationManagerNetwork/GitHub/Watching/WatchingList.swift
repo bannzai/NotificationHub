@@ -6,7 +6,7 @@
 import Foundation
 
 // MARK: - WatchingElement
-public struct WatchingElement: Codable {
+public struct WatchingElement: Codable, Identifiable {
     public let id: Int64
     public let nodeID: String
     public let name: String

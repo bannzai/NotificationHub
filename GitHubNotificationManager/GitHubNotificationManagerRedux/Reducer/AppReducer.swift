@@ -12,6 +12,7 @@ public let appReducer: Reducer<AppState> = { state, action in
     var state = state
     state.watchingListState = watchingsReducer(state.watchingListState, action)
     state.hudState = hudReducer(state.hudState, action)
+    state.notificationPageState = notificationsReducer(state.notificationPageState, action)
     
     switch action {
     case let networkError as ReceiveNetworkRequestError:

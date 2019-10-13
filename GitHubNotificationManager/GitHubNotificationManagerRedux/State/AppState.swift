@@ -14,6 +14,7 @@ public struct AppState: ReduxState, Codable {
     var requestError: RequestError? = nil
     var watchingListState = WatchingsState()
     var hudState: HUDState = HUDState()
+    var notificationPageState: NotificationPageState = NotificationPageState()
     
     private enum CodingKeys: String, CodingKey {
         case watchingListState
@@ -23,5 +24,4 @@ public struct AppState: ReduxState, Codable {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(watchingListState, forKey: .watchingListState)
     }
-    
 }
