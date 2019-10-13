@@ -10,6 +10,10 @@ import Foundation
 
 let authentificationReducer: Reducer<AuthenfiicationState> = { state, action in
     switch action {
+    case let action as SignupAction:
+        var state = state
+        state.githubAccessToken = action.githubAccessToken
+        return state
     case _:
         return state
     }
