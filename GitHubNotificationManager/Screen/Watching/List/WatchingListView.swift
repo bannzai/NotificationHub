@@ -7,22 +7,19 @@
 //
 
 import SwiftUI
+import GitHubNotificationManagerNetwork
 
 struct WatchingListView: View {
-    var watchings: [WatchingEntity] = []
-
-    func watching(of index: Int) -> Binding<WatchingEntity> {
-        return Binding(get: {
-            self.watchings[index]
-        }) { (watching) in
-            fatalError()
-//            self.watchings[index] = watching
-        }
-    }
+    @EnvironmentObject var store: Store<AppState>
     
     var body: some View {
-        List(watchings.indices, id: \.self) { (index) in
-            Cell(watching: self.watching(of: index))
+        List(store.state.watchingListState.watchings) { (watching) in
+            StoreProvider(store: self.store) {
+                Cell(watching: watching)
+            }
+        }
+        .onAppear {
+            self.store.dispatch(action: WatchingsFetchAction(canceller: sharedStore))
         }
     }
 }

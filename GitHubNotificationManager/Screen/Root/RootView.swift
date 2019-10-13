@@ -43,17 +43,14 @@ struct RootView: RenderableView {
                                 Image(systemName: "text.badge.plus")
                                     .barButtonItems()
                             })
-                    ).onAppear(perform: {
-                        // FIXME: Compile error about self.store passing to canceller.
-                        self.store.dispatch(action: WatchingsFetchAction(canceller: sharedStore))
-                    }).alert(item: $store.state.requestError) { (error) in
+                    ).alert(item: $store.state.requestError) { (error) in
                         Alert(
                             title: Text("Fetched Error"),
                             message: Text(error.localizedDescription),
                             dismissButton: .default(Text("OK"))
                         )
                     }.sheet(isPresented: $selectedAddNotificationList) { () in
-                        WatchingListView()
+                        StoreProvider(store: self.store) { WatchingListView() }
                     }
                 }
             } else {
