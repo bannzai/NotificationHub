@@ -95,7 +95,6 @@
 		BAC127D122A841B300B52862 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC1278122A83DBC00B52862 /* ImageLoader.swift */; };
 		BAC127D422A8442A00B52862 /* URLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC127D222A8442200B52862 /* URLConvertible.swift */; };
 		BAC127D622A844BD00B52862 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC127D522A844BD00B52862 /* RootView.swift */; };
-		BAC127DB22A8539000B52862 /* NotificationListVIewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC127DA22A8539000B52862 /* NotificationListVIewModel.swift */; };
 		BAC127E422A8911C00B52862 /* NotificationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC127E322A8911C00B52862 /* NotificationListView.swift */; };
 		BAC127FB22A9A82300B52862 /* NotificationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC127F922A9A7FB00B52862 /* NotificationList.swift */; };
 		BAC1280C22A9B57700B52862 /* NotificationListView.Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC1280B22A9B57700B52862 /* NotificationListView.Cell.swift */; };
@@ -268,7 +267,6 @@
 		BAC1278122A83DBC00B52862 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
 		BAC127D222A8442200B52862 /* URLConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConvertible.swift; sourceTree = "<group>"; };
 		BAC127D522A844BD00B52862 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
-		BAC127DA22A8539000B52862 /* NotificationListVIewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListVIewModel.swift; sourceTree = "<group>"; };
 		BAC127E322A8911C00B52862 /* NotificationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListView.swift; sourceTree = "<group>"; };
 		BAC127F922A9A7FB00B52862 /* NotificationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationList.swift; sourceTree = "<group>"; };
 		BAC1280B22A9B57700B52862 /* NotificationListView.Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListView.Cell.swift; sourceTree = "<group>"; };
@@ -759,7 +757,6 @@
 			isa = PBXGroup;
 			children = (
 				BAEFFC3D22B9DBD3006D1549 /* NotificationModel.swift */,
-				BAC127DA22A8539000B52862 /* NotificationListVIewModel.swift */,
 				BAC127E322A8911C00B52862 /* NotificationListView.swift */,
 				BAC1280B22A9B57700B52862 /* NotificationListView.Cell.swift */,
 			);
@@ -1075,7 +1072,6 @@
 				BA8A3739234206CF00CB487B /* SafariViewControllerWrapperViewController.swift in Sources */,
 				33953C00235247AD000AED79 /* GitHubNotificationManager.xcdatamodeld in Sources */,
 				BABB9A83234B936F0067B767 /* ReadButton.swift in Sources */,
-				BAC127DB22A8539000B52862 /* NotificationListVIewModel.swift in Sources */,
 				BAFE55F02349865800A35674 /* DeviceType.swift in Sources */,
 				BA357A1622B56BA800549BA0 /* SearchBar.swift in Sources */,
 				BA60426E22A7409300345259 /* SceneDelegate.swift in Sources */,
