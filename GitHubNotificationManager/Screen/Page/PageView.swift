@@ -9,16 +9,23 @@
 import UIKit
 import SwiftUI
 
-final class PageViewModel: ObservableObject {
-    var currentPage: Int = 0 {
-        didSet {
-            didChangePage(currentPage)
+struct NotificationListPageView: View {
+    @EnvironmentObject var store: Store<AppState>
+    @Binding var currentPage: Int
+
+    var pages: [NotificationListView] {
+        store
+            .state
+            .notificationPageState
+            .notificationsStatuses
+            .filter { $0.isVisible }
+            .map { _ in
+                NotificationListView()
         }
     }
-    var didChangePage: (Int) -> Void
     
-    init(didChangePage: @escaping (Int) -> Void) {
-        self.didChangePage = didChangePage
+    var body: some View {
+        PageView(views: pages, currentPage: $currentPage)
     }
 }
 

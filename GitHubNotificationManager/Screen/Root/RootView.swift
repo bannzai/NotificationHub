@@ -33,7 +33,7 @@ struct RootView: RenderableView {
         Group {
             if props.isAuthorized {
                 NavigationView {
-                    PageView(views: pages, currentPage: props.currentPage)
+                    NotificationListPageView(currentPage: props.currentPage)
                         .navigationBarTitle(Text(props.title), displayMode: .inline)
                         .navigationBarItems(
                             trailing: Button(
@@ -58,7 +58,7 @@ struct RootView: RenderableView {
             }
         }
     }
-
+    
     var pages: [AnyView] {
         if store.state.watchingListState.fetchStatus == .notYetLoad {
             return []
