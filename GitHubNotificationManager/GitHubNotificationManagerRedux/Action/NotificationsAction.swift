@@ -10,10 +10,10 @@ import Foundation
 import GitHubNotificationManagerNetwork
 import Combine
 
-struct CreateNotifications: Action {
+struct CreateNotificationsAction: Action {
     let watching: WatchingElement
 }
-struct SetNotificationList: Action {
+struct SetNotificationListAction: Action {
     let elements: [NotificationElement]
 }
 
@@ -21,7 +21,7 @@ func appState(_ state: ReduxState?) -> AppState {
     state as! AppState
 }
 
-struct ChangeNotificationPage: Action {
+struct ChangeNotificationPageAction: Action {
     let page: Int
 }
 
@@ -35,7 +35,7 @@ struct NotificationsFetchAction: AsyncAction {
         let state = appState(state).notificationPageState.currentState
         GitHubAPI
             .request(request: NotificationsRequest(page: state.nextFetchPage, notificationsUrl: state))
-            .map(SetNotificationList.init(elements:))
+            .map(SetNotificationListAction.init(elements:))
             .sink(receiveCompletion: { (completion) in
                 switch completion {
                 case .finished:

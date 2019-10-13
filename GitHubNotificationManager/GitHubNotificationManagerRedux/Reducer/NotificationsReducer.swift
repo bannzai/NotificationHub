@@ -11,7 +11,7 @@ import GitHubNotificationManagerNetwork
 
 let notificationsReducer: Reducer<NotificationPageState> = { state, action in
     switch action {
-    case let action as CreateNotifications:
+    case let action as CreateNotificationsAction:
         switch state.notificationsStatuses.contains(where: { $0.watching?.id == action.watching.id }) {
         case false:
             var state = state
@@ -20,7 +20,7 @@ let notificationsReducer: Reducer<NotificationPageState> = { state, action in
         case true:
             return state
         }
-    case let action as SetNotificationList:
+    case let action as SetNotificationListAction:
         let index = state.currentNotificationPage
         var notificationsState = state.notificationsStatuses[index]
         notificationsState.notifications = action.elements
@@ -28,7 +28,7 @@ let notificationsReducer: Reducer<NotificationPageState> = { state, action in
         var state = state
         state.notificationsStatuses[index] = notificationsState
         return state
-    case let action as ChangeNotificationPage:
+    case let action as ChangeNotificationPageAction:
         var state = state
         state.currentNotificationPage = action.page
         return state
