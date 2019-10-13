@@ -17,10 +17,6 @@ struct SetNotificationListAction: Action {
     let elements: [NotificationElement]
 }
 
-func appState(_ state: ReduxState?) -> AppState {
-    state as! AppState
-}
-
 struct ChangeNotificationPageAction: Action {
     let page: Int
 }

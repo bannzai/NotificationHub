@@ -8,6 +8,7 @@
 
 import Foundation
 
-extension Array: ReduxState where Element == ReduxState {
-    
+func appState(_ state: ReduxState?) -> AppState {
+    state as! AppState
 }
+
