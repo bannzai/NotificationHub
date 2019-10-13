@@ -23,7 +23,7 @@ struct NotificationListView : RenderableView {
         Props(
             searchWord: Binding<String>(
                 get: { state.notificationPageState.currentState.searchWord },
-                set: { dispatch(action: SearchRequestAction(text: $0)) }
+                set: { dispatch(SearchRequestAction(text: $0)) }
             ),
             notifications: state.notificationPageState.currentState.visiblyNotifications,
             isNoData: state.notificationPageState.currentState.visiblyNotifications.isEmpty && state.notificationPageState.currentState.fetchStatus == .loaded,
