@@ -43,6 +43,12 @@ let notificationsReducer: Reducer<NotificationPageState> = { state, action in
         var state = state
         state.notificationsStatuses[state.currentNotificationPage] = notificationsState
         return state
+    case let action as SearchRequestAction:
+        var state = state
+        var notificationsState = state.currentState
+        notificationsState.searchWord = action.text
+        state.notificationsStatuses[state.currentNotificationPage] = notificationsState
+        return state
     case _:
         return state
     }

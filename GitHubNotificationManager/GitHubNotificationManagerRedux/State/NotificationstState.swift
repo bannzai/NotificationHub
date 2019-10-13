@@ -16,6 +16,7 @@ struct NotificationPageState: ReduxState, Codable {
     var currentNotificationPage: Int = Self.allNotificationsPage
     var currentState: NotificationsState { notificationsStatuses[currentNotificationPage] }
 }
+
 struct NotificationsState: ReduxState, Codable {
     enum FetchStatus: Int, Codable {
         case notYetLoad
@@ -23,6 +24,7 @@ struct NotificationsState: ReduxState, Codable {
         case loading
     }
     var watching: WatchingElement?
+    var searchWord: String = ""
     var nextFetchPage: Int = 0
     var notifications: [NotificationElement] = []
     var fetchStatus: FetchStatus = .notYetLoad
