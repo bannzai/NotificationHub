@@ -17,6 +17,10 @@
 		33498ABA2352D82100D1A8BC /* AsyncMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AB92352D82100D1A8BC /* AsyncMiddleware.swift */; };
 		33498ABD2352DA9100D1A8BC /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498ABC2352DA9100D1A8BC /* AppState.swift */; };
 		33498AC02352DAD400D1A8BC /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498ABF2352DAD400D1A8BC /* AppReducer.swift */; };
+		33498AC22352DD6400D1A8BC /* WatcingListState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AC12352DD6400D1A8BC /* WatcingListState.swift */; };
+		33498AC52352DDC700D1A8BC /* WatchingListAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AC42352DDC700D1A8BC /* WatchingListAction.swift */; };
+		33498AC72352E45400D1A8BC /* NetworkActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AC62352E45400D1A8BC /* NetworkActions.swift */; };
+		33498ACA2352E48000D1A8BC /* Canceller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AC92352E48000D1A8BC /* Canceller.swift */; };
 		33953C00235247AD000AED79 /* GitHubNotificationManager.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 33953BFE235247AD000AED79 /* GitHubNotificationManager.xcdatamodeld */; };
 		33B929472351980A00CBD088 /* NavigationBarTitleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B929462351980A00CBD088 /* NavigationBarTitleModifier.swift */; };
 		33B92955235219D100CBD088 /* WatchingEntity+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B9294B2351DB2400CBD088 /* WatchingEntity+CoreDataClass.swift */; };
@@ -173,6 +177,10 @@
 		33498AB92352D82100D1A8BC /* AsyncMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncMiddleware.swift; sourceTree = "<group>"; };
 		33498ABC2352DA9100D1A8BC /* AppState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppState.swift; sourceTree = "<group>"; };
 		33498ABF2352DAD400D1A8BC /* AppReducer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppReducer.swift; sourceTree = "<group>"; };
+		33498AC12352DD6400D1A8BC /* WatcingListState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatcingListState.swift; sourceTree = "<group>"; };
+		33498AC42352DDC700D1A8BC /* WatchingListAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchingListAction.swift; sourceTree = "<group>"; };
+		33498AC62352E45400D1A8BC /* NetworkActions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkActions.swift; sourceTree = "<group>"; };
+		33498AC92352E48000D1A8BC /* Canceller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Canceller.swift; sourceTree = "<group>"; };
 		33953BFF235247AD000AED79 /* GitHubNotificationManager.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = GitHubNotificationManager.xcdatamodel; sourceTree = "<group>"; };
 		33B929462351980A00CBD088 /* NavigationBarTitleModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarTitleModifier.swift; sourceTree = "<group>"; };
 		33B9294B2351DB2400CBD088 /* WatchingEntity+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WatchingEntity+CoreDataClass.swift"; sourceTree = "<group>"; };
@@ -316,6 +324,8 @@
 		33498AB72352D80F00D1A8BC /* GitHubNotificationManagerRedux */ = {
 			isa = PBXGroup;
 			children = (
+				33498AC82352E46000D1A8BC /* Canceller */,
+				33498AC32352DDBE00D1A8BC /* Action */,
 				33498ABE2352DACA00D1A8BC /* Reducer */,
 				33498ABB2352DA8600D1A8BC /* State */,
 				33498AB82352D81900D1A8BC /* Middleware */,
@@ -336,6 +346,7 @@
 			isa = PBXGroup;
 			children = (
 				33498ABC2352DA9100D1A8BC /* AppState.swift */,
+				33498AC12352DD6400D1A8BC /* WatcingListState.swift */,
 			);
 			path = State;
 			sourceTree = "<group>";
@@ -346,6 +357,23 @@
 				33498ABF2352DAD400D1A8BC /* AppReducer.swift */,
 			);
 			path = Reducer;
+			sourceTree = "<group>";
+		};
+		33498AC32352DDBE00D1A8BC /* Action */ = {
+			isa = PBXGroup;
+			children = (
+				33498AC42352DDC700D1A8BC /* WatchingListAction.swift */,
+				33498AC62352E45400D1A8BC /* NetworkActions.swift */,
+			);
+			path = Action;
+			sourceTree = "<group>";
+		};
+		33498AC82352E46000D1A8BC /* Canceller */ = {
+			isa = PBXGroup;
+			children = (
+				33498AC92352E48000D1A8BC /* Canceller.swift */,
+			);
+			path = Canceller;
 			sourceTree = "<group>";
 		};
 		33B92945235197FA00CBD088 /* NavigationBar */ = {
@@ -987,6 +1015,7 @@
 				BABB9A85234CB8A10067B767 /* LayoutPriorityExtension.swift in Sources */,
 				33B9295C2352391600CBD088 /* WatchingEntity+CoreDataProperties.swift in Sources */,
 				BA8A37372342068500CB487B /* SafariViewController.swift in Sources */,
+				33498AC22352DD6400D1A8BC /* WatcingListState.swift in Sources */,
 				33498ABA2352D82100D1A8BC /* AsyncMiddleware.swift in Sources */,
 				BAEFFC4022B9DDBF006D1549 /* FuzzyFindable.swift in Sources */,
 				33498AB42352D65400D1A8BC /* Store.swift in Sources */,
@@ -1008,6 +1037,7 @@
 				33B9295623521AF600CBD088 /* WatchingOwnerEntity+CoreDataClass.swift in Sources */,
 				BABB9AAE234D5BA60067B767 /* CoreDataAccessor.swift in Sources */,
 				BA1D70EA22A9D5BE000F83A1 /* ImageLoaderViewModel.swift in Sources */,
+				33498AC52352DDC700D1A8BC /* WatchingListAction.swift in Sources */,
 				BAC1280C22A9B57700B52862 /* NotificationListView.Cell.swift in Sources */,
 				33B9295E23523A9700CBD088 /* NSManagedObjectExtensions.swift in Sources */,
 				33498ABD2352DA9100D1A8BC /* AppState.swift in Sources */,
@@ -1022,6 +1052,7 @@
 				33498AB62352D78000D1A8BC /* Middleware.swift in Sources */,
 				33B9295B2352391600CBD088 /* WatchingOwnerEntity+CoreDataProperties.swift in Sources */,
 				BAEFFC3C22B9DB4E006D1549 /* ViewExtension.swift in Sources */,
+				33498AC72352E45400D1A8BC /* NetworkActions.swift in Sources */,
 				BAFE55EC23497B7F00A35674 /* ThumbnailImageView.swift in Sources */,
 				BAEFFC3E22B9DBD3006D1549 /* NotificationModel.swift in Sources */,
 				BA8A374A23422EFA00CB487B /* RootViewModel.swift in Sources */,
@@ -1029,6 +1060,7 @@
 				BACDC8002346C7F800C4A1AE /* OAuthViewController.swift in Sources */,
 				BAC127D622A844BD00B52862 /* RootView.swift in Sources */,
 				BA8A374E2342304200CB487B /* WatchingModel.swift in Sources */,
+				33498ACA2352E48000D1A8BC /* Canceller.swift in Sources */,
 				BA357A1422B4C41300549BA0 /* SafariView.swift in Sources */,
 				BAC127E422A8911C00B52862 /* NotificationListView.swift in Sources */,
 				BAFE55F32349C27B00A35674 /* NoDataView.swift in Sources */,
