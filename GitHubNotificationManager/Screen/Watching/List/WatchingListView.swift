@@ -9,13 +9,14 @@
 import SwiftUI
 
 struct WatchingListView: View {
-    @Binding var watchings: [WatchingEntity]
+    var watchings: [WatchingEntity] = []
 
     func watching(of index: Int) -> Binding<WatchingEntity> {
         return Binding(get: {
             self.watchings[index]
         }) { (watching) in
-            self.watchings[index] = watching
+            fatalError()
+//            self.watchings[index] = watching
         }
     }
     
@@ -30,7 +31,7 @@ struct WatchingListView: View {
 struct WatchingListView_Previews: PreviewProvider {
     @State static var watchings: [WatchingEntity] = []
     static var previews: some View {
-        WatchingListView(watchings: $watchings)
+        WatchingListView()
     }
 }
 #endif

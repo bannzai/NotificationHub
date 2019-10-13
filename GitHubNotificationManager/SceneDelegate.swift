@@ -13,7 +13,7 @@ import GitHubNotificationManagerCore
 import GitHubNotificationManagerNetwork
 import CoreData
 
-let store = Store<AppState>(
+let sharedStore = Store<AppState>(
     reducer: appReducer,
     middlewares: [
         asyncActionsMiddleware,
@@ -39,7 +39,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             window.rootViewController = UIHostingController(
-                rootView: StoreProvider(store: store, content: {
+                rootView: StoreProvider(store: sharedStore, content: {
                     RootView()
                 })
             )

@@ -71,7 +71,6 @@
 		BA8A37402342251800CB487B /* WatchingsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A373D2342250800CB487B /* WatchingsRequest.swift */; };
 		BA8A37442342259000CB487B /* WatchingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A37412342257000CB487B /* WatchingList.swift */; };
 		BA8A374823422E5100CB487B /* WatchingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A374723422E5100CB487B /* WatchingListView.swift */; };
-		BA8A374A23422EFA00CB487B /* RootViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A374923422EFA00CB487B /* RootViewModel.swift */; };
 		BA8A374C23422F4600CB487B /* WatchingList.Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A374B23422F4600CB487B /* WatchingList.Cell.swift */; };
 		BA8A374E2342304200CB487B /* WatchingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A374D2342304200CB487B /* WatchingModel.swift */; };
 		BABB9A83234B936F0067B767 /* ReadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABB9A82234B936F0067B767 /* ReadButton.swift */; };
@@ -261,7 +260,6 @@
 		BA8A373D2342250800CB487B /* WatchingsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchingsRequest.swift; sourceTree = "<group>"; };
 		BA8A37412342257000CB487B /* WatchingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchingList.swift; sourceTree = "<group>"; };
 		BA8A374723422E5100CB487B /* WatchingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchingListView.swift; sourceTree = "<group>"; };
-		BA8A374923422EFA00CB487B /* RootViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootViewModel.swift; sourceTree = "<group>"; };
 		BA8A374B23422F4600CB487B /* WatchingList.Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchingList.Cell.swift; sourceTree = "<group>"; };
 		BA8A374D2342304200CB487B /* WatchingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchingModel.swift; sourceTree = "<group>"; };
 		BABB9A82234B936F0067B767 /* ReadButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadButton.swift; sourceTree = "<group>"; };
@@ -726,7 +724,6 @@
 			isa = PBXGroup;
 			children = (
 				BAC127D522A844BD00B52862 /* RootView.swift */,
-				BA8A374923422EFA00CB487B /* RootViewModel.swift */,
 			);
 			path = Root;
 			sourceTree = "<group>";
@@ -1108,7 +1105,6 @@
 				33498AC72352E45400D1A8BC /* NetworkActions.swift in Sources */,
 				BAFE55EC23497B7F00A35674 /* ThumbnailImageView.swift in Sources */,
 				BAEFFC3E22B9DBD3006D1549 /* NotificationModel.swift in Sources */,
-				BA8A374A23422EFA00CB487B /* RootViewModel.swift in Sources */,
 				BAFE55F82349C42000A35674 /* DecideButton.swift in Sources */,
 				BACDC8002346C7F800C4A1AE /* OAuthViewController.swift in Sources */,
 				BAC127D622A844BD00B52862 /* RootView.swift in Sources */,

@@ -16,6 +16,7 @@ public struct AppState: ReduxState, Codable {
     var hudState: HUDState = HUDState()
     var notificationPageState: NotificationPageState = NotificationPageState()
     var authentificationState: AuthenfiicationState = AuthenfiicationState()
+    var title: String { notificationPageState.currentState.watching?.owner.login ?? "Notifications" }
 
     private enum CodingKeys: String, CodingKey {
         case watchingListState

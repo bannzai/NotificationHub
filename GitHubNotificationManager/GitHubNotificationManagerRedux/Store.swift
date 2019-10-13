@@ -12,6 +12,7 @@ import Combine
 
 final public class Store<State: ReduxState>: ObservableObject {
     @Published public var state: State
+    var canceller: Set<AnyCancellable> = []
 
     private var dispatchFunction: DispatchFunction!
     private let reducer: Reducer<State>
@@ -54,3 +55,5 @@ final public class Store<State: ReduxState>: ObservableObject {
         state = reducer(state, action)
     }
 }
+
+extension Store: Canceller where State == AppState { }

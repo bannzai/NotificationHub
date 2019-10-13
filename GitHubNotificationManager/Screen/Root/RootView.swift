@@ -9,16 +9,32 @@
 import SwiftUI
 import GitHubNotificationManagerNetwork
 
-struct RootView: View {
+struct RootView: RenderableView {
+    @EnvironmentObject var store: Store<AppState>
     @State private var selectedAddNotificationList: Bool = false
-    @ObservedObject private var viewModel = RootViewModel()
+    
+    struct Props {
+        let isAuthorized: Bool
+        let title: String
+        let currentPage: Binding<Int>
+    }
+    func map(state: AppState, dispatch: @escaping DispatchFunction) -> Props {
+        Props(
+            isAuthorized: state.authentificationState.isAuthorized,
+            title: state.title,
+            currentPage:Binding<Int>(
+                get: { state.notificationPageState.currentNotificationPage },
+                set: { dispatch(ChangeNotificationPageAction(page: $0)) }
+            )
+        )
+    }
 
-    var body: some View {
+    func body(props: Props) -> some View {
         Group {
-            if viewModel.isAuthorized {
+            if props.isAuthorized {
                 NavigationView {
-                    PageView(views: pages, currentPage: $viewModel.currentPage)
-                        .navigationBarTitle(Text(viewModel.title), displayMode: .inline)
+                    PageView(views: pages, currentPage: props.currentPage)
+                        .navigationBarTitle(Text(props.title), displayMode: .inline)
                         .navigationBarItems(
                             trailing: Button(
                                 action: {
@@ -28,33 +44,35 @@ struct RootView: View {
                                     .barButtonItems()
                             })
                     ).onAppear(perform: {
-                        self.viewModel.fetchIfHasNotWatching()
-                    }).alert(item: $viewModel.requestError) { (error) in
+                        // FIXME: Compile error about self.store passing to canceller.
+                        self.store.dispatch(action: WatchingsFetchAction(canceller: sharedStore))
+                    }).alert(item: $store.state.requestError) { (error) in
                         Alert(
                             title: Text("Fetched Error"),
                             message: Text(error.localizedDescription),
                             dismissButton: .default(Text("OK"))
                         )
                     }.sheet(isPresented: $selectedAddNotificationList) { () in
-                        WatchingListView(watchings: self.$viewModel.watchings)
+                        WatchingListView()
                     }
                 }
             } else {
-                OAuthView(githubAccessToken: viewModel.githubAccessTokenBinder)
+                OAuthView()
             }
         }
     }
-    
+
     var pages: [AnyView] {
-        if viewModel.isNotYetLoad {
+        if store.state.watchingListState.fetchStatus == .notYetLoad {
             return []
         }
         
-        let main = AnyView(NotificationListView().environmentObject(viewModel.allNotificationViewModel))
-        let filtered = viewModel.activateNotificationViewModels.map {
-            AnyView(NotificationListView().environmentObject($0))
-        }
-        return [main] + filtered
+        return []
+//        let main = AnyView(NotificationListView().environmentObject(viewModel.allNotificationViewModel))
+//        let filtered = viewModel.activateNotificationViewModels.map {
+//            AnyView(NotificationListView().environmentObject($0))
+//        }
+//        return [main] + filtered
     }
 }
 
