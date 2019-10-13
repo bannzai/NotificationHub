@@ -34,8 +34,8 @@ extension WatchingListView {
                     get: { self.dummy.toggleValue },
                     set: { value in
                         self.dummy.toggleValue = value
-                        self.store.dispatch(action: CreateNotificationsAction(watching: self.watching))
-                        self.store.dispatch(action: ToggleWatchingAction(watcihng: self.watching))
+                        dispatch(action: CreateNotificationsAction(watching: self.watching))
+                        dispatch(action: ToggleWatchingAction(watcihng: self.watching))
                 })
             )
         }
