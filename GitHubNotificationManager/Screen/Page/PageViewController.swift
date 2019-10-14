@@ -24,8 +24,6 @@ struct PageViewController: UIViewControllerRepresentable {
         )
         pageViewController.dataSource = context.coordinator
         pageViewController.delegate = context.coordinator
-        pageViewController.setViewControllers([viewControllers[currentPage]], direction: .forward, animated: false)
-        context.coordinator.parent = self
         return pageViewController
     }
 
@@ -33,6 +31,7 @@ struct PageViewController: UIViewControllerRepresentable {
         if viewControllers.isEmpty {
             return
         }
+        context.coordinator.parent = self
         pageViewController.setViewControllers([viewControllers[currentPage]], direction: .forward, animated: false)
     }
 
@@ -42,38 +41,31 @@ struct PageViewController: UIViewControllerRepresentable {
         init(_ pageViewController: PageViewController) {
             self.parent = pageViewController
         }
-
+        
         func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-            guard
-                let viewControllers = pageViewController.viewControllers,
-                let index = viewControllers.firstIndex(of: viewController)
-                else {
+            guard let index = parent.viewControllers.firstIndex(of: viewController) else {
                 return nil
             }
             if index <= 0 {
                 return nil
             }
-            return viewControllers[index - 1]
+            return parent.viewControllers[index - 1]
         }
 
         func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-            guard
-                let viewControllers = pageViewController.viewControllers,
-                let index = viewControllers.firstIndex(of: viewController)
-                else {
+            guard let index = parent.viewControllers.firstIndex(of: viewController) else {
                 return nil
             }
-            if index + 1 >= viewControllers.endIndex {
+            if index + 1 >= parent.viewControllers.endIndex {
                 return nil
             }
-            return viewControllers[index + 1]
+            return parent.viewControllers[index + 1]
         }
 
         func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
             guard
-                let viewControllers = pageViewController.viewControllers,
-                let displayedViewController = viewControllers.first,
-                let index = viewControllers.firstIndex(of: displayedViewController)
+                let displayedViewController = pageViewController.viewControllers?.first,
+                let index = parent.viewControllers.firstIndex(of: displayedViewController)
                 else {
                     return
             }
