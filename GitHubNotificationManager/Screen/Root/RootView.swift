@@ -9,16 +9,32 @@
 import SwiftUI
 import GitHubNotificationManagerNetwork
 
-struct RootView: View {
+struct RootView: RenderableView {
+    @EnvironmentObject var store: Store<AppState>
     @State private var selectedAddNotificationList: Bool = false
-    @State var currentPage: Int = 0
+    
+    struct Props {
+        let isAuthorized: Bool
+        let title: String
+        let currentPage: Binding<Int>
+    }
+    func map(state: AppState, dispatch: @escaping DispatchFunction) -> Props {
+        Props(
+            isAuthorized: state.authentificationState.isAuthorized,
+            title: state.title,
+            currentPage:Binding<Int>(
+                get: { state.notificationPageState.currentNotificationPage },
+                set: { dispatch(ChangeNotificationPageAction(page: $0)) }
+            )
+        )
+    }
 
-    var body: some View {
+    func body(props: Props) -> some View {
         Group {
-            if sharedStore.state.authentificationState.isAuthorized {
+            if props.isAuthorized {
                 NavigationView {
-                    NotificationListPageView(currentPage: self.$currentPage)
-                        .navigationBarTitle(Text(sharedStore.state.title), displayMode: .inline)
+                    NotificationListPageView(currentPage: props.currentPage)
+                        .navigationBarTitle(Text(props.title), displayMode: .inline)
                         .navigationBarItems(
                             trailing: Button(
                                 action: {
@@ -27,12 +43,18 @@ struct RootView: View {
                                 Image(systemName: "text.badge.plus")
                                     .barButtonItems()
                             })
-                    ).sheet(isPresented: $selectedAddNotificationList) { () in
-                        StoreProvider(store: sharedStore) { WatchingListView() }
+                    ).alert(item: $store.state.requestError) { (error) in
+                        Alert(
+                            title: Text("Fetched Error"),
+                            message: Text(error.localizedDescription),
+                            dismissButton: .default(Text("OK"))
+                        )
+                    }.sheet(isPresented: $selectedAddNotificationList) { () in
+                        StoreProvider(store: self.store) { WatchingListView() }
                     }
                 }
                 .onAppear {
-                    sharedStore.dispatch(action: WatchingsFetchAction(canceller: sharedStore))
+                    self.store.dispatch(action: WatchingsFetchAction(canceller: sharedStore))
                 }
             } else {
                 OAuthView()
