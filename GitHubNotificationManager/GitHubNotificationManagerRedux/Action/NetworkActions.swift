@@ -9,11 +9,6 @@
 import Foundation
 import GitHubNotificationManagerNetwork
 
-enum NetworkRequestAction: Action {
-    case start
-    case finished
-}
-
 struct ReceiveNetworkRequestError: Action {
     typealias ErrorType = RequestError
     let error: ErrorType

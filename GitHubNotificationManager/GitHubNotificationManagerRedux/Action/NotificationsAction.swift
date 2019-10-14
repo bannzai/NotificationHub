@@ -35,7 +35,6 @@ struct NotificationsFetchAction: AsyncAction {
 
     func async(state: ReduxState?, dispatch: @escaping DispatchFunction) {
         let state = appState(state).notificationPageState.currentState
-        dispatch(NetworkRequestAction.start)
         GitHubAPI
             .request(request: NotificationsRequest(page: state.nextFetchPage, notificationsUrl: state))
             .map(AddNotificationListAction.init(elements:))
@@ -46,7 +45,6 @@ struct NotificationsFetchAction: AsyncAction {
                 case .failure(let error):
                     dispatch(ReceiveNetworkRequestError.init(error: error))
                 }
-                dispatch(NetworkRequestAction.finished)
             }, receiveValue: { values in
                 dispatch(values)
             })

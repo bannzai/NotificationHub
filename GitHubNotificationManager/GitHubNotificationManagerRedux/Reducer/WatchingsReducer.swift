@@ -38,13 +38,6 @@ let watchingsReducer: Reducer<WatchingsState> = { state, action in
         
         state.watchings[index].isReceiveNotification.toggle()
         return state
-    case let action as NetworkRequestAction:
-        switch action {
-        case .start:
-            state.fetchStatus = .loading
-        case .finished:
-            state.fetchStatus = .loaded
-        }
     case _:
         break
     }
