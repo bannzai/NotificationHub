@@ -12,7 +12,7 @@ import GitHubNotificationManagerNetwork
 
 extension NotificationListView {
     struct Cell: RenderableView {
-        @EnvironmentObject var store: Store<AppState>
+        @EnvironmentObject var store: Store
         
         let notification: NotificationElement
         let didSelectCell: (NotificationElement) -> Void

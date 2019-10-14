@@ -10,7 +10,7 @@ import UIKit
 import SwiftUI
 
 struct NotificationListPageView: View {
-    @EnvironmentObject var store: Store<AppState>
+    @EnvironmentObject var store: Store
     @Binding var currentPage: Int
 
     var pages: [NotificationListView] {

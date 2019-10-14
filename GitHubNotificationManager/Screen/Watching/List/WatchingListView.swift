@@ -10,7 +10,7 @@ import SwiftUI
 import GitHubNotificationManagerNetwork
 
 struct WatchingListView: View {
-    @EnvironmentObject var store: Store<AppState>
+    @EnvironmentObject var store: Store
     
     var body: some View {
         List(store.state.watchingListState.watchings) { (watching) in

@@ -12,7 +12,7 @@ import GitHubNotificationManagerNetwork
 
 extension WatchingListView {
     struct Cell: RenderableView {
-        @EnvironmentObject var store: Store<AppState>
+        @EnvironmentObject var store: Store
         let watching: WatchingElement
         
         // Dummy Value for animated toggle

@@ -10,7 +10,7 @@ import SwiftUI
 import GitHubNotificationManagerNetwork
 
 struct NotificationListView : RenderableView {
-    @EnvironmentObject var store: Store<AppState>
+    @EnvironmentObject var store: Store
     @State private var selectedNotification: NotificationElement? = nil
 
     struct Props {
