@@ -15,6 +15,31 @@ struct NotificationPageState: ReduxState, Codable, Equatable {
     var notificationsStatuses: [NotificationsState] = [Self.allNotificationsState]
     var currentNotificationPage: Int = Self.allNotificationsPage
     var currentState: NotificationsState { notificationsStatuses.filter { $0.isVisible }[currentNotificationPage] }
+    
+    func indexesOf(notificationId: NotificationElement.ID) -> (pageIndex: Int, groupedNotificationIndex: Int, notificationIndex: Int) {
+        let groupedNotificationMatcher: ([GroupedNotification]) -> Bool = { groupedNotifications in
+            groupedNotifications.contains(where: { $0.values.contains { $0.id == notificationId }})
+        }
+        let notificationsMatcher: ([NotificationElement]) -> Bool = { notifications in
+            notifications.contains(where: { $0.id == notificationId })
+        }
+        guard
+            let pageIndex = notificationsStatuses.firstIndex(where: { groupedNotificationMatcher($0.groupedNotifications) }),
+            let groupedNotificationIndex = notificationsStatuses
+                .first(where: { groupedNotificationMatcher($0.groupedNotifications) })?
+                .groupedNotifications
+                .firstIndex(where: { notificationsMatcher($0.values) }),
+            let notificationIndex = notificationsStatuses
+                .first(where: { groupedNotificationMatcher($0.groupedNotifications) })?
+                .groupedNotifications
+                .first(where: { notificationsMatcher($0.values) })?
+                .values
+                .firstIndex(where: { $0.id == notificationId })
+            else {
+                fatalError("Unexpected notification id \(notificationId)")
+        }
+        return (pageIndex: pageIndex, groupedNotificationIndex: groupedNotificationIndex, notificationIndex: notificationIndex)
+    }
 }
 
 struct NotificationsState: ReduxState, Codable, Equatable {
@@ -23,14 +48,33 @@ struct NotificationsState: ReduxState, Codable, Equatable {
         case loaded
         case loading
     }
+
     var watching: WatchingElement?
     var fetchStatus: FetchStatus = .notYetLoad
     var nextFetchPage: Int { (notifications.count + NotificationsRequest.elementPerPage) / NotificationsRequest.elementPerPage - 1 }
     var isVisible: Bool = false
-    var notifications: [NotificationElement] = []
+    var groupedNotifications: [GroupedNotification] = []
+    var notifications: [NotificationElement] {
+        groupedNotifications.flatMap { $0.values }
+    }
+}
 
-    internal var visiblyNotifications: [NotificationElement] {
-         notifications
+struct GroupedNotification: Equatable, Codable {
+    typealias NotificationDate = String
+    let key: NotificationDate
+    var values: [NotificationElement]
+    
+    static func toKey(dateString: String) -> NotificationDate {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'hh:mm:ss'Z'"
+        dateFormatter.calendar = Calendar(identifier: .gregorian)
+        guard let date = dateFormatter.date(from: dateString) else {
+            fatalError("unexpected date format \(dateString)")
+        }
+        
+        dateFormatter.dateFormat = "yyyy-MM-dd"
+        let string = dateFormatter.string(from: date)
+        return string
     }
 }
 

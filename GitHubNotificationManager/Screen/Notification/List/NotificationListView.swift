@@ -25,10 +25,10 @@ struct NotificationListView : RenderableView {
     }
     func map(state: AppState, dispatch: @escaping DispatchFunction) -> Props {
         Props(
-            notifications: self.state.visiblyNotifications,
-            canCallFetchWhenOnAppear: self.state.visiblyNotifications.isEmpty,
-            canCallFetchWhenReachedBottom: !self.state.visiblyNotifications.isEmpty && self.state.nextFetchPage != 0,
-            isNoData: self.state.visiblyNotifications.isEmpty && self.state.fetchStatus != .notYetLoad,
+            notifications: self.state.notifications,
+            canCallFetchWhenOnAppear: self.state.notifications.isEmpty,
+            canCallFetchWhenReachedBottom: !self.state.notifications.isEmpty && self.state.nextFetchPage != 0,
+            isNoData: self.state.notifications.isEmpty && self.state.fetchStatus != .notYetLoad,
             watchingOwnerName: self.state.watching?.owner.login
         )
     }

@@ -29,7 +29,8 @@ let debugNotification = NotificationElement(
         )
     ),
     reason: "reason",
-    url: "https://github.com"
+    url: "https://github.com",
+    updatedAt: "2014-11-07T22:01:45Z"
 )
 
 

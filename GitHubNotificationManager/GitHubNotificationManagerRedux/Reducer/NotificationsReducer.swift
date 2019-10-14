@@ -25,7 +25,19 @@ let notificationsReducer: Reducer<NotificationPageState> = { state, action in
             fatalError("Unexpected watching :\(String(describing: action.watching))")
         }
         var notificationsState = state.notificationsStatuses[index]
-        notificationsState.notifications += action.elements
+        notificationsState.groupedNotifications = action.elements.reduce(into: notificationsState.groupedNotifications, { (result, element) in
+            let key = GroupedNotification.toKey(dateString: element.updatedAt)
+            let matcher: (GroupedNotification) -> Bool = {
+                $0.key == key
+            }
+            switch result.contains(where: matcher) {
+            case true:
+                let index = result.firstIndex(where: matcher)!
+                result[index].values.append(element)
+            case false:
+                result.append(GroupedNotification(key: element.updatedAt, values: [element]))
+            }
+        })
         notificationsState.fetchStatus = .loaded
         var state = state
         state.notificationsStatuses[index] = notificationsState
@@ -57,24 +69,14 @@ let notificationsReducer: Reducer<NotificationPageState> = { state, action in
         print("notification SubscribeWatchingAction: \(state.notificationsStatuses[index].isVisible)")
         return state
     case let action as UnReadNotificationAction:
-        guard
-            let pageIndex = state.notificationsStatuses.firstIndex(where: { $0.notifications.map { $0.id }.contains(action.notificationId) }),
-            let notificationIndex = state.notificationsStatuses[pageIndex].notifications.map({ $0.id }).firstIndex(of: action.notificationId)
-            else {
-                fatalError("Unexpected notification for \(action.notificationId)")
-        }
         var state = state
-        state.notificationsStatuses[pageIndex].notifications[notificationIndex].unread = true
+        let (pageIndex, groupedIndex, notificationIndex) = state.indexesOf(notificationId: action.notificationId)
+        state.notificationsStatuses[pageIndex].groupedNotifications[groupedIndex].values[notificationIndex].unread = false
         return state
     case let action as ReadNotificationAction:
-        guard
-            let pageIndex = state.notificationsStatuses.firstIndex(where: { $0.notifications.map { $0.id }.contains(action.notificationId) }),
-            let notificationIndex = state.notificationsStatuses[pageIndex].notifications.map({ $0.id }).firstIndex(of: action.notificationId)
-        else {
-            fatalError("Unexpected notification for \(action.notificationId)")
-        }
         var state = state
-        state.notificationsStatuses[pageIndex].notifications[notificationIndex].unread = false
+        let (pageIndex, groupedIndex, notificationIndex) = state.indexesOf(notificationId: action.notificationId)
+        state.notificationsStatuses[pageIndex].groupedNotifications[groupedIndex].values[notificationIndex].unread = true
         return state
     case _:
         return state
