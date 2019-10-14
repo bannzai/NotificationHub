@@ -11,12 +11,25 @@ import Combine
 import GitHubNotificationManagerNetwork
 
 extension NotificationListView {
-    struct Cell: View {
+    struct Cell: RenderableView {
+        @EnvironmentObject var store: Store<AppState>
+        
         let notification: NotificationElement
         let didSelectCell: (NotificationElement) -> Void
         
         struct Props {
             let notification: NotificationElement
+            let unreadBinding: Binding<Bool>
+        }
+        
+        func map(state: AppState, dispatch: @escaping DispatchFunction) -> Props {
+            Props(
+                notification: notification,
+                unreadBinding: Binding<Bool>(
+                    get: { self.notification.unread },
+                    set: { $0 ? dispatch(UnReadNotificationAction(notificationId: self.notification.id)) : dispatch(ReadNotificationAction(notificationId: self.notification.id)) }
+                )
+            )
         }
         
         var cellGestuer: some Gesture {
@@ -25,18 +38,20 @@ extension NotificationListView {
             }
         }
         
-        var body: some View {
+        func body(props: Props) -> some View {
             HStack {
                 Group {
-                    ImageLoaderView(url: notification.repository.owner.avatarURL, defaultImage: UIImage(systemName: "person")!)
+                    ImageLoaderView(url: props.notification.repository.owner.avatarURL, defaultImage: UIImage(systemName: "person")!)
                         .modifier(ThumbnailImageViewModifier())
                     VStack(alignment: .leading) {
-                        Text(notification.repository.fullName).font(.headline).lineLimit(1)
-                        Text(notification.subject.title).font(.subheadline).lineLimit(1)
+                        Text(props.notification.repository.fullName).font(.headline).lineLimit(1)
+                        Text(props.notification.subject.title).font(.subheadline).lineLimit(1)
                     }
                 }
                 .layoutPriority(DefaultLayoutPriority + 1)
                 .gesture(cellGestuer)
+                Spacer()
+                ReadButton(read: props.unreadBinding)
             }
         }
     }

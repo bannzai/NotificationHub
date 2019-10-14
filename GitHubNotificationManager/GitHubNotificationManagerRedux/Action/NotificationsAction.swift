@@ -22,6 +22,14 @@ struct ChangeNotificationPageAction: Action {
     let page: Int
 }
 
+
+struct ReadNotificationAction: Action {
+    let notificationId: NotificationElement.ID
+}
+struct UnReadNotificationAction: Action {
+    let notificationId: NotificationElement.ID
+}
+
 struct NotificationsFetchAction: AsyncAction {
     let watching: WatchingElement?
     var canceller: Canceller
