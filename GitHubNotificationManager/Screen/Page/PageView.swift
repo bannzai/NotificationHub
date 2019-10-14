@@ -9,6 +9,7 @@
 import UIKit
 import SwiftUI
 import Combine
+import GitHubNotificationManagerNetwork
 
 final class NotificationListPageViewStore: ObservableObject {
     static let shared = NotificationListPageViewStore()
@@ -28,8 +29,13 @@ final class NotificationListPageViewStore: ObservableObject {
             .sink { [weak self] (state) in self?.subject.value = state }
             .store(in: &canceller)
         
+        let propery: (NotificationPageState?) -> [WatchingElement?]? = {
+            $0?.notificationsStatuses.filter { $0.isVisible }.map { $0.watching }
+        }
         subject
-            .removeDuplicates(by: { $0?.notificationsStatuses.count == $1?.notificationsStatuses.count })
+            .removeDuplicates(by: {
+                return propery($0) == propery($1)
+            })
             .filter { $0 != nil }
             .map { state in
                 state!.notificationsStatuses

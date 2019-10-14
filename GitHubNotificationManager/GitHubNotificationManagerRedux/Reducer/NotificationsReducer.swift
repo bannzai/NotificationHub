@@ -15,7 +15,7 @@ let notificationsReducer: Reducer<NotificationPageState> = { state, action in
         switch state.notificationsStatuses.contains(where: { $0.watching?.owner.login == action.watching.owner.login }) {
         case false:
             var state = state
-            state.notificationsStatuses.append(NotificationsState(watching: action.watching))
+            state.notificationsStatuses.append(NotificationsState(watching: action.watching, isVisible: true))
             return state
         case true:
             return state
@@ -24,6 +24,7 @@ let notificationsReducer: Reducer<NotificationPageState> = { state, action in
         let index = state.currentNotificationPage
         var notificationsState = state.notificationsStatuses[index]
         notificationsState.notifications += action.elements
+        notificationsState.fetchStatus = .loaded
         var state = state
         state.notificationsStatuses[index] = notificationsState
         return state
@@ -37,17 +38,25 @@ let notificationsReducer: Reducer<NotificationPageState> = { state, action in
         notificationsState.searchWord = action.text
         state.notificationsStatuses[state.currentNotificationPage] = notificationsState
         return state
-    case let action as ToggleWatchingAction:
+    case let action as UnSubscribeWatchingAction:
         guard let index = state
             .notificationsStatuses
-            .firstIndex(where: { $0.watching?.owner.login == action.watcihng.owner.login })
+            .firstIndex(where: { $0.watching?.owner.login == action.watching.owner.login })
             else {
-                fatalError("Unexpected watching \(action.watcihng)")
+                fatalError("Unexpected watching \(action.watching)")
         }
         var state = state
-        var notificationsState = state.notificationsStatuses[index]
-        notificationsState.isVisible.toggle()
-        state.notificationsStatuses[index] = notificationsState
+        state.notificationsStatuses[index].isVisible = false
+        return state
+    case let action as SubscribeWatchingAction:
+        guard let index = state
+            .notificationsStatuses
+            .firstIndex(where: { $0.watching?.owner.login == action.watching.owner.login })
+            else {
+                fatalError("Unexpected watching \(action.watching)")
+        }
+        var state = state
+        state.notificationsStatuses[index].isVisible = true
         return state
     case _:
         return state

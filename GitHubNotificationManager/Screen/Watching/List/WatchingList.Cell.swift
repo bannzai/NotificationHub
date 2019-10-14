@@ -34,7 +34,7 @@ extension WatchingListView {
                     set: { value in
                         self.dummy.toggleValue = value
                         dispatch(CreateNotificationsAction(watching: self.watching))
-                        dispatch(ToggleWatchingAction(watcihng: self.watching))
+                        self.watching.isReceiveNotification ? dispatch(UnSubscribeWatchingAction(watching: self.watching)) : dispatch(SubscribeWatchingAction(watching: self.watching))
                 })
             )
         }

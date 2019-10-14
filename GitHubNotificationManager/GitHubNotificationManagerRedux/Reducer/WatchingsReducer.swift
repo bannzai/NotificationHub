@@ -28,15 +28,25 @@ let watchingsReducer: Reducer<WatchingsState> = { state, action in
     switch action {
     case let action as SetWatchingListAction:
         state.watchings = action.elements.distinct()
-    case let action as ToggleWatchingAction:
+    case let action as UnSubscribeWatchingAction:
         guard let index = state
             .watchings
-            .firstIndex(where: { $0.owner.login == action.watcihng.owner.login })
+            .firstIndex(where: { $0.owner.login == action.watching.owner.login })
             else {
-                fatalError("Unexpected watching \(action.watcihng)")
+                fatalError("Unexpected watching \(action.watching)")
         }
         
-        state.watchings[index].isReceiveNotification.toggle()
+        state.watchings[index].isReceiveNotification = false
+        return state
+    case let action as SubscribeWatchingAction:
+        guard let index = state
+            .watchings
+            .firstIndex(where: { $0.owner.login == action.watching.owner.login })
+            else {
+                fatalError("Unexpected watching \(action.watching)")
+        }
+        
+        state.watchings[index].isReceiveNotification = true
         return state
     case let action as NetworkRequestAction:
         switch action {
