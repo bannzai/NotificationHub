@@ -27,7 +27,7 @@ extension NotificationListView {
                 notification: notification,
                 unreadBinding: Binding<Bool>(
                     get: { self.notification.unread },
-                    set: { dispatch(UnReadNotificationAction(notification: self.notification, unread: $0)) }
+                    set: { $0 ? dispatch(UnReadNotificationAction(notificationId: self.notification.id)) : dispatch(ReadNotificationAction(notificationId: self.notification.id)) }
                 )
             )
         }

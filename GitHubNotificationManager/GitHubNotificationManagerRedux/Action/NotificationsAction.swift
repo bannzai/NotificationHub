@@ -26,9 +26,11 @@ struct SearchRequestAction: Action {
     let text: String
 }
 
+struct ReadNotificationAction: Action {
+    let notificationId: NotificationElement.ID
+}
 struct UnReadNotificationAction: Action {
-    let notification: NotificationElement
-    let unread: Bool
+    let notificationId: NotificationElement.ID
 }
 
 struct NotificationsFetchAction: AsyncAction {

@@ -9,7 +9,7 @@ import GitHubNotificationManagerCore
 // MARK: - NotificationElement
 public struct NotificationElement: Codable, Identifiable, Equatable {
     public let id: String
-    public let unread: Bool
+    public var unread: Bool
     public let subject: Subject
     public let repository: Repository
     public let reason: String
