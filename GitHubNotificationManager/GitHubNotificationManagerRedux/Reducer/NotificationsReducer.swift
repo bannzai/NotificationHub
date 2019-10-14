@@ -35,7 +35,7 @@ let notificationsReducer: Reducer<NotificationPageState> = { state, action in
                 let index = result.firstIndex(where: matcher)!
                 result[index].values.append(element)
             case false:
-                result.append(GroupedNotification(key: element.updatedAt, values: [element]))
+                result.append(GroupedNotification(key: key, values: [element]))
             }
         })
         notificationsState.fetchStatus = .loaded

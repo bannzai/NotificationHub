@@ -17,7 +17,7 @@ struct NotificationListView : RenderableView {
     }
 
     struct Props {
-        let notifications: [NotificationElement]
+        let groupedNotifications: [GroupedNotification]
         let canCallFetchWhenOnAppear: Bool
         let canCallFetchWhenReachedBottom: Bool
         let isNoData: Bool
@@ -25,7 +25,7 @@ struct NotificationListView : RenderableView {
     }
     func map(state: AppState, dispatch: @escaping DispatchFunction) -> Props {
         Props(
-            notifications: self.state.notifications,
+            groupedNotifications: self.state.groupedNotifications,
             canCallFetchWhenOnAppear: self.state.notifications.isEmpty,
             canCallFetchWhenReachedBottom: !self.state.notifications.isEmpty && self.state.nextFetchPage != 0,
             isNoData: self.state.notifications.isEmpty && self.state.fetchStatus != .notYetLoad,
@@ -41,12 +41,14 @@ struct NotificationListView : RenderableView {
                 })
             } else {
                 List {
-                    ForEach(props.notifications) { notification in
-                        StoreProvider(store: sharedStore) {
-                            Cell(
-                                notification: notification,
-                                didSelectCell: { self.selectedNotification = $0 }
-                            )
+                    ForEach(props.groupedNotifications, id: \.key) { groupedNotification in
+                        Section(header: Text(groupedNotification.key)) {
+                            ForEach(groupedNotification.values) { notification in
+                                Cell(
+                                    notification: notification,
+                                    didSelectCell: { self.selectedNotification = $0 }
+                                )
+                            }
                         }
                     }
                     IndicatorView()
