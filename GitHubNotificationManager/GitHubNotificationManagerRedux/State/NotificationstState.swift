@@ -15,31 +15,6 @@ struct NotificationPageState: ReduxState, Codable, Equatable {
     var notificationsStatuses: [NotificationsState] = [Self.allNotificationsState]
     var currentNotificationPage: Int = Self.allNotificationsPage
     var currentState: NotificationsState { notificationsStatuses.filter { $0.isVisible }[currentNotificationPage] }
-    
-    func indexesOf(notificationId: NotificationElement.ID) -> (pageIndex: Int, groupedNotificationIndex: Int, notificationIndex: Int) {
-        let groupedNotificationMatcher: ([GroupedNotification]) -> Bool = { groupedNotifications in
-            groupedNotifications.contains(where: { $0.values.contains { $0.id == notificationId }})
-        }
-        let notificationsMatcher: ([NotificationElement]) -> Bool = { notifications in
-            notifications.contains(where: { $0.id == notificationId })
-        }
-        guard
-            let pageIndex = notificationsStatuses.firstIndex(where: { groupedNotificationMatcher($0.groupedNotifications) }),
-            let groupedNotificationIndex = notificationsStatuses
-                .first(where: { groupedNotificationMatcher($0.groupedNotifications) })?
-                .groupedNotifications
-                .firstIndex(where: { notificationsMatcher($0.values) }),
-            let notificationIndex = notificationsStatuses
-                .first(where: { groupedNotificationMatcher($0.groupedNotifications) })?
-                .groupedNotifications
-                .first(where: { notificationsMatcher($0.values) })?
-                .values
-                .firstIndex(where: { $0.id == notificationId })
-            else {
-                fatalError("Unexpected notification id \(notificationId)")
-        }
-        return (pageIndex: pageIndex, groupedNotificationIndex: groupedNotificationIndex, notificationIndex: notificationIndex)
-    }
 }
 
 struct NotificationsState: ReduxState, Codable, Equatable {
