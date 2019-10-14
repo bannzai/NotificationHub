@@ -29,7 +29,7 @@ struct NotificationsState: ReduxState, Codable, Equatable {
     var nextFetchPage: Int { (notifications.count + NotificationsRequest.elementPerPage) / NotificationsRequest.elementPerPage - 1 }
     var isVisible: Bool = false
     var groupedNotifications: [GroupedNotification] {
-        notifications.reduce(into: [GroupedNotification]()) { (result, element) in
+        visibilyNotifications.reduce(into: [GroupedNotification]()) { (result, element) in
             let key = GroupedNotification.toKey(dateString: element.updatedAt)
             let matcher: (GroupedNotification) -> Bool = {
                 $0.key == key
@@ -42,6 +42,9 @@ struct NotificationsState: ReduxState, Codable, Equatable {
                 result.append(GroupedNotification(key: key, values: [element]))
             }
         }
+    }
+    var visibilyNotifications: [NotificationElement] {
+        notifications.filter { !$0.unread }
     }
     var notifications: [NotificationElement] = []
 }
