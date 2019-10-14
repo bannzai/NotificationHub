@@ -11,7 +11,7 @@ import SwiftUI
 extension Image {
     func barButtonItems() -> some View {
         renderingMode(.template)
-            .background(Color.primary)
+            .foregroundColor(.primary)
             .modifier(BarButtonImageModifier())
     }
 }

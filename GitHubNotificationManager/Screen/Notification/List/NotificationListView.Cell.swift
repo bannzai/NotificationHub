@@ -48,10 +48,7 @@ extension NotificationListView {
                         Text(props.notification.subject.title).font(.subheadline).lineLimit(1)
                     }
                 }
-                .layoutPriority(DefaultLayoutPriority + 1)
                 .gesture(cellGestuer)
-                Spacer()
-                ReadButton(read: props.unreadBinding)
             }
         }
     }

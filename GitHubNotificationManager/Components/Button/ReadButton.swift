@@ -18,8 +18,12 @@ struct ReadButton: View {
         }) {
             if read {
                 Image(systemName: "eye")
+                    .renderingMode(.template)
+                    .foregroundColor(.primary)
             } else {
                 Image(systemName: "eye.fill")
+                    .renderingMode(.template)
+                    .foregroundColor(.primary)
             }
         }.frame(width: edge, height: edge, alignment: .center)
     }
