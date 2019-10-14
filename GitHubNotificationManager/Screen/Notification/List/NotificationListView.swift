@@ -11,8 +11,9 @@ import GitHubNotificationManagerNetwork
 
 struct NotificationListView : RenderableView {
     @State private var selectedNotification: NotificationElement? = nil
+    let watching: WatchingElement?
     var state: NotificationsState {
-        sharedStore.state.notificationPageState.currentState
+        sharedStore.state.notificationPageState.notificationsStatuses.first(where: { $0.watching?.owner.login == watching?.owner.login })!
     }
 
     struct Props {
@@ -26,11 +27,11 @@ struct NotificationListView : RenderableView {
     func map(state: AppState, dispatch: @escaping DispatchFunction) -> Props {
         Props(
             searchWord: Binding<String>(
-                get: { state.notificationPageState.currentState.searchWord },
+                get: { self.state.searchWord },
                 set: { dispatch(SearchRequestAction(text: $0)) }
             ),
             notifications: self.state.visiblyNotifications,
-            canCallFetchWhenOnAppear: self.state.watching == nil && self.state.visiblyNotifications.isEmpty,
+            canCallFetchWhenOnAppear: self.state.visiblyNotifications.isEmpty,
             canCallFetchWhenReachedBottom: !self.state.visiblyNotifications.isEmpty && self.state.nextFetchPage != 0,
             isNoData: self.state.visiblyNotifications.isEmpty && self.state.nextFetchPage != 0,
             watchingOwnerName: self.state.watching?.owner.login
@@ -77,7 +78,7 @@ struct NotificationListView : RenderableView {
 
 private extension NotificationListView {
     private func fetch(props: Props) {
-        sharedStore.dispatch(action: NotificationsFetchAction(canceller: sharedStore))
+        sharedStore.dispatch(action: NotificationsFetchAction(watching: watching, canceller: sharedStore))
     }
     
     // FIXME: from https://api.github.com/repos/{Owner}/{RepoName}/pulls/{Number}

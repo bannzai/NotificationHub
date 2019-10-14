@@ -16,7 +16,7 @@ final class NotificationListPageViewStore: ObservableObject {
     private let subject = CurrentValueSubject<NotificationPageState?, Never>(nil)
     private var canceller: Set<AnyCancellable> = []
     
-    @Published var pages: [NotificationListView] = [NotificationListView()]
+    @Published var pages: [NotificationListView] = []
     private init() {
         bind()
     }
@@ -34,7 +34,7 @@ final class NotificationListPageViewStore: ObservableObject {
             .map { state in
                 state!.notificationsStatuses
                     .filter { $0.isVisible }
-                    .map { _ in NotificationListView() }
+                    .map { NotificationListView(watching: $0.watching) }
         }
         .assign(to: \.pages, on: self)
         .store(in: &canceller)
@@ -47,10 +47,7 @@ struct NotificationListPageView: View {
     var currentPage: Binding<Int> {
         Binding<Int>(
             get: { sharedStore.state.notificationPageState.currentNotificationPage },
-            set: {
-                sharedStore.dispatch(action: ChangeNotificationPageAction(page: $0))
-                sharedStore.dispatch(action: NotificationsFetchAction(canceller: sharedStore))
-        })
+            set: { sharedStore.dispatch(action: ChangeNotificationPageAction(page: $0)) })
     }
     
 //    var pages: [NotificationListView] {

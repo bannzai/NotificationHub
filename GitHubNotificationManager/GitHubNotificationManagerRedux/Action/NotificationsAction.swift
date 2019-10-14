@@ -31,10 +31,11 @@ struct UnReadNotificationAction: Action {
 }
 
 struct NotificationsFetchAction: AsyncAction {
+    let watching: WatchingElement?
     var canceller: Canceller
 
     func async(state: ReduxState?, dispatch: @escaping DispatchFunction) {
-        let state = appState(state).notificationPageState.currentState
+        let state = appState(state).notificationPageState.notificationsStatuses.first(where: { $0.watching?.owner.login == watching?.owner.login })!
         dispatch(NetworkRequestAction.start)
         GitHubAPI
             .request(request: NotificationsRequest(page: state.nextFetchPage, notificationsUrl: state))
