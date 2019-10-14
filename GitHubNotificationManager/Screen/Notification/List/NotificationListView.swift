@@ -10,13 +10,16 @@ import SwiftUI
 import GitHubNotificationManagerNetwork
 
 struct NotificationListView : RenderableView {
-    @EnvironmentObject var store: Store<AppState>
     @State private var selectedNotification: NotificationElement? = nil
-    let state: NotificationsState
+    var state: NotificationsState {
+        sharedStore.state.notificationPageState.currentState
+    }
 
     struct Props {
         let searchWord: Binding<String>
         let notifications: [NotificationElement]
+        let canCallFetchWhenOnAppear: Bool
+        let canCallFetchWhenReachedBottom: Bool
         let isNoData: Bool
         let watchingOwnerName: String?
     }
@@ -27,7 +30,9 @@ struct NotificationListView : RenderableView {
                 set: { dispatch(SearchRequestAction(text: $0)) }
             ),
             notifications: self.state.visiblyNotifications,
-            isNoData: self.state.visiblyNotifications.isEmpty,
+            canCallFetchWhenOnAppear: self.state.watching == nil && self.state.visiblyNotifications.isEmpty,
+            canCallFetchWhenReachedBottom: !self.state.visiblyNotifications.isEmpty && self.state.nextFetchPage != 0,
+            isNoData: self.state.visiblyNotifications.isEmpty && self.state.nextFetchPage != 0,
             watchingOwnerName: self.state.watching?.owner.login
         )
     }
@@ -42,7 +47,7 @@ struct NotificationListView : RenderableView {
                 List {
                     SearchBar(text: props.searchWord)
                     ForEach(props.notifications) { notification in
-                        StoreProvider(store: self.store) {
+                        StoreProvider(store: sharedStore) {
                             Cell(
                                 notification: notification,
                                 didSelectCell: { self.selectedNotification = $0 }
@@ -52,7 +57,9 @@ struct NotificationListView : RenderableView {
                     IndicatorView()
                         .frame(maxWidth: .infinity,  idealHeight: 44, alignment: .center)
                         .onAppear {
-                            self.fetch(props: props)
+                            if props.canCallFetchWhenReachedBottom {
+                                self.fetch(props: props)
+                            }
                     }
                 }
             }
@@ -61,7 +68,7 @@ struct NotificationListView : RenderableView {
             SafariView(url: self.destinationURL(subject: notification.subject))
         }
         .onAppear {
-            if props.isNoData {
+            if props.canCallFetchWhenOnAppear {
                 self.fetch(props: props)
             }
         }
@@ -70,7 +77,7 @@ struct NotificationListView : RenderableView {
 
 private extension NotificationListView {
     private func fetch(props: Props) {
-        store.dispatch(action: NotificationsFetchAction(canceller: sharedStore))
+        sharedStore.dispatch(action: NotificationsFetchAction(canceller: sharedStore))
     }
     
     // FIXME: from https://api.github.com/repos/{Owner}/{RepoName}/pulls/{Number}

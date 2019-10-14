@@ -24,7 +24,6 @@ let notificationsReducer: Reducer<NotificationPageState> = { state, action in
         let index = state.currentNotificationPage
         var notificationsState = state.notificationsStatuses[index]
         notificationsState.notifications += action.elements
-        notificationsState.nextFetchPage += 1
         var state = state
         state.notificationsStatuses[index] = notificationsState
         return state

@@ -12,11 +12,11 @@ import Combine
 
 final class NotificationListPageViewStore: ObservableObject {
     static let shared = NotificationListPageViewStore()
-    
-    private let subject = CurrentValueSubject<NotificationPageState, Never>(NotificationPageState())
+
+    private let subject = CurrentValueSubject<NotificationPageState?, Never>(nil)
     private var canceller: Set<AnyCancellable> = []
     
-    @Published var pages: [NotificationListView] = []
+    @Published var pages: [NotificationListView] = [NotificationListView()]
     private init() {
         bind()
     }
@@ -25,15 +25,16 @@ final class NotificationListPageViewStore: ObservableObject {
         sharedStore
             .objectWillChange
             .map { sharedStore.state.notificationPageState }
-            .sink { [weak self] (state) in self?.subject.send(state) }
+            .sink { [weak self] (state) in self?.subject.value = state }
             .store(in: &canceller)
         
         subject
-            .removeDuplicates(by: { $0 == $1 })
+            .removeDuplicates(by: { $0?.notificationsStatuses.count == $1?.notificationsStatuses.count })
+            .filter { $0 != nil }
             .map { state in
-                state.notificationsStatuses
+                state!.notificationsStatuses
                     .filter { $0.isVisible }
-                    .map { NotificationListView(state: $0) }
+                    .map { _ in NotificationListView() }
         }
         .assign(to: \.pages, on: self)
         .store(in: &canceller)
@@ -46,10 +47,22 @@ struct NotificationListPageView: View {
     var currentPage: Binding<Int> {
         Binding<Int>(
             get: { sharedStore.state.notificationPageState.currentNotificationPage },
-            set: { sharedStore.dispatch(action: ChangeNotificationPageAction(page: $0)) }
-        )
+            set: {
+                sharedStore.dispatch(action: ChangeNotificationPageAction(page: $0))
+                sharedStore.dispatch(action: NotificationsFetchAction(canceller: sharedStore))
+        })
     }
-
+    
+//    var pages: [NotificationListView] {
+//        sharedStore
+//            .state
+//            .notificationPageState
+//            .notificationsStatuses
+//            .map { _ in
+//                NotificationListView()
+//        }
+//    }
+//
     var body: some View {
         PageView(views: store.pages, currentPage: currentPage)
     }

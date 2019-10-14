@@ -61,7 +61,7 @@ struct PageViewController: UIViewControllerRepresentable {
             }
             return parent.viewControllers[index + 1]
         }
-
+        
         func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
             guard
                 let displayedViewController = pageViewController.viewControllers?.first,

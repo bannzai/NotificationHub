@@ -25,7 +25,7 @@ struct NotificationsState: ReduxState, Codable, Equatable {
     }
     var watching: WatchingElement?
     var searchWord: String = ""
-    var nextFetchPage: Int = 0
+    var nextFetchPage: Int { (notifications.count + NotificationsRequest.elementPerPage) / NotificationsRequest.elementPerPage - 1 }
     var isVisible: Bool = false
     var notifications: [NotificationElement] = []
 
