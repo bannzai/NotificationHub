@@ -34,12 +34,11 @@ final class NotificationListPageViewStore: ObservableObject {
             .sink { [weak self] (state) in self?.subject.value = state }
             .store(in: &canceller)
         
-        let compareProperty: (NotificationPageState?) -> [NotificationsState]? = {
-            $0?.notificationsStatuses.filter { $0.isVisible }
+        let compareProperty: (NotificationPageState?) -> [WatchingElement?]? = {
+            $0?.notificationsStatuses.filter { $0.isVisible }.map { $0.watching }
         }
         subject
             .receive(on: DispatchQueue.main)
-            .handleEvents(receiveOutput: { (state) in print("before: \(compareProperty(state)?.count)") })
             .removeDuplicates(by: { return compareProperty($0) == compareProperty($1) })
             .filter { $0 != nil }
             .map { state in
