@@ -9,7 +9,7 @@
 import Foundation
 import GitHubNotificationManagerNetwork
 
-public struct AppState: ReduxState, Codable {
+public struct AppState: ReduxState, Codable, Equatable {
     public init() { }
     var requestError: RequestError? = nil
     var watchingListState = WatchingsState()

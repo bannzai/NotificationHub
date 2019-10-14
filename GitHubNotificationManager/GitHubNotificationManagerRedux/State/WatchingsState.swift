@@ -9,8 +9,8 @@
 import Foundation
 import GitHubNotificationManagerNetwork
 
-struct WatchingsState: ReduxState, Codable {
-    enum FetchStatus: Int, Codable {
+struct WatchingsState: ReduxState, Codable, Equatable {
+    enum FetchStatus: Int, Codable, Equatable {
         case notYetLoad
         case loaded
         case loading

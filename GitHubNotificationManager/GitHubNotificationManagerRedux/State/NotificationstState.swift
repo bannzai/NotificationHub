@@ -9,7 +9,7 @@
 import Foundation
 import GitHubNotificationManagerNetwork
 
-struct NotificationPageState: ReduxState, Codable {
+struct NotificationPageState: ReduxState, Codable, Equatable {
     static let allNotificationsState: NotificationsState = NotificationsState(watching: nil)
     static let allNotificationsPage: Int = 0
     var notificationsStatuses: [NotificationsState] = [Self.allNotificationsState]
@@ -17,8 +17,8 @@ struct NotificationPageState: ReduxState, Codable {
     var currentState: NotificationsState { notificationsStatuses[currentNotificationPage] }
 }
 
-struct NotificationsState: ReduxState, Codable {
-    enum FetchStatus: Int, Codable {
+struct NotificationsState: ReduxState, Codable, Equatable {
+    enum FetchStatus: Int, Codable, Equatable {
         case notYetLoad
         case loaded
         case loading
@@ -35,8 +35,7 @@ struct NotificationsState: ReduxState, Codable {
         }
     }
     var notifications: [NotificationElement] = []
-    var fetchStatus: FetchStatus = .notYetLoad
-    
+
     private var filteredNotifications: [NotificationElement] {
         notifications.filter { $0.match(for: searchWord) }
     }

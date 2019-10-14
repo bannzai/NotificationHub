@@ -8,8 +8,8 @@
 
 import Foundation
 
-struct HUDState: ReduxState, Codable {
-    enum HUDStateType: Int, Codable  {
+struct HUDState: ReduxState, Codable, Equatable {
+    enum HUDStateType: Int, Codable, Equatable {
         case show
         case hide
     }

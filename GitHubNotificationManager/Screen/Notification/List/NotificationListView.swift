@@ -26,7 +26,7 @@ struct NotificationListView : RenderableView {
                 set: { dispatch(SearchRequestAction(text: $0)) }
             ),
             notifications: state.notificationPageState.currentState.visiblyNotifications,
-            isNoData: state.notificationPageState.currentState.visiblyNotifications.isEmpty && state.notificationPageState.currentState.fetchStatus == .loaded,
+            isNoData: state.notificationPageState.currentState.visiblyNotifications.isEmpty,
             watchingOwnerName: state.notificationPageState.currentState.watching?.owner.login
         )
     }
@@ -58,6 +58,11 @@ struct NotificationListView : RenderableView {
         }
         .sheet(item: $selectedNotification) { (notification) in
             SafariView(url: self.destinationURL(subject: notification.subject))
+        }
+        .onAppear {
+            if props.isNoData {
+                self.fetch(props: props)
+            }
         }
     }
 }

@@ -34,11 +34,7 @@ struct NotificationsFetchAction: AsyncAction {
     var canceller: Canceller
 
     func async(state: ReduxState?, dispatch: @escaping DispatchFunction) {
-
         let state = appState(state).notificationPageState.currentState
-        if state.fetchStatus == .loading {
-            return
-        }
         dispatch(NetworkRequestAction.start)
         GitHubAPI
             .request(request: NotificationsRequest(page: state.nextFetchPage, notificationsUrl: state))

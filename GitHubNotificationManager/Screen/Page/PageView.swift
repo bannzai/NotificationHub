@@ -14,7 +14,7 @@ struct NotificationListPageView: View {
     @Binding var currentPage: Int
 
     var pages: [NotificationListView] {
-        store
+        return store
             .state
             .notificationPageState
             .notificationsStatuses

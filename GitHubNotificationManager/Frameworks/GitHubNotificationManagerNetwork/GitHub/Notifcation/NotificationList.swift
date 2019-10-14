@@ -7,7 +7,7 @@ import Foundation
 import GitHubNotificationManagerCore
 
 // MARK: - NotificationElement
-public struct NotificationElement: Codable, Identifiable {
+public struct NotificationElement: Codable, Identifiable, Equatable {
     public let id: String
     public let unread: Bool
     public let subject: Subject
@@ -42,7 +42,7 @@ public struct NotificationElement: Codable, Identifiable {
 }
 
 // MARK: - Repository
-public struct Repository: Codable {
+public struct Repository: Codable, Equatable {
     public let id: Int
     public let name: String
     public let fullName: String
@@ -73,7 +73,7 @@ public struct Repository: Codable {
 }
 
 // MARK: - Owner
-public struct Owner: Codable {
+public struct Owner: Codable, Equatable {
     public let id: Int
     public let login: String
     public let avatarURL: String
@@ -92,7 +92,7 @@ public struct Owner: Codable {
 }
 
 // MARK: - Subject
-public struct Subject: Codable {
+public struct Subject: Codable, Equatable {
     public let title: String
     public let url: String
 

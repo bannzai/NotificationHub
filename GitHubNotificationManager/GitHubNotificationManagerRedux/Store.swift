@@ -56,4 +56,4 @@ final public class Store<State: ReduxState>: ObservableObject {
     }
 }
 
-extension Store: Canceller where State == AppState { }
+extension Store: Canceller { }
