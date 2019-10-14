@@ -46,6 +46,10 @@ final public class Store<State: ReduxState>: ObservableObject {
     }
     
     public func dispatch(action: Action) {
+        if Thread.isMainThread {
+            self.dispatchFunction(action)
+            return
+        }
         DispatchQueue.main.async {
             self.dispatchFunction(action)
         }
