@@ -10,8 +10,7 @@ import Foundation
 import SwiftUI
 import Combine
 
-final public class Store: ObservableObject {
-    public typealias State = AppState
+final public class Store<State: ReduxState>: ObservableObject {
     @Published public var state: State
     var canceller: Set<AnyCancellable> = []
 

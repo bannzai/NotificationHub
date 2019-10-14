@@ -13,7 +13,7 @@ import GitHubNotificationManagerCore
 import GitHubNotificationManagerNetwork
 import CoreData
 
-let sharedStore = Store(
+let sharedStore = Store<AppState>(
     reducer: appReducer,
     middlewares: [
         asyncActionsMiddleware,
