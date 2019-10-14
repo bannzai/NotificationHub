@@ -22,10 +22,6 @@ struct ChangeNotificationPageAction: Action {
     let page: Int
 }
 
-struct SearchRequestAction: Action {
-    let text: String
-}
-
 struct NotificationsFetchAction: AsyncAction {
     let watching: WatchingElement?
     var canceller: Canceller
