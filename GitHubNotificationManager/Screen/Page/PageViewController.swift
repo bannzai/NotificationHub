@@ -11,7 +11,6 @@ import SwiftUI
 
 struct PageViewController: UIViewControllerRepresentable {
     var viewControllers: [UIViewController]
-    @Binding var currentPage: Int
 
     func makeCoordinator() -> Coordinator {
         Coordinator(self)
@@ -33,20 +32,26 @@ struct PageViewController: UIViewControllerRepresentable {
         }
 
         context.coordinator.parent = self
+        let currentPage = sharedStore.state.notificationPageState.currentNotificationPage
         switch viewControllers.count <= currentPage  {
         case true:
             // FIXME: Reset current page and page view content in order to setViewControllers -> currentPage
-            pageViewController.setViewControllers([viewControllers[0]], direction: .forward, animated: false)
-            currentPage = 0
+            let next = max(0, viewControllers.count - 2)
+            pageViewController.setViewControllers([viewControllers[next]], direction: .forward, animated: false)
+            sharedStore.dispatch(action: ChangeNotificationPageAction(page: next))
         case false:
             pageViewController.setViewControllers([viewControllers[currentPage]], direction: .forward, animated: false)
         }
-        
     }
 
     class Coordinator: NSObject, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
         var parent: PageViewController
-        
+        var currentPage: Int = 0 {
+            didSet {
+                sharedStore.dispatch(action: ChangeNotificationPageAction(page: currentPage))
+            }
+        }
+
         init(_ pageViewController: PageViewController) {
             self.parent = pageViewController
         }
@@ -72,13 +77,17 @@ struct PageViewController: UIViewControllerRepresentable {
         }
         
         func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
+            if !finished {
+                return
+            }
             guard
                 let displayedViewController = pageViewController.viewControllers?.first,
                 let index = parent.viewControllers.firstIndex(of: displayedViewController)
                 else {
                     return
             }
-            parent.currentPage = index
+            
+            currentPage = index
         }
     }
 }

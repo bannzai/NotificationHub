@@ -18,11 +18,7 @@ final class NotificationListPageViewStore: ObservableObject {
     private var canceller: Set<AnyCancellable> = []
     
     @Published var pages: [NotificationListView] = []
-    @Published var currentPage: Int = sharedStore.state.notificationPageState.currentNotificationPage {
-        didSet {
-            sharedStore.dispatch(action: ChangeNotificationPageAction(page: currentPage))
-        }
-    }
+    
     private init() {
         bind()
     }
@@ -66,23 +62,20 @@ struct NotificationListPageView: View {
 //    }
 //
     var body: some View {
-        PageView(views: store.pages, currentPage: $store.currentPage)
+        PageView(views: store.pages)
     }
 }
 
 struct PageView<Page: View>: View {
     var viewControllers: [UIHostingController<Page>]
-    var currentPage: Binding<Int>
 
-    init(views: [Page], currentPage: Binding<Int>) {
+    init(views: [Page]) {
         self.viewControllers = views.map { UIHostingController(rootView: $0) }
-        self.currentPage = currentPage
     }
 
     var body: some View {
         PageViewController(
-            viewControllers: viewControllers,
-            currentPage: currentPage
+            viewControllers: viewControllers
         )
     }
 }
@@ -91,7 +84,7 @@ struct PageView<Page: View>: View {
 struct PageView_Preview: PreviewProvider {
     @State static var currentPage: Int = 0
     static var previews: some View {
-        PageView(views: [EmptyView()], currentPage: $currentPage)
+        PageView(views: [EmptyView()])
     }
 }
 #endif
