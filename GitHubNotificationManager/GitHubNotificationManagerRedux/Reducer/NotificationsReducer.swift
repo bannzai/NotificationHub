@@ -21,7 +21,9 @@ let notificationsReducer: Reducer<NotificationPageState> = { state, action in
             return state
         }
     case let action as AddNotificationListAction:
-        let index = state.currentNotificationPage
+        guard let index = state.notificationsStatuses.firstIndex(where: { $0.watching?.owner.login == action.watching?.owner.login }) else {
+            fatalError("Unexpected watching :\(String(describing: action.watching))")
+        }
         var notificationsState = state.notificationsStatuses[index]
         notificationsState.notifications += action.elements
         notificationsState.fetchStatus = .loaded
