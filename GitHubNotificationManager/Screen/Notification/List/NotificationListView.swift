@@ -12,6 +12,7 @@ import GitHubNotificationManagerNetwork
 struct NotificationListView : RenderableView {
     @EnvironmentObject var store: Store<AppState>
     @State private var selectedNotification: NotificationElement? = nil
+    let state: NotificationsState
 
     struct Props {
         let searchWord: Binding<String>
@@ -25,9 +26,9 @@ struct NotificationListView : RenderableView {
                 get: { state.notificationPageState.currentState.searchWord },
                 set: { dispatch(SearchRequestAction(text: $0)) }
             ),
-            notifications: state.notificationPageState.currentState.visiblyNotifications,
-            isNoData: state.notificationPageState.currentState.visiblyNotifications.isEmpty,
-            watchingOwnerName: state.notificationPageState.currentState.watching?.owner.login
+            notifications: self.state.visiblyNotifications,
+            isNoData: self.state.visiblyNotifications.isEmpty,
+            watchingOwnerName: self.state.watching?.owner.login
         )
     }
     

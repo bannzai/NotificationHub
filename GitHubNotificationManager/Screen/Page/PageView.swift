@@ -8,23 +8,50 @@
 
 import UIKit
 import SwiftUI
+import Combine
 
-struct NotificationListPageView: View {
-    @Binding var currentPage: Int
-
-    var pages: [NotificationListView] {
-        sharedStore
-            .state
-            .notificationPageState
-            .notificationsStatuses
-            .filter { $0.isVisible }
-            .map { _ in
-                NotificationListView()
-        }
+final class NotificationListPageViewStore: ObservableObject {
+    static let shared = NotificationListPageViewStore()
+    
+    private let subject = CurrentValueSubject<NotificationPageState, Never>(NotificationPageState())
+    private var canceller: Set<AnyCancellable> = []
+    
+    @Published var pages: [NotificationListView] = []
+    private init() {
+        bind()
     }
     
+    func bind() {
+        sharedStore
+            .objectWillChange
+            .map { sharedStore.state.notificationPageState }
+            .sink { [weak self] (state) in self?.subject.send(state) }
+            .store(in: &canceller)
+        
+        subject
+            .removeDuplicates(by: { $0 == $1 })
+            .map { state in
+                state.notificationsStatuses
+                    .filter { $0.isVisible }
+                    .map { NotificationListView(state: $0) }
+        }
+        .assign(to: \.pages, on: self)
+        .store(in: &canceller)
+        
+    }
+}
+
+struct NotificationListPageView: View {
+    @ObservedObject var store: NotificationListPageViewStore = .shared
+    var currentPage: Binding<Int> {
+        Binding<Int>(
+            get: { sharedStore.state.notificationPageState.currentNotificationPage },
+            set: { sharedStore.dispatch(action: ChangeNotificationPageAction(page: $0)) }
+        )
+    }
+
     var body: some View {
-        PageView(views: pages, currentPage: $currentPage)
+        PageView(views: store.pages, currentPage: currentPage)
     }
 }
 

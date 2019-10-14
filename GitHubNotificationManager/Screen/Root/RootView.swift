@@ -17,7 +17,7 @@ struct RootView: View {
         Group {
             if sharedStore.state.authentificationState.isAuthorized {
                 NavigationView {
-                    NotificationListPageView(currentPage: self.$currentPage)
+                    NotificationListPageView()
                         .navigationBarTitle(Text(sharedStore.state.title), displayMode: .inline)
                         .navigationBarItems(
                             trailing: Button(
