@@ -28,7 +28,7 @@ struct NotificationListView : RenderableView {
             notifications: self.state.visiblyNotifications,
             canCallFetchWhenOnAppear: self.state.visiblyNotifications.isEmpty,
             canCallFetchWhenReachedBottom: !self.state.visiblyNotifications.isEmpty && self.state.nextFetchPage != 0,
-            isNoData: self.state.visiblyNotifications.isEmpty && self.state.nextFetchPage != 0,
+            isNoData: self.state.visiblyNotifications.isEmpty && self.state.fetchStatus != .notYetLoad,
             watchingOwnerName: self.state.watching?.owner.login
         )
     }
