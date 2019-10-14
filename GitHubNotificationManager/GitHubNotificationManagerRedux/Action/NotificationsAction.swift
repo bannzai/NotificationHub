@@ -64,9 +64,19 @@ struct ReadNotificationAction: AsyncAction, ReadNotificationPath {
     }
 
     func async(state: ReduxState?, dispatch: @escaping DispatchFunction) {
+        
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = sectionDateFormat
+        dateFormatter.calendar = Calendar(identifier: .gregorian)
+        guard let date = dateFormatter.date(from: sectionDate) else {
+            fatalError("unexpected date format \(sectionDate)")
+        }
+        dateFormatter.dateFormat = originalDateFormat
+        let lastReadAt = dateFormatter.string(from: date)
+
         dispatch(NetworkRequestAction.start)
         GitHubAPI
-            .request(request: ReadNotificationsRequest(lastReadAt: sectionDate, notificationsUrl: self))
+            .request(request: ReadNotificationsRequest(lastReadAt: lastReadAt, notificationsUrl: self))
             .map({ UpdateNotificationsTorRead(watching: self.watching, sectionDate: self.sectionDate) })
             .sink(receiveCompletion: { (completion) in
                 switch completion {

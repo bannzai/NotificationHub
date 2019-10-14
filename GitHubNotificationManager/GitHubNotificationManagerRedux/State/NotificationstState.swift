@@ -44,7 +44,7 @@ struct NotificationsState: ReduxState, Codable, Equatable {
         }
     }
     var visibilyNotifications: [NotificationElement] {
-        notifications.filter { !$0.unread }
+        notifications.filter { $0.unread }
     }
     var notifications: [NotificationElement] = []
 }
