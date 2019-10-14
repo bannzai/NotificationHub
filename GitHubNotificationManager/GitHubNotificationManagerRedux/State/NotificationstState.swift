@@ -24,17 +24,13 @@ struct NotificationsState: ReduxState, Codable, Equatable {
         case loading
     }
     var watching: WatchingElement?
-    var searchWord: String = ""
     var fetchStatus: FetchStatus = .notYetLoad
     var nextFetchPage: Int { (notifications.count + NotificationsRequest.elementPerPage) / NotificationsRequest.elementPerPage - 1 }
     var isVisible: Bool = false
     var notifications: [NotificationElement] = []
 
-    private var filteredNotifications: [NotificationElement] {
-        notifications.filter { $0.match(for: searchWord) }
-    }
     internal var visiblyNotifications: [NotificationElement] {
-        searchWord.isEmpty ? notifications : filteredNotifications
+         notifications
     }
 }
 

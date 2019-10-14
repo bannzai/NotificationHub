@@ -17,7 +17,6 @@ struct NotificationListView : RenderableView {
     }
 
     struct Props {
-        let searchWord: Binding<String>
         let notifications: [NotificationElement]
         let canCallFetchWhenOnAppear: Bool
         let canCallFetchWhenReachedBottom: Bool
@@ -26,10 +25,6 @@ struct NotificationListView : RenderableView {
     }
     func map(state: AppState, dispatch: @escaping DispatchFunction) -> Props {
         Props(
-            searchWord: Binding<String>(
-                get: { self.state.searchWord },
-                set: { dispatch(SearchRequestAction(text: $0)) }
-            ),
             notifications: self.state.visiblyNotifications,
             canCallFetchWhenOnAppear: self.state.visiblyNotifications.isEmpty,
             canCallFetchWhenReachedBottom: !self.state.visiblyNotifications.isEmpty && self.state.nextFetchPage != 0,
@@ -46,7 +41,6 @@ struct NotificationListView : RenderableView {
                 })
             } else {
                 List {
-                    SearchBar(text: props.searchWord)
                     ForEach(props.notifications) { notification in
                         StoreProvider(store: sharedStore) {
                             Cell(
