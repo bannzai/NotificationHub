@@ -10,7 +10,7 @@ import Foundation
 import GitHubNotificationManagerNetwork
 
 struct NotificationPageState: ReduxState, Codable, Equatable {
-    static let allNotificationsState: NotificationsState = NotificationsState(watching: nil)
+    static let allNotificationsState: NotificationsState = NotificationsState(watching: nil, isVisible: true)
     static let allNotificationsPage: Int = 0
     var notificationsStatuses: [NotificationsState] = [Self.allNotificationsState]
     var currentNotificationPage: Int = Self.allNotificationsPage
@@ -26,14 +26,7 @@ struct NotificationsState: ReduxState, Codable, Equatable {
     var watching: WatchingElement?
     var searchWord: String = ""
     var nextFetchPage: Int = 0
-    var isVisible: Bool {
-        switch watching {
-        case nil:
-            return true
-        case let watching?:
-            return watching.isReceiveNotification
-        }
-    }
+    var isVisible: Bool = false
     var notifications: [NotificationElement] = []
 
     private var filteredNotifications: [NotificationElement] {

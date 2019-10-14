@@ -31,7 +31,7 @@ let watchingsReducer: Reducer<WatchingsState> = { state, action in
     case let action as ToggleWatchingAction:
         guard let index = state
             .watchings
-            .firstIndex(where: { $0.id == action.watcihng.id })
+            .firstIndex(where: { $0.owner.login == action.watcihng.owner.login })
             else {
                 fatalError("Unexpected watching \(action.watcihng)")
         }

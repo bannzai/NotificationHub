@@ -13,7 +13,7 @@ struct NotificationListPageView: View {
     @Binding var currentPage: Int
 
     var pages: [NotificationListView] {
-        return sharedStore
+        sharedStore
             .state
             .notificationPageState
             .notificationsStatuses
