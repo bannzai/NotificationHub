@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import GitHubNotificationManager
+@testable import NotificationHub
 
 class GitHubNotificationManagerTests: XCTestCase {
 

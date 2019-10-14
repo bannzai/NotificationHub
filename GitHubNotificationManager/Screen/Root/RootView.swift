@@ -11,14 +11,14 @@ import GitHubNotificationManagerNetwork
 
 struct RootView: View {
     @State private var selectedAddNotificationList: Bool = false
-    @ObservedObject private var viewModel = RootViewModel()
+    @State var currentPage: Int = 0
 
     var body: some View {
         Group {
-            if viewModel.isAuthorized {
+            if sharedStore.state.authentificationState.isAuthorized {
                 NavigationView {
-                    PageView(views: pages, currentPage: $viewModel.currentPage)
-                        .navigationBarTitle(Text(viewModel.title), displayMode: .inline)
+                    NotificationListPageView()
+                        .modifier(NavigationBarTitleModifier())
                         .navigationBarItems(
                             trailing: Button(
                                 action: {
@@ -27,34 +27,17 @@ struct RootView: View {
                                 Image(systemName: "text.badge.plus")
                                     .barButtonItems()
                             })
-                    ).onAppear(perform: {
-                        self.viewModel.fetchIfHasNotWatching()
-                    }).alert(item: $viewModel.requestError) { (error) in
-                        Alert(
-                            title: Text("Fetched Error"),
-                            message: Text(error.localizedDescription),
-                            dismissButton: .default(Text("OK"))
-                        )
-                    }.sheet(isPresented: $selectedAddNotificationList) { () in
-                        WatchingListView(watchings: self.$viewModel.watchings)
+                    ).sheet(isPresented: $selectedAddNotificationList) { () in
+                        StoreProvider(store: sharedStore) { WatchingListView() }
                     }
                 }
+                .onAppear {
+                    sharedStore.dispatch(action: WatchingsFetchAction(canceller: sharedStore))
+                }
             } else {
-                OAuthView(githubAccessToken: viewModel.githubAccessTokenBinder)
+                OAuthView()
             }
         }
-    }
-    
-    var pages: [AnyView] {
-        if viewModel.isNotYetLoad {
-            return []
-        }
-        
-        let main = AnyView(NotificationListView().environmentObject(viewModel.allNotificationViewModel))
-        let filtered = viewModel.activateNotificationViewModels.map {
-            AnyView(NotificationListView().environmentObject($0))
-        }
-        return [main] + filtered
     }
 }
 

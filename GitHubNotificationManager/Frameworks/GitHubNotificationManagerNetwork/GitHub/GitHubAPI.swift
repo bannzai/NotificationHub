@@ -9,7 +9,11 @@
 import Foundation
 import Combine
 
-public struct RequestError: Identifiable, Error {
+public struct RequestError: Identifiable, Error, Equatable {
+    public static func == (lhs: RequestError, rhs: RequestError) -> Bool {
+        lhs.localizedDescription == rhs.localizedDescription
+    }
+    
     // TODO: Use NetworkError
     public let error: Swift.Error
     public init(error: Swift.Error) {
@@ -17,6 +21,7 @@ public struct RequestError: Identifiable, Error {
     }
     
     public var id: String { error.localizedDescription }
+
 }
 
 public enum NetworkError: Error {

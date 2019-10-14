@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import GitHubNotificationManagerNetwork
 
 protocol FuzzyFindable {
     func fuzzyWords() -> [String]
@@ -17,5 +18,20 @@ extension FuzzyFindable {
         fuzzyWords().reduce(false) { result, word in
             result || word.contains(string) // FIXME: Using any fuzzy match algorithm
         }
+    }
+}
+
+extension NotificationElement: FuzzyFindable {
+    func fuzzyWords() -> [String] {
+        [
+            repository.name,
+            repository.owner.login,
+            repository.owner.avatarURL,
+            repository.fullName,
+            reason,
+            url,
+            subject.title,
+            subject.url
+        ]
     }
 }

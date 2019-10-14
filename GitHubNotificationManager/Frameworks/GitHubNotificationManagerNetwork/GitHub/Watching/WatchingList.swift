@@ -6,13 +6,15 @@
 import Foundation
 
 // MARK: - WatchingElement
-public struct WatchingElement: Codable {
+public struct WatchingElement: Codable, Identifiable, Equatable {
     public let id: Int64
     public let nodeID: String
     public let name: String
     public let fullName: String
     public let owner: Owner
     public let notificationsUrl: String
+    
+    public var isReceiveNotification: Bool = false
 
     enum CodingKeys: String, CodingKey {
         case id

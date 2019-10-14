@@ -9,9 +9,9 @@
 import SwiftUI
 
 struct NavigationBarTitleModifier: ViewModifier {
-    let title: String
+    @EnvironmentObject var store: Store<AppState>
     func body(content: Content) -> some View {
         content
-            .navigationBarTitle(Text(title), displayMode: .inline)
+            .navigationBarTitle(Text(store.state.title), displayMode: .inline)
     }
 }

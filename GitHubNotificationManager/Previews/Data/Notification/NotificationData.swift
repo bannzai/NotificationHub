@@ -7,24 +7,29 @@
 //
 
 import Foundation
+import GitHubNotificationManagerNetwork
 
 #if DEBUG
-let debugNotification = NotificationModel(
+let debugNotification = NotificationElement(
     id: "",
-    reason: "reason",
-    repository: NotificationModel.Repository(
-        id: 1,
-        name: "name",
-        ownerName: "owner name",
-        avatarURL: Debug.Const.avatarURL,
-        fullName: "bannzai/GitHubNotificationManager"
-    ),
-    subject: NotificationModel.Subject(
+    unread: false,
+    subject: Subject(
         title: "Subject",
         url: "https://github.com/bannzai"
     ),
-    url: "https://github.com",
-    unread: false
+    repository: Repository(
+        id: 1,
+        name: "name",
+        fullName: "bannzai/GitHubNotificationManager",
+        repositoryPrivate: false,
+        owner: Owner(
+            id: 2,
+            login: "bannzai",
+            avatarURL: Debug.Const.avatarURL
+        )
+    ),
+    reason: "reason",
+    url: "https://github.com"
 )
 
 

@@ -9,86 +9,100 @@
 import SwiftUI
 import GitHubNotificationManagerNetwork
 
-struct NotificationListView : View {
-    @EnvironmentObject private var viewModel: NotificationListViewModel
-    @State private var selectedNotification: NotificationModel? = nil
+struct NotificationListView : RenderableView {
+    @State private var selectedNotification: NotificationElement? = nil
+    let watching: WatchingElement?
+    var state: NotificationsState {
+        sharedStore.state.notificationPageState.notificationsStatuses.first(where: { $0.watching?.owner.login == watching?.owner.login })!
+    }
 
-    var body: some View {
+    struct Props {
+        let searchWord: Binding<String>
+        let notifications: [NotificationElement]
+        let canCallFetchWhenOnAppear: Bool
+        let canCallFetchWhenReachedBottom: Bool
+        let isNoData: Bool
+        let watchingOwnerName: String?
+    }
+    func map(state: AppState, dispatch: @escaping DispatchFunction) -> Props {
+        Props(
+            searchWord: Binding<String>(
+                get: { self.state.searchWord },
+                set: { dispatch(SearchRequestAction(text: $0)) }
+            ),
+            notifications: self.state.visiblyNotifications,
+            canCallFetchWhenOnAppear: self.state.visiblyNotifications.isEmpty,
+            canCallFetchWhenReachedBottom: !self.state.visiblyNotifications.isEmpty && self.state.nextFetchPage != 0,
+            isNoData: self.state.visiblyNotifications.isEmpty && self.state.nextFetchPage != 0,
+            watchingOwnerName: self.state.watching?.owner.login
+        )
+    }
+    
+    func body(props: Props) -> some View {
         Group {
-            if viewModel.isNoData {
+            if props.isNoData {
                 RetryableNoDataView(message: "No Notifications", action: {
-                    self.viewModel.fetchNext()
+                    self.fetch(props: props)
                 })
             } else {
                 List {
-                    SearchBar(text: $viewModel.searchWord)
-                    ForEach(viewModel.notifications) { notification in
-                        Cell(binding: self.viewModel.binding(notification: notification)) {
-                            self.selectedNotification = $0
+                    SearchBar(text: props.searchWord)
+                    ForEach(props.notifications) { notification in
+                        StoreProvider(store: sharedStore) {
+                            Cell(
+                                notification: notification,
+                                didSelectCell: { self.selectedNotification = $0 }
+                            )
                         }
                     }
                     IndicatorView()
                         .frame(maxWidth: .infinity,  idealHeight: 44, alignment: .center)
                         .onAppear {
-                            self.viewModel.fetchNext()
+                            if props.canCallFetchWhenReachedBottom {
+                                self.fetch(props: props)
+                            }
                     }
                 }
             }
         }
         .sheet(item: $selectedNotification) { (notification) in
-            SafariView(url: notification.subject.destinationURL)
+            SafariView(url: self.destinationURL(subject: notification.subject))
         }
-        .alert(item: $viewModel.requestError) { (error) in
-            Alert(
-                title: Text("Fetched Error"),
-                message: Text(error.localizedDescription),
-                dismissButton: .default(Text("OK"))
-            )
-        }}
-}
-
-extension NotificationListView {
-    enum ListType: NotificationPath {
-        case all
-        case specify(watching: WatchingEntity)
-        
-        var notificationPath: URLPathConvertible {
-            switch self {
-            case .all:
-                return "notifications"
-            case .specify(watching: let watching):
-                // e.g) https://api.github.com/repos/bannzai/vimrc/notifications{?since,all,participating}
-                // Drop {?since, all, participating}
-                return watching.notificationsURL
-                    .split(separator: "/")
-                    .reduce(into: "") { (result, element) in
-                        switch element {
-                        case "/":
-                            return
-                        case "https:", "api.github.com":
-                            return
-                        case _:
-                            break
-                        }
-                        
-                        switch element.contains("{") {
-                        case false:
-                            // repos bannzai vimrc
-                            result += element + "/"
-                        case true:
-                            result += element.split(separator: "{").dropLast().joined()
-                        }
-                }
+        .onAppear {
+            if props.canCallFetchWhenOnAppear {
+                self.fetch(props: props)
             }
         }
     }
 }
 
-
-#if DEBUG
-struct NotificationListView_Previews : PreviewProvider {
-    static var previews: some View {
-        NotificationListView()
+private extension NotificationListView {
+    private func fetch(props: Props) {
+        sharedStore.dispatch(action: NotificationsFetchAction(watching: watching, canceller: sharedStore))
+    }
+    
+    // FIXME: from https://api.github.com/repos/{Owner}/{RepoName}/pulls/{Number}
+    private func destinationURL(subject: Subject) -> URL {
+        guard let components = URLComponents(string: subject.url) else {
+            fatalError("Missing format url from API")
+        }
+        
+        let path = components
+            .path
+            .components(separatedBy: "/")
+            .filter { !$0.isEmpty }
+            .enumerated()
+            .reduce("/") { (result, elements) in
+                let isReposPath = elements.offset == 0
+                if isReposPath {
+                    return result
+                }
+                let isPulls = elements.offset == 3
+                if isPulls {
+                    return result + "/" + "pull"
+                }
+                return result + "/" + elements.element
+        }
+        return URL(string: "https://github.com" + path)!
     }
 }
-#endif

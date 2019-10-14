@@ -13,6 +13,14 @@ import GitHubNotificationManagerCore
 import GitHubNotificationManagerNetwork
 import CoreData
 
+let sharedStore = Store<AppState>(
+    reducer: appReducer,
+    middlewares: [
+        asyncActionsMiddleware,
+        signupMiddleware,
+    ],
+    initialState: AppState()
+)
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -26,12 +34,14 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 //        UserDefaults.standard.set(Secret.Debug.accessToken, forKey: .GitHubAccessToken)
         #endif
         if let token = UserDefaults.standard.string(forKey: .GitHubAccessToken) {
-            NetworkConfig.Github.accessToken = token
+            sharedStore.dispatch(action: SignupAction(githubAccessToken: token))
         }
         if let windowScene = scene as? UIWindowScene {
             let window = UIWindow(windowScene: windowScene)
             window.rootViewController = UIHostingController(
-                rootView: RootView()
+                rootView: StoreProvider(store: sharedStore, content: {
+                    RootView()
+                })
             )
             self.window = window
             window.makeKeyAndVisible()
@@ -64,7 +74,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
-        CoreDataAccessor.shared.saveContext()
     }
     
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
