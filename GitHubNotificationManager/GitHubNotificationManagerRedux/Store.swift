@@ -12,11 +12,12 @@ import Combine
 
 final public class Store<State: ReduxState>: ObservableObject {
     @Published public var state: State
+    let objectDidChange = PassthroughSubject<Void, Never>()
     var canceller: Set<AnyCancellable> = []
 
     private var dispatchFunction: DispatchFunction!
     private let reducer: Reducer<State>
-    
+
     public init(
         reducer: @escaping Reducer<State>,
         middlewares: [Middleware<State>],
@@ -47,6 +48,7 @@ final public class Store<State: ReduxState>: ObservableObject {
     
     public func dispatch(action: Action) {
         if Thread.isMainThread {
+            print("action: \(type(of: action))")
             self.dispatchFunction(action)
             return
         }
@@ -57,6 +59,7 @@ final public class Store<State: ReduxState>: ObservableObject {
     
     private func dispatchReduce(action: Action) {
         state = reducer(state, action)
+        objectDidChange.send()
     }
 }
 

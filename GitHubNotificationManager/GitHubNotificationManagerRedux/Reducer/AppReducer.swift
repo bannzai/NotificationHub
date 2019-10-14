@@ -17,10 +17,10 @@ public func *=<T: Equatable>(lhs: inout T, rhs: T) {
 
 public let appReducer: Reducer<AppState> = { state, action in
     var state = state
-    state.watchingListState *= watchingsReducer(state.watchingListState, action)
-    state.hudState *= hudReducer(state.hudState, action)
-    state.notificationPageState *= notificationsReducer(state.notificationPageState, action)
-    state.authentificationState *= authentificationReducer(state.authentificationState, action)
+    state.watchingListState = watchingsReducer(state.watchingListState, action)
+    state.hudState = hudReducer(state.hudState, action)
+    state.notificationPageState = notificationsReducer(state.notificationPageState, action)
+    state.authentificationState = authentificationReducer(state.authentificationState, action)
     
     switch action {
     case let networkError as ReceiveNetworkRequestError:

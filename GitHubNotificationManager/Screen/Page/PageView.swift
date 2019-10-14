@@ -18,22 +18,28 @@ final class NotificationListPageViewStore: ObservableObject {
     private var canceller: Set<AnyCancellable> = []
     
     @Published var pages: [NotificationListView] = []
+    @Published var currentPage: Int = sharedStore.state.notificationPageState.currentNotificationPage {
+        didSet {
+            sharedStore.dispatch(action: ChangeNotificationPageAction(page: currentPage))
+        }
+    }
     private init() {
         bind()
     }
     
     func bind() {
         sharedStore
-            .objectWillChange
+            .objectDidChange
             .map { sharedStore.state.notificationPageState }
             .sink { [weak self] (state) in self?.subject.value = state }
             .store(in: &canceller)
         
-        let compareProperty: (NotificationPageState?) -> [WatchingElement?]? = {
-            $0?.notificationsStatuses.filter { $0.isVisible }.map { $0.watching }
+        let compareProperty: (NotificationPageState?) -> [NotificationsState]? = {
+            $0?.notificationsStatuses.filter { $0.isVisible }
         }
         subject
             .receive(on: DispatchQueue.main)
+            .handleEvents(receiveOutput: { (state) in print("before: \(compareProperty(state)?.count)") })
             .removeDuplicates(by: { return compareProperty($0) == compareProperty($1) })
             .filter { $0 != nil }
             .map { state in
@@ -49,12 +55,7 @@ final class NotificationListPageViewStore: ObservableObject {
 
 struct NotificationListPageView: View {
     @ObservedObject var store: NotificationListPageViewStore = .shared
-    var currentPage: Binding<Int> {
-        Binding<Int>(
-            get: { sharedStore.state.notificationPageState.currentNotificationPage },
-            set: { sharedStore.dispatch(action: ChangeNotificationPageAction(page: $0)) })
-    }
-    
+
 //    var pages: [NotificationListView] {
 //        sharedStore
 //            .state
@@ -66,7 +67,7 @@ struct NotificationListPageView: View {
 //    }
 //
     var body: some View {
-        PageView(views: store.pages, currentPage: currentPage)
+        PageView(views: store.pages, currentPage: $store.currentPage)
     }
 }
 

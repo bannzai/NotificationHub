@@ -49,6 +49,7 @@ let notificationsReducer: Reducer<NotificationPageState> = { state, action in
         }
         var state = state
         state.notificationsStatuses[index].isVisible = false
+        print("notification UnSubscribeWatchingAction: \(state.notificationsStatuses[index].isVisible)")
         return state
     case let action as SubscribeWatchingAction:
         guard let index = state
@@ -59,6 +60,7 @@ let notificationsReducer: Reducer<NotificationPageState> = { state, action in
         }
         var state = state
         state.notificationsStatuses[index].isVisible = true
+        print("notification SubscribeWatchingAction: \(state.notificationsStatuses[index].isVisible)")
         return state
     case _:
         return state

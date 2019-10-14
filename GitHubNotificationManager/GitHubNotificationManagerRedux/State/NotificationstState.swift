@@ -14,7 +14,7 @@ struct NotificationPageState: ReduxState, Codable, Equatable {
     static let allNotificationsPage: Int = 0
     var notificationsStatuses: [NotificationsState] = [Self.allNotificationsState]
     var currentNotificationPage: Int = Self.allNotificationsPage
-    var currentState: NotificationsState { notificationsStatuses[currentNotificationPage] }
+    var currentState: NotificationsState { notificationsStatuses.filter { $0.isVisible }[currentNotificationPage] }
 }
 
 struct NotificationsState: ReduxState, Codable, Equatable {
