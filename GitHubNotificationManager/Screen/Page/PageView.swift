@@ -33,6 +33,7 @@ final class NotificationListPageViewStore: ObservableObject {
             $0?.notificationsStatuses.filter { $0.isVisible }.map { $0.watching }
         }
         subject
+            .receive(on: DispatchQueue.main)
             .removeDuplicates(by: { return compareProperty($0) == compareProperty($1) })
             .filter { $0 != nil }
             .map { state in

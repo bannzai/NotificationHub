@@ -31,8 +31,17 @@ struct PageViewController: UIViewControllerRepresentable {
         if viewControllers.isEmpty {
             return
         }
+
         context.coordinator.parent = self
-        pageViewController.setViewControllers([viewControllers[currentPage]], direction: .forward, animated: false)
+        switch viewControllers.count <= currentPage  {
+        case true:
+            // FIXME: Reset current page and page view content in order to setViewControllers -> currentPage
+            pageViewController.setViewControllers([viewControllers[0]], direction: .forward, animated: false)
+            currentPage = 0
+        case false:
+            pageViewController.setViewControllers([viewControllers[currentPage]], direction: .forward, animated: false)
+        }
+        
     }
 
     class Coordinator: NSObject, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
