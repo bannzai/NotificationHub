@@ -25,6 +25,7 @@ struct WatchingsFetchAction: AsyncAction {
         if !appState(state).watchingListState.watchings.isEmpty {
             return
         }
+        dispatch(NetworkRequestAction.start)
 
         GitHubAPI
             .request(request: WatchingsRequest())
@@ -36,6 +37,7 @@ struct WatchingsFetchAction: AsyncAction {
                 case .failure(let error):
                     dispatch(ReceiveNetworkRequestError.init(error: error))
                 }
+                dispatch(NetworkRequestAction.finished)
             }, receiveValue: { values in
                 dispatch(values)
             })

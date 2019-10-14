@@ -53,7 +53,7 @@ final public class Store: ObservableObject {
     }
     
     private func dispatchReduce(action: Action) {
-        state *= reducer(state, action)
+        state = reducer(state, action)
     }
 }
 
