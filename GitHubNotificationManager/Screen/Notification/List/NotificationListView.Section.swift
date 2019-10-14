@@ -7,12 +7,15 @@
 //
 
 import SwiftUI
+import GitHubNotificationManagerNetwork
 
 extension NotificationListView {
     struct SectionView: RenderableView {
         @EnvironmentObject var store: Store<AppState>
         
         let title: String
+        let watching: WatchingElement?
+        
         struct Props {
             let title: String
             let unreadBinding: Binding<Bool>
@@ -23,8 +26,7 @@ extension NotificationListView {
                 title: title,
                 unreadBinding: Binding<Bool>(
                     get: { false },
-//                    set: { $0 ? dispatch(UnReadNotificationAction(notificationId: self.notification.id)) : dispatch(ReadNotificationAction(notificationId: self.notification.id)) }
-                    set: { fatalError("\($0)") }
+                    set: { $0 ? dispatch(UnReadNotificationAction(watchingId: self.watching?.id, sectionDate: self.title)): dispatch(ReadNotificationAction(watchingId: self.watching?.id, sectionDate: self.title)) }
                 )
             )
         }
@@ -41,6 +43,6 @@ extension NotificationListView {
 
 struct NotificationListView_Section_Previews: PreviewProvider {
     static var previews: some View {
-        NotificationListView.SectionView(title: "abc")
+        NotificationListView.SectionView(title: "abc", watching: nil)
     }
 }

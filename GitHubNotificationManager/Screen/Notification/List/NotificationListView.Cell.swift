@@ -19,16 +19,11 @@ extension NotificationListView {
         
         struct Props {
             let notification: NotificationElement
-            let unreadBinding: Binding<Bool>
         }
         
         func map(state: AppState, dispatch: @escaping DispatchFunction) -> Props {
             Props(
-                notification: notification,
-                unreadBinding: Binding<Bool>(
-                    get: { self.notification.unread },
-                    set: { $0 ? dispatch(UnReadNotificationAction(notificationId: self.notification.id)) : dispatch(ReadNotificationAction(notificationId: self.notification.id)) }
-                )
+                notification: notification
             )
         }
         

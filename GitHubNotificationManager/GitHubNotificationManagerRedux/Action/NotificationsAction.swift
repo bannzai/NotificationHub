@@ -24,10 +24,12 @@ struct ChangeNotificationPageAction: Action {
 
 
 struct ReadNotificationAction: Action {
-    let notificationId: NotificationElement.ID
+    let watchingId: WatchingElement.ID?
+    let sectionDate: String
 }
 struct UnReadNotificationAction: Action {
-    let notificationId: NotificationElement.ID
+    let watchingId: WatchingElement.ID?
+    let sectionDate: String
 }
 
 struct NotificationsFetchAction: AsyncAction {

@@ -22,6 +22,7 @@ struct NotificationListView : RenderableView {
         let canCallFetchWhenReachedBottom: Bool
         let isNoData: Bool
         let watchingOwnerName: String?
+        let watching: WatchingElement?
     }
     func map(state: AppState, dispatch: @escaping DispatchFunction) -> Props {
         Props(
@@ -29,7 +30,8 @@ struct NotificationListView : RenderableView {
             canCallFetchWhenOnAppear: self.state.notifications.isEmpty,
             canCallFetchWhenReachedBottom: !self.state.notifications.isEmpty && self.state.nextFetchPage != 0,
             isNoData: self.state.notifications.isEmpty && self.state.fetchStatus != .notYetLoad,
-            watchingOwnerName: self.state.watching?.owner.login
+            watchingOwnerName: self.state.watching?.owner.login,
+            watching: self.state.watching
         )
     }
     
@@ -42,7 +44,7 @@ struct NotificationListView : RenderableView {
             } else {
                 List {
                     ForEach(props.groupedNotifications, id: \.key) { groupedNotification in
-                        Section(header: SectionView(title: groupedNotification.key)) {
+                        Section(header: SectionView(title: groupedNotification.key, watching: props.watching)) {
                             ForEach(groupedNotification.values) { notification in
                                 Cell(
                                     notification: notification,

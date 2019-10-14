@@ -110,3 +110,4 @@ public struct Subject: Codable, Equatable {
         self.url = url
     }
 }
+

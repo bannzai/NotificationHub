@@ -53,9 +53,44 @@ struct NotificationsState: ReduxState, Codable, Equatable {
     var fetchStatus: FetchStatus = .notYetLoad
     var nextFetchPage: Int { (notifications.count + NotificationsRequest.elementPerPage) / NotificationsRequest.elementPerPage - 1 }
     var isVisible: Bool = false
-    var groupedNotifications: [GroupedNotification] = []
-    var notifications: [NotificationElement] {
-        groupedNotifications.flatMap { $0.values }
+    var groupedNotifications: [GroupedNotification] {
+        notifications.reduce(into: [GroupedNotification]()) { (result, element) in
+            let key = GroupedNotification.toKey(dateString: element.updatedAt)
+            let matcher: (GroupedNotification) -> Bool = {
+                $0.key == key
+            }
+            switch result.contains(where: matcher) {
+            case true:
+                let index = result.firstIndex(where: matcher)!
+                result[index].values.append(element)
+            case false:
+                result.append(GroupedNotification(key: key, values: [element]))
+            }
+        }
+    }
+    var notifications: [NotificationElement] = []
+}
+
+let originalDateFormat = "yyyy-MM-dd'T'hh:mm:ss'Z'"
+let sectionDateFormat = "yyyy-MM-dd"
+extension Array where Element == NotificationElement {
+    private func dateComponents(from key: String, format: String) -> DateComponents {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = format
+        dateFormatter.calendar = Calendar(identifier: .gregorian)
+        guard let date = dateFormatter.date(from: key) else {
+            fatalError("unexpected date format \(key)")
+        }
+        let components = Calendar(identifier: .gregorian).dateComponents(in: TimeZone.current, from: date)
+        return components
+    }
+    
+    func indicies(key: String) -> [Array<Element>.Index] {
+        let keyDate = dateComponents(from: key, format: sectionDateFormat)
+        return map { dateComponents(from: $0.updatedAt, format: originalDateFormat) }
+            .enumerated()
+            .filter { $0.element.year == keyDate.year && $0.element.month == keyDate.month && $0.element.day == keyDate.day }
+            .map { $0.offset }
     }
 }
 
@@ -66,13 +101,13 @@ struct GroupedNotification: Equatable, Codable {
     
     static func toKey(dateString: String) -> NotificationDate {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'hh:mm:ss'Z'"
+        dateFormatter.dateFormat = originalDateFormat
         dateFormatter.calendar = Calendar(identifier: .gregorian)
         guard let date = dateFormatter.date(from: dateString) else {
             fatalError("unexpected date format \(dateString)")
         }
         
-        dateFormatter.dateFormat = "yyyy-MM-dd"
+        dateFormatter.dateFormat = sectionDateFormat
         let string = dateFormatter.string(from: date)
         return string
     }
