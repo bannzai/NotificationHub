@@ -58,8 +58,10 @@
 		BA60430322A7CE1E00345259 /* GitHubNotificationManagerNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA6042EE22A7CE1E00345259 /* GitHubNotificationManagerNetwork.framework */; };
 		BA60430422A7CE1E00345259 /* GitHubNotificationManagerNetwork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA6042EE22A7CE1E00345259 /* GitHubNotificationManagerNetwork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BA6C829022B49E98006D2231 /* NotificationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6C828F22B49E98006D2231 /* NotificationData.swift */; };
+		BA8A3735234200F800CB487B /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A3734234200F800CB487B /* PageView.swift */; };
 		BA8A37372342068500CB487B /* SafariViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A37362342068500CB487B /* SafariViewController.swift */; };
 		BA8A3739234206CF00CB487B /* SafariViewControllerWrapperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A3738234206CF00CB487B /* SafariViewControllerWrapperViewController.swift */; };
+		BA8A373B2342070500CB487B /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A373A2342070500CB487B /* PageViewController.swift */; };
 		BA8A37402342251800CB487B /* WatchingsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A373D2342250800CB487B /* WatchingsRequest.swift */; };
 		BA8A37442342259000CB487B /* WatchingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A37412342257000CB487B /* WatchingList.swift */; };
 		BA8A374823422E5100CB487B /* WatchingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A374723422E5100CB487B /* WatchingListView.swift */; };
@@ -235,8 +237,10 @@
 		BA60432722A7D91200345259 /* GitHubAPIAuthorization.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubAPIAuthorization.swift; sourceTree = "<group>"; };
 		BA60432A22A7D99B00345259 /* NotificationsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsRequest.swift; sourceTree = "<group>"; };
 		BA6C828F22B49E98006D2231 /* NotificationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationData.swift; sourceTree = "<group>"; };
+		BA8A3734234200F800CB487B /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		BA8A37362342068500CB487B /* SafariViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariViewController.swift; sourceTree = "<group>"; };
 		BA8A3738234206CF00CB487B /* SafariViewControllerWrapperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariViewControllerWrapperViewController.swift; sourceTree = "<group>"; };
+		BA8A373A2342070500CB487B /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		BA8A373D2342250800CB487B /* WatchingsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchingsRequest.swift; sourceTree = "<group>"; };
 		BA8A37412342257000CB487B /* WatchingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchingList.swift; sourceTree = "<group>"; };
 		BA8A374723422E5100CB487B /* WatchingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchingListView.swift; sourceTree = "<group>"; };
@@ -582,6 +586,15 @@
 			path = Notification;
 			sourceTree = "<group>";
 		};
+		BA8A3733234200EC00CB487B /* Page */ = {
+			isa = PBXGroup;
+			children = (
+				BA8A3734234200F800CB487B /* PageView.swift */,
+				BA8A373A2342070500CB487B /* PageViewController.swift */,
+			);
+			path = Page;
+			sourceTree = "<group>";
+		};
 		BA8A373C2342249200CB487B /* Watching */ = {
 			isa = PBXGroup;
 			children = (
@@ -663,6 +676,7 @@
 				BAFE55F12349C27200A35674 /* NoData */,
 				BACDC7F8234647EA00C4A1AE /* OAuth */,
 				BA8A374523422E3D00CB487B /* Watching */,
+				BA8A3733234200EC00CB487B /* Page */,
 				BAEFFC4722BA7FAC006D1549 /* Notification */,
 				BAEFFC4622BA7F96006D1549 /* WebView */,
 				BAEFFC4422BA7F7F006D1549 /* Root */,
@@ -1018,6 +1032,7 @@
 				BA417D1922A9E6FB0041B3C3 /* HUDViewModel.swift in Sources */,
 				33498AAC2352D50000D1A8BC /* ReduxState.swift in Sources */,
 				33498AAE2352D50F00D1A8BC /* Reducer.swift in Sources */,
+				BA8A3735234200F800CB487B /* PageView.swift in Sources */,
 				BA8A3739234206CF00CB487B /* SafariViewControllerWrapperViewController.swift in Sources */,
 				BABB9A83234B936F0067B767 /* ReadButton.swift in Sources */,
 				BAFE55F02349865800A35674 /* DeviceType.swift in Sources */,
@@ -1030,6 +1045,7 @@
 				33498AC52352DDC700D1A8BC /* WatchingsAction.swift in Sources */,
 				BAC1280C22A9B57700B52862 /* NotificationListView.Cell.swift in Sources */,
 				33498ABD2352DA9100D1A8BC /* AppState.swift in Sources */,
+				BA8A373B2342070500CB487B /* PageViewController.swift in Sources */,
 				BA1D70E822A9D42F000F83A1 /* ImageLoaderView.swift in Sources */,
 				33498AD02352EC3F00D1A8BC /* HUDReducer.swift in Sources */,
 				33498AD823530D0C00D1A8BC /* StateExtension.swift in Sources */,
