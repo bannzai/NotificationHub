@@ -56,20 +56,9 @@ let notificationsReducer: Reducer<NotificationPageState> = { state, action in
         state.notificationsStatuses[index].isVisible = true
         print("notification SubscribeWatchingAction: \(state.notificationsStatuses[index].isVisible)")
         return state
-    case let action as UnReadNotificationAction:
-        guard let pageIndex = state.notificationsStatuses.firstIndex(where: { $0.watching?.id == action.watchingId }) else {
-            fatalError("Unexpected target watching \(String(describing: action.watchingId))")
-        }
-        
-        var state = state
-        let indicies = state.notificationsStatuses[pageIndex].notifications.indicies(key: action.sectionDate)
-        indicies.forEach {
-            state.notificationsStatuses[pageIndex].notifications[$0].unread = false
-        }
-        return state
-    case let action as ReadNotificationAction:
-        guard let pageIndex = state.notificationsStatuses.firstIndex(where: { $0.watching?.id == action.watchingId }) else {
-            fatalError("Unexpected target watching \(String(describing: action.watchingId))")
+    case let action as UpdateNotificationsTorRead:
+        guard let pageIndex = state.notificationsStatuses.firstIndex(where: { $0.watching?.owner.login == action.watching?.owner.login }) else {
+            fatalError("Unexpected target watching \(String(describing: action.watching))")
         }
         
         var state = state

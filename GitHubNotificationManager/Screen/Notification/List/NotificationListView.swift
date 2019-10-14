@@ -44,7 +44,7 @@ struct NotificationListView : RenderableView {
             } else {
                 List {
                     ForEach(props.groupedNotifications, id: \.key) { groupedNotification in
-                        Section(header: SectionView(title: groupedNotification.key, watching: props.watching)) {
+                        Section(header: SectionView(date: groupedNotification.key, watching: props.watching)) {
                             ForEach(groupedNotification.values) { notification in
                                 Cell(
                                     notification: notification,

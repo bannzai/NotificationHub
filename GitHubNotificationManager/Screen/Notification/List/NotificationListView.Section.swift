@@ -13,7 +13,7 @@ extension NotificationListView {
     struct SectionView: RenderableView {
         @EnvironmentObject var store: Store<AppState>
         
-        let title: String
+        let date: String
         let watching: WatchingElement?
         
         struct Props {
@@ -23,10 +23,10 @@ extension NotificationListView {
 
         func map(state: AppState, dispatch: @escaping DispatchFunction) -> Props {
             Props(
-                title: title,
+                title: date,
                 unreadBinding: Binding<Bool>(
                     get: { false },
-                    set: { $0 ? dispatch(UnReadNotificationAction(watchingId: self.watching?.id, sectionDate: self.title)): dispatch(ReadNotificationAction(watchingId: self.watching?.id, sectionDate: self.title)) }
+                    set: { _ in dispatch(ReadNotificationAction(watching: self.watching, sectionDate: self.date, canceller: sharedStore)) }
                 )
             )
         }
@@ -43,6 +43,6 @@ extension NotificationListView {
 
 struct NotificationListView_Section_Previews: PreviewProvider {
     static var previews: some View {
-        NotificationListView.SectionView(title: "abc", watching: nil)
+        NotificationListView.SectionView(date: "abc", watching: nil)
     }
 }
