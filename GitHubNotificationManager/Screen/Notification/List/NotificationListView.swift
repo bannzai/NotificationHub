@@ -11,25 +11,28 @@ import GitHubNotificationManagerNetwork
 
 struct NotificationListView : RenderableView {
     @State private var selectedNotification: NotificationElement? = nil
+    @State private var selectedGroupdNotification: GroupedNotification? = nil
     let watching: WatchingElement?
     var state: NotificationsState {
         sharedStore.state.notificationPageState.notificationsStatuses.first(where: { $0.watching?.owner.login == watching?.owner.login })!
     }
 
     struct Props {
-        let notifications: [NotificationElement]
+        let groupedNotifications: [GroupedNotification]
         let canCallFetchWhenOnAppear: Bool
         let canCallFetchWhenReachedBottom: Bool
         let isNoData: Bool
         let watchingOwnerName: String?
+        let watching: WatchingElement?
     }
     func map(state: AppState, dispatch: @escaping DispatchFunction) -> Props {
         Props(
-            notifications: self.state.visiblyNotifications,
-            canCallFetchWhenOnAppear: self.state.visiblyNotifications.isEmpty,
-            canCallFetchWhenReachedBottom: !self.state.visiblyNotifications.isEmpty && self.state.nextFetchPage != 0,
-            isNoData: self.state.visiblyNotifications.isEmpty && self.state.nextFetchPage != 0,
-            watchingOwnerName: self.state.watching?.owner.login
+            groupedNotifications: self.state.groupedNotifications,
+            canCallFetchWhenOnAppear: self.state.visibilyNotifications.isEmpty,
+            canCallFetchWhenReachedBottom: !self.state.visibilyNotifications.isEmpty && self.state.nextFetchPage != 0,
+            isNoData: self.state.visibilyNotifications.isEmpty && self.state.fetchStatus != .notYetLoad,
+            watchingOwnerName: self.state.watching?.owner.login,
+            watching: self.state.watching
         )
     }
     
@@ -41,12 +44,21 @@ struct NotificationListView : RenderableView {
                 })
             } else {
                 List {
-                    ForEach(props.notifications) { notification in
-                        StoreProvider(store: sharedStore) {
-                            Cell(
-                                notification: notification,
-                                didSelectCell: { self.selectedNotification = $0 }
-                            )
+                    ForEach(props.groupedNotifications, id: \.key) { groupedNotification in
+                        Section(
+                            header: SectionView(
+                                groupedNotification: groupedNotification,
+                                watching: props.watching,
+                                unreadButtonPressed: { groupedNotification in
+                                    self.selectedGroupdNotification = groupedNotification
+                            })
+                        ) {
+                            ForEach(groupedNotification.values) { notification in
+                                Cell(
+                                    notification: notification,
+                                    didSelectCell: { self.selectedNotification = $0 }
+                                )
+                            }
                         }
                     }
                     IndicatorView()
@@ -62,6 +74,16 @@ struct NotificationListView : RenderableView {
         .sheet(item: $selectedNotification) { (notification) in
             SafariView(url: self.destinationURL(subject: notification.subject))
         }
+        .alert(item: $selectedGroupdNotification, content: { (groupedNotification) in
+            Alert(
+                title: Text("Unread until \(groupedNotification.key)"),
+                message: Text("You want to change notifications status to unread until \(groupedNotification.key)? This action is irreversible."),
+                primaryButton: .destructive(Text("Yes, I want to unread"), action: {
+                    sharedStore.dispatch(action: ReadNotificationAction(watching: self.watching, sectionDate: groupedNotification.key, canceller: sharedStore))
+                }),
+                secondaryButton: .cancel()
+            )
+        })
         .onAppear {
             if props.canCallFetchWhenOnAppear {
                 self.fetch(props: props)

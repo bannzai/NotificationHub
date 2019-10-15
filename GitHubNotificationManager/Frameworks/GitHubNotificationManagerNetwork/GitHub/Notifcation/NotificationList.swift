@@ -14,6 +14,7 @@ public struct NotificationElement: Codable, Identifiable, Equatable {
     public let repository: Repository
     public let reason: String
     public let url: String
+    public let updatedAt: String
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -22,6 +23,7 @@ public struct NotificationElement: Codable, Identifiable, Equatable {
         case repository
         case reason
         case url
+        case updatedAt = "updated_at"
     }
     
     public init(
@@ -30,7 +32,8 @@ public struct NotificationElement: Codable, Identifiable, Equatable {
         subject: Subject,
         repository: Repository,
         reason: String,
-        url: String
+        url: String,
+        updatedAt: String
     ) {
         self.id = id
         self.unread = unread
@@ -38,6 +41,7 @@ public struct NotificationElement: Codable, Identifiable, Equatable {
         self.repository = repository
         self.reason = reason
         self.url = url
+        self.updatedAt = updatedAt
     }
 }
 
@@ -106,3 +110,4 @@ public struct Subject: Codable, Equatable {
         self.url = url
     }
 }
+

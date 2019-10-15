@@ -13,11 +13,13 @@ public protocol NotificationPath {
 }
 
 public struct NotificationsRequest: GitHubAPIRequest {
+    public typealias Response = [NotificationElement]
+    
     public var path: URLPathConvertible
     public var method: HTTPMethod { .GET }
-    public typealias Response = [NotificationElement]
-    public var query: Query? { ["all": true, "page": page, "per_page": Self.elementPerPage] }
-    
+    private let isOnlyNotUnread = false
+    public var query: Query? { ["all": isOnlyNotUnread, "page": page, "per_page": Self.elementPerPage] }
+
     public static let elementPerPage = 50
     private let page: Int
     

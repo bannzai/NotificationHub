@@ -23,14 +23,52 @@ struct NotificationsState: ReduxState, Codable, Equatable {
         case loaded
         case loading
     }
+
     var watching: WatchingElement?
     var fetchStatus: FetchStatus = .notYetLoad
     var nextFetchPage: Int { (notifications.count + NotificationsRequest.elementPerPage) / NotificationsRequest.elementPerPage - 1 }
     var isVisible: Bool = false
+    var groupedNotifications: [GroupedNotification] {
+        visibilyNotifications.reduce(into: [GroupedNotification]()) { (result, element) in
+            let key = GroupedNotification.toKey(dateString: element.updatedAt)
+            let matcher: (GroupedNotification) -> Bool = {
+                $0.key == key
+            }
+            switch result.contains(where: matcher) {
+            case true:
+                let index = result.firstIndex(where: matcher)!
+                result[index].values.append(element)
+            case false:
+                result.append(GroupedNotification(key: key, values: [element]))
+            }
+        }
+    }
+    var visibilyNotifications: [NotificationElement] {
+        notifications.filter { $0.unread }
+    }
     var notifications: [NotificationElement] = []
+}
 
-    internal var visiblyNotifications: [NotificationElement] {
-         notifications
+extension Array where Element == NotificationElement {
+    func indicies(key: String) -> [Array<Element>.Index] {
+        let keyDate = SectionTitleDateFormatter.dateComponents(from: key)
+        return map { APIDateformatter.dateComponents(from: $0.updatedAt) }
+            .enumerated()
+            .filter { $0.element.year == keyDate.year && $0.element.month == keyDate.month && $0.element.day == keyDate.day }
+            .map { $0.offset }
+    }
+}
+
+struct GroupedNotification: Equatable, Codable, Identifiable {
+    typealias NotificationDate = String
+    var id: String { key }
+    let key: NotificationDate
+    var values: [NotificationElement]
+    
+    static func toKey(dateString: String) -> NotificationDate {
+        let date = APIDateformatter.date(from: dateString)
+        let string = SectionTitleDateFormatter.string(from: date)
+        return string
     }
 }
 

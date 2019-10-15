@@ -61,8 +61,39 @@ public struct GitHubAPI {
             }
         }
     }
-    
+    internal struct VoidResponseRequestPublisher<Request: APIRequest>: Publisher where Request.Response == Void {
+        typealias Output = Request.Response
+        typealias Failure = RequestError
+        
+        let request: Request
+        
+        func receive<S>(subscriber: S) where S : Subscriber, VoidResponseRequestPublisher.Failure == S.Failure, VoidResponseRequestPublisher.Output == S.Input {
+            do {
+                URLSession.shared.dataTaskPublisher(for: try request.urlRequest())
+                    .handleEvents(receiveCompletion: { (completion) in
+                        switch completion {
+                        case .finished:
+                            Swift.print("[INFO] finished request \(self.request)")
+                        case .failure(let error):
+                            Swift.print("[ERROR] error request \(self.request), error: \(error)")
+                        }
+                    })
+                    .map { _ in return }
+                    .receive(on: DispatchQueue.main)
+                    .mapError(RequestError.init(error:))
+                    .subscribe(subscriber)
+            } catch {
+                Fail<Output, Swift.Error>(error: error)
+                    .mapError(RequestError.init(error:))
+                    .subscribe(subscriber)
+            }
+        }
+    }
+
     public static func request<R: APIRequest> (request: R) -> AnyPublisher<R.Response, RequestError> where R.Response: Decodable {
         DecodedRequestPublisher(request: request).eraseToAnyPublisher()
+    }
+    public static func request<R: APIRequest> (request: R) -> AnyPublisher<R.Response, RequestError> where R.Response == Void {
+        VoidResponseRequestPublisher(request: request).eraseToAnyPublisher()
     }
 }
