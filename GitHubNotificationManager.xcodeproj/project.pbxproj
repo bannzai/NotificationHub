@@ -39,7 +39,6 @@
 		33C676012355327E00E3F2DD /* ReadNotificationsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C675FF2355326000E3F2DD /* ReadNotificationsRequest.swift */; };
 		33C676082356059B00E3F2DD /* GroupedNotificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C676072356059B00E3F2DD /* GroupedNotificationTests.swift */; };
 		33C676092356060B00E3F2DD /* NotificationstState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AD12352ED2E00D1A8BC /* NotificationstState.swift */; };
-		33C6760B235606B700E3F2DD /* ToDateComponentsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C6760A235606B700E3F2DD /* ToDateComponentsTests.swift */; };
 		33C6760C2356085900E3F2DD /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C67602235602BA00E3F2DD /* DateFormatter.swift */; };
 		BA1D70E822A9D42F000F83A1 /* ImageLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1D70E722A9D42F000F83A1 /* ImageLoaderView.swift */; };
 		BA1D70EA22A9D5BE000F83A1 /* ImageLoaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1D70E922A9D5BE000F83A1 /* ImageLoaderViewModel.swift */; };
@@ -205,7 +204,6 @@
 		33C675FF2355326000E3F2DD /* ReadNotificationsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadNotificationsRequest.swift; sourceTree = "<group>"; };
 		33C67602235602BA00E3F2DD /* DateFormatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		33C676072356059B00E3F2DD /* GroupedNotificationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GroupedNotificationTests.swift; sourceTree = "<group>"; };
-		33C6760A235606B700E3F2DD /* ToDateComponentsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDateComponentsTests.swift; sourceTree = "<group>"; };
 		BA1D70E722A9D42F000F83A1 /* ImageLoaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderView.swift; sourceTree = "<group>"; };
 		BA1D70E922A9D5BE000F83A1 /* ImageLoaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoaderViewModel.swift; sourceTree = "<group>"; };
 		BA357A1322B4C41300549BA0 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
@@ -430,7 +428,6 @@
 			isa = PBXGroup;
 			children = (
 				33C676072356059B00E3F2DD /* GroupedNotificationTests.swift */,
-				33C6760A235606B700E3F2DD /* ToDateComponentsTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -1104,7 +1101,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33C6760B235606B700E3F2DD /* ToDateComponentsTests.swift in Sources */,
 				33C676082356059B00E3F2DD /* GroupedNotificationTests.swift in Sources */,
 				338CB7E22354942400BA3594 /* ToggleWatchingTests.swift in Sources */,
 				BA60428322A7409400345259 /* GitHubNotificationManagerTests.swift in Sources */,

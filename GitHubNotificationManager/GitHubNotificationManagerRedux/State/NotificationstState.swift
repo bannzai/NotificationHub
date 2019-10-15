@@ -49,21 +49,10 @@ struct NotificationsState: ReduxState, Codable, Equatable {
     var notifications: [NotificationElement] = []
 }
 
-let originalDateFormat = "yyyy-MM-dd'T'hh:mm:ss'Z'"
-let sectionDateFormat = "yyyy-MM-dd"
-func toDateComponents(from key: String, format: String) -> DateComponents {
-    switch DateFormat(rawValue: format)! {
-    case .yyMMdd:
-        return SectionTitleDateFormatter.dateComponents(from: key)
-    case .yyyyMMddhhmmss:
-        return APIDateformatter.dateComponents(from: key)
-    }
-}
 extension Array where Element == NotificationElement {
-
     func indicies(key: String) -> [Array<Element>.Index] {
-        let keyDate = toDateComponents(from: key, format: sectionDateFormat)
-        return map { toDateComponents(from: $0.updatedAt, format: originalDateFormat) }
+        let keyDate = SectionTitleDateFormatter.dateComponents(from: key)
+        return map { APIDateformatter.dateComponents(from: $0.updatedAt) }
             .enumerated()
             .filter { $0.element.year == keyDate.year && $0.element.month == keyDate.month && $0.element.day == keyDate.day }
             .map { $0.offset }
