@@ -52,14 +52,12 @@ struct NotificationsState: ReduxState, Codable, Equatable {
 let originalDateFormat = "yyyy-MM-dd'T'hh:mm:ss'Z'"
 let sectionDateFormat = "yyyy-MM-dd"
 func toDateComponents(from key: String, format: String) -> DateComponents {
-    let dateFormatter = DateFormatter()
-    dateFormatter.dateFormat = format
-    dateFormatter.calendar = Calendar(identifier: .gregorian)
-    guard let date = dateFormatter.date(from: key) else {
-        fatalError("unexpected date format \(key)")
+    switch DateFormat(rawValue: format)! {
+    case .yyMMdd:
+        return SectionTitleDateFormatter.dateComponents(from: key)
+    case .yyyyMMddhhmmss:
+        return APIDateformatter.dateComponents(from: key)
     }
-    let components = Calendar(identifier: .gregorian).dateComponents(in: TimeZone.current, from: date)
-    return components
 }
 extension Array where Element == NotificationElement {
 
@@ -78,15 +76,8 @@ struct GroupedNotification: Equatable, Codable {
     var values: [NotificationElement]
     
     static func toKey(dateString: String) -> NotificationDate {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = originalDateFormat
-        dateFormatter.calendar = Calendar(identifier: .gregorian)
-        guard let date = dateFormatter.date(from: dateString) else {
-            fatalError("unexpected date format \(dateString)")
-        }
-        
-        dateFormatter.dateFormat = sectionDateFormat
-        let string = dateFormatter.string(from: date)
+        let date = APIDateformatter.date(from: dateString)
+        let string = SectionTitleDateFormatter.string(from: date)
         return string
     }
 }

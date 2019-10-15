@@ -64,15 +64,8 @@ struct ReadNotificationAction: AsyncAction, ReadNotificationPath {
     }
 
     func async(state: ReduxState?, dispatch: @escaping DispatchFunction) {
-        
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = sectionDateFormat
-        dateFormatter.calendar = Calendar(identifier: .gregorian)
-        guard let date = dateFormatter.date(from: sectionDate) else {
-            fatalError("unexpected date format \(sectionDate)")
-        }
-        dateFormatter.dateFormat = originalDateFormat
-        let lastReadAt = dateFormatter.string(from: date)
+        let date = SectionTitleDateFormatter.date(from: sectionDate)
+        let lastReadAt = APIDateformatter.string(from: date)
 
         dispatch(NetworkRequestAction.start)
         GitHubAPI

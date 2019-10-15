@@ -17,15 +17,18 @@ enum DateFormat: String {
 struct DateFormatter {
     private let dateFormatter: Foundation.DateFormatter
     let dateFormat: DateFormat
+    let calendar: Calendar
     
     init(dateFormat: DateFormat) {
+        let calendar = Calendar(identifier: .gregorian)
         self.dateFormat = dateFormat
         self.dateFormatter = {
             let formatter: Foundation.DateFormatter = Foundation.DateFormatter()
             formatter.dateFormat = dateFormat.rawValue
-            formatter.calendar = Calendar(identifier: .gregorian)
+            formatter.calendar = calendar
             return formatter
         }()
+        self.calendar = calendar
     }
     
     func date(from string: String) -> Date {
@@ -36,7 +39,11 @@ struct DateFormatter {
     }
     
     func string(from date: Date) -> String {
-        return dateFormatter.string(from: date)
+        dateFormatter.string(from: date)
+    }
+    
+    func dateComponents(from dateString: String) -> DateComponents {
+        calendar.dateComponents(in: TimeZone.current, from: date(from: dateString))
     }
 }
 
