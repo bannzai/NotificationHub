@@ -64,7 +64,9 @@ struct ReadNotificationAction: AsyncAction, ReadNotificationPath {
     }
 
     func async(state: ReduxState?, dispatch: @escaping DispatchFunction) {
-        let date = SectionTitleDateFormatter.date(from: sectionDate)
+        let oneDay = TimeInterval(60 * 60 * 24)
+        var date = SectionTitleDateFormatter.date(from: sectionDate)
+        date.addTimeInterval(oneDay)
         let lastReadAt = APIDateformatter.string(from: date)
 
         dispatch(NetworkRequestAction.start)
