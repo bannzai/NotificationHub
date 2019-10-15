@@ -74,16 +74,14 @@ struct NotificationListView : RenderableView {
         .sheet(item: $selectedNotification) { (notification) in
             SafariView(url: self.destinationURL(subject: notification.subject))
         }
-        .actionSheet(item: $selectedGroupdNotification, content: { (groupedNotification) in
-            ActionSheet(
-                title: Text("Unread until \(groupedNotification.key)").foregroundColor(.red),
+        .alert(item: $selectedGroupdNotification, content: { (groupedNotification) in
+            Alert(
+                title: Text("Unread until \(groupedNotification.key)"),
                 message: Text("You want to change notifications status to unread until \(groupedNotification.key)? This action is irreversible."),
-                buttons: [
-                    .cancel(),
-                    .destructive(Text("Yes, I want to unread"), action: {
-                        sharedStore.dispatch(action: ReadNotificationAction(watching: self.watching, sectionDate: groupedNotification.key, canceller: sharedStore))
-                    })
-                ]
+                primaryButton: .destructive(Text("Yes, I want to unread"), action: {
+                    sharedStore.dispatch(action: ReadNotificationAction(watching: self.watching, sectionDate: groupedNotification.key, canceller: sharedStore))
+                }),
+                secondaryButton: .cancel()
             )
         })
         .onAppear {
