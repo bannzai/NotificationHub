@@ -11,6 +11,7 @@ import GitHubNotificationManagerNetwork
 
 struct NotificationListView : RenderableView {
     @State private var selectedNotification: NotificationElement? = nil
+    @State private var selectedGroupdNotification: GroupedNotification? = nil
     let watching: WatchingElement?
     var state: NotificationsState {
         sharedStore.state.notificationPageState.notificationsStatuses.first(where: { $0.watching?.owner.login == watching?.owner.login })!
@@ -66,6 +67,18 @@ struct NotificationListView : RenderableView {
         .sheet(item: $selectedNotification) { (notification) in
             SafariView(url: self.destinationURL(subject: notification.subject))
         }
+        .actionSheet(item: $selectedGroupdNotification, content: { (groupedNotification) in
+            ActionSheet(
+                title: Text("Confirm Delete"),
+                message: Text("Do you want to delete the notices until \(groupedNotification.key)?"),
+                buttons: [
+                    .cancel(),
+                    .default(Text("Delete"), action: {
+                        sharedStore.dispatch(action: ReadNotificationAction(watching: self.watching, sectionDate: groupedNotification.key, canceller: sharedStore))
+                    })
+                ]
+            )
+        })
         .onAppear {
             if props.canCallFetchWhenOnAppear {
                 self.fetch(props: props)

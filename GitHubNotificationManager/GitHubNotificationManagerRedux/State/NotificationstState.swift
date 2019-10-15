@@ -59,8 +59,9 @@ extension Array where Element == NotificationElement {
     }
 }
 
-struct GroupedNotification: Equatable, Codable {
+struct GroupedNotification: Equatable, Codable, Identifiable {
     typealias NotificationDate = String
+    var id: String { key }
     let key: NotificationDate
     var values: [NotificationElement]
     
