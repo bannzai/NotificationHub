@@ -12,22 +12,22 @@ import GitHubNotificationManagerNetwork
 extension NotificationListView {
     struct SectionView: RenderableView {
         @EnvironmentObject var store: Store<AppState>
-        
-        let date: String
+
+        let groupedNotification: GroupedNotification
         let watching: WatchingElement?
+        let unreadButtonPressed: (GroupedNotification) -> Void
         
         struct Props {
             let title: String
-            let unreadBinding: Binding<Bool>
+            let groupedNotification: GroupedNotification
+            let unreadButtonPressed: (GroupedNotification) -> Void
         }
 
         func map(state: AppState, dispatch: @escaping DispatchFunction) -> Props {
             Props(
-                title: date,
-                unreadBinding: Binding<Bool>(
-                    get: { false },
-                    set: { _ in dispatch(ReadNotificationAction(watching: self.watching, sectionDate: self.date, canceller: sharedStore)) }
-                )
+                title: groupedNotification.key,
+                groupedNotification: groupedNotification,
+                unreadButtonPressed: unreadButtonPressed
             )
         }
         
@@ -35,7 +35,9 @@ extension NotificationListView {
             HStack {
                 Text(props.title)
                 Spacer()
-                ReadButton(read: props.unreadBinding)
+                ReadButton {
+                    props.unreadButtonPressed(props.groupedNotification)
+                }
             }
         }
     }
@@ -43,6 +45,13 @@ extension NotificationListView {
 
 struct NotificationListView_Section_Previews: PreviewProvider {
     static var previews: some View {
-        NotificationListView.SectionView(date: "abc", watching: nil)
+        NotificationListView.SectionView(
+            groupedNotification: GroupedNotification(
+                key: "2019-10-15",
+                values: []
+            ),
+            watching: nil,
+            unreadButtonPressed: { print($0) }
+        )
     }
 }

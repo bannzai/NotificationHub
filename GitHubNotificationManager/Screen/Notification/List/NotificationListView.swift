@@ -45,7 +45,14 @@ struct NotificationListView : RenderableView {
             } else {
                 List {
                     ForEach(props.groupedNotifications, id: \.key) { groupedNotification in
-                        Section(header: SectionView(date: groupedNotification.key, watching: props.watching)) {
+                        Section(
+                            header: SectionView(
+                                groupedNotification: groupedNotification,
+                                watching: props.watching,
+                                unreadButtonPressed: { groupedNotification in
+                                    self.selectedGroupdNotification = groupedNotification
+                            })
+                        ) {
                             ForEach(groupedNotification.values) { notification in
                                 Cell(
                                     notification: notification,
@@ -69,11 +76,11 @@ struct NotificationListView : RenderableView {
         }
         .actionSheet(item: $selectedGroupdNotification, content: { (groupedNotification) in
             ActionSheet(
-                title: Text("Confirm Delete"),
-                message: Text("Do you want to delete the notices until \(groupedNotification.key)?"),
+                title: Text("Unread until \(groupedNotification.key)").foregroundColor(.red),
+                message: Text("You want to change notifications status to unread until \(groupedNotification.key)? This action is irreversible."),
                 buttons: [
                     .cancel(),
-                    .default(Text("Delete"), action: {
+                    .destructive(Text("Yes, I want to unread"), action: {
                         sharedStore.dispatch(action: ReadNotificationAction(watching: self.watching, sectionDate: groupedNotification.key, canceller: sharedStore))
                     })
                 ]
