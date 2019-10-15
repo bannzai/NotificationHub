@@ -51,21 +51,21 @@ struct NotificationsState: ReduxState, Codable, Equatable {
 
 let originalDateFormat = "yyyy-MM-dd'T'hh:mm:ss'Z'"
 let sectionDateFormat = "yyyy-MM-dd"
-extension Array where Element == NotificationElement {
-    private func dateComponents(from key: String, format: String) -> DateComponents {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = format
-        dateFormatter.calendar = Calendar(identifier: .gregorian)
-        guard let date = dateFormatter.date(from: key) else {
-            fatalError("unexpected date format \(key)")
-        }
-        let components = Calendar(identifier: .gregorian).dateComponents(in: TimeZone.current, from: date)
-        return components
+func toDateComponents(from key: String, format: String) -> DateComponents {
+    let dateFormatter = DateFormatter()
+    dateFormatter.dateFormat = format
+    dateFormatter.calendar = Calendar(identifier: .gregorian)
+    guard let date = dateFormatter.date(from: key) else {
+        fatalError("unexpected date format \(key)")
     }
-    
+    let components = Calendar(identifier: .gregorian).dateComponents(in: TimeZone.current, from: date)
+    return components
+}
+extension Array where Element == NotificationElement {
+
     func indicies(key: String) -> [Array<Element>.Index] {
-        let keyDate = dateComponents(from: key, format: sectionDateFormat)
-        return map { dateComponents(from: $0.updatedAt, format: originalDateFormat) }
+        let keyDate = toDateComponents(from: key, format: sectionDateFormat)
+        return map { toDateComponents(from: $0.updatedAt, format: originalDateFormat) }
             .enumerated()
             .filter { $0.element.year == keyDate.year && $0.element.month == keyDate.month && $0.element.day == keyDate.day }
             .map { $0.offset }
