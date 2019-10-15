@@ -12,7 +12,7 @@ import XCTest
 class GroupedNotificationTests: XCTestCase {
 
     func testToKey() {
-        XCTAssertEqual(GroupedNotification.toKey(dateString: "2014-11-07T22:01:45Z"), "2014-11-07")
+        XCTAssertEqual(GroupedNotification.toKey(dateString: "2014-11-07T22:01:45Z"), "2014/11/07")
     }
 
     func testPerformanceExample() {

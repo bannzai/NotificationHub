@@ -11,7 +11,7 @@ import Foundation
 
 enum DateFormat: String {
     case yyyyMMddhhmmss = "yyyy-MM-dd'T'hh:mm:ss'Z'"
-    case yyMMdd = "yyyy-MM-dd"
+    case yyMMdd = "yyyy/MM/dd"
 }
 
 struct DateFormatter {
