@@ -7,11 +7,32 @@
 //
 
 import SwiftUI
+import Combine
 import GitHubNotificationManagerNetwork
+
+final class RootViewStore: ObservableObject {
+    let subject = CurrentValueSubject<String?, Never>(nil)
+    var canceller: Set<AnyCancellable> = []
+    @Published var token: String? = nil
+    
+    init() {
+        sharedStore
+            .objectDidChange
+            .map { sharedStore.state.authentificationState.githubAccessToken }
+            .sink { [weak self] (state) in self?.subject.value = state }
+            .store(in: &canceller)
+        
+        subject
+            .removeDuplicates()
+            .sink(receiveValue: { [weak self] in self?.token = $0 })
+            .store(in: &canceller)
+    }
+}
 
 struct RootView: View {
     @State private var selectedAddNotificationList: Bool = false
     @State var currentPage: Int = 0
+    @ObservedObject var store: RootViewStore = RootViewStore()
 
     var body: some View {
         Group {
