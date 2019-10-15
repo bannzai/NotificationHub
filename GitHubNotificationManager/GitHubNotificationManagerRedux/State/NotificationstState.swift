@@ -84,8 +84,9 @@ struct GroupedNotification: Equatable, Codable {
         guard let date = dateFormatter.date(from: dateString) else {
             fatalError("unexpected date format \(dateString)")
         }
-        let date = APIDateformatter.date(from: dateString)
-        let string = SectionTitleDateFormatter.string(from: date)
+        
+        dateFormatter.dateFormat = sectionDateFormat
+        let string = dateFormatter.string(from: date)
         return string
     }
 }
