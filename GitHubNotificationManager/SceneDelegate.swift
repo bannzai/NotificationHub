@@ -13,14 +13,7 @@ import GitHubNotificationManagerCore
 import GitHubNotificationManagerNetwork
 import CoreData
 
-let sharedStore = Store<AppState>(
-    reducer: appReducer,
-    middlewares: [
-        asyncActionsMiddleware,
-        signupMiddleware,
-    ],
-    initialState: AppState()
-)
+let sharedStore = Store<AppState>.create()
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?

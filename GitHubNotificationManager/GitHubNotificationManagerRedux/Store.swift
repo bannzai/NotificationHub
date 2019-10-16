@@ -64,3 +64,30 @@ final public class Store<State: ReduxState>: ObservableObject {
 }
 
 extension Store: Canceller { }
+
+extension Store where State == AppState {
+    public static func create() -> Store<AppState> {
+        let coder = Coder<AppState>()
+        let state = try? coder.read()
+        switch state {
+        case nil:
+            return Store<AppState>(
+                reducer: appReducer,
+                middlewares: [
+                    asyncActionsMiddleware,
+                    signupMiddleware,
+                ],
+                initialState: AppState()
+            )
+        case .some(let state):
+            return Store<AppState>(
+                reducer: appReducer,
+                middlewares: [
+                    asyncActionsMiddleware,
+                    signupMiddleware,
+                ],
+                initialState: state
+            )
+        }
+    }
+}
