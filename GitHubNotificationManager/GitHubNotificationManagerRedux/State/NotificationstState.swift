@@ -21,7 +21,6 @@ struct NotificationsState: ReduxState, Codable, Equatable {
     enum FetchStatus: Int, Codable, Equatable {
         case notYetLoad
         case loaded
-        case loading
     }
 
     var watching: WatchingElement?
