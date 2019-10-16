@@ -12,8 +12,6 @@ public struct WatchingsRequest: GitHubAPIRequest {
     public var path: URLPathConvertible { ["user/subscriptions"] }
     public var method: HTTPMethod { .GET }
     public typealias Response = [WatchingElement]
-    public var query: Query? { ["per_page": Self.perPage] }
-    
-    public static let perPage = 1000 // FIXME: All pages
+
     public init() { }
 }
