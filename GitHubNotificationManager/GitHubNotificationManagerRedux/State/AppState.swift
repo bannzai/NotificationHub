@@ -9,6 +9,29 @@
 import Foundation
 import GitHubNotificationManagerNetwork
 
+struct Coder<Coder: Codable> {
+    private let key = Coder.self
+    
+    private var url: URL {
+        let url = FileManager.default.urls(
+            for: .documentDirectory,
+            in: .userDomainMask).first!
+        let dataUrl = url.appendingPathComponent("\(type(of: key)).json")
+        return dataUrl
+    }
+    
+    func write(for coder: Coder) throws {
+        let data = try JSONEncoder().encode(coder)
+        try data.write(to: url)
+    }
+    
+    func read() throws -> Coder? {
+        let data = try Data(contentsOf: url)
+        let decoded = try JSONDecoder().decode(Coder.self, from: data)
+        return decoded
+    }
+}
+
 public struct AppState: ReduxState, Codable, Equatable {
     public init() { }
     var requestError: RequestError? = nil
