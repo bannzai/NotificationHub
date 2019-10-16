@@ -15,23 +15,42 @@ public enum HUDAppearanceType: Int, Equatable {
 }
 
 struct IndicatorView : UIViewRepresentable {
-    func makeUIView(context: UIViewRepresentableContext<HUD>) -> UIActivityIndicatorView {
+    @Environment(\.colorScheme) var scheme
+    func makeUIView(context: UIViewRepresentableContext<IndicatorView>) -> UIActivityIndicatorView {
         let view: UIViewType = UIActivityIndicatorView(style: .medium)
-        view.color = .black
+        switch scheme {
+        case .dark:
+            view.color = .white
+        case .light:
+            view.color = .black
+        @unknown default:
+            fatalError()
+        }
         view.hidesWhenStopped = true
         view.center = Optional(UIScreen.main.bounds.origin).map { CGPoint(x: $0.x / 2, y: $0.y / 2) }!
         view.startAnimating()
         return view
     }
     
-    func updateUIView(_ uiView: UIActivityIndicatorView, context: UIViewRepresentableContext<HUD>) {
+    func updateUIView(_ uiView: UIActivityIndicatorView, context: UIViewRepresentableContext<IndicatorView>) {
 
     }
     
     typealias UIViewType = UIActivityIndicatorView
 }
 
-typealias HUD = IndicatorView
+struct HUD: View {
+    @EnvironmentObject var store: Store<AppState>
+    var body: some View {
+        Group {
+            if store.state.hudState.current == .show {
+                IndicatorView()
+            } else {
+                EmptyView()
+            }
+        }
+    }
+}
 
 #if DEBUG
 struct HUD_Previews : PreviewProvider {
