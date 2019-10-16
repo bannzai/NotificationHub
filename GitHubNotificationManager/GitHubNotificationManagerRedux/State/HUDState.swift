@@ -14,5 +14,16 @@ struct HUDState: ReduxState, Codable, Equatable {
         case hide
     }
     
-    var current: HUDStateType = .hide
+    var last: HUDStateType = .hide {
+        didSet {
+            switch last {
+            case .show:
+                counter += 1
+            case .hide:
+                counter -= 1
+            }
+        }
+    }
+    private var counter: Int = 0
+    var current: HUDStateType { counter == 0 ? .hide : .show }
 }
