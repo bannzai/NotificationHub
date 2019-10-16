@@ -37,20 +37,24 @@ struct RootView: View {
     var body: some View {
         Group {
             if sharedStore.state.authentificationState.isAuthorized {
-                NavigationView {
-                    NotificationListPageView()
-                        .modifier(NavigationBarTitleModifier())
-                        .navigationBarItems(
-                            trailing: Button(
-                                action: {
-                                    self.selectedAddNotificationList = true
-                            }, label: {
-                                Image(systemName: "text.badge.plus")
-                                    .barButtonItems()
-                            })
-                    ).sheet(isPresented: $selectedAddNotificationList) { () in
-                        StoreProvider(store: sharedStore) { WatchingListView() }
+                ZStack {
+                    NavigationView {
+                        NotificationListPageView()
+                            .modifier(NavigationBarTitleModifier())
+                            .navigationBarItems(
+                                trailing: Button(
+                                    action: {
+                                        self.selectedAddNotificationList = true
+                                }, label: {
+                                    Image(systemName: "text.badge.plus")
+                                        .barButtonItems()
+                                })
+                        )
                     }
+                    HUD()
+                }
+                .sheet(isPresented: $selectedAddNotificationList) { () in
+                    StoreProvider(store: sharedStore) { WatchingListView() }
                 }
                 .onAppear {
                     sharedStore.dispatch(action: WatchingsFetchAction(canceller: sharedStore))

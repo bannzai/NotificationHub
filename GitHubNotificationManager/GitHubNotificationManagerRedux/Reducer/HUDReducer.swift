@@ -14,9 +14,9 @@ let hudReducer: Reducer<HUDState> = { state, action in
     case let networkAction as NetworkRequestAction:
         switch networkAction {
         case .start:
-            state.current = .show
+            state.last = .show
         case .finished:
-            state.current = .hide
+            state.last = .hide
         }
     case _:
         break

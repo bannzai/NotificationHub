@@ -45,7 +45,6 @@
 		BA357A1422B4C41300549BA0 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA357A1322B4C41300549BA0 /* SafariView.swift */; };
 		BA417D1122A9DF4E0041B3C3 /* DebugInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA417D1022A9DF4E0041B3C3 /* DebugInfo.swift */; };
 		BA417D1522A9E2BA0041B3C3 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA417D1422A9E2BA0041B3C3 /* HUD.swift */; };
-		BA417D1922A9E6FB0041B3C3 /* HUDViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA417D1822A9E6FB0041B3C3 /* HUDViewModel.swift */; };
 		BA602C452348C8A0003C281C /* UserDefaultsGenerator.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA602C442348C8A0003C281C /* UserDefaultsGenerator.generated.swift */; };
 		BA602C482348E6C5003C281C /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA602C462348E68A003C281C /* NetworkConfig.swift */; };
 		BA60426C22A7409300345259 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60426B22A7409300345259 /* AppDelegate.swift */; };
@@ -209,7 +208,6 @@
 		BA357A1322B4C41300549BA0 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		BA417D1022A9DF4E0041B3C3 /* DebugInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugInfo.swift; sourceTree = "<group>"; };
 		BA417D1422A9E2BA0041B3C3 /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
-		BA417D1822A9E6FB0041B3C3 /* HUDViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUDViewModel.swift; sourceTree = "<group>"; };
 		BA602C442348C8A0003C281C /* UserDefaultsGenerator.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsGenerator.generated.swift; sourceTree = "<group>"; };
 		BA602C462348E68A003C281C /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
 		BA60426822A7409300345259 /* NotificationHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotificationHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -722,7 +720,6 @@
 			isa = PBXGroup;
 			children = (
 				BA417D1422A9E2BA0041B3C3 /* HUD.swift */,
-				BA417D1822A9E6FB0041B3C3 /* HUDViewModel.swift */,
 			);
 			path = HUD;
 			sourceTree = "<group>";
@@ -1049,7 +1046,6 @@
 				33498AE32353656600D1A8BC /* SignupMiddleware.swift in Sources */,
 				BA6C829022B49E98006D2231 /* NotificationData.swift in Sources */,
 				33498AB02352D56000D1A8BC /* AsyncAction.swift in Sources */,
-				BA417D1922A9E6FB0041B3C3 /* HUDViewModel.swift in Sources */,
 				33498AAC2352D50000D1A8BC /* ReduxState.swift in Sources */,
 				33498AAE2352D50F00D1A8BC /* Reducer.swift in Sources */,
 				BA8A3735234200F800CB487B /* PageView.swift in Sources */,

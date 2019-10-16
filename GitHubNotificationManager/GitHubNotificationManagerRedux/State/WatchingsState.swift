@@ -13,7 +13,6 @@ struct WatchingsState: ReduxState, Codable, Equatable {
     enum FetchStatus: Int, Codable, Equatable {
         case notYetLoad
         case loaded
-        case loading
     }
     var watchings: [WatchingElement] = []
     var fetchStatus: FetchStatus = .notYetLoad

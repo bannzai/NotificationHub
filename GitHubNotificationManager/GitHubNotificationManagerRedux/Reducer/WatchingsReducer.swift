@@ -28,6 +28,7 @@ let watchingsReducer: Reducer<WatchingsState> = { state, action in
     switch action {
     case let action as SetWatchingListAction:
         state.watchings = action.elements.distinct()
+        state.fetchStatus = .loaded
     case let action as UnSubscribeWatchingAction:
         guard let index = state
             .watchings
@@ -50,13 +51,6 @@ let watchingsReducer: Reducer<WatchingsState> = { state, action in
         state.watchings[index].isReceiveNotification = true
         print("watchings SubscribeWatchingAction: \(state.watchings[index].isReceiveNotification)")
         return state
-    case let action as NetworkRequestAction:
-        switch action {
-        case .start:
-            state.fetchStatus = .loading
-        case .finished:
-            state.fetchStatus = .loaded
-        }
     case _:
         break
     }
