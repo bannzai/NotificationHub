@@ -22,7 +22,7 @@
 			<key>CFBundleTypeRole</key>
 			<string>Editor</string>
 			<key>CFBundleURLName</key>
-			<string>com.bannzai.githubnotificationmanager</string>
+			<string>com.bannzai.notificationhub</string>
 			<key>CFBundleURLSchemes</key>
 			<array>
 				<string>GITHUB_NOTIFICATION_MANAGER_URL_SCHEMA</string>
