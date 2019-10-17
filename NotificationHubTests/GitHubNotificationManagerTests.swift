@@ -1,6 +1,6 @@
 //
-//  GitHubNotificationManagerTests.swift
-//  GitHubNotificationManagerTests
+//  NotificationHubTests.swift
+//  NotificationHubTests
 //
 //  Created by Yudai.Hirose on 2019/06/05.
 //  Copyright © 2019 bannzai. All rights reserved.
@@ -9,7 +9,7 @@
 import XCTest
 @testable import NotificationHub
 
-class GitHubNotificationManagerTests: XCTestCase {
+class NotificationHubTests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.

@@ -1,6 +1,6 @@
 //
 //  ImageLoaderViewModel.swift
-//  GitHubNotificationManager
+//  NotificationHub
 //
 //  Created by Yudai.Hirose on 2019/06/07.
 //  Copyright © 2019 bannzai. All rights reserved.
@@ -9,7 +9,7 @@
 import Foundation
 import Combine
 import SwiftUI
-import GitHubNotificationManagerNetwork
+import NotificationHubNetwork
 import UIKit.UIImage
 
 final public class ImageLoaderViewModel: ObservableObject {

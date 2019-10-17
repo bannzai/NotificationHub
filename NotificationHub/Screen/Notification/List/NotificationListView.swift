@@ -1,13 +1,13 @@
 //
 //  NotificationListView.swift
-//  GitHubNotificationManager
+//  NotificationHub
 //
 //  Created by Yudai.Hirose on 2019/06/06.
 //  Copyright © 2019 bannzai. All rights reserved.
 //
 
 import SwiftUI
-import GitHubNotificationManagerNetwork
+import NotificationHubNetwork
 
 struct NotificationListView : RenderableView {
     @State private var selectedNotification: NotificationElement? = nil

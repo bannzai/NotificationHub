@@ -1,6 +1,6 @@
 //
 //  CoderAction.swift
-//  GitHubNotificationManager
+//  NotificationHub
 //
 //  Created by Yudai.Hirose on 2019/10/17.
 //  Copyright © 2019 bannzai. All rights reserved.

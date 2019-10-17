@@ -1,6 +1,6 @@
 //
 //  ImageLoader.swift
-//  GitHubNotificationManager
+//  NotificationHub
 //
 //  Created by Yudai.Hirose on 2019/06/06.
 //  Copyright © 2019 bannzai. All rights reserved.
@@ -9,7 +9,7 @@
 import UIKit.UIImage
 import Combine
 import Nuke
-import GitHubNotificationManagerCore
+import NotificationHubCore
 
 public typealias ImageLoadPublisher = AnyPublisher<UIImage?, ImagePipeline.Error>
 

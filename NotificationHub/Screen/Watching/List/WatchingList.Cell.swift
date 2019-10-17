@@ -8,7 +8,7 @@
 
 import SwiftUI
 import Combine
-import GitHubNotificationManagerNetwork
+import NotificationHubNetwork
 
 extension WatchingListView {
     struct Cell: RenderableView {

@@ -1,6 +1,6 @@
 //
-//  GitHubNotificationManagerUITests.swift
-//  GitHubNotificationManagerUITests
+//  NotificationHubUITests.swift
+//  NotificationHubUITests
 //
 //  Created by Yudai.Hirose on 2019/06/05.
 //  Copyright © 2019 bannzai. All rights reserved.
@@ -8,7 +8,7 @@
 
 import XCTest
 
-class GitHubNotificationManagerUITests: XCTestCase {
+class NotificationHubUITests: XCTestCase {
 
     override func setUp() {
         // Put setup code here. This method is called before the invocation of each test method in the class.

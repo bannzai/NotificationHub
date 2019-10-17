@@ -1,13 +1,13 @@
 //
 //  ImageLoaderView.swift
-//  GitHubNotificationManager
+//  NotificationHub
 //
 //  Created by Yudai.Hirose on 2019/06/07.
 //  Copyright © 2019 bannzai. All rights reserved.
 //
 
 import SwiftUI
-import GitHubNotificationManagerNetwork
+import NotificationHubNetwork
 
 struct ImageLoaderView : View {
     @ObservedObject var viewModel = ImageLoaderViewModel()

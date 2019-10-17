@@ -1,13 +1,13 @@
 //
 //  WatchingsState.swift
-//  GitHubNotificationManager
+//  NotificationHub
 //
 //  Created by Yudai Hirose on 2019/10/13.
 //  Copyright © 2019 bannzai. All rights reserved.
 //
 
 import Foundation
-import GitHubNotificationManagerNetwork
+import NotificationHubNetwork
 
 struct WatchingsState: ReduxState, Codable, Equatable {
     enum FetchStatus: Int, Codable, Equatable {

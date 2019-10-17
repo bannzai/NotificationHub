@@ -1,13 +1,13 @@
 //
 //  NotificationData.swift
-//  GitHubNotificationManager
+//  NotificationHub
 //
 //  Created by Yudai.Hirose on 2019/06/15.
 //  Copyright © 2019 bannzai. All rights reserved.
 //
 
 import Foundation
-import GitHubNotificationManagerNetwork
+import NotificationHubNetwork
 
 #if DEBUG
 let debugNotification = NotificationElement(
@@ -20,7 +20,7 @@ let debugNotification = NotificationElement(
     repository: Repository(
         id: 1,
         name: "name",
-        fullName: "bannzai/GitHubNotificationManager",
+        fullName: "bannzai/NotificationHub",
         repositoryPrivate: false,
         owner: Owner(
             id: 2,

@@ -1,6 +1,6 @@
 //
 //  PageView.swift
-//  GitHubNotificationManager
+//  NotificationHub
 //
 //  Created by Yudai.Hirose on 2019/09/30.
 //  Copyright © 2019 bannzai. All rights reserved.
@@ -9,7 +9,7 @@
 import UIKit
 import SwiftUI
 import Combine
-import GitHubNotificationManagerNetwork
+import NotificationHubNetwork
 
 final class NotificationListPageViewStore: ObservableObject {
     static let shared = NotificationListPageViewStore()

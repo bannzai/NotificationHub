@@ -1,6 +1,6 @@
 //
 //  SceneDelegate.swift
-//  GitHubNotificationManager
+//  NotificationHub
 //
 //  Created by Yudai.Hirose on 2019/06/05.
 //  Copyright © 2019 bannzai. All rights reserved.
@@ -9,8 +9,8 @@
 import UIKit
 import SwiftUI
 import OAuthSwift
-import GitHubNotificationManagerCore
-import GitHubNotificationManagerNetwork
+import NotificationHubCore
+import NotificationHubNetwork
 import CoreData
 
 let sharedStore = Store<AppState>(

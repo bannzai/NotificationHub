@@ -1,6 +1,6 @@
 //
 //  NotificationListView.Cell.swift
-//  GitHubNotificationManager
+//  NotificationHub
 //
 //  Created by Yudai.Hirose on 2019/06/07.
 //  Copyright © 2019 bannzai. All rights reserved.
@@ -8,7 +8,7 @@
 
 import SwiftUI
 import Combine
-import GitHubNotificationManagerNetwork
+import NotificationHubNetwork
 
 extension NotificationListView {
     struct Cell: RenderableView {

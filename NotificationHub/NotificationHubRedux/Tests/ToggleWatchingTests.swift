@@ -1,6 +1,6 @@
 //
 //  ToggleWatchingTests.swift
-//  GitHubNotificationManagerTests
+//  NotificationHubTests
 //
 //  Created by Yudai Hirose on 2019/10/14.
 //  Copyright © 2019 bannzai. All rights reserved.
@@ -8,7 +8,7 @@
 
 import XCTest
 @testable import NotificationHub
-import GitHubNotificationManagerNetwork
+import NotificationHubNetwork
 
 class ToggleWatchingTests: XCTestCase {
 
