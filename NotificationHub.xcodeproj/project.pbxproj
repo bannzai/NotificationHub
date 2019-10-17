@@ -333,7 +333,7 @@
 			path = Redux;
 			sourceTree = "<group>";
 		};
-		33498AB72352D80F00D1A8BC /* GitHubNotificationManagerRedux */ = {
+		33498AB72352D80F00D1A8BC /* NotificationHubRedux */ = {
 			isa = PBXGroup;
 			children = (
 				338CB7E02354940E00BA3594 /* Tests */,
@@ -345,7 +345,7 @@
 				33498AB82352D81900D1A8BC /* Middleware */,
 				33498AB32352D65400D1A8BC /* Store.swift */,
 			);
-			path = GitHubNotificationManagerRedux;
+			path = NotificationHubRedux;
 			sourceTree = "<group>";
 		};
 		33498AB82352D81900D1A8BC /* Middleware */ = {
@@ -471,7 +471,7 @@
 		BA60426A22A7409300345259 /* NotificationHub */ = {
 			isa = PBXGroup;
 			children = (
-				33498AB72352D80F00D1A8BC /* GitHubNotificationManagerRedux */,
+				33498AB72352D80F00D1A8BC /* NotificationHubRedux */,
 				33498AA82352B42E00D1A8BC /* Redux */,
 				BA6C828C22B49E6B006D2231 /* Previews */,
 				BA6042E722A7CAF500345259 /* Frameworks */,
@@ -524,26 +524,26 @@
 			path = Secret;
 			sourceTree = "<group>";
 		};
-		BA6042CA22A7CAD500345259 /* GitHubNotificationManagerCore */ = {
+		BA6042CA22A7CAD500345259 /* NotificationHubCore */ = {
 			isa = PBXGroup;
 			children = (
 				BA60429D22A7C90700345259 /* Secret */,
 				BA6042CB22A7CAD500345259 /* Core.h */,
 				BA6042CC22A7CAD500345259 /* Info.plist */,
 			);
-			path = GitHubNotificationManagerCore;
+			path = NotificationHubCore;
 			sourceTree = "<group>";
 		};
 		BA6042E722A7CAF500345259 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				BA6042CA22A7CAD500345259 /* GitHubNotificationManagerCore */,
-				BA6042EF22A7CE1E00345259 /* GitHubNotificationManagerNetwork */,
+				BA6042CA22A7CAD500345259 /* NotificationHubCore */,
+				BA6042EF22A7CE1E00345259 /* NotificationHubNetwork */,
 			);
 			path = Frameworks;
 			sourceTree = "<group>";
 		};
-		BA6042EF22A7CE1E00345259 /* GitHubNotificationManagerNetwork */ = {
+		BA6042EF22A7CE1E00345259 /* NotificationHubNetwork */ = {
 			isa = PBXGroup;
 			children = (
 				BAC1278022A83D2100B52862 /* Image */,
@@ -553,7 +553,7 @@
 				BA6042F122A7CE1E00345259 /* Info.plist */,
 				BA602C462348E68A003C281C /* NetworkConfig.swift */,
 			);
-			path = GitHubNotificationManagerNetwork;
+			path = NotificationHubNetwork;
 			sourceTree = "<group>";
 		};
 		BA60430F22A7CE9100345259 /* API */ = {
