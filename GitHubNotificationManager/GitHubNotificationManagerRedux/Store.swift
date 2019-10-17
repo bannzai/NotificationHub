@@ -48,7 +48,6 @@ final public class Store<State: ReduxState>: ObservableObject {
     
     public func dispatch(action: Action) {
         if Thread.isMainThread {
-            print("action: \(type(of: action))")
             self.dispatchFunction(action)
             return
         }

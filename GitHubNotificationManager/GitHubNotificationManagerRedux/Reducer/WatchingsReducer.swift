@@ -42,7 +42,6 @@ let watchingsReducer: Reducer<WatchingsState> = { state, action in
         }
         
         state.watchings[index].isReceiveNotification = false
-        print("watchings UnSubscribeWatchingAction: \(state.watchings[index].isReceiveNotification)")
         return state
     case let action as SubscribeWatchingAction:
         guard let index = state
@@ -53,7 +52,6 @@ let watchingsReducer: Reducer<WatchingsState> = { state, action in
         }
         
         state.watchings[index].isReceiveNotification = true
-        print("watchings SubscribeWatchingAction: \(state.watchings[index].isReceiveNotification)")
         return state
     case _:
         break

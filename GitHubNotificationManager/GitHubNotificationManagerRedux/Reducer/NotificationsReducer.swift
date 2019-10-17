@@ -43,7 +43,6 @@ let notificationsReducer: Reducer<NotificationPageState> = { state, action in
         }
         var state = state
         state.notificationsStatuses[index].isVisible = false
-        print("notification UnSubscribeWatchingAction: \(state.notificationsStatuses[index].isVisible)")
         return state
     case let action as SubscribeWatchingAction:
         guard let index = state
@@ -54,7 +53,6 @@ let notificationsReducer: Reducer<NotificationPageState> = { state, action in
         }
         var state = state
         state.notificationsStatuses[index].isVisible = true
-        print("notification SubscribeWatchingAction: \(state.notificationsStatuses[index].isVisible)")
         return state
     case let action as UpdateNotificationsTorRead:
         guard let pageIndex = state.notificationsStatuses.firstIndex(where: { $0.watching?.owner.login == action.watching?.owner.login }) else {
