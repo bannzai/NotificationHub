@@ -25,6 +25,8 @@ public let appReducer: Reducer<AppState> = { state, action in
     switch action {
     case let networkError as ReceiveNetworkRequestError:
         state.requestError = networkError.error
+    case let action as RestoreAction:
+        state.watchingListState = action.watching
     case _:
         break
     }

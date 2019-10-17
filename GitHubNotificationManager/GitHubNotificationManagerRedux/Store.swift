@@ -48,7 +48,6 @@ final public class Store<State: ReduxState>: ObservableObject {
     
     public func dispatch(action: Action) {
         if Thread.isMainThread {
-            print("action: \(type(of: action))")
             self.dispatchFunction(action)
             return
         }
@@ -64,3 +63,25 @@ final public class Store<State: ReduxState>: ObservableObject {
 }
 
 extension Store: Canceller { }
+
+extension Store where State == AppState {
+    public func restore() {
+        guard let state = try? Coder<AppState>().read() else {
+            return
+        }
+        dispatch(action: RestoreAction(watching: state.watchingListState))
+    }
+    
+    func saveState() {
+        DispatchQueue.global().async {
+            let coder = Coder<AppState>()
+            do {
+                try coder.write(for: self.state)
+                print("[INFO] Succesfully save state")
+            } catch {
+                print("[ERROR] " + error.localizedDescription)
+            }
+        }
+    }
+}
+
