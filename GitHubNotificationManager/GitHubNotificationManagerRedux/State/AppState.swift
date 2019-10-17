@@ -14,8 +14,9 @@ struct Coder<Coder: Codable> {
     
     private var url: URL {
         let url = FileManager.default.urls(
-            for: .documentDirectory,
-            in: .userDomainMask).first!
+            for: .cachesDirectory,
+            in: .userDomainMask
+        ).first!
         let dataUrl = url.appendingPathComponent("\(type(of: key)).json")
         return dataUrl
     }

@@ -67,6 +67,14 @@ let notificationsReducer: Reducer<NotificationPageState> = { state, action in
             state.notificationsStatuses[pageIndex].notifications[$0].unread = true
         }
         return state
+    case let action as RestoreAction:
+        var state = state
+         action
+            .watching
+            .watchings
+            .filter { $0.isReceiveNotification }
+            .forEach { state.notificationsStatuses.append(NotificationsState(watching: $0, isVisible: true)) }
+        return state
     case _:
         return state
     }

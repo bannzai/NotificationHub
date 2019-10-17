@@ -13,11 +13,14 @@ import GitHubNotificationManagerCore
 import GitHubNotificationManagerNetwork
 import CoreData
 
-let sharedStore = Store<AppState>.create()
-fileprivate func saveState() {
-    let coder = Coder<AppState>()
-    try? coder.write(for: sharedStore.state)
-}
+let sharedStore = Store<AppState>(
+    reducer: appReducer,
+    middlewares: [
+        asyncActionsMiddleware,
+        signupMiddleware,
+    ],
+    initialState: AppState()
+)
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
@@ -32,6 +35,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         #if DEBUG
 //        UserDefaults.standard.set(Secret.Debug.accessToken, forKey: .GitHubAccessToken)
         #endif
+        sharedStore.restore()
         if let token = UserDefaults.standard.string(forKey: .GitHubAccessToken) {
             sharedStore.dispatch(action: SignupAction(githubAccessToken: token))
         }
@@ -47,7 +51,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         }
         
         saveStatTimer = Timer.scheduledTimer(withTimeInterval: 30.0, repeats: true, block: { _ in
-            saveState()
+            sharedStore.saveState()
         })
     }
 
@@ -77,7 +81,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Called as the scene transitions from the foreground to the background.
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
-        saveState()
+        sharedStore.saveState()
     }
     
     func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {

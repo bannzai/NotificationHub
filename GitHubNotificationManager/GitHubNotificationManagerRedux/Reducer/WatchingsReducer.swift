@@ -27,7 +27,11 @@ let watchingsReducer: Reducer<WatchingsState> = { state, action in
     var state = state
     switch action {
     case let action as SetWatchingListAction:
-        state.watchings = action.elements.distinct()
+        state.watchings = state.watchings.reduce(into: action.elements.distinct(), { (result, element) in
+            result.firstIndex(where: { $0.owner.login == element.owner.login }).map {
+                result[$0].isReceiveNotification = element.isReceiveNotification
+            }
+        })
         state.fetchStatus = .loaded
     case let action as UnSubscribeWatchingAction:
         guard let index = state

@@ -26,9 +26,6 @@ struct WatchingsFetchAction: AsyncAction {
     var canceller: Canceller
 
     func async(state: ReduxState?, dispatch: @escaping DispatchFunction) {
-        if !appState(state).watchingListState.watchings.isEmpty {
-            return
-        }
         dispatch(NetworkRequestAction.start)
 
         GitHubAPI
