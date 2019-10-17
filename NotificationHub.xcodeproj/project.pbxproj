@@ -448,9 +448,9 @@
 		BA60425F22A7409300345259 = {
 			isa = PBXGroup;
 			children = (
-				BA60426A22A7409300345259 /* GitHubNotificationManager */,
-				BA60428122A7409400345259 /* GitHubNotificationManagerTests */,
-				BA60428C22A7409400345259 /* GitHubNotificationManagerUITests */,
+				BA60426A22A7409300345259 /* NotificationHub */,
+				BA60428122A7409400345259 /* NotificationHubTests */,
+				BA60428C22A7409400345259 /* NotificationHubUITests */,
 				BA60426922A7409300345259 /* Products */,
 				BAC1277422A830CF00B52862 /* Frameworks */,
 			);
@@ -468,7 +468,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BA60426A22A7409300345259 /* GitHubNotificationManager */ = {
+		BA60426A22A7409300345259 /* NotificationHub */ = {
 			isa = PBXGroup;
 			children = (
 				33498AB72352D80F00D1A8BC /* GitHubNotificationManagerRedux */,
@@ -487,7 +487,7 @@
 				BA60427922A7409400345259 /* Info.plist */,
 				BA60427322A7409400345259 /* Preview Content */,
 			);
-			path = GitHubNotificationManager;
+			path = NotificationHub;
 			sourceTree = "<group>";
 		};
 		BA60427322A7409400345259 /* Preview Content */ = {
@@ -498,22 +498,22 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
-		BA60428122A7409400345259 /* GitHubNotificationManagerTests */ = {
+		BA60428122A7409400345259 /* NotificationHubTests */ = {
 			isa = PBXGroup;
 			children = (
 				BA60428222A7409400345259 /* GitHubNotificationManagerTests.swift */,
 				BA60428422A7409400345259 /* Info.plist */,
 			);
-			path = GitHubNotificationManagerTests;
+			path = NotificationHubTests;
 			sourceTree = "<group>";
 		};
-		BA60428C22A7409400345259 /* GitHubNotificationManagerUITests */ = {
+		BA60428C22A7409400345259 /* NotificationHubUITests */ = {
 			isa = PBXGroup;
 			children = (
 				BA60428D22A7409400345259 /* GitHubNotificationManagerUITests.swift */,
 				BA60428F22A7409400345259 /* Info.plist */,
 			);
-			path = GitHubNotificationManagerUITests;
+			path = NotificationHubUITests;
 			sourceTree = "<group>";
 		};
 		BA60429D22A7C90700345259 /* Secret */ = {
