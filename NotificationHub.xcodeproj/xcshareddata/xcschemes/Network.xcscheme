@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BA6042ED22A7CE1E00345259"
-               BuildableName = "GitHubNotificationManagerNetwork.framework"
-               BlueprintName = "GitHubNotificationManagerNetwork"
-               ReferencedContainer = "container:GitHubNotificationManager.xcodeproj">
+               BuildableName = "NotificationHubNetwork.framework"
+               BlueprintName = "NotificationHubNetwork"
+               ReferencedContainer = "container:NotificationHub.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -51,9 +51,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BA6042ED22A7CE1E00345259"
-            BuildableName = "GitHubNotificationManagerNetwork.framework"
-            BlueprintName = "GitHubNotificationManagerNetwork"
-            ReferencedContainer = "container:GitHubNotificationManager.xcodeproj">
+            BuildableName = "NotificationHubNetwork.framework"
+            BlueprintName = "NotificationHubNetwork"
+            ReferencedContainer = "container:NotificationHub.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </ProfileAction>

@@ -16,8 +16,8 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BA60426722A7409300345259"
                BuildableName = "NotificationHub.app"
-               BlueprintName = "GitHubNotificationManager"
-               ReferencedContainer = "container:GitHubNotificationManager.xcodeproj">
+               BlueprintName = "NotificationHub"
+               ReferencedContainer = "container:NotificationHub.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -37,7 +37,7 @@
                BlueprintIdentifier = "BAC127B122A83F8400B52862"
                BuildableName = "GitHubNotificationManagerUIComponentsTests.xctest"
                BlueprintName = "GitHubNotificationManagerUIComponentsTests"
-               ReferencedContainer = "container:GitHubNotificationManager.xcodeproj">
+               ReferencedContainer = "container:NotificationHub.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -58,8 +58,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BA60426722A7409300345259"
             BuildableName = "NotificationHub.app"
-            BlueprintName = "GitHubNotificationManager"
-            ReferencedContainer = "container:GitHubNotificationManager.xcodeproj">
+            BlueprintName = "NotificationHub"
+            ReferencedContainer = "container:NotificationHub.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -75,8 +75,8 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BA60426722A7409300345259"
             BuildableName = "NotificationHub.app"
-            BlueprintName = "GitHubNotificationManager"
-            ReferencedContainer = "container:GitHubNotificationManager.xcodeproj">
+            BlueprintName = "NotificationHub"
+            ReferencedContainer = "container:NotificationHub.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
