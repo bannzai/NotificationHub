@@ -16,6 +16,7 @@ import CoreData
 let sharedStore = Store<AppState>(
     reducer: appReducer,
     middlewares: [
+        loggingMiddleware,
         asyncActionsMiddleware,
         signupMiddleware,
     ],

@@ -70,6 +70,7 @@
 		BA8A374823422E5100CB487B /* WatchingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A374723422E5100CB487B /* WatchingListView.swift */; };
 		BA8A374C23422F4600CB487B /* WatchingList.Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A374B23422F4600CB487B /* WatchingList.Cell.swift */; };
 		BAAAA2F92357EADF0087731C /* CoderAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAAA2F82357EADF0087731C /* CoderAction.swift */; };
+		BAAAA2FB2357EF980087731C /* LoggingMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAAA2FA2357EF980087731C /* LoggingMiddleware.swift */; };
 		BABB9A83234B936F0067B767 /* ReadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABB9A82234B936F0067B767 /* ReadButton.swift */; };
 		BABB9A85234CB8A10067B767 /* LayoutPriorityExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABB9A84234CB8A10067B767 /* LayoutPriorityExtension.swift */; };
 		BAC1276622A82F7C00B52862 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431222A7CEBF00345259 /* APIRequest.swift */; };
@@ -253,6 +254,7 @@
 		BA8A374723422E5100CB487B /* WatchingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchingListView.swift; sourceTree = "<group>"; };
 		BA8A374B23422F4600CB487B /* WatchingList.Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchingList.Cell.swift; sourceTree = "<group>"; };
 		BAAAA2F82357EADF0087731C /* CoderAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoderAction.swift; sourceTree = "<group>"; };
+		BAAAA2FA2357EF980087731C /* LoggingMiddleware.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingMiddleware.swift; sourceTree = "<group>"; };
 		BABB9A82234B936F0067B767 /* ReadButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReadButton.swift; sourceTree = "<group>"; };
 		BABB9A84234CB8A10067B767 /* LayoutPriorityExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutPriorityExtension.swift; sourceTree = "<group>"; };
 		BAC1278122A83DBC00B52862 /* ImageLoader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLoader.swift; sourceTree = "<group>"; };
@@ -350,6 +352,7 @@
 			isa = PBXGroup;
 			children = (
 				33498AB92352D82100D1A8BC /* AsyncMiddleware.swift */,
+				BAAAA2FA2357EF980087731C /* LoggingMiddleware.swift */,
 				33498AE22353656600D1A8BC /* SignupMiddleware.swift */,
 			);
 			path = Middleware;
@@ -1076,6 +1079,7 @@
 				33498AAA2352D4F500D1A8BC /* Action.swift in Sources */,
 				33498AB62352D78000D1A8BC /* Middleware.swift in Sources */,
 				BAEFFC3C22B9DB4E006D1549 /* ViewExtension.swift in Sources */,
+				BAAAA2FB2357EF980087731C /* LoggingMiddleware.swift in Sources */,
 				33C675FE2354D09500E3F2DD /* NotificationListView.Section.swift in Sources */,
 				33498AC72352E45400D1A8BC /* NetworkActions.swift in Sources */,
 				BAFE55EC23497B7F00A35674 /* ThumbnailImageView.swift in Sources */,
