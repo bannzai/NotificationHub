@@ -1,8 +1,8 @@
 # WIP
 This project work in progress.
 
-# GitHubNotificationManager
-GitHubNotificationManager is managed [GitHub notification](https://github.com/notifications) to use [SwiftUI](https://developer.apple.com/documentation/swiftui) and [Combine](https://developer.apple.com/documentation/combine) and [Swift Package Manager](https://github.com/apple/swift-package-manager) for iOS.  
+# NotificationHub
+NotificationHub is managed [GitHub notification](https://github.com/notifications) to use [SwiftUI](https://developer.apple.com/documentation/swiftui) and [Combine](https://developer.apple.com/documentation/combine) and [Swift Package Manager](https://github.com/apple/swift-package-manager) for iOS.  
 So, this project example for *New Apple Technologies*.
 
 ## Environment
@@ -14,7 +14,7 @@ So, this project example for *New Apple Technologies*.
 Prepare created Secret.swift.
 ```
 $ make secret
-$ ls ./GitHubNotificationManager/Frameworks/GitHubNotificationManagerCore/Secret/Secret.swift
+$ ls ./NotificationHub/Frameworks/NotificationHubCore/Secret/Secret.swift
 ```
 
 And it edit to use [GitHub Persnal Access Token](https://github.com/settings/tokens).
@@ -39,6 +39,6 @@ public struct Secret {
 <img width="320px" src="https://user-images.githubusercontent.com/10897361/59778587-bd2b0e80-92f1-11e9-9202-d29f6df6ea9d.png" />
 
 ## LICENSE
-GitHubNotificationManager is available under the MIT license. See the LICENSE file for more info.
+NotificationHub is available under the MIT license. See the LICENSE file for more info.
 
 
