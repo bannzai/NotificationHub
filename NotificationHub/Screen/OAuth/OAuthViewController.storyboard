@@ -10,7 +10,7 @@
         <!--Auth View Controller-->
         <scene sceneID="rp7-Be-UbJ">
             <objects>
-                <viewController id="QP3-i1-Zih" customClass="OAuthViewController" customModule="GitHubNotificationManager" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="QP3-i1-Zih" customClass="OAuthViewController" customModule="NotificationHub" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WcG-4H-Zbx">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

@@ -52,8 +52,8 @@
 		BA60427222A7409400345259 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA60427122A7409400345259 /* Assets.xcassets */; };
 		BA60427522A7409400345259 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA60427422A7409400345259 /* Preview Assets.xcassets */; };
 		BA60427822A7409400345259 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA60427622A7409400345259 /* LaunchScreen.storyboard */; };
-		BA60428322A7409400345259 /* GitHubNotificationManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60428222A7409400345259 /* GitHubNotificationManagerTests.swift */; };
-		BA60428E22A7409400345259 /* GitHubNotificationManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60428D22A7409400345259 /* GitHubNotificationManagerUITests.swift */; };
+		BA60428322A7409400345259 /* NotificationHubTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60428222A7409400345259 /* NotificationHubTests.swift */; };
+		BA60428E22A7409400345259 /* NotificationHubUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60428D22A7409400345259 /* NotificationHubUITests.swift */; };
 		BA6042DB22A7CAD500345259 /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = BA6042CB22A7CAD500345259 /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BA6042DE22A7CAD500345259 /* NotificationHubCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA6042C922A7CAD500345259 /* NotificationHubCore.framework */; };
 		BA6042DF22A7CAD500345259 /* NotificationHubCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA6042C922A7CAD500345259 /* NotificationHubCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -114,14 +114,14 @@
 			containerPortal = BA60426022A7409300345259 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = BA60426722A7409300345259;
-			remoteInfo = GitHubNotificationManager;
+			remoteInfo = NotificationHub;
 		};
 		BA60428A22A7409400345259 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BA60426022A7409300345259 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = BA60426722A7409300345259;
-			remoteInfo = GitHubNotificationManager;
+			remoteInfo = NotificationHub;
 		};
 		BA6042DC22A7CAD500345259 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -142,7 +142,7 @@
 			containerPortal = BA60426022A7409300345259 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = BA6042C822A7CAD500345259;
-			remoteInfo = GitHubNotificationManagerCore;
+			remoteInfo = NotificationHubCore;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -220,10 +220,10 @@
 		BA60427722A7409400345259 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA60427922A7409400345259 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA60427E22A7409400345259 /* NotificationHubTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NotificationHubTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BA60428222A7409400345259 /* GitHubNotificationManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubNotificationManagerTests.swift; sourceTree = "<group>"; };
+		BA60428222A7409400345259 /* NotificationHubTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHubTests.swift; sourceTree = "<group>"; };
 		BA60428422A7409400345259 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA60428922A7409400345259 /* NotificationHubUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NotificationHubUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		BA60428D22A7409400345259 /* GitHubNotificationManagerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitHubNotificationManagerUITests.swift; sourceTree = "<group>"; };
+		BA60428D22A7409400345259 /* NotificationHubUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHubUITests.swift; sourceTree = "<group>"; };
 		BA60428F22A7409400345259 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA60429E22A7C91000345259 /* Secret.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secret.swift; sourceTree = "<group>"; };
 		BA6042C922A7CAD500345259 /* NotificationHubCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NotificationHubCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -501,7 +501,7 @@
 		BA60428122A7409400345259 /* NotificationHubTests */ = {
 			isa = PBXGroup;
 			children = (
-				BA60428222A7409400345259 /* GitHubNotificationManagerTests.swift */,
+				BA60428222A7409400345259 /* NotificationHubTests.swift */,
 				BA60428422A7409400345259 /* Info.plist */,
 			);
 			path = NotificationHubTests;
@@ -510,7 +510,7 @@
 		BA60428C22A7409400345259 /* NotificationHubUITests */ = {
 			isa = PBXGroup;
 			children = (
-				BA60428D22A7409400345259 /* GitHubNotificationManagerUITests.swift */,
+				BA60428D22A7409400345259 /* NotificationHubUITests.swift */,
 				BA60428F22A7409400345259 /* Info.plist */,
 			);
 			path = NotificationHubUITests;
@@ -852,7 +852,7 @@
 			packageProductDependencies = (
 				BACDC7FC23464B9400C4A1AE /* OAuthSwift */,
 			);
-			productName = GitHubNotificationManager;
+			productName = NotificationHub;
 			productReference = BA60426822A7409300345259 /* NotificationHub.app */;
 			productType = "com.apple.product-type.application";
 		};
@@ -870,7 +870,7 @@
 				BA60428022A7409400345259 /* PBXTargetDependency */,
 			);
 			name = NotificationHubTests;
-			productName = GitHubNotificationManagerTests;
+			productName = NotificationHubTests;
 			productReference = BA60427E22A7409400345259 /* NotificationHubTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
@@ -888,7 +888,7 @@
 				BA60428B22A7409400345259 /* PBXTargetDependency */,
 			);
 			name = NotificationHubUITests;
-			productName = GitHubNotificationManagerUITests;
+			productName = NotificationHubUITests;
 			productReference = BA60428922A7409400345259 /* NotificationHubUITests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
@@ -1107,7 +1107,7 @@
 			files = (
 				33C676082356059B00E3F2DD /* GroupedNotificationTests.swift in Sources */,
 				338CB7E22354942400BA3594 /* ToggleWatchingTests.swift in Sources */,
-				BA60428322A7409400345259 /* GitHubNotificationManagerTests.swift in Sources */,
+				BA60428322A7409400345259 /* NotificationHubTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1115,7 +1115,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA60428E22A7409400345259 /* GitHubNotificationManagerUITests.swift in Sources */,
+				BA60428E22A7409400345259 /* NotificationHubUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1316,11 +1316,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "GitHubNotificationManager/Preview\\ Content";
+				DEVELOPMENT_ASSET_PATHS = "NotificationHub/Preview\\ Content";
 				DEVELOPMENT_TEAM = TQPN82UBBY;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_PATH = "$(SRCROOT)/Frameworks/";
-				INFOPLIST_FILE = GitHubNotificationManager/Info.plist;
+				INFOPLIST_FILE = NotificationHub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1341,11 +1341,11 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "GitHubNotificationManager/Preview\\ Content";
+				DEVELOPMENT_ASSET_PATHS = "NotificationHub/Preview\\ Content";
 				DEVELOPMENT_TEAM = TQPN82UBBY;
 				ENABLE_PREVIEWS = YES;
 				FRAMEWORK_PATH = "$(SRCROOT)/Frameworks/";
-				INFOPLIST_FILE = GitHubNotificationManager/Info.plist;
+				INFOPLIST_FILE = NotificationHub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1365,14 +1365,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = GitHubNotificationManagerTests/Info.plist;
+				INFOPLIST_FILE = NotificationHubTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
 				OTHER_SWIFT_FLAGS = "-D DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bannzai.GitHubNotificationManagerTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bannzai.NotificationHubTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1386,14 +1386,14 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = GitHubNotificationManagerTests/Info.plist;
+				INFOPLIST_FILE = NotificationHubTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
 				OTHER_SWIFT_FLAGS = "-D DEBUG";
-				PRODUCT_BUNDLE_IDENTIFIER = com.bannzai.GitHubNotificationManagerTests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bannzai.NotificationHubTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1406,17 +1406,17 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = GitHubNotificationManagerUITests/Info.plist;
+				INFOPLIST_FILE = NotificationHubUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bannzai.GitHubNotificationManagerUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bannzai.NotificationHubUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = GitHubNotificationManager;
+				TEST_TARGET_NAME = NotificationHub;
 			};
 			name = Debug;
 		};
@@ -1425,17 +1425,17 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = GitHubNotificationManagerUITests/Info.plist;
+				INFOPLIST_FILE = NotificationHubUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 					"@loader_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bannzai.GitHubNotificationManagerUITests;
+				PRODUCT_BUNDLE_IDENTIFIER = com.bannzai.NotificationHubUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = GitHubNotificationManager;
+				TEST_TARGET_NAME = NotificationHub;
 			};
 			name = Release;
 		};
@@ -1448,7 +1448,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/GitHubNotificationManager/Frameworks/GitHubNotificationManagerCore/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/NotificationHub/Frameworks/NotificationHubCore/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1474,7 +1474,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/GitHubNotificationManager/Frameworks/GitHubNotificationManagerCore/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/NotificationHub/Frameworks/NotificationHubCore/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1500,7 +1500,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/GitHubNotificationManager/Frameworks/GitHubNotificationManagerNetwork/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/NotificationHub/Frameworks/NotificationHubNetwork/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1526,7 +1526,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/GitHubNotificationManager/Frameworks/GitHubNotificationManagerNetwork/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/NotificationHub/Frameworks/NotificationHubNetwork/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",

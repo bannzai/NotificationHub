@@ -35,8 +35,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BAC127B122A83F8400B52862"
-               BuildableName = "GitHubNotificationManagerUIComponentsTests.xctest"
-               BlueprintName = "GitHubNotificationManagerUIComponentsTests"
+               BuildableName = "NotificationHubUIComponentsTests.xctest"
+               BlueprintName = "NotificationHubUIComponentsTests"
                ReferencedContainer = "container:NotificationHub.xcodeproj">
             </BuildableReference>
          </TestableReference>
