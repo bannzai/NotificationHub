@@ -9,12 +9,12 @@
 import Foundation
 import SwiftUI
 
-public enum DeviceType: String, CaseIterable, Identifiable {
+enum DeviceType: String, CaseIterable, Identifiable {
     // TODO: Add cases
     case iPhoneSE = "iPhone SE"
     case iPhoneXSMax = "iPhone XS Max"
     
-    public var id: String { rawValue }
+    var id: String { rawValue }
     
     var preview: PreviewDevice { PreviewDevice(rawValue: rawValue) }
     var name: String { rawValue }

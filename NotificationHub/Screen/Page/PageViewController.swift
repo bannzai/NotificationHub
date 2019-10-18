@@ -8,6 +8,7 @@
 
 import UIKit
 import SwiftUI
+import NotificationHubRedux
 
 struct PageViewController: UIViewControllerRepresentable {
     var viewControllers: [UIViewController]

@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import NotificationHubNetwork
+import NotificationHubCore
 
 struct ThumbnailImageViewModifier: ViewModifier {
     let edge: CGFloat = 44
@@ -32,10 +32,8 @@ struct ThumbnailImageView: View {
     }
 }
 
-#if DEBUG
 struct ThumbnailImageView_Previews : PreviewProvider {
     static var previews: some View {
         ThumbnailImageView(url: Debug.Const.avatarURL, defaultImage: UIImage(systemName: "person")!)
     }
 }
-#endif

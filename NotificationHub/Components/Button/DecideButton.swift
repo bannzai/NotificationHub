@@ -25,7 +25,6 @@ extension Text {
     }
 }
 
-#if DEBUG
 struct DecideButtonModifier_Previews: PreviewProvider {
     static var previews: some View {
         Button(action: {
@@ -36,4 +35,3 @@ struct DecideButtonModifier_Previews: PreviewProvider {
         .modifier(DecideButtonModifier())
     }
 }
-#endif

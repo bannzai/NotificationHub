@@ -7,46 +7,83 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		33498AAA2352D4F500D1A8BC /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AA92352D4F500D1A8BC /* Action.swift */; };
-		33498AAC2352D50000D1A8BC /* ReduxState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AAB2352D50000D1A8BC /* ReduxState.swift */; };
-		33498AAE2352D50F00D1A8BC /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AAD2352D50F00D1A8BC /* Reducer.swift */; };
-		33498AB02352D56000D1A8BC /* AsyncAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AAF2352D56000D1A8BC /* AsyncAction.swift */; };
-		33498AB22352D5A700D1A8BC /* Dispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AB12352D5A700D1A8BC /* Dispatch.swift */; };
-		33498AB42352D65400D1A8BC /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AB32352D65400D1A8BC /* Store.swift */; };
-		33498AB62352D78000D1A8BC /* Middleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AB52352D78000D1A8BC /* Middleware.swift */; };
-		33498ABA2352D82100D1A8BC /* AsyncMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AB92352D82100D1A8BC /* AsyncMiddleware.swift */; };
-		33498ABD2352DA9100D1A8BC /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498ABC2352DA9100D1A8BC /* AppState.swift */; };
-		33498AC02352DAD400D1A8BC /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498ABF2352DAD400D1A8BC /* AppReducer.swift */; };
-		33498AC22352DD6400D1A8BC /* WatchingsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AC12352DD6400D1A8BC /* WatchingsState.swift */; };
-		33498AC52352DDC700D1A8BC /* WatchingsAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AC42352DDC700D1A8BC /* WatchingsAction.swift */; };
-		33498AC72352E45400D1A8BC /* NetworkActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AC62352E45400D1A8BC /* NetworkActions.swift */; };
-		33498ACA2352E48000D1A8BC /* Canceller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AC92352E48000D1A8BC /* Canceller.swift */; };
-		33498ACC2352E75000D1A8BC /* WatchingsReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498ACB2352E75000D1A8BC /* WatchingsReducer.swift */; };
-		33498ACE2352EBCF00D1A8BC /* HUDState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498ACD2352EBCF00D1A8BC /* HUDState.swift */; };
-		33498AD02352EC3F00D1A8BC /* HUDReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498ACF2352EC3F00D1A8BC /* HUDReducer.swift */; };
-		33498AD42353083700D1A8BC /* NotificationsAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AD32353083600D1A8BC /* NotificationsAction.swift */; };
-		33498AD623530BCA00D1A8BC /* NotificationsReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AD523530BCA00D1A8BC /* NotificationsReducer.swift */; };
-		33498AD823530D0C00D1A8BC /* StateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AD723530D0C00D1A8BC /* StateExtension.swift */; };
-		33498ADA2353534300D1A8BC /* AuthentificationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AD92353534300D1A8BC /* AuthentificationState.swift */; };
-		33498ADD2353558000D1A8BC /* AuthentificationReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498ADC2353558000D1A8BC /* AuthentificationReducer.swift */; };
-		33498ADF235355E400D1A8BC /* AuthentificationAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498ADE235355E400D1A8BC /* AuthentificationAction.swift */; };
-		33498AE32353656600D1A8BC /* SignupMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AE22353656600D1A8BC /* SignupMiddleware.swift */; };
 		334FB93523536D8B006441E7 /* FuzzyFindable.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAEFFC3F22B9DDBF006D1549 /* FuzzyFindable.swift */; };
-		334FB938235370C8006441E7 /* RenderableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334FB937235370C8006441E7 /* RenderableView.swift */; };
-		338CB7E22354942400BA3594 /* ToggleWatchingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338CB7E12354942400BA3594 /* ToggleWatchingTests.swift */; };
 		33B929472351980A00CBD088 /* NavigationBarTitleModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33B929462351980A00CBD088 /* NavigationBarTitleModifier.swift */; };
 		33C675FE2354D09500E3F2DD /* NotificationListView.Section.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C675FD2354D09500E3F2DD /* NotificationListView.Section.swift */; };
-		33C676012355327E00E3F2DD /* ReadNotificationsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C675FF2355326000E3F2DD /* ReadNotificationsRequest.swift */; };
-		33C676082356059B00E3F2DD /* GroupedNotificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C676072356059B00E3F2DD /* GroupedNotificationTests.swift */; };
-		33C676092356060B00E3F2DD /* NotificationstState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AD12352ED2E00D1A8BC /* NotificationstState.swift */; };
-		33C6760C2356085900E3F2DD /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C67602235602BA00E3F2DD /* DateFormatter.swift */; };
 		BA1D70E822A9D42F000F83A1 /* ImageLoaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1D70E722A9D42F000F83A1 /* ImageLoaderView.swift */; };
 		BA1D70EA22A9D5BE000F83A1 /* ImageLoaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA1D70E922A9D5BE000F83A1 /* ImageLoaderViewModel.swift */; };
 		BA357A1422B4C41300549BA0 /* SafariView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA357A1322B4C41300549BA0 /* SafariView.swift */; };
 		BA417D1122A9DF4E0041B3C3 /* DebugInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA417D1022A9DF4E0041B3C3 /* DebugInfo.swift */; };
 		BA417D1522A9E2BA0041B3C3 /* HUD.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA417D1422A9E2BA0041B3C3 /* HUD.swift */; };
-		BA602C452348C8A0003C281C /* UserDefaultsGenerator.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA602C442348C8A0003C281C /* UserDefaultsGenerator.generated.swift */; };
-		BA602C482348E6C5003C281C /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA602C462348E68A003C281C /* NetworkConfig.swift */; };
+		BA546ACB2359EF6D0069F552 /* NotificationHubRedux.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA546AC22359EF6D0069F552 /* NotificationHubRedux.framework */; };
+		BA546AD22359EF6D0069F552 /* NotificationHubReduxTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA546AD12359EF6D0069F552 /* NotificationHubReduxTests.swift */; };
+		BA546AD42359EF6D0069F552 /* NotificationHubRedux.h in Headers */ = {isa = PBXBuildFile; fileRef = BA546AC42359EF6D0069F552 /* NotificationHubRedux.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BA546AD72359EF6D0069F552 /* NotificationHubRedux.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA546AC22359EF6D0069F552 /* NotificationHubRedux.framework */; };
+		BA546AD82359EF6D0069F552 /* NotificationHubRedux.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA546AC22359EF6D0069F552 /* NotificationHubRedux.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BA546ADF2359EFAC0069F552 /* Action.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AA92352D4F500D1A8BC /* Action.swift */; };
+		BA546AE02359EFAC0069F552 /* AsyncAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AAF2352D56000D1A8BC /* AsyncAction.swift */; };
+		BA546AE12359EFAC0069F552 /* ReduxState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AAB2352D50000D1A8BC /* ReduxState.swift */; };
+		BA546AE22359EFAC0069F552 /* Reducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AAD2352D50F00D1A8BC /* Reducer.swift */; };
+		BA546AE32359EFAC0069F552 /* Dispatch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AB12352D5A700D1A8BC /* Dispatch.swift */; };
+		BA546AE42359EFAC0069F552 /* Middleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AB52352D78000D1A8BC /* Middleware.swift */; };
+		BA546AE52359EFAC0069F552 /* RenderableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 334FB937235370C8006441E7 /* RenderableView.swift */; };
+		BA546AE62359EFAC0069F552 /* Canceller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AC92352E48000D1A8BC /* Canceller.swift */; };
+		BA546AE72359EFAC0069F552 /* WatchingsAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AC42352DDC700D1A8BC /* WatchingsAction.swift */; };
+		BA546AE82359EFAC0069F552 /* NetworkActions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AC62352E45400D1A8BC /* NetworkActions.swift */; };
+		BA546AE92359EFAC0069F552 /* NotificationsAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AD32353083600D1A8BC /* NotificationsAction.swift */; };
+		BA546AEA2359EFAC0069F552 /* AuthentificationAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498ADE235355E400D1A8BC /* AuthentificationAction.swift */; };
+		BA546AEB2359EFAC0069F552 /* CoderAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAAA2F82357EADF0087731C /* CoderAction.swift */; };
+		BA546AEC2359EFAC0069F552 /* AppReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498ABF2352DAD400D1A8BC /* AppReducer.swift */; };
+		BA546AED2359EFAC0069F552 /* HUDReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498ACF2352EC3F00D1A8BC /* HUDReducer.swift */; };
+		BA546AEE2359EFAC0069F552 /* WatchingsReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498ACB2352E75000D1A8BC /* WatchingsReducer.swift */; };
+		BA546AEF2359EFAC0069F552 /* NotificationsReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AD523530BCA00D1A8BC /* NotificationsReducer.swift */; };
+		BA546AF02359EFAC0069F552 /* AuthentificationReducer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498ADC2353558000D1A8BC /* AuthentificationReducer.swift */; };
+		BA546AF12359EFAC0069F552 /* AppState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498ABC2352DA9100D1A8BC /* AppState.swift */; };
+		BA546AF22359EFAC0069F552 /* HUDState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498ACD2352EBCF00D1A8BC /* HUDState.swift */; };
+		BA546AF32359EFAC0069F552 /* WatchingsState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AC12352DD6400D1A8BC /* WatchingsState.swift */; };
+		BA546AF42359EFAC0069F552 /* NotificationstState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AD12352ED2E00D1A8BC /* NotificationstState.swift */; };
+		BA546AF52359EFAC0069F552 /* StateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AD723530D0C00D1A8BC /* StateExtension.swift */; };
+		BA546AF62359EFAC0069F552 /* AuthentificationState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AD92353534300D1A8BC /* AuthentificationState.swift */; };
+		BA546AF72359EFAC0069F552 /* AsyncMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AB92352D82100D1A8BC /* AsyncMiddleware.swift */; };
+		BA546AF82359EFAC0069F552 /* LoggingMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAAA2FA2357EF980087731C /* LoggingMiddleware.swift */; };
+		BA546AF92359EFAC0069F552 /* SignupMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AE22353656600D1A8BC /* SignupMiddleware.swift */; };
+		BA546AFA2359EFAC0069F552 /* Store.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33498AB32352D65400D1A8BC /* Store.swift */; };
+		BA546AFB2359EFB20069F552 /* GroupedNotificationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C676072356059B00E3F2DD /* GroupedNotificationTests.swift */; };
+		BA546AFC2359EFBE0069F552 /* ToggleWatchingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338CB7E12354942400BA3594 /* ToggleWatchingTests.swift */; };
+		BA546AFF2359F03C0069F552 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = BA546AFE2359F03C0069F552 /* Nuke */; };
+		BA546B002359F0430069F552 /* NotificationHubCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA6042C922A7CAD500345259 /* NotificationHubCore.framework */; };
+		BA546B012359F0430069F552 /* NotificationHubCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA6042C922A7CAD500345259 /* NotificationHubCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BA546B172359F05B0069F552 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC1278122A83DBC00B52862 /* ImageLoader.swift */; };
+		BA546B182359F05B0069F552 /* URLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC127D222A8442200B52862 /* URLConvertible.swift */; };
+		BA546B192359F05B0069F552 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431222A7CEBF00345259 /* APIRequest.swift */; };
+		BA546B1A2359F05B0069F552 /* AuthorizationHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60432522A7D68700345259 /* AuthorizationHeader.swift */; };
+		BA546B1B2359F05B0069F552 /* HTTPPathConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60432322A7D41D00345259 /* HTTPPathConvertible.swift */; };
+		BA546B1C2359F05B0069F552 /* HTTPHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60432122A7D3D400345259 /* HTTPHeader.swift */; };
+		BA546B1D2359F05B0069F552 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431F22A7D3C700345259 /* Query.swift */; };
+		BA546B1E2359F05B0069F552 /* HTTPBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431622A7D1D900345259 /* HTTPBody.swift */; };
+		BA546B1F2359F05B0069F552 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431822A7D1ED00345259 /* HTTPMethod.swift */; };
+		BA546B202359F05B0069F552 /* URLEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431422A7D12900345259 /* URLEncoder.swift */; };
+		BA546B262359F05B0069F552 /* GitHubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431B22A7D22900345259 /* GitHubAPI.swift */; };
+		BA546B272359F05B0069F552 /* GitHubAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431D22A7D2FF00345259 /* GitHubAPIRequest.swift */; };
+		BA546B282359F05B0069F552 /* GitHubAPIAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60432722A7D91200345259 /* GitHubAPIAuthorization.swift */; };
+		BA546B292359F05B0069F552 /* NetworkConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA602C462348E68A003C281C /* NetworkConfig.swift */; };
+		BA546B2A2359F05B0069F552 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60429E22A7C91000345259 /* Secret.swift */; };
+		BA546B2C2359F0970069F552 /* UserDefaultsGenerator.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA602C442348C8A0003C281C /* UserDefaultsGenerator.generated.swift */; };
+		BA546B2E2359F0F20069F552 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C67602235602BA00E3F2DD /* DateFormatter.swift */; };
+		BA546B3F2359FE090069F552 /* NotificationHubData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA546B362359FE090069F552 /* NotificationHubData.framework */; };
+		BA546B462359FE090069F552 /* NotificationHubDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA546B452359FE090069F552 /* NotificationHubDataTests.swift */; };
+		BA546B482359FE090069F552 /* NotificationHubData.h in Headers */ = {isa = PBXBuildFile; fileRef = BA546B382359FE090069F552 /* NotificationHubData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BA546B4B2359FE090069F552 /* NotificationHubData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA546B362359FE090069F552 /* NotificationHubData.framework */; };
+		BA546B4C2359FE090069F552 /* NotificationHubData.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA546B362359FE090069F552 /* NotificationHubData.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BA546B532359FE170069F552 /* NotificationHubCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA6042C922A7CAD500345259 /* NotificationHubCore.framework */; };
+		BA546B542359FE170069F552 /* NotificationHubCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA6042C922A7CAD500345259 /* NotificationHubCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BA546B582359FE1F0069F552 /* NotificationHubData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA546B362359FE090069F552 /* NotificationHubData.framework */; };
+		BA546B592359FE1F0069F552 /* NotificationHubData.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA546B362359FE090069F552 /* NotificationHubData.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BA546B5D2359FE390069F552 /* WatchingsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A373D2342250800CB487B /* WatchingsRequest.swift */; };
+		BA546B5E2359FE390069F552 /* WatchingElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A37412342257000CB487B /* WatchingElement.swift */; };
+		BA546B5F2359FE390069F552 /* NotificationsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60432A22A7D99B00345259 /* NotificationsRequest.swift */; };
+		BA546B602359FE390069F552 /* ReadNotificationsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C675FF2355326000E3F2DD /* ReadNotificationsRequest.swift */; };
+		BA546B612359FE390069F552 /* NotificationElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC127F922A9A7FB00B52862 /* NotificationElement.swift */; };
 		BA60426C22A7409300345259 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60426B22A7409300345259 /* AppDelegate.swift */; };
 		BA60426E22A7409300345259 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60426D22A7409300345259 /* SceneDelegate.swift */; };
 		BA60427222A7409400345259 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA60427122A7409400345259 /* Assets.xcassets */; };
@@ -57,43 +94,17 @@
 		BA6042DB22A7CAD500345259 /* Core.h in Headers */ = {isa = PBXBuildFile; fileRef = BA6042CB22A7CAD500345259 /* Core.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		BA6042DE22A7CAD500345259 /* NotificationHubCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA6042C922A7CAD500345259 /* NotificationHubCore.framework */; };
 		BA6042DF22A7CAD500345259 /* NotificationHubCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA6042C922A7CAD500345259 /* NotificationHubCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BA60430022A7CE1E00345259 /* Network.h in Headers */ = {isa = PBXBuildFile; fileRef = BA6042F022A7CE1E00345259 /* Network.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		BA60430322A7CE1E00345259 /* NotificationHubNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA6042EE22A7CE1E00345259 /* NotificationHubNetwork.framework */; };
-		BA60430422A7CE1E00345259 /* NotificationHubNetwork.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA6042EE22A7CE1E00345259 /* NotificationHubNetwork.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BA6C829022B49E98006D2231 /* NotificationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6C828F22B49E98006D2231 /* NotificationData.swift */; };
 		BA8A3735234200F800CB487B /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A3734234200F800CB487B /* PageView.swift */; };
 		BA8A37372342068500CB487B /* SafariViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A37362342068500CB487B /* SafariViewController.swift */; };
 		BA8A3739234206CF00CB487B /* SafariViewControllerWrapperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A3738234206CF00CB487B /* SafariViewControllerWrapperViewController.swift */; };
 		BA8A373B2342070500CB487B /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A373A2342070500CB487B /* PageViewController.swift */; };
-		BA8A37402342251800CB487B /* WatchingsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A373D2342250800CB487B /* WatchingsRequest.swift */; };
-		BA8A37442342259000CB487B /* WatchingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A37412342257000CB487B /* WatchingList.swift */; };
 		BA8A374823422E5100CB487B /* WatchingListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A374723422E5100CB487B /* WatchingListView.swift */; };
 		BA8A374C23422F4600CB487B /* WatchingList.Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A374B23422F4600CB487B /* WatchingList.Cell.swift */; };
-		BAAAA2F92357EADF0087731C /* CoderAction.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAAA2F82357EADF0087731C /* CoderAction.swift */; };
-		BAAAA2FB2357EF980087731C /* LoggingMiddleware.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAAAA2FA2357EF980087731C /* LoggingMiddleware.swift */; };
 		BABB9A83234B936F0067B767 /* ReadButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABB9A82234B936F0067B767 /* ReadButton.swift */; };
 		BABB9A85234CB8A10067B767 /* LayoutPriorityExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = BABB9A84234CB8A10067B767 /* LayoutPriorityExtension.swift */; };
-		BAC1276622A82F7C00B52862 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431222A7CEBF00345259 /* APIRequest.swift */; };
-		BAC1276722A82F8000B52862 /* AuthorizationHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60432522A7D68700345259 /* AuthorizationHeader.swift */; };
-		BAC1276822A82F8000B52862 /* HTTPPathConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60432322A7D41D00345259 /* HTTPPathConvertible.swift */; };
-		BAC1276922A82F8000B52862 /* HTTPHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60432122A7D3D400345259 /* HTTPHeader.swift */; };
-		BAC1276A22A82F8000B52862 /* Query.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431F22A7D3C700345259 /* Query.swift */; };
-		BAC1276B22A82F8000B52862 /* HTTPBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431622A7D1D900345259 /* HTTPBody.swift */; };
-		BAC1276C22A82F8000B52862 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431822A7D1ED00345259 /* HTTPMethod.swift */; };
-		BAC1276D22A82F8000B52862 /* URLEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431422A7D12900345259 /* URLEncoder.swift */; };
-		BAC1276F22A82F8700B52862 /* NotificationsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60432A22A7D99B00345259 /* NotificationsRequest.swift */; };
-		BAC1277022A82F8700B52862 /* GitHubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431B22A7D22900345259 /* GitHubAPI.swift */; };
-		BAC1277122A82F8700B52862 /* GitHubAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431D22A7D2FF00345259 /* GitHubAPIRequest.swift */; };
-		BAC1277222A82F8700B52862 /* GitHubAPIAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60432722A7D91200345259 /* GitHubAPIAuthorization.swift */; };
-		BAC1277322A82F9200B52862 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60429E22A7C91000345259 /* Secret.swift */; };
-		BAC1277522A830CF00B52862 /* NotificationHubCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA6042C922A7CAD500345259 /* NotificationHubCore.framework */; };
-		BAC1277622A830CF00B52862 /* NotificationHubCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA6042C922A7CAD500345259 /* NotificationHubCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		BAC1277F22A83D0900B52862 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = BAC1277E22A83D0900B52862 /* Nuke */; };
-		BAC127D122A841B300B52862 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC1278122A83DBC00B52862 /* ImageLoader.swift */; };
-		BAC127D422A8442A00B52862 /* URLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC127D222A8442200B52862 /* URLConvertible.swift */; };
 		BAC127D622A844BD00B52862 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC127D522A844BD00B52862 /* RootView.swift */; };
 		BAC127E422A8911C00B52862 /* NotificationListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC127E322A8911C00B52862 /* NotificationListView.swift */; };
-		BAC127FB22A9A82300B52862 /* NotificationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC127F922A9A7FB00B52862 /* NotificationList.swift */; };
 		BAC1280C22A9B57700B52862 /* NotificationListView.Cell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC1280B22A9B57700B52862 /* NotificationListView.Cell.swift */; };
 		BACDC7FD23464B9400C4A1AE /* OAuthSwift in Frameworks */ = {isa = PBXBuildFile; productRef = BACDC7FC23464B9400C4A1AE /* OAuthSwift */; };
 		BACDC8002346C7F800C4A1AE /* OAuthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BACDC7FE2346C7F800C4A1AE /* OAuthViewController.swift */; };
@@ -109,6 +120,69 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
+		BA546ACC2359EF6D0069F552 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BA60426022A7409300345259 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA546AC12359EF6D0069F552;
+			remoteInfo = NotificationHubRedux;
+		};
+		BA546ACE2359EF6D0069F552 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BA60426022A7409300345259 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA60426722A7409300345259;
+			remoteInfo = NotificationHub;
+		};
+		BA546AD52359EF6D0069F552 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BA60426022A7409300345259 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA546AC12359EF6D0069F552;
+			remoteInfo = NotificationHubRedux;
+		};
+		BA546B022359F0430069F552 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BA60426022A7409300345259 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA6042C822A7CAD500345259;
+			remoteInfo = NotificationHubCore;
+		};
+		BA546B402359FE090069F552 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BA60426022A7409300345259 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA546B352359FE090069F552;
+			remoteInfo = NotificationHubData;
+		};
+		BA546B422359FE090069F552 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BA60426022A7409300345259 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA60426722A7409300345259;
+			remoteInfo = NotificationHub;
+		};
+		BA546B492359FE090069F552 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BA60426022A7409300345259 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA546B352359FE090069F552;
+			remoteInfo = NotificationHubData;
+		};
+		BA546B552359FE170069F552 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BA60426022A7409300345259 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA6042C822A7CAD500345259;
+			remoteInfo = NotificationHubCore;
+		};
+		BA546B5A2359FE1F0069F552 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BA60426022A7409300345259 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA546B352359FE090069F552;
+			remoteInfo = NotificationHubData;
+		};
 		BA60427F22A7409400345259 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BA60426022A7409300345259 /* Project object */;
@@ -130,42 +204,41 @@
 			remoteGlobalIDString = BA6042C822A7CAD500345259;
 			remoteInfo = Core;
 		};
-		BA60430122A7CE1E00345259 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BA60426022A7409300345259 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BA6042ED22A7CE1E00345259;
-			remoteInfo = Network;
-		};
-		BAC1277722A830CF00B52862 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = BA60426022A7409300345259 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = BA6042C822A7CAD500345259;
-			remoteInfo = NotificationHubCore;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
+		BA546B042359F0430069F552 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BA546B012359F0430069F552 /* NotificationHubCore.framework in Embed Frameworks */,
+				BA546B592359FE1F0069F552 /* NotificationHubData.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA546B572359FE170069F552 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BA546B542359FE170069F552 /* NotificationHubCore.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BA6042E022A7CAD500345259 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				BA546AD82359EF6D0069F552 /* NotificationHubRedux.framework in Embed Frameworks */,
+				BA546B4C2359FE090069F552 /* NotificationHubData.framework in Embed Frameworks */,
 				BA6042DF22A7CAD500345259 /* NotificationHubCore.framework in Embed Frameworks */,
-				BA60430422A7CE1E00345259 /* NotificationHubNetwork.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BAC1277922A830CF00B52862 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				BAC1277622A830CF00B52862 /* NotificationHubCore.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -210,6 +283,18 @@
 		BA357A1322B4C41300549BA0 /* SafariView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariView.swift; sourceTree = "<group>"; };
 		BA417D1022A9DF4E0041B3C3 /* DebugInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DebugInfo.swift; sourceTree = "<group>"; };
 		BA417D1422A9E2BA0041B3C3 /* HUD.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HUD.swift; sourceTree = "<group>"; };
+		BA546AC22359EF6D0069F552 /* NotificationHubRedux.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NotificationHubRedux.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA546AC42359EF6D0069F552 /* NotificationHubRedux.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationHubRedux.h; sourceTree = "<group>"; };
+		BA546AC52359EF6D0069F552 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA546ACA2359EF6D0069F552 /* NotificationHubReduxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NotificationHubReduxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA546AD12359EF6D0069F552 /* NotificationHubReduxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHubReduxTests.swift; sourceTree = "<group>"; };
+		BA546AD32359EF6D0069F552 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA546B362359FE090069F552 /* NotificationHubData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NotificationHubData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA546B382359FE090069F552 /* NotificationHubData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationHubData.h; sourceTree = "<group>"; };
+		BA546B392359FE090069F552 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA546B3E2359FE090069F552 /* NotificationHubDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NotificationHubDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA546B452359FE090069F552 /* NotificationHubDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHubDataTests.swift; sourceTree = "<group>"; };
+		BA546B472359FE090069F552 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA602C442348C8A0003C281C /* UserDefaultsGenerator.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsGenerator.generated.swift; sourceTree = "<group>"; };
 		BA602C462348E68A003C281C /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
 		BA60426822A7409300345259 /* NotificationHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotificationHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -229,9 +314,6 @@
 		BA6042C922A7CAD500345259 /* NotificationHubCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NotificationHubCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA6042CB22A7CAD500345259 /* Core.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Core.h; sourceTree = "<group>"; };
 		BA6042CC22A7CAD500345259 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BA6042EE22A7CE1E00345259 /* NotificationHubNetwork.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NotificationHubNetwork.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BA6042F022A7CE1E00345259 /* Network.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Network.h; sourceTree = "<group>"; };
-		BA6042F122A7CE1E00345259 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA60431222A7CEBF00345259 /* APIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRequest.swift; sourceTree = "<group>"; };
 		BA60431422A7D12900345259 /* URLEncoder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLEncoder.swift; sourceTree = "<group>"; };
 		BA60431622A7D1D900345259 /* HTTPBody.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPBody.swift; sourceTree = "<group>"; };
@@ -250,7 +332,7 @@
 		BA8A3738234206CF00CB487B /* SafariViewControllerWrapperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariViewControllerWrapperViewController.swift; sourceTree = "<group>"; };
 		BA8A373A2342070500CB487B /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		BA8A373D2342250800CB487B /* WatchingsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchingsRequest.swift; sourceTree = "<group>"; };
-		BA8A37412342257000CB487B /* WatchingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchingList.swift; sourceTree = "<group>"; };
+		BA8A37412342257000CB487B /* WatchingElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchingElement.swift; sourceTree = "<group>"; };
 		BA8A374723422E5100CB487B /* WatchingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchingListView.swift; sourceTree = "<group>"; };
 		BA8A374B23422F4600CB487B /* WatchingList.Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchingList.Cell.swift; sourceTree = "<group>"; };
 		BAAAA2F82357EADF0087731C /* CoderAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoderAction.swift; sourceTree = "<group>"; };
@@ -261,7 +343,7 @@
 		BAC127D222A8442200B52862 /* URLConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConvertible.swift; sourceTree = "<group>"; };
 		BAC127D522A844BD00B52862 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		BAC127E322A8911C00B52862 /* NotificationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListView.swift; sourceTree = "<group>"; };
-		BAC127F922A9A7FB00B52862 /* NotificationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationList.swift; sourceTree = "<group>"; };
+		BAC127F922A9A7FB00B52862 /* NotificationElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationElement.swift; sourceTree = "<group>"; };
 		BAC1280B22A9B57700B52862 /* NotificationListView.Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListView.Cell.swift; sourceTree = "<group>"; };
 		BACDC7FE2346C7F800C4A1AE /* OAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
 		BACDC8022346CC1000C4A1AE /* OAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthView.swift; sourceTree = "<group>"; };
@@ -277,12 +359,46 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		BA546ABF2359EF6D0069F552 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA546B002359F0430069F552 /* NotificationHubCore.framework in Frameworks */,
+				BA546B582359FE1F0069F552 /* NotificationHubData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA546AC72359EF6D0069F552 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA546ACB2359EF6D0069F552 /* NotificationHubRedux.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA546B332359FE090069F552 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA546B532359FE170069F552 /* NotificationHubCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA546B3B2359FE090069F552 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA546B3F2359FE090069F552 /* NotificationHubData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BA60426522A7409300345259 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BA546AD72359EF6D0069F552 /* NotificationHubRedux.framework in Frameworks */,
+				BA546B4B2359FE090069F552 /* NotificationHubData.framework in Frameworks */,
 				BA6042DE22A7CAD500345259 /* NotificationHubCore.framework in Frameworks */,
-				BA60430322A7CE1E00345259 /* NotificationHubNetwork.framework in Frameworks */,
 				BACDC7FD23464B9400C4A1AE /* OAuthSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -305,15 +421,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BA6042EB22A7CE1E00345259 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BAC1277522A830CF00B52862 /* NotificationHubCore.framework in Frameworks */,
-				BAC1277F22A83D0900B52862 /* Nuke in Frameworks */,
+				BA546AFF2359F03C0069F552 /* Nuke in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -336,6 +444,10 @@
 		33498AB72352D80F00D1A8BC /* NotificationHubRedux */ = {
 			isa = PBXGroup;
 			children = (
+				BA546AC42359EF6D0069F552 /* NotificationHubRedux.h */,
+				BA546AC52359EF6D0069F552 /* Info.plist */,
+				33C67602235602BA00E3F2DD /* DateFormatter.swift */,
+				33498AA82352B42E00D1A8BC /* Redux */,
 				338CB7E02354940E00BA3594 /* Tests */,
 				334FB936235370BF006441E7 /* Render */,
 				33498AC82352E46000D1A8BC /* Canceller */,
@@ -436,10 +548,62 @@
 			path = Tests;
 			sourceTree = "<group>";
 		};
-		BA602C432348C75B003C281C /* Foundation */ = {
+		BA546AD02359EF6D0069F552 /* NotificationHubReduxTests */ = {
+			isa = PBXGroup;
+			children = (
+				BA546AD12359EF6D0069F552 /* NotificationHubReduxTests.swift */,
+				BA546AD32359EF6D0069F552 /* Info.plist */,
+			);
+			path = NotificationHubReduxTests;
+			sourceTree = "<group>";
+		};
+		BA546B2B2359F0840069F552 /* Storage */ = {
 			isa = PBXGroup;
 			children = (
 				BA602C442348C8A0003C281C /* UserDefaultsGenerator.generated.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		BA546B2D2359F0EB0069F552 /* Formatter */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Formatter;
+			sourceTree = "<group>";
+		};
+		BA546B302359FDF30069F552 /* NotificationHubData */ = {
+			isa = PBXGroup;
+			children = (
+				BA546B382359FE090069F552 /* NotificationHubData.h */,
+				BA546B392359FE090069F552 /* Info.plist */,
+				BA60431A22A7D21800345259 /* GitHub */,
+			);
+			path = NotificationHubData;
+			sourceTree = "<group>";
+		};
+		BA546B442359FE090069F552 /* NotificationHubDataTests */ = {
+			isa = PBXGroup;
+			children = (
+				BA546B452359FE090069F552 /* NotificationHubDataTests.swift */,
+				BA546B472359FE090069F552 /* Info.plist */,
+			);
+			path = NotificationHubDataTests;
+			sourceTree = "<group>";
+		};
+		BA546B5C2359FE2D0069F552 /* GitHub */ = {
+			isa = PBXGroup;
+			children = (
+				BA60431B22A7D22900345259 /* GitHubAPI.swift */,
+				BA60431D22A7D2FF00345259 /* GitHubAPIRequest.swift */,
+				BA60432722A7D91200345259 /* GitHubAPIAuthorization.swift */,
+			);
+			path = GitHub;
+			sourceTree = "<group>";
+		};
+		BA602C432348C75B003C281C /* Foundation */ = {
+			isa = PBXGroup;
+			children = (
 				BABB9A84234CB8A10067B767 /* LayoutPriorityExtension.swift */,
 			);
 			path = Foundation;
@@ -451,6 +615,8 @@
 				BA60426A22A7409300345259 /* NotificationHub */,
 				BA60428122A7409400345259 /* NotificationHubTests */,
 				BA60428C22A7409400345259 /* NotificationHubUITests */,
+				BA546AD02359EF6D0069F552 /* NotificationHubReduxTests */,
+				BA546B442359FE090069F552 /* NotificationHubDataTests */,
 				BA60426922A7409300345259 /* Products */,
 				BAC1277422A830CF00B52862 /* Frameworks */,
 			);
@@ -463,7 +629,10 @@
 				BA60427E22A7409400345259 /* NotificationHubTests.xctest */,
 				BA60428922A7409400345259 /* NotificationHubUITests.xctest */,
 				BA6042C922A7CAD500345259 /* NotificationHubCore.framework */,
-				BA6042EE22A7CE1E00345259 /* NotificationHubNetwork.framework */,
+				BA546AC22359EF6D0069F552 /* NotificationHubRedux.framework */,
+				BA546ACA2359EF6D0069F552 /* NotificationHubReduxTests.xctest */,
+				BA546B362359FE090069F552 /* NotificationHubData.framework */,
+				BA546B3E2359FE090069F552 /* NotificationHubDataTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -471,8 +640,6 @@
 		BA60426A22A7409300345259 /* NotificationHub */ = {
 			isa = PBXGroup;
 			children = (
-				33498AB72352D80F00D1A8BC /* NotificationHubRedux */,
-				33498AA82352B42E00D1A8BC /* Redux */,
 				BA6C828C22B49E6B006D2231 /* Previews */,
 				BA6042E722A7CAF500345259 /* Frameworks */,
 				BAEFFC4122BA7F3F006D1549 /* Components */,
@@ -527,6 +694,12 @@
 		BA6042CA22A7CAD500345259 /* NotificationHubCore */ = {
 			isa = PBXGroup;
 			children = (
+				BA546B5C2359FE2D0069F552 /* GitHub */,
+				BA546B2D2359F0EB0069F552 /* Formatter */,
+				BA546B2B2359F0840069F552 /* Storage */,
+				BAC1278022A83D2100B52862 /* Image */,
+				BA60430F22A7CE9100345259 /* API */,
+				BA602C462348E68A003C281C /* NetworkConfig.swift */,
 				BA60429D22A7C90700345259 /* Secret */,
 				BA6042CB22A7CAD500345259 /* Core.h */,
 				BA6042CC22A7CAD500345259 /* Info.plist */,
@@ -537,23 +710,11 @@
 		BA6042E722A7CAF500345259 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BA546B302359FDF30069F552 /* NotificationHubData */,
+				33498AB72352D80F00D1A8BC /* NotificationHubRedux */,
 				BA6042CA22A7CAD500345259 /* NotificationHubCore */,
-				BA6042EF22A7CE1E00345259 /* NotificationHubNetwork */,
 			);
 			path = Frameworks;
-			sourceTree = "<group>";
-		};
-		BA6042EF22A7CE1E00345259 /* NotificationHubNetwork */ = {
-			isa = PBXGroup;
-			children = (
-				BAC1278022A83D2100B52862 /* Image */,
-				BA60430F22A7CE9100345259 /* API */,
-				BA60431A22A7D21800345259 /* GitHub */,
-				BA6042F022A7CE1E00345259 /* Network.h */,
-				BA6042F122A7CE1E00345259 /* Info.plist */,
-				BA602C462348E68A003C281C /* NetworkConfig.swift */,
-			);
-			path = NotificationHubNetwork;
 			sourceTree = "<group>";
 		};
 		BA60430F22A7CE9100345259 /* API */ = {
@@ -576,9 +737,6 @@
 			children = (
 				BA8A373C2342249200CB487B /* Watching */,
 				BA60432922A7D98A00345259 /* Notifcation */,
-				BA60431B22A7D22900345259 /* GitHubAPI.swift */,
-				BA60431D22A7D2FF00345259 /* GitHubAPIRequest.swift */,
-				BA60432722A7D91200345259 /* GitHubAPIAuthorization.swift */,
 			);
 			path = GitHub;
 			sourceTree = "<group>";
@@ -588,7 +746,7 @@
 			children = (
 				BA60432A22A7D99B00345259 /* NotificationsRequest.swift */,
 				33C675FF2355326000E3F2DD /* ReadNotificationsRequest.swift */,
-				BAC127F922A9A7FB00B52862 /* NotificationList.swift */,
+				BAC127F922A9A7FB00B52862 /* NotificationElement.swift */,
 			);
 			path = Notifcation;
 			sourceTree = "<group>";
@@ -630,7 +788,7 @@
 			isa = PBXGroup;
 			children = (
 				BA8A373D2342250800CB487B /* WatchingsRequest.swift */,
-				BA8A37412342257000CB487B /* WatchingList.swift */,
+				BA8A37412342257000CB487B /* WatchingElement.swift */,
 			);
 			path = Watching;
 			sourceTree = "<group>";
@@ -788,7 +946,6 @@
 			children = (
 				BAEFFC3F22B9DDBF006D1549 /* FuzzyFindable.swift */,
 				BAFE55EF2349865800A35674 /* DeviceType.swift */,
-				33C67602235602BA00E3F2DD /* DateFormatter.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -814,6 +971,22 @@
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
+		BA546ABD2359EF6D0069F552 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA546AD42359EF6D0069F552 /* NotificationHubRedux.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA546B312359FE090069F552 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA546B482359FE090069F552 /* NotificationHubData.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BA6042C422A7CAD500345259 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -822,17 +995,88 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BA6042E922A7CE1E00345259 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BA60430022A7CE1E00345259 /* Network.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
+		BA546AC12359EF6D0069F552 /* NotificationHubRedux */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA546AD92359EF6D0069F552 /* Build configuration list for PBXNativeTarget "NotificationHubRedux" */;
+			buildPhases = (
+				BA546ABD2359EF6D0069F552 /* Headers */,
+				BA546ABE2359EF6D0069F552 /* Sources */,
+				BA546ABF2359EF6D0069F552 /* Frameworks */,
+				BA546AC02359EF6D0069F552 /* Resources */,
+				BA546B042359F0430069F552 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BA546B032359F0430069F552 /* PBXTargetDependency */,
+				BA546B5B2359FE1F0069F552 /* PBXTargetDependency */,
+			);
+			name = NotificationHubRedux;
+			productName = NotificationHubRedux;
+			productReference = BA546AC22359EF6D0069F552 /* NotificationHubRedux.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BA546AC92359EF6D0069F552 /* NotificationHubReduxTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA546ADC2359EF6D0069F552 /* Build configuration list for PBXNativeTarget "NotificationHubReduxTests" */;
+			buildPhases = (
+				BA546AC62359EF6D0069F552 /* Sources */,
+				BA546AC72359EF6D0069F552 /* Frameworks */,
+				BA546AC82359EF6D0069F552 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BA546ACD2359EF6D0069F552 /* PBXTargetDependency */,
+				BA546ACF2359EF6D0069F552 /* PBXTargetDependency */,
+			);
+			name = NotificationHubReduxTests;
+			productName = NotificationHubReduxTests;
+			productReference = BA546ACA2359EF6D0069F552 /* NotificationHubReduxTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		BA546B352359FE090069F552 /* NotificationHubData */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA546B4D2359FE090069F552 /* Build configuration list for PBXNativeTarget "NotificationHubData" */;
+			buildPhases = (
+				BA546B312359FE090069F552 /* Headers */,
+				BA546B322359FE090069F552 /* Sources */,
+				BA546B332359FE090069F552 /* Frameworks */,
+				BA546B342359FE090069F552 /* Resources */,
+				BA546B572359FE170069F552 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BA546B562359FE170069F552 /* PBXTargetDependency */,
+			);
+			name = NotificationHubData;
+			productName = NotificationHubData;
+			productReference = BA546B362359FE090069F552 /* NotificationHubData.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BA546B3D2359FE090069F552 /* NotificationHubDataTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA546B502359FE090069F552 /* Build configuration list for PBXNativeTarget "NotificationHubDataTests" */;
+			buildPhases = (
+				BA546B3A2359FE090069F552 /* Sources */,
+				BA546B3B2359FE090069F552 /* Frameworks */,
+				BA546B3C2359FE090069F552 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BA546B412359FE090069F552 /* PBXTargetDependency */,
+				BA546B432359FE090069F552 /* PBXTargetDependency */,
+			);
+			name = NotificationHubDataTests;
+			productName = NotificationHubDataTests;
+			productReference = BA546B3E2359FE090069F552 /* NotificationHubDataTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		BA60426722A7409300345259 /* NotificationHub */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA60429222A7409400345259 /* Build configuration list for PBXNativeTarget "NotificationHub" */;
@@ -846,7 +1090,8 @@
 			);
 			dependencies = (
 				BA6042DD22A7CAD500345259 /* PBXTargetDependency */,
-				BA60430222A7CE1E00345259 /* PBXTargetDependency */,
+				BA546AD62359EF6D0069F552 /* PBXTargetDependency */,
+				BA546B4A2359FE090069F552 /* PBXTargetDependency */,
 			);
 			name = NotificationHub;
 			packageProductDependencies = (
@@ -907,32 +1152,10 @@
 			);
 			name = NotificationHubCore;
 			packageProductDependencies = (
+				BA546AFE2359F03C0069F552 /* Nuke */,
 			);
 			productName = Core;
 			productReference = BA6042C922A7CAD500345259 /* NotificationHubCore.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		BA6042ED22A7CE1E00345259 /* NotificationHubNetwork */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = BA60430522A7CE1E00345259 /* Build configuration list for PBXNativeTarget "NotificationHubNetwork" */;
-			buildPhases = (
-				BA6042E922A7CE1E00345259 /* Headers */,
-				BA6042EA22A7CE1E00345259 /* Sources */,
-				BA6042EB22A7CE1E00345259 /* Frameworks */,
-				BA6042EC22A7CE1E00345259 /* Resources */,
-				BAC1277922A830CF00B52862 /* Embed Frameworks */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				BAC1277822A830CF00B52862 /* PBXTargetDependency */,
-			);
-			name = NotificationHubNetwork;
-			packageProductDependencies = (
-				BAC1277E22A83D0900B52862 /* Nuke */,
-			);
-			productName = Network;
-			productReference = BA6042EE22A7CE1E00345259 /* NotificationHubNetwork.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -945,6 +1168,20 @@
 				LastUpgradeCheck = 1100;
 				ORGANIZATIONNAME = bannzai;
 				TargetAttributes = {
+					BA546AC12359EF6D0069F552 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					BA546AC92359EF6D0069F552 = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = BA60426722A7409300345259;
+					};
+					BA546B352359FE090069F552 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					BA546B3D2359FE090069F552 = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = BA60426722A7409300345259;
+					};
 					BA60426722A7409300345259 = {
 						CreatedOnToolsVersion = 11.0;
 					};
@@ -957,9 +1194,6 @@
 						TestTargetID = BA60426722A7409300345259;
 					};
 					BA6042C822A7CAD500345259 = {
-						CreatedOnToolsVersion = 11.0;
-					};
-					BA6042ED22A7CE1E00345259 = {
 						CreatedOnToolsVersion = 11.0;
 					};
 				};
@@ -983,14 +1217,45 @@
 			targets = (
 				BA60426722A7409300345259 /* NotificationHub */,
 				BA60427D22A7409400345259 /* NotificationHubTests */,
+				BA546B3D2359FE090069F552 /* NotificationHubDataTests */,
+				BA546AC92359EF6D0069F552 /* NotificationHubReduxTests */,
 				BA60428822A7409400345259 /* NotificationHubUITests */,
 				BA6042C822A7CAD500345259 /* NotificationHubCore */,
-				BA6042ED22A7CE1E00345259 /* NotificationHubNetwork */,
+				BA546AC12359EF6D0069F552 /* NotificationHubRedux */,
+				BA546B352359FE090069F552 /* NotificationHubData */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		BA546AC02359EF6D0069F552 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA546AC82359EF6D0069F552 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA546B342359FE090069F552 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA546B3C2359FE090069F552 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BA60426622A7409300345259 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1023,81 +1288,110 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		BA6042EC22A7CE1E00345259 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		BA546ABE2359EF6D0069F552 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA546AE02359EFAC0069F552 /* AsyncAction.swift in Sources */,
+				BA546AE12359EFAC0069F552 /* ReduxState.swift in Sources */,
+				BA546AF12359EFAC0069F552 /* AppState.swift in Sources */,
+				BA546AEC2359EFAC0069F552 /* AppReducer.swift in Sources */,
+				BA546AF02359EFAC0069F552 /* AuthentificationReducer.swift in Sources */,
+				BA546AEF2359EFAC0069F552 /* NotificationsReducer.swift in Sources */,
+				BA546AEE2359EFAC0069F552 /* WatchingsReducer.swift in Sources */,
+				BA546B2E2359F0F20069F552 /* DateFormatter.swift in Sources */,
+				BA546AFA2359EFAC0069F552 /* Store.swift in Sources */,
+				BA546AE32359EFAC0069F552 /* Dispatch.swift in Sources */,
+				BA546AEB2359EFAC0069F552 /* CoderAction.swift in Sources */,
+				BA546AF72359EFAC0069F552 /* AsyncMiddleware.swift in Sources */,
+				BA546AE62359EFAC0069F552 /* Canceller.swift in Sources */,
+				BA546AF32359EFAC0069F552 /* WatchingsState.swift in Sources */,
+				BA546AF42359EFAC0069F552 /* NotificationstState.swift in Sources */,
+				BA546AE42359EFAC0069F552 /* Middleware.swift in Sources */,
+				BA546AE22359EFAC0069F552 /* Reducer.swift in Sources */,
+				BA546AF82359EFAC0069F552 /* LoggingMiddleware.swift in Sources */,
+				BA546AF62359EFAC0069F552 /* AuthentificationState.swift in Sources */,
+				BA546AE72359EFAC0069F552 /* WatchingsAction.swift in Sources */,
+				BA546AE52359EFAC0069F552 /* RenderableView.swift in Sources */,
+				BA546AF52359EFAC0069F552 /* StateExtension.swift in Sources */,
+				BA546AEA2359EFAC0069F552 /* AuthentificationAction.swift in Sources */,
+				BA546AF22359EFAC0069F552 /* HUDState.swift in Sources */,
+				BA546AE92359EFAC0069F552 /* NotificationsAction.swift in Sources */,
+				BA546AED2359EFAC0069F552 /* HUDReducer.swift in Sources */,
+				BA546AE82359EFAC0069F552 /* NetworkActions.swift in Sources */,
+				BA546ADF2359EFAC0069F552 /* Action.swift in Sources */,
+				BA546AF92359EFAC0069F552 /* SignupMiddleware.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA546AC62359EF6D0069F552 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA546AD22359EF6D0069F552 /* NotificationHubReduxTests.swift in Sources */,
+				BA546AFB2359EFB20069F552 /* GroupedNotificationTests.swift in Sources */,
+				BA546AFC2359EFBE0069F552 /* ToggleWatchingTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA546B322359FE090069F552 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA546B602359FE390069F552 /* ReadNotificationsRequest.swift in Sources */,
+				BA546B5D2359FE390069F552 /* WatchingsRequest.swift in Sources */,
+				BA546B5F2359FE390069F552 /* NotificationsRequest.swift in Sources */,
+				BA546B5E2359FE390069F552 /* WatchingElement.swift in Sources */,
+				BA546B612359FE390069F552 /* NotificationElement.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA546B3A2359FE090069F552 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA546B462359FE090069F552 /* NotificationHubDataTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BA60426422A7409300345259 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				BA60426C22A7409300345259 /* AppDelegate.swift in Sources */,
-				33498ADD2353558000D1A8BC /* AuthentificationReducer.swift in Sources */,
 				BABB9A85234CB8A10067B767 /* LayoutPriorityExtension.swift in Sources */,
 				BA8A37372342068500CB487B /* SafariViewController.swift in Sources */,
-				33498AC22352DD6400D1A8BC /* WatchingsState.swift in Sources */,
-				33498ABA2352D82100D1A8BC /* AsyncMiddleware.swift in Sources */,
-				33498ACC2352E75000D1A8BC /* WatchingsReducer.swift in Sources */,
 				334FB93523536D8B006441E7 /* FuzzyFindable.swift in Sources */,
-				33498AB42352D65400D1A8BC /* Store.swift in Sources */,
 				BA8A374C23422F4600CB487B /* WatchingList.Cell.swift in Sources */,
-				33498AD42353083700D1A8BC /* NotificationsAction.swift in Sources */,
-				BA602C452348C8A0003C281C /* UserDefaultsGenerator.generated.swift in Sources */,
-				33498AE32353656600D1A8BC /* SignupMiddleware.swift in Sources */,
 				BA6C829022B49E98006D2231 /* NotificationData.swift in Sources */,
-				33498AB02352D56000D1A8BC /* AsyncAction.swift in Sources */,
-				33498AAC2352D50000D1A8BC /* ReduxState.swift in Sources */,
-				33498AAE2352D50F00D1A8BC /* Reducer.swift in Sources */,
 				BA8A3735234200F800CB487B /* PageView.swift in Sources */,
 				BA8A3739234206CF00CB487B /* SafariViewControllerWrapperViewController.swift in Sources */,
 				BABB9A83234B936F0067B767 /* ReadButton.swift in Sources */,
 				BAFE55F02349865800A35674 /* DeviceType.swift in Sources */,
 				BA60426E22A7409300345259 /* SceneDelegate.swift in Sources */,
-				33498AD623530BCA00D1A8BC /* NotificationsReducer.swift in Sources */,
-				33C6760C2356085900E3F2DD /* DateFormatter.swift in Sources */,
-				33498ADA2353534300D1A8BC /* AuthentificationState.swift in Sources */,
 				BA1D70EA22A9D5BE000F83A1 /* ImageLoaderViewModel.swift in Sources */,
-				33498AC52352DDC700D1A8BC /* WatchingsAction.swift in Sources */,
 				BAC1280C22A9B57700B52862 /* NotificationListView.Cell.swift in Sources */,
-				33498ABD2352DA9100D1A8BC /* AppState.swift in Sources */,
 				BA8A373B2342070500CB487B /* PageViewController.swift in Sources */,
 				BA1D70E822A9D42F000F83A1 /* ImageLoaderView.swift in Sources */,
-				33498AD02352EC3F00D1A8BC /* HUDReducer.swift in Sources */,
-				33498AD823530D0C00D1A8BC /* StateExtension.swift in Sources */,
-				33C676092356060B00E3F2DD /* NotificationstState.swift in Sources */,
-				33498AC02352DAD400D1A8BC /* AppReducer.swift in Sources */,
 				BA417D1122A9DF4E0041B3C3 /* DebugInfo.swift in Sources */,
 				33B929472351980A00CBD088 /* NavigationBarTitleModifier.swift in Sources */,
 				BA417D1522A9E2BA0041B3C3 /* HUD.swift in Sources */,
 				BAFE55EE2349836000A35674 /* BarButtonImageModifier.swift in Sources */,
-				33498AAA2352D4F500D1A8BC /* Action.swift in Sources */,
-				33498AB62352D78000D1A8BC /* Middleware.swift in Sources */,
 				BAEFFC3C22B9DB4E006D1549 /* ViewExtension.swift in Sources */,
-				BAAAA2FB2357EF980087731C /* LoggingMiddleware.swift in Sources */,
 				33C675FE2354D09500E3F2DD /* NotificationListView.Section.swift in Sources */,
-				33498AC72352E45400D1A8BC /* NetworkActions.swift in Sources */,
 				BAFE55EC23497B7F00A35674 /* ThumbnailImageView.swift in Sources */,
 				BAFE55F82349C42000A35674 /* DecideButton.swift in Sources */,
 				BACDC8002346C7F800C4A1AE /* OAuthViewController.swift in Sources */,
 				BAC127D622A844BD00B52862 /* RootView.swift in Sources */,
-				33498ACA2352E48000D1A8BC /* Canceller.swift in Sources */,
 				BA357A1422B4C41300549BA0 /* SafariView.swift in Sources */,
 				BAC127E422A8911C00B52862 /* NotificationListView.swift in Sources */,
 				BAFE55F32349C27B00A35674 /* NoDataView.swift in Sources */,
 				BACDC8032346CC1000C4A1AE /* OAuthView.swift in Sources */,
-				33498ACE2352EBCF00D1A8BC /* HUDState.swift in Sources */,
 				BA8A374823422E5100CB487B /* WatchingListView.swift in Sources */,
-				33498ADF235355E400D1A8BC /* AuthentificationAction.swift in Sources */,
 				BAFE55F52349C3F100A35674 /* RetryableNoDataView.swift in Sources */,
-				334FB938235370C8006441E7 /* RenderableView.swift in Sources */,
-				33498AB22352D5A700D1A8BC /* Dispatch.swift in Sources */,
-				BAAAA2F92357EADF0087731C /* CoderAction.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1105,8 +1399,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				33C676082356059B00E3F2DD /* GroupedNotificationTests.swift in Sources */,
-				338CB7E22354942400BA3594 /* ToggleWatchingTests.swift in Sources */,
 				BA60428322A7409400345259 /* NotificationHubTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1123,39 +1415,73 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BAC1277322A82F9200B52862 /* Secret.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BA6042EA22A7CE1E00345259 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				BA8A37442342259000CB487B /* WatchingList.swift in Sources */,
-				33C676012355327E00E3F2DD /* ReadNotificationsRequest.swift in Sources */,
-				BAC1276622A82F7C00B52862 /* APIRequest.swift in Sources */,
-				BAC1277222A82F8700B52862 /* GitHubAPIAuthorization.swift in Sources */,
-				BA8A37402342251800CB487B /* WatchingsRequest.swift in Sources */,
-				BAC127D122A841B300B52862 /* ImageLoader.swift in Sources */,
-				BAC127FB22A9A82300B52862 /* NotificationList.swift in Sources */,
-				BAC1276722A82F8000B52862 /* AuthorizationHeader.swift in Sources */,
-				BAC1276F22A82F8700B52862 /* NotificationsRequest.swift in Sources */,
-				BA602C482348E6C5003C281C /* NetworkConfig.swift in Sources */,
-				BAC1276922A82F8000B52862 /* HTTPHeader.swift in Sources */,
-				BAC1277122A82F8700B52862 /* GitHubAPIRequest.swift in Sources */,
-				BAC1276D22A82F8000B52862 /* URLEncoder.swift in Sources */,
-				BAC1276822A82F8000B52862 /* HTTPPathConvertible.swift in Sources */,
-				BAC1276C22A82F8000B52862 /* HTTPMethod.swift in Sources */,
-				BAC1277022A82F8700B52862 /* GitHubAPI.swift in Sources */,
-				BAC1276A22A82F8000B52862 /* Query.swift in Sources */,
-				BAC1276B22A82F8000B52862 /* HTTPBody.swift in Sources */,
-				BAC127D422A8442A00B52862 /* URLConvertible.swift in Sources */,
+				BA546B2A2359F05B0069F552 /* Secret.swift in Sources */,
+				BA546B202359F05B0069F552 /* URLEncoder.swift in Sources */,
+				BA546B1C2359F05B0069F552 /* HTTPHeader.swift in Sources */,
+				BA546B1D2359F05B0069F552 /* Query.swift in Sources */,
+				BA546B172359F05B0069F552 /* ImageLoader.swift in Sources */,
+				BA546B262359F05B0069F552 /* GitHubAPI.swift in Sources */,
+				BA546B192359F05B0069F552 /* APIRequest.swift in Sources */,
+				BA546B2C2359F0970069F552 /* UserDefaultsGenerator.generated.swift in Sources */,
+				BA546B1A2359F05B0069F552 /* AuthorizationHeader.swift in Sources */,
+				BA546B282359F05B0069F552 /* GitHubAPIAuthorization.swift in Sources */,
+				BA546B1F2359F05B0069F552 /* HTTPMethod.swift in Sources */,
+				BA546B292359F05B0069F552 /* NetworkConfig.swift in Sources */,
+				BA546B1B2359F05B0069F552 /* HTTPPathConvertible.swift in Sources */,
+				BA546B272359F05B0069F552 /* GitHubAPIRequest.swift in Sources */,
+				BA546B182359F05B0069F552 /* URLConvertible.swift in Sources */,
+				BA546B1E2359F05B0069F552 /* HTTPBody.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
+		BA546ACD2359EF6D0069F552 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BA546AC12359EF6D0069F552 /* NotificationHubRedux */;
+			targetProxy = BA546ACC2359EF6D0069F552 /* PBXContainerItemProxy */;
+		};
+		BA546ACF2359EF6D0069F552 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BA60426722A7409300345259 /* NotificationHub */;
+			targetProxy = BA546ACE2359EF6D0069F552 /* PBXContainerItemProxy */;
+		};
+		BA546AD62359EF6D0069F552 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BA546AC12359EF6D0069F552 /* NotificationHubRedux */;
+			targetProxy = BA546AD52359EF6D0069F552 /* PBXContainerItemProxy */;
+		};
+		BA546B032359F0430069F552 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BA6042C822A7CAD500345259 /* NotificationHubCore */;
+			targetProxy = BA546B022359F0430069F552 /* PBXContainerItemProxy */;
+		};
+		BA546B412359FE090069F552 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BA546B352359FE090069F552 /* NotificationHubData */;
+			targetProxy = BA546B402359FE090069F552 /* PBXContainerItemProxy */;
+		};
+		BA546B432359FE090069F552 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BA60426722A7409300345259 /* NotificationHub */;
+			targetProxy = BA546B422359FE090069F552 /* PBXContainerItemProxy */;
+		};
+		BA546B4A2359FE090069F552 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BA546B352359FE090069F552 /* NotificationHubData */;
+			targetProxy = BA546B492359FE090069F552 /* PBXContainerItemProxy */;
+		};
+		BA546B562359FE170069F552 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BA6042C822A7CAD500345259 /* NotificationHubCore */;
+			targetProxy = BA546B552359FE170069F552 /* PBXContainerItemProxy */;
+		};
+		BA546B5B2359FE1F0069F552 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BA546B352359FE090069F552 /* NotificationHubData */;
+			targetProxy = BA546B5A2359FE1F0069F552 /* PBXContainerItemProxy */;
+		};
 		BA60428022A7409400345259 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = BA60426722A7409300345259 /* NotificationHub */;
@@ -1171,16 +1497,6 @@
 			target = BA6042C822A7CAD500345259 /* NotificationHubCore */;
 			targetProxy = BA6042DC22A7CAD500345259 /* PBXContainerItemProxy */;
 		};
-		BA60430222A7CE1E00345259 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BA6042ED22A7CE1E00345259 /* NotificationHubNetwork */;
-			targetProxy = BA60430122A7CE1E00345259 /* PBXContainerItemProxy */;
-		};
-		BAC1277822A830CF00B52862 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = BA6042C822A7CAD500345259 /* NotificationHubCore */;
-			targetProxy = BAC1277722A830CF00B52862 /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
@@ -1195,6 +1511,198 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		BA546ADA2359EF6D0069F552 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = TQPN82UBBY;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/NotificationHub/Frameworks/NotificationHubRedux/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bannzai.NotificationHubRedux;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BA546ADB2359EF6D0069F552 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = TQPN82UBBY;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/NotificationHub/Frameworks/NotificationHubRedux/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bannzai.NotificationHubRedux;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BA546ADD2359EF6D0069F552 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "$(SRCROOT)/NotificationHubReduxTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bannzai.NotificationHubReduxTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NotificationHub.app/NotificationHub";
+			};
+			name = Debug;
+		};
+		BA546ADE2359EF6D0069F552 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "$(SRCROOT)/NotificationHubReduxTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bannzai.NotificationHubReduxTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NotificationHub.app/NotificationHub";
+			};
+			name = Release;
+		};
+		BA546B4E2359FE090069F552 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = NO;
+				DEVELOPMENT_TEAM = TQPN82UBBY;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/NotificationHub/Frameworks/NotificationHubData/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bannzai.NotificationHubData;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BA546B4F2359FE090069F552 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = NO;
+				DEVELOPMENT_TEAM = TQPN82UBBY;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "$(SRCROOT)/NotificationHub/Frameworks/NotificationHubData/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bannzai.NotificationHubData;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BA546B512359FE090069F552 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "$(SRCROOT)/NotificationHubDataTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bannzai.NotificationHubDataTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NotificationHub.app/NotificationHub";
+			};
+			name = Debug;
+		};
+		BA546B522359FE090069F552 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = "$(SRCROOT)/NotificationHubDataTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bannzai.NotificationHubDataTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NotificationHub.app/NotificationHub";
+			};
+			name = Release;
+		};
 		BA60429022A7409400345259 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1365,7 +1873,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = NotificationHubTests/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/NotificationHubTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1386,7 +1894,7 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = NotificationHubTests/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/NotificationHubTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1406,7 +1914,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = NotificationHubUITests/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/NotificationHubUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1425,7 +1933,7 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = NotificationHubUITests/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/NotificationHubUITests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -1445,6 +1953,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1458,6 +1967,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bannzai.Core;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1471,6 +1981,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = NO;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
@@ -1484,58 +1995,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.bannzai.Core;
 				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
 				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		BA60430622A7CE1E00345259 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/NotificationHub/Frameworks/NotificationHubNetwork/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bannzai.Network;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		BA60430722A7CE1E00345259 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = "$(SRCROOT)/NotificationHub/Frameworks/NotificationHubNetwork/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.bannzai.Network;
-				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
-				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				VERSIONING_SYSTEM = "apple-generic";
@@ -1546,6 +2006,42 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		BA546AD92359EF6D0069F552 /* Build configuration list for PBXNativeTarget "NotificationHubRedux" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA546ADA2359EF6D0069F552 /* Debug */,
+				BA546ADB2359EF6D0069F552 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BA546ADC2359EF6D0069F552 /* Build configuration list for PBXNativeTarget "NotificationHubReduxTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA546ADD2359EF6D0069F552 /* Debug */,
+				BA546ADE2359EF6D0069F552 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BA546B4D2359FE090069F552 /* Build configuration list for PBXNativeTarget "NotificationHubData" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA546B4E2359FE090069F552 /* Debug */,
+				BA546B4F2359FE090069F552 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BA546B502359FE090069F552 /* Build configuration list for PBXNativeTarget "NotificationHubDataTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA546B512359FE090069F552 /* Debug */,
+				BA546B522359FE090069F552 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		BA60426322A7409300345259 /* Build configuration list for PBXProject "NotificationHub" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -1591,15 +2087,6 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BA60430522A7CE1E00345259 /* Build configuration list for PBXNativeTarget "NotificationHubNetwork" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				BA60430622A7CE1E00345259 /* Debug */,
-				BA60430722A7CE1E00345259 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
@@ -1622,7 +2109,7 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		BAC1277E22A83D0900B52862 /* Nuke */ = {
+		BA546AFE2359F03C0069F552 /* Nuke */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = BAC1277D22A83D0900B52862 /* XCRemoteSwiftPackageReference "Nuke" */;
 			productName = Nuke;

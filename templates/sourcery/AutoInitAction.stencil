@@ -1,0 +1,19 @@
+{% for type in types.structs where type.based.Action or type.based.AsyncAction %}
+{% set spacing %}{% if type.parentName %}    {% endif %}{% endset %}
+{% map type.storedVariables into parameters using var %}{{ var.name }}: {{ var.typeName }}{% endmap %}
+// sourcery:inline:auto:{{ type.name }}.AutoInitAction:
+{{spacing}}  {% if type.storedVariables.count == 0 %}
+{{spacing}}    {{ type.accessLevel }} init() { }
+{{spacing}}  {% else %}
+{{spacing}}    {{ type.accessLevel }} init(
+{{spacing}}        {% for params in parameters %}
+{{spacing}}        {{ params }}{% if not forloop.last %},{% endif %}
+{{spacing}}        {% endfor %}
+{{spacing}}        ) {
+{{spacing}}        {% for variable in type.storedVariables %}
+{{spacing}}        self.{{ variable.name }} = {{ variable.name }}
+{{spacing}}        {% endfor %}
+{{spacing}}    }
+{{spacing}}  {% endif %}
+// sourcery:end
+{% endfor %}

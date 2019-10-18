@@ -7,7 +7,8 @@
 //
 
 import SwiftUI
-import NotificationHubNetwork
+import NotificationHubCore
+import NotificationHubRedux
 
 struct WatchingListView: View {
     @EnvironmentObject var store: Store<AppState>
@@ -21,10 +22,9 @@ struct WatchingListView: View {
     }
 }
 
-#if DEBUG
 struct WatchingListView_Previews: PreviewProvider {
     static var previews: some View {
         WatchingListView()
     }
 }
-#endif
+

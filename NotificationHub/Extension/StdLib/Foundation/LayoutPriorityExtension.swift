@@ -9,4 +9,4 @@
 import Foundation
 import SwiftUI
 
-public let DefaultLayoutPriority: Double = 0
+let DefaultLayoutPriority: Double = 0

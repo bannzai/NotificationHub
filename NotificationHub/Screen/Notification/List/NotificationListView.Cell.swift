@@ -8,7 +8,9 @@
 
 import SwiftUI
 import Combine
-import NotificationHubNetwork
+import NotificationHubCore
+import NotificationHubData
+import NotificationHubRedux
 
 extension NotificationListView {
     struct Cell: RenderableView {
@@ -49,11 +51,12 @@ extension NotificationListView {
     }
 }
 
-// TODO:
-//#if DEBUG
-//struct NotificationListView_Cell_Previews : PreviewProvider {
-//    static var previews: some View {
-//        fatalError("TODO:")
-//    }
-//}
-//#endif
+struct NotificationListView_Cell_Previews : PreviewProvider {
+    static var previews: some View {
+        List {
+            NotificationListView.Cell(notification: debugNotification) { (element) in
+                print(element)
+            }
+        }
+    }
+}

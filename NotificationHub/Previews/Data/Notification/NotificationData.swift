@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import NotificationHubNetwork
+import NotificationHubData
 
 #if DEBUG
 let debugNotification = NotificationElement(

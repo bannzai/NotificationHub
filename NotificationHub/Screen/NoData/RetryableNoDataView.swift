@@ -28,7 +28,6 @@ struct RetryableNoDataView: View {
     }
 }
 
-#if DEBUG
 struct RetryableNoDataView_Previews: PreviewProvider {
     static var previews: some View {
         RetryableNoDataView(message: "No Data", action: {
@@ -36,4 +35,4 @@ struct RetryableNoDataView_Previews: PreviewProvider {
         })
     }
 }
-#endif
+

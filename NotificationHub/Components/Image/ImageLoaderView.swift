@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import NotificationHubNetwork
+import NotificationHubCore
 
 struct ImageLoaderView : View {
     @ObservedObject var viewModel = ImageLoaderViewModel()
@@ -35,7 +35,6 @@ struct ImageLoaderView : View {
     }
 }
 
-#if DEBUG
 struct ImageLoaderView_Previews : PreviewProvider {
     static var previews: some View {
         Group {
@@ -44,4 +43,3 @@ struct ImageLoaderView_Previews : PreviewProvider {
         }
     }
 }
-#endif

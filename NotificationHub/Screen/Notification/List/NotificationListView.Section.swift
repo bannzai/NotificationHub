@@ -7,7 +7,9 @@
 //
 
 import SwiftUI
-import NotificationHubNetwork
+import NotificationHubCore
+import NotificationHubData
+import NotificationHubRedux
 
 extension NotificationListView {
     struct SectionView: RenderableView {

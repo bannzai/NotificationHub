@@ -9,7 +9,9 @@
 import UIKit
 import SwiftUI
 import Combine
-import NotificationHubNetwork
+import NotificationHubCore
+import NotificationHubData
+import NotificationHubRedux
 
 final class NotificationListPageViewStore: ObservableObject {
     static let shared = NotificationListPageViewStore()
@@ -80,11 +82,10 @@ struct PageView<Page: View>: View {
     }
 }
 
-#if DEBUG
 struct PageView_Preview: PreviewProvider {
     @State static var currentPage: Int = 0
     static var previews: some View {
         PageView(views: [EmptyView()])
     }
 }
-#endif
+
