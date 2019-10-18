@@ -23,10 +23,9 @@ struct SafariView : UIViewControllerRepresentable {
     }
 }
 
-#if DEBUG
 struct SafariViewController_Previews : PreviewProvider {
     static var previews: some View {
         SafariView(url: URL(string: "https://github.com/bannzai/")!)
     }
 }
-#endif
+

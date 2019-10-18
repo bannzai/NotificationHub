@@ -51,18 +51,15 @@ extension WatchingListView {
     }
 }
 
-#if DEBUG
-//struct WatchingListView_Cell_Previews : PreviewProvider {
-//    static var previews: some View {
-//        WatchingListView.Cell(
-//            watching: State(initialValue: WatchingEntity(
-//                id: .init(id: 1),
-//                name: "ABC",
-//                owner: .init(name: "bannzai", avatarURL: Debug.Const.avatarURL),
-//                notificationsURL: "https://api.github.com/repos/bannzai/vimrc/notifications{?since,all,participating}",
-//                isReceiveNotification: false
-//            )).projectedValue
-//        )
-//    }
-//}
-#endif
+struct WatchingListView_Cell_Previews : PreviewProvider {
+    static var previews: some View {
+        WatchingListView.Cell(
+            watching: State(initialValue: WatchingEntity(
+                id: .init(id: 1),
+                name: "ABC",
+                owner: .init(name: "bannzai", avatarURL: Debug.Const.avatarURL),
+                notificationsURL: "https://api.github.com/repos/bannzai/vimrc/notifications{?since,all,participating}",
+                isReceiveNotification: false
+            )).projectedValue
+        )
+    }

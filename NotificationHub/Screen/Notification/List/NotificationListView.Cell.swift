@@ -50,11 +50,8 @@ extension NotificationListView {
     }
 }
 
-// TODO:
-//#if DEBUG
-//struct NotificationListView_Cell_Previews : PreviewProvider {
-//    static var previews: some View {
-//        fatalError("TODO:")
-//    }
-//}
-//#endif
+struct NotificationListView_Cell_Previews : PreviewProvider {
+    static var previews: some View {
+        
+    }
+}

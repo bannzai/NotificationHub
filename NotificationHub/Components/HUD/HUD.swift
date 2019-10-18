@@ -44,10 +44,8 @@ struct HUD: View {
     }
 }
 
-#if DEBUG
 struct HUD_Previews : PreviewProvider {
     static var previews: some View {
         HUD()
     }
 }
-#endif

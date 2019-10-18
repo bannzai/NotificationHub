@@ -25,11 +25,9 @@ struct BarButtonImageModifier: ViewModifier {
     }
 }
 
-#if DEBUG
 struct BarButtonImageModifier_Previews : PreviewProvider {
     static var previews: some View {
         Image(systemName: "person")
             .barButtonItems()
     }
 }
-#endif

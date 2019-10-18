@@ -17,10 +17,8 @@ struct NoDataView: View {
     }
 }
 
-#if DEBUG
 struct NoDataView_Previews: PreviewProvider {
     static var previews: some View {
         NoDataView(message: "No Data")
     }
 }
-#endif

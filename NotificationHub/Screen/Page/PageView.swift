@@ -81,11 +81,10 @@ struct PageView<Page: View>: View {
     }
 }
 
-#if DEBUG
 struct PageView_Preview: PreviewProvider {
     @State static var currentPage: Int = 0
     static var previews: some View {
         PageView(views: [EmptyView()])
     }
 }
-#endif
+

@@ -22,10 +22,9 @@ struct WatchingListView: View {
     }
 }
 
-#if DEBUG
 struct WatchingListView_Previews: PreviewProvider {
     static var previews: some View {
         WatchingListView()
     }
 }
-#endif
+

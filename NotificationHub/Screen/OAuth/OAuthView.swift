@@ -45,11 +45,9 @@ struct OAuthView : UIViewControllerRepresentable {
     }
 }
 
-#if DEBUG
 struct OAuthViewController_Previews : PreviewProvider {
     @State static var githubAccessToken: String? = nil
     static var previews: some View {
         OAuthView()
     }
 }
-#endif
