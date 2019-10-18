@@ -11,8 +11,8 @@ import OAuthSwift
 import NotificationHubCore
 import AuthenticationServices
 
-public typealias OAuthCallBackType = (Result<OAuthSwift.TokenSuccess, OAuthSwiftError>) -> Void
-public class OAuthViewController: UIViewController {
+typealias OAuthCallBackType = (Result<OAuthSwift.TokenSuccess, OAuthSwiftError>) -> Void
+class OAuthViewController: UIViewController {
     struct Const {
         static let callbackHost = "oauth-callback"
     }
@@ -37,7 +37,7 @@ public class OAuthViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    public override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
         
         signupButton.layer.cornerRadius = 6
@@ -45,7 +45,7 @@ public class OAuthViewController: UIViewController {
         signupButton.layer.borderColor = UIColor.systemGray4.cgColor
     }
     
-    public override func viewWillAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
         navigationController?.setNavigationBarHidden(true, animated: animated)
