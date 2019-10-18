@@ -4,7 +4,6 @@
 //   let notification = try? newJSONDecoder().decode(Notification.self, from: jsonData)
 
 import Foundation
-import NotificationHubCore
 
 // MARK: - NotificationElement
 public struct NotificationElement: Codable, Identifiable, Equatable {

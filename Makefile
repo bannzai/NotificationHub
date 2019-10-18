@@ -6,4 +6,5 @@ setup:
 	./scripts/development/secret.sh
 
 udg:
-	udg generate --output	NotificationHub/Extension/StdLib/Foundation/UserDefaultsGenerator.generated.swift
+	udg generate --output	NotificationHub/Frameworks/NotificationHubCore/Storage/UserDefaultsGenerator.generated.swift
+	

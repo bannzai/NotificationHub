@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import NotificationHub
+@testable import NotificationHubRedux
 
 class GroupedNotificationTests: XCTestCase {
 

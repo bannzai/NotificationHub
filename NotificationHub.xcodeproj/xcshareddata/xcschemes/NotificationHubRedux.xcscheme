@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "BA6042ED22A7CE1E00345259"
-               BuildableName = "NotificationHubNetwork.framework"
-               BlueprintName = "NotificationHubNetwork"
+               BlueprintIdentifier = "BA546AC12359EF6D0069F552"
+               BuildableName = "NotificationHubRedux.framework"
+               BlueprintName = "NotificationHubRedux"
                ReferencedContainer = "container:NotificationHub.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -28,6 +28,16 @@
       selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES">
       <Testables>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "BA546AC92359EF6D0069F552"
+               BuildableName = "NotificationHubReduxTests.xctest"
+               BlueprintName = "NotificationHubReduxTests"
+               ReferencedContainer = "container:NotificationHub.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
@@ -50,9 +60,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "BA6042ED22A7CE1E00345259"
-            BuildableName = "NotificationHubNetwork.framework"
-            BlueprintName = "NotificationHubNetwork"
+            BlueprintIdentifier = "BA546AC12359EF6D0069F552"
+            BuildableName = "NotificationHubRedux.framework"
+            BlueprintName = "NotificationHubRedux"
             ReferencedContainer = "container:NotificationHub.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
