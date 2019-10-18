@@ -35,7 +35,7 @@ class ToggleWatchingTests: XCTestCase {
                     nodeID: "\(offset)",
                     name: "name",
                     fullName: "full name",
-                    owner: Owner(id: 10, login: element, avatarURL: Debug.Const.avatarURL),
+                    owner: Owner(id: 10, login: element, avatarURL: "https://avatars0.githubusercontent.com/u/10897361?s=460&v=4"),
                     notificationsUrl: "https://github.com/\(element)"
             )
         }
