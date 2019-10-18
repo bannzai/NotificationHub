@@ -14,6 +14,6 @@ public struct WatchingsState: ReduxState, Codable, Equatable {
         case notYetLoad
         case loaded
     }
-    var watchings: [WatchingElement] = []
+    public internal(set) var watchings: [WatchingElement] = []
     var fetchStatus: FetchStatus = .notYetLoad
 }

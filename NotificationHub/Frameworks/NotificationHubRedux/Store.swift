@@ -12,7 +12,7 @@ import Combine
 
 final public class Store<State: ReduxState>: ObservableObject {
     @Published public var state: State
-    let objectDidChange = PassthroughSubject<Void, Never>()
+    public let objectDidChange = PassthroughSubject<Void, Never>()
     public var canceller: Set<AnyCancellable> = []
 
     private var dispatchFunction: DispatchFunction!

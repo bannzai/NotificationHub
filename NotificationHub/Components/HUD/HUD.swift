@@ -8,6 +8,7 @@
 
 import SwiftUI
 import Combine
+import NotificationHubRedux
 
 public enum HUDAppearanceType: Int, Equatable {
     case hide

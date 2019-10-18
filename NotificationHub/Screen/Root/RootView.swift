@@ -9,6 +9,7 @@
 import SwiftUI
 import Combine
 import NotificationHubCore
+import NotificationHubRedux
 
 final class RootViewStore: ObservableObject {
     let subject = CurrentValueSubject<String?, Never>(nil)

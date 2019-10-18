@@ -13,7 +13,7 @@ public struct NotificationPageState: ReduxState, Codable, Equatable {
     static let allNotificationsState: NotificationsState = NotificationsState(watching: nil, isVisible: true)
     static let allNotificationsPage: Int = 0
     public var notificationsStatuses: [NotificationsState] = [Self.allNotificationsState]
-    var currentNotificationPage: Int = Self.allNotificationsPage
+    public var currentNotificationPage: Int = Self.allNotificationsPage
     var currentState: NotificationsState { notificationsStatuses.filter { $0.isVisible }[currentNotificationPage] }
 }
 
@@ -26,7 +26,7 @@ public struct NotificationsState: ReduxState, Codable, Equatable {
     public var watching: WatchingElement?
     public var fetchStatus: FetchStatus = .notYetLoad
     public var nextFetchPage: Int { (notifications.count + NotificationsRequest.elementPerPage) / NotificationsRequest.elementPerPage - 1 }
-    var isVisible: Bool = false
+    public internal(set) var isVisible: Bool = false
     public var groupedNotifications: [GroupedNotification] {
         visibilyNotifications.reduce(into: [GroupedNotification]()) { (result, element) in
             let key = GroupedNotification.toKey(dateString: element.updatedAt)
@@ -62,7 +62,7 @@ public struct GroupedNotification: Equatable, Codable, Identifiable {
     public typealias NotificationDate = String
     public var id: String { key }
     public let key: NotificationDate
-    var values: [NotificationElement]
+    public internal(set) var values: [NotificationElement]
     
     public init(key: NotificationDate, values: [NotificationElement]) {
         self.key = key

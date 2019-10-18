@@ -9,7 +9,7 @@
 import Foundation
 
 public struct HUDState: ReduxState, Codable, Equatable {
-    enum HUDStateType: Int, Codable, Equatable {
+    public enum HUDStateType: Int, Codable, Equatable {
         case show
         case hide
     }
@@ -25,5 +25,5 @@ public struct HUDState: ReduxState, Codable, Equatable {
         }
     }
     private var counter: Int = 0
-    var current: HUDStateType { counter == 0 ? .hide : .show }
+    public var current: HUDStateType { counter == 0 ? .hide : .show }
 }

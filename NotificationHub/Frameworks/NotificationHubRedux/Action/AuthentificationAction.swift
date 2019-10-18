@@ -11,7 +11,7 @@ import NotificationHubCore
 import Combine
 
 public struct SignupAction: Action {
-    let githubAccessToken: String
+    public let githubAccessToken: String
 
 // sourcery:inline:auto:SignupAction.AutoInitAction:
     public init(
