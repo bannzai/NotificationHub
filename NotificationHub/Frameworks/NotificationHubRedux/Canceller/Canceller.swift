@@ -9,6 +9,6 @@
 import Foundation
 import Combine
 
-protocol Canceller: class {
+public protocol Canceller: class {
     var canceller: Set<AnyCancellable> { get set }
 }
