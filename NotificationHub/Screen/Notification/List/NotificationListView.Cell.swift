@@ -52,6 +52,10 @@ extension NotificationListView {
 
 struct NotificationListView_Cell_Previews : PreviewProvider {
     static var previews: some View {
-        
+        List {
+            NotificationListView.Cell(notification: debugNotification) { (element) in
+                print(element)
+            }
+        }
     }
 }

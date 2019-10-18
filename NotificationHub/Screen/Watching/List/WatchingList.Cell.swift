@@ -54,12 +54,14 @@ extension WatchingListView {
 struct WatchingListView_Cell_Previews : PreviewProvider {
     static var previews: some View {
         WatchingListView.Cell(
-            watching: State(initialValue: WatchingEntity(
-                id: .init(id: 1),
-                name: "ABC",
-                owner: .init(name: "bannzai", avatarURL: Debug.Const.avatarURL),
-                notificationsURL: "https://api.github.com/repos/bannzai/vimrc/notifications{?since,all,participating}",
-                isReceiveNotification: false
-            )).projectedValue
+            watching: WatchingElement(
+                id: 1,
+                nodeID: "1",
+                name: "bannzai",
+                fullName: "bannzai",
+                owner: Owner(id: 10, login: "bannzai", avatarURL: Debug.Const.avatarURL),
+                notificationsUrl: "https://api.github.com/repos/bannzai/vimrc/notifications{?since,all,participating}"
+            )
         )
     }
+}
