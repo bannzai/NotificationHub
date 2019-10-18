@@ -45,6 +45,7 @@ extension NotificationListView {
     }
 }
 
+#if DEBUG
 struct NotificationListView_Section_Previews: PreviewProvider {
     static var previews: some View {
         NotificationListView.SectionView(
@@ -57,3 +58,4 @@ struct NotificationListView_Section_Previews: PreviewProvider {
         )
     }
 }
+#endif

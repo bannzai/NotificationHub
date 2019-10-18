@@ -24,6 +24,7 @@ struct ReadButton: View {
 }
 
 
+#if DEBUG
 struct ReadButton_Previews: PreviewProvider {
     @State static var read: Bool = false
     static var previews: some View {
@@ -32,3 +33,4 @@ struct ReadButton_Previews: PreviewProvider {
         }
     }
 }
+#endif

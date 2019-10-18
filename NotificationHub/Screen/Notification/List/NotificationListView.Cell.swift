@@ -51,6 +51,7 @@ extension NotificationListView {
     }
 }
 
+#if DEBUG
 struct NotificationListView_Cell_Previews : PreviewProvider {
     static var previews: some View {
         List {
@@ -60,3 +61,4 @@ struct NotificationListView_Cell_Previews : PreviewProvider {
         }
     }
 }
+#endif
