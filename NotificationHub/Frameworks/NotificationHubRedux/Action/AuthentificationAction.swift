@@ -12,7 +12,12 @@ import Combine
 
 public struct SignupAction: Action {
     let githubAccessToken: String
-    public init(githubAccessToken: String) {
+
+// sourcery:inline:auto:SignupAction.AutoInitAction:
+    public init(
+        githubAccessToken: String
+        ) {
         self.githubAccessToken = githubAccessToken
     }
+// sourcery:end
 }

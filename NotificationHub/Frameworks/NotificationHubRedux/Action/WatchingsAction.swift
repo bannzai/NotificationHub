@@ -12,14 +12,38 @@ import Combine
 
 public struct SetWatchingListAction: Action {
     let elements: [WatchingElement]
+
+// sourcery:inline:auto:SetWatchingListAction.AutoInitAction:
+    public init(
+        elements: [WatchingElement]
+        ) {
+        self.elements = elements
+    }
+// sourcery:end
 }
 
 public struct SubscribeWatchingAction: Action {
     let watching: WatchingElement
+
+// sourcery:inline:auto:SubscribeWatchingAction.AutoInitAction:
+    public init(
+        watching: WatchingElement
+        ) {
+        self.watching = watching
+    }
+// sourcery:end
 }
 
 public struct UnSubscribeWatchingAction: Action {
     let watching: WatchingElement
+
+// sourcery:inline:auto:UnSubscribeWatchingAction.AutoInitAction:
+    public init(
+        watching: WatchingElement
+        ) {
+        self.watching = watching
+    }
+// sourcery:end
 }
 
 public struct WatchingsFetchAction: AsyncAction {
@@ -44,4 +68,12 @@ public struct WatchingsFetchAction: AsyncAction {
             })
             .store(in: &canceller.canceller)
     }
+
+// sourcery:inline:auto:WatchingsFetchAction.AutoInitAction:
+    public init(
+        canceller: Canceller
+        ) {
+        self.canceller = canceller
+    }
+// sourcery:end
 }

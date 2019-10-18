@@ -10,4 +10,12 @@ import Foundation
 
 public struct RestoreAction: Action {
     let watching: WatchingsState
+
+// sourcery:inline:auto:RestoreAction.AutoInitAction:
+    public init(
+        watching: WatchingsState
+        ) {
+        self.watching = watching
+    }
+// sourcery:end
 }
