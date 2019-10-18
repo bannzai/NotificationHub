@@ -8,6 +8,7 @@
 
 import Foundation
 import NotificationHubCore
+import NotificationHubData
 import Combine
 
 public struct CreateNotificationsAction: Action {

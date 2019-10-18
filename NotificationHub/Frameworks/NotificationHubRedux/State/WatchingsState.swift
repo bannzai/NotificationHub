@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import NotificationHubCore
+import NotificationHubData
 
 public struct WatchingsState: ReduxState, Codable, Equatable {
     enum FetchStatus: Int, Codable, Equatable {

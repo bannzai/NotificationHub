@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import NotificationHubCore
 
 public protocol ReadNotificationPath {
     var readNotificationPath: URLPathConvertible { get }

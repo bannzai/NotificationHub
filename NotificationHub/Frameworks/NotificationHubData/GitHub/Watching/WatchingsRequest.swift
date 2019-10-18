@@ -7,7 +7,8 @@
 //
 
 import Foundation
- 
+import NotificationHubCore
+
 public struct WatchingsRequest: GitHubAPIRequest {
     public var path: URLPathConvertible { ["user/subscriptions"] }
     public var method: HTTPMethod { .GET }

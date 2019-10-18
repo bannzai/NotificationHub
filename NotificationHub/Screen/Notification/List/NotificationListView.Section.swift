@@ -8,6 +8,7 @@
 
 import SwiftUI
 import NotificationHubCore
+import NotificationHubData
 import NotificationHubRedux
 
 extension NotificationListView {

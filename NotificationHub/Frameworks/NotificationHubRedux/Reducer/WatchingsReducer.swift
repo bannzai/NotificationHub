@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import NotificationHubCore
+import NotificationHubData
 
 extension Array where Element == WatchingElement {
     func distinct() -> [WatchingElement] {

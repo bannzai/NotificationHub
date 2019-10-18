@@ -38,6 +38,16 @@
                ReferencedContainer = "container:NotificationHub.xcodeproj">
             </BuildableReference>
          </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "BA546B3D2359FE090069F552"
+               BuildableName = "NotificationHubDataTests.xctest"
+               BlueprintName = "NotificationHubDataTests"
+               ReferencedContainer = "container:NotificationHub.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction

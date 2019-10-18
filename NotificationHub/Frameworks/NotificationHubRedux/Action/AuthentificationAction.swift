@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import NotificationHubCore
+import NotificationHubData
 import Combine
 
 public struct SignupAction: Action {

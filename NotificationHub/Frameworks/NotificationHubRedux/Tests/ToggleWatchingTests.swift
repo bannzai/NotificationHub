@@ -8,7 +8,7 @@
 
 import XCTest
 @testable import NotificationHubRedux
-import NotificationHubCore
+import NotificationHubData
 
 class ToggleWatchingTests: XCTestCase {
 

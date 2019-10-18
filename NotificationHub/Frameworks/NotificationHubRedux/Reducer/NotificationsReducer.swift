@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import NotificationHubCore
+import NotificationHubData
 
 let notificationsReducer: Reducer<NotificationPageState> = { state, action in
     switch action {

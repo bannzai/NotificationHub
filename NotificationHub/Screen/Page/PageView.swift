@@ -10,6 +10,7 @@ import UIKit
 import SwiftUI
 import Combine
 import NotificationHubCore
+import NotificationHubData
 import NotificationHubRedux
 
 final class NotificationListPageViewStore: ObservableObject {

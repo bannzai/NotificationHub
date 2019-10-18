@@ -63,11 +63,6 @@
 		BA546B1E2359F05B0069F552 /* HTTPBody.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431622A7D1D900345259 /* HTTPBody.swift */; };
 		BA546B1F2359F05B0069F552 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431822A7D1ED00345259 /* HTTPMethod.swift */; };
 		BA546B202359F05B0069F552 /* URLEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431422A7D12900345259 /* URLEncoder.swift */; };
-		BA546B212359F05B0069F552 /* WatchingsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A373D2342250800CB487B /* WatchingsRequest.swift */; };
-		BA546B222359F05B0069F552 /* WatchingElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A37412342257000CB487B /* WatchingElement.swift */; };
-		BA546B232359F05B0069F552 /* NotificationsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60432A22A7D99B00345259 /* NotificationsRequest.swift */; };
-		BA546B242359F05B0069F552 /* ReadNotificationsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C675FF2355326000E3F2DD /* ReadNotificationsRequest.swift */; };
-		BA546B252359F05B0069F552 /* NotificationElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC127F922A9A7FB00B52862 /* NotificationElement.swift */; };
 		BA546B262359F05B0069F552 /* GitHubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431B22A7D22900345259 /* GitHubAPI.swift */; };
 		BA546B272359F05B0069F552 /* GitHubAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431D22A7D2FF00345259 /* GitHubAPIRequest.swift */; };
 		BA546B282359F05B0069F552 /* GitHubAPIAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60432722A7D91200345259 /* GitHubAPIAuthorization.swift */; };
@@ -75,6 +70,20 @@
 		BA546B2A2359F05B0069F552 /* Secret.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60429E22A7C91000345259 /* Secret.swift */; };
 		BA546B2C2359F0970069F552 /* UserDefaultsGenerator.generated.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA602C442348C8A0003C281C /* UserDefaultsGenerator.generated.swift */; };
 		BA546B2E2359F0F20069F552 /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C67602235602BA00E3F2DD /* DateFormatter.swift */; };
+		BA546B3F2359FE090069F552 /* NotificationHubData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA546B362359FE090069F552 /* NotificationHubData.framework */; };
+		BA546B462359FE090069F552 /* NotificationHubDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA546B452359FE090069F552 /* NotificationHubDataTests.swift */; };
+		BA546B482359FE090069F552 /* NotificationHubData.h in Headers */ = {isa = PBXBuildFile; fileRef = BA546B382359FE090069F552 /* NotificationHubData.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BA546B4B2359FE090069F552 /* NotificationHubData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA546B362359FE090069F552 /* NotificationHubData.framework */; };
+		BA546B4C2359FE090069F552 /* NotificationHubData.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA546B362359FE090069F552 /* NotificationHubData.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BA546B532359FE170069F552 /* NotificationHubCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA6042C922A7CAD500345259 /* NotificationHubCore.framework */; };
+		BA546B542359FE170069F552 /* NotificationHubCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA6042C922A7CAD500345259 /* NotificationHubCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BA546B582359FE1F0069F552 /* NotificationHubData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA546B362359FE090069F552 /* NotificationHubData.framework */; };
+		BA546B592359FE1F0069F552 /* NotificationHubData.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA546B362359FE090069F552 /* NotificationHubData.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		BA546B5D2359FE390069F552 /* WatchingsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A373D2342250800CB487B /* WatchingsRequest.swift */; };
+		BA546B5E2359FE390069F552 /* WatchingElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A37412342257000CB487B /* WatchingElement.swift */; };
+		BA546B5F2359FE390069F552 /* NotificationsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60432A22A7D99B00345259 /* NotificationsRequest.swift */; };
+		BA546B602359FE390069F552 /* ReadNotificationsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C675FF2355326000E3F2DD /* ReadNotificationsRequest.swift */; };
+		BA546B612359FE390069F552 /* NotificationElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC127F922A9A7FB00B52862 /* NotificationElement.swift */; };
 		BA60426C22A7409300345259 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60426B22A7409300345259 /* AppDelegate.swift */; };
 		BA60426E22A7409300345259 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60426D22A7409300345259 /* SceneDelegate.swift */; };
 		BA60427222A7409400345259 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA60427122A7409400345259 /* Assets.xcassets */; };
@@ -139,6 +148,41 @@
 			remoteGlobalIDString = BA6042C822A7CAD500345259;
 			remoteInfo = NotificationHubCore;
 		};
+		BA546B402359FE090069F552 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BA60426022A7409300345259 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA546B352359FE090069F552;
+			remoteInfo = NotificationHubData;
+		};
+		BA546B422359FE090069F552 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BA60426022A7409300345259 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA60426722A7409300345259;
+			remoteInfo = NotificationHub;
+		};
+		BA546B492359FE090069F552 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BA60426022A7409300345259 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA546B352359FE090069F552;
+			remoteInfo = NotificationHubData;
+		};
+		BA546B552359FE170069F552 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BA60426022A7409300345259 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA6042C822A7CAD500345259;
+			remoteInfo = NotificationHubCore;
+		};
+		BA546B5A2359FE1F0069F552 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BA60426022A7409300345259 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BA546B352359FE090069F552;
+			remoteInfo = NotificationHubData;
+		};
 		BA60427F22A7409400345259 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = BA60426022A7409300345259 /* Project object */;
@@ -170,6 +214,18 @@
 			dstSubfolderSpec = 10;
 			files = (
 				BA546B012359F0430069F552 /* NotificationHubCore.framework in Embed Frameworks */,
+				BA546B592359FE1F0069F552 /* NotificationHubData.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA546B572359FE170069F552 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				BA546B542359FE170069F552 /* NotificationHubCore.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -181,6 +237,7 @@
 			dstSubfolderSpec = 10;
 			files = (
 				BA546AD82359EF6D0069F552 /* NotificationHubRedux.framework in Embed Frameworks */,
+				BA546B4C2359FE090069F552 /* NotificationHubData.framework in Embed Frameworks */,
 				BA6042DF22A7CAD500345259 /* NotificationHubCore.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
@@ -232,6 +289,12 @@
 		BA546ACA2359EF6D0069F552 /* NotificationHubReduxTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NotificationHubReduxTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA546AD12359EF6D0069F552 /* NotificationHubReduxTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHubReduxTests.swift; sourceTree = "<group>"; };
 		BA546AD32359EF6D0069F552 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA546B362359FE090069F552 /* NotificationHubData.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NotificationHubData.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA546B382359FE090069F552 /* NotificationHubData.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NotificationHubData.h; sourceTree = "<group>"; };
+		BA546B392359FE090069F552 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA546B3E2359FE090069F552 /* NotificationHubDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NotificationHubDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BA546B452359FE090069F552 /* NotificationHubDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHubDataTests.swift; sourceTree = "<group>"; };
+		BA546B472359FE090069F552 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA602C442348C8A0003C281C /* UserDefaultsGenerator.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsGenerator.generated.swift; sourceTree = "<group>"; };
 		BA602C462348E68A003C281C /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
 		BA60426822A7409300345259 /* NotificationHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotificationHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -301,6 +364,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BA546B002359F0430069F552 /* NotificationHubCore.framework in Frameworks */,
+				BA546B582359FE1F0069F552 /* NotificationHubData.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -312,11 +376,28 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BA546B332359FE090069F552 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA546B532359FE170069F552 /* NotificationHubCore.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA546B3B2359FE090069F552 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA546B3F2359FE090069F552 /* NotificationHubData.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BA60426522A7409300345259 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				BA546AD72359EF6D0069F552 /* NotificationHubRedux.framework in Frameworks */,
+				BA546B4B2359FE090069F552 /* NotificationHubData.framework in Frameworks */,
 				BA6042DE22A7CAD500345259 /* NotificationHubCore.framework in Frameworks */,
 				BACDC7FD23464B9400C4A1AE /* OAuthSwift in Frameworks */,
 			);
@@ -498,6 +579,42 @@
 			path = Formatter;
 			sourceTree = "<group>";
 		};
+		BA546B302359FDF30069F552 /* NotificationHubData */ = {
+			isa = PBXGroup;
+			children = (
+				BA60431A22A7D21800345259 /* GitHub */,
+			);
+			path = NotificationHubData;
+			sourceTree = "<group>";
+		};
+		BA546B372359FE090069F552 /* NotificationHubData */ = {
+			isa = PBXGroup;
+			children = (
+				BA546B382359FE090069F552 /* NotificationHubData.h */,
+				BA546B392359FE090069F552 /* Info.plist */,
+			);
+			path = NotificationHubData;
+			sourceTree = "<group>";
+		};
+		BA546B442359FE090069F552 /* NotificationHubDataTests */ = {
+			isa = PBXGroup;
+			children = (
+				BA546B452359FE090069F552 /* NotificationHubDataTests.swift */,
+				BA546B472359FE090069F552 /* Info.plist */,
+			);
+			path = NotificationHubDataTests;
+			sourceTree = "<group>";
+		};
+		BA546B5C2359FE2D0069F552 /* GitHub */ = {
+			isa = PBXGroup;
+			children = (
+				BA60431B22A7D22900345259 /* GitHubAPI.swift */,
+				BA60431D22A7D2FF00345259 /* GitHubAPIRequest.swift */,
+				BA60432722A7D91200345259 /* GitHubAPIAuthorization.swift */,
+			);
+			path = GitHub;
+			sourceTree = "<group>";
+		};
 		BA602C432348C75B003C281C /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
@@ -514,6 +631,8 @@
 				BA60428C22A7409400345259 /* NotificationHubUITests */,
 				BA546AC32359EF6D0069F552 /* NotificationHubRedux */,
 				BA546AD02359EF6D0069F552 /* NotificationHubReduxTests */,
+				BA546B372359FE090069F552 /* NotificationHubData */,
+				BA546B442359FE090069F552 /* NotificationHubDataTests */,
 				BA60426922A7409300345259 /* Products */,
 				BAC1277422A830CF00B52862 /* Frameworks */,
 			);
@@ -528,6 +647,8 @@
 				BA6042C922A7CAD500345259 /* NotificationHubCore.framework */,
 				BA546AC22359EF6D0069F552 /* NotificationHubRedux.framework */,
 				BA546ACA2359EF6D0069F552 /* NotificationHubReduxTests.xctest */,
+				BA546B362359FE090069F552 /* NotificationHubData.framework */,
+				BA546B3E2359FE090069F552 /* NotificationHubDataTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -589,11 +710,11 @@
 		BA6042CA22A7CAD500345259 /* NotificationHubCore */ = {
 			isa = PBXGroup;
 			children = (
+				BA546B5C2359FE2D0069F552 /* GitHub */,
 				BA546B2D2359F0EB0069F552 /* Formatter */,
 				BA546B2B2359F0840069F552 /* Storage */,
 				BAC1278022A83D2100B52862 /* Image */,
 				BA60430F22A7CE9100345259 /* API */,
-				BA60431A22A7D21800345259 /* GitHub */,
 				BA602C462348E68A003C281C /* NetworkConfig.swift */,
 				BA60429D22A7C90700345259 /* Secret */,
 				BA6042CB22A7CAD500345259 /* Core.h */,
@@ -605,6 +726,7 @@
 		BA6042E722A7CAF500345259 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BA546B302359FDF30069F552 /* NotificationHubData */,
 				33498AB72352D80F00D1A8BC /* NotificationHubRedux */,
 				BA6042CA22A7CAD500345259 /* NotificationHubCore */,
 			);
@@ -631,9 +753,6 @@
 			children = (
 				BA8A373C2342249200CB487B /* Watching */,
 				BA60432922A7D98A00345259 /* Notifcation */,
-				BA60431B22A7D22900345259 /* GitHubAPI.swift */,
-				BA60431D22A7D2FF00345259 /* GitHubAPIRequest.swift */,
-				BA60432722A7D91200345259 /* GitHubAPIAuthorization.swift */,
 			);
 			path = GitHub;
 			sourceTree = "<group>";
@@ -876,6 +995,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BA546B312359FE090069F552 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA546B482359FE090069F552 /* NotificationHubData.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BA6042C422A7CAD500345259 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -901,6 +1028,7 @@
 			);
 			dependencies = (
 				BA546B032359F0430069F552 /* PBXTargetDependency */,
+				BA546B5B2359FE1F0069F552 /* PBXTargetDependency */,
 			);
 			name = NotificationHubRedux;
 			productName = NotificationHubRedux;
@@ -926,6 +1054,45 @@
 			productReference = BA546ACA2359EF6D0069F552 /* NotificationHubReduxTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
+		BA546B352359FE090069F552 /* NotificationHubData */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA546B4D2359FE090069F552 /* Build configuration list for PBXNativeTarget "NotificationHubData" */;
+			buildPhases = (
+				BA546B312359FE090069F552 /* Headers */,
+				BA546B322359FE090069F552 /* Sources */,
+				BA546B332359FE090069F552 /* Frameworks */,
+				BA546B342359FE090069F552 /* Resources */,
+				BA546B572359FE170069F552 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BA546B562359FE170069F552 /* PBXTargetDependency */,
+			);
+			name = NotificationHubData;
+			productName = NotificationHubData;
+			productReference = BA546B362359FE090069F552 /* NotificationHubData.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		BA546B3D2359FE090069F552 /* NotificationHubDataTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = BA546B502359FE090069F552 /* Build configuration list for PBXNativeTarget "NotificationHubDataTests" */;
+			buildPhases = (
+				BA546B3A2359FE090069F552 /* Sources */,
+				BA546B3B2359FE090069F552 /* Frameworks */,
+				BA546B3C2359FE090069F552 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				BA546B412359FE090069F552 /* PBXTargetDependency */,
+				BA546B432359FE090069F552 /* PBXTargetDependency */,
+			);
+			name = NotificationHubDataTests;
+			productName = NotificationHubDataTests;
+			productReference = BA546B3E2359FE090069F552 /* NotificationHubDataTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		BA60426722A7409300345259 /* NotificationHub */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = BA60429222A7409400345259 /* Build configuration list for PBXNativeTarget "NotificationHub" */;
@@ -940,6 +1107,7 @@
 			dependencies = (
 				BA6042DD22A7CAD500345259 /* PBXTargetDependency */,
 				BA546AD62359EF6D0069F552 /* PBXTargetDependency */,
+				BA546B4A2359FE090069F552 /* PBXTargetDependency */,
 			);
 			name = NotificationHub;
 			packageProductDependencies = (
@@ -1023,6 +1191,13 @@
 						CreatedOnToolsVersion = 11.0;
 						TestTargetID = BA60426722A7409300345259;
 					};
+					BA546B352359FE090069F552 = {
+						CreatedOnToolsVersion = 11.0;
+					};
+					BA546B3D2359FE090069F552 = {
+						CreatedOnToolsVersion = 11.0;
+						TestTargetID = BA60426722A7409300345259;
+					};
 					BA60426722A7409300345259 = {
 						CreatedOnToolsVersion = 11.0;
 					};
@@ -1062,6 +1237,8 @@
 				BA60428822A7409400345259 /* NotificationHubUITests */,
 				BA6042C822A7CAD500345259 /* NotificationHubCore */,
 				BA546AC12359EF6D0069F552 /* NotificationHubRedux */,
+				BA546B352359FE090069F552 /* NotificationHubData */,
+				BA546B3D2359FE090069F552 /* NotificationHubDataTests */,
 			);
 		};
 /* End PBXProject section */
@@ -1075,6 +1252,20 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 		BA546AC82359EF6D0069F552 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA546B342359FE090069F552 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA546B3C2359FE090069F552 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1162,6 +1353,26 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BA546B322359FE090069F552 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA546B602359FE390069F552 /* ReadNotificationsRequest.swift in Sources */,
+				BA546B5D2359FE390069F552 /* WatchingsRequest.swift in Sources */,
+				BA546B5F2359FE390069F552 /* NotificationsRequest.swift in Sources */,
+				BA546B5E2359FE390069F552 /* WatchingElement.swift in Sources */,
+				BA546B612359FE390069F552 /* NotificationElement.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA546B3A2359FE090069F552 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BA546B462359FE090069F552 /* NotificationHubDataTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		BA60426422A7409300345259 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1220,23 +1431,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BA546B242359F05B0069F552 /* ReadNotificationsRequest.swift in Sources */,
 				BA546B2A2359F05B0069F552 /* Secret.swift in Sources */,
 				BA546B202359F05B0069F552 /* URLEncoder.swift in Sources */,
 				BA546B1C2359F05B0069F552 /* HTTPHeader.swift in Sources */,
-				BA546B222359F05B0069F552 /* WatchingElement.swift in Sources */,
-				BA546B252359F05B0069F552 /* NotificationElement.swift in Sources */,
 				BA546B1D2359F05B0069F552 /* Query.swift in Sources */,
 				BA546B172359F05B0069F552 /* ImageLoader.swift in Sources */,
 				BA546B262359F05B0069F552 /* GitHubAPI.swift in Sources */,
 				BA546B192359F05B0069F552 /* APIRequest.swift in Sources */,
-				BA546B212359F05B0069F552 /* WatchingsRequest.swift in Sources */,
 				BA546B2C2359F0970069F552 /* UserDefaultsGenerator.generated.swift in Sources */,
 				BA546B1A2359F05B0069F552 /* AuthorizationHeader.swift in Sources */,
 				BA546B282359F05B0069F552 /* GitHubAPIAuthorization.swift in Sources */,
 				BA546B1F2359F05B0069F552 /* HTTPMethod.swift in Sources */,
 				BA546B292359F05B0069F552 /* NetworkConfig.swift in Sources */,
-				BA546B232359F05B0069F552 /* NotificationsRequest.swift in Sources */,
 				BA546B1B2359F05B0069F552 /* HTTPPathConvertible.swift in Sources */,
 				BA546B272359F05B0069F552 /* GitHubAPIRequest.swift in Sources */,
 				BA546B182359F05B0069F552 /* URLConvertible.swift in Sources */,
@@ -1266,6 +1472,31 @@
 			isa = PBXTargetDependency;
 			target = BA6042C822A7CAD500345259 /* NotificationHubCore */;
 			targetProxy = BA546B022359F0430069F552 /* PBXContainerItemProxy */;
+		};
+		BA546B412359FE090069F552 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BA546B352359FE090069F552 /* NotificationHubData */;
+			targetProxy = BA546B402359FE090069F552 /* PBXContainerItemProxy */;
+		};
+		BA546B432359FE090069F552 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BA60426722A7409300345259 /* NotificationHub */;
+			targetProxy = BA546B422359FE090069F552 /* PBXContainerItemProxy */;
+		};
+		BA546B4A2359FE090069F552 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BA546B352359FE090069F552 /* NotificationHubData */;
+			targetProxy = BA546B492359FE090069F552 /* PBXContainerItemProxy */;
+		};
+		BA546B562359FE170069F552 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BA6042C822A7CAD500345259 /* NotificationHubCore */;
+			targetProxy = BA546B552359FE170069F552 /* PBXContainerItemProxy */;
+		};
+		BA546B5B2359FE1F0069F552 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BA546B352359FE090069F552 /* NotificationHubData */;
+			targetProxy = BA546B5A2359FE1F0069F552 /* PBXContainerItemProxy */;
 		};
 		BA60428022A7409400345259 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
@@ -1383,6 +1614,104 @@
 					"@loader_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.bannzai.NotificationHubReduxTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NotificationHub.app/NotificationHub";
+			};
+			name = Release;
+		};
+		BA546B4E2359FE090069F552 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = NO;
+				DEVELOPMENT_TEAM = TQPN82UBBY;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = NotificationHubData/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bannzai.NotificationHubData;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		BA546B4F2359FE090069F552 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DERIVE_MACCATALYST_PRODUCT_BUNDLE_IDENTIFIER = NO;
+				DEVELOPMENT_TEAM = TQPN82UBBY;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = NotificationHubData/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bannzai.NotificationHubData;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SUPPORTS_MACCATALYST = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		BA546B512359FE090069F552 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NotificationHubDataTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bannzai.NotificationHubDataTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NotificationHub.app/NotificationHub";
+			};
+			name = Debug;
+		};
+		BA546B522359FE090069F552 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = NotificationHubDataTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.bannzai.NotificationHubDataTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -1707,6 +2036,24 @@
 			buildConfigurations = (
 				BA546ADD2359EF6D0069F552 /* Debug */,
 				BA546ADE2359EF6D0069F552 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BA546B4D2359FE090069F552 /* Build configuration list for PBXNativeTarget "NotificationHubData" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA546B4E2359FE090069F552 /* Debug */,
+				BA546B4F2359FE090069F552 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		BA546B502359FE090069F552 /* Build configuration list for PBXNativeTarget "NotificationHubDataTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				BA546B512359FE090069F552 /* Debug */,
+				BA546B522359FE090069F552 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -9,6 +9,7 @@
 import SwiftUI
 import Combine
 import NotificationHubCore
+import NotificationHubData
 import NotificationHubRedux
 
 extension WatchingListView {
