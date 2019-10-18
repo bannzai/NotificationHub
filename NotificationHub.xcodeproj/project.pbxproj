@@ -1217,12 +1217,12 @@
 			targets = (
 				BA60426722A7409300345259 /* NotificationHub */,
 				BA60427D22A7409400345259 /* NotificationHubTests */,
+				BA546B3D2359FE090069F552 /* NotificationHubDataTests */,
 				BA546AC92359EF6D0069F552 /* NotificationHubReduxTests */,
 				BA60428822A7409400345259 /* NotificationHubUITests */,
 				BA6042C822A7CAD500345259 /* NotificationHubCore */,
 				BA546AC12359EF6D0069F552 /* NotificationHubRedux */,
 				BA546B352359FE090069F552 /* NotificationHubData */,
-				BA546B3D2359FE090069F552 /* NotificationHubDataTests */,
 			);
 		};
 /* End PBXProject section */
