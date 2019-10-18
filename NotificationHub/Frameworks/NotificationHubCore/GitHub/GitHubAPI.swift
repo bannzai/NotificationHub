@@ -14,7 +14,6 @@ public struct RequestError: Identifiable, Error, Equatable {
         lhs.localizedDescription == rhs.localizedDescription
     }
     
-    // TODO: Use NetworkError
     public let error: Swift.Error
     public init(error: Swift.Error) {
         self.error = error
@@ -23,13 +22,6 @@ public struct RequestError: Identifiable, Error, Equatable {
     public var id: String { error.localizedDescription }
 
 }
-
-public enum NetworkError: Error {
-    case noResponseData
-    case networkError(Swift.Error)
-    case makeURLRequestFaield(Swift.Error)
-}
-
 
 public struct GitHubAPI {
     internal struct DecodedRequestPublisher<Request: APIRequest>: Publisher where Request.Response: Decodable {
