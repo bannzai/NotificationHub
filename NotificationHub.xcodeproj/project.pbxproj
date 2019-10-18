@@ -336,6 +336,7 @@
 		33498AB72352D80F00D1A8BC /* NotificationHubRedux */ = {
 			isa = PBXGroup;
 			children = (
+				33498AA82352B42E00D1A8BC /* Redux */,
 				338CB7E02354940E00BA3594 /* Tests */,
 				334FB936235370BF006441E7 /* Render */,
 				33498AC82352E46000D1A8BC /* Canceller */,
@@ -471,7 +472,6 @@
 		BA60426A22A7409300345259 /* NotificationHub */ = {
 			isa = PBXGroup;
 			children = (
-				33498AA82352B42E00D1A8BC /* Redux */,
 				BA6C828C22B49E6B006D2231 /* Previews */,
 				BA6042E722A7CAF500345259 /* Frameworks */,
 				BAEFFC4122BA7F3F006D1549 /* Components */,
