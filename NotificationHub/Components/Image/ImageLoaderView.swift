@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import NotificationHubNetwork
+import NotificationHubCore
 
 struct ImageLoaderView : View {
     @ObservedObject var viewModel = ImageLoaderViewModel()

@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import NotificationHubNetwork
+import NotificationHubCore
 
 let signupMiddleware: Middleware<ReduxState> = { dispatch, getState in
     return { next in

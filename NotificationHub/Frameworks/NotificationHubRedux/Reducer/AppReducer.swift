@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import NotificationHubCore
 
 public func *=<T: Equatable>(lhs: inout T, rhs: T) {
     if lhs == rhs {

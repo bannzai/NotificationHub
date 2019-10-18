@@ -9,7 +9,7 @@
 import UIKit
 import SwiftUI
 import Combine
-import NotificationHubNetwork
+import NotificationHubCore
 
 final class NotificationListPageViewStore: ObservableObject {
     static let shared = NotificationListPageViewStore()

@@ -8,7 +8,7 @@
 
 import SwiftUI
 import Combine
-import NotificationHubNetwork
+import NotificationHubCore
 
 final class RootViewStore: ObservableObject {
     let subject = CurrentValueSubject<String?, Never>(nil)

@@ -9,7 +9,7 @@
 import Foundation
 import Combine
 import SwiftUI
-import NotificationHubNetwork
+import NotificationHubCore
 import UIKit.UIImage
 
 final public class ImageLoaderViewModel: ObservableObject {

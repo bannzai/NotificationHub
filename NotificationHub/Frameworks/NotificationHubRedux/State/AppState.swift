@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import NotificationHubNetwork
+import NotificationHubCore
 
 struct Coder<Coder: Codable> {
     private let key = Coder.self

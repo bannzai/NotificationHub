@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import NotificationHubNetwork
+import NotificationHubCore
 
 struct NotificationListView : RenderableView {
     @State private var selectedNotification: NotificationElement? = nil

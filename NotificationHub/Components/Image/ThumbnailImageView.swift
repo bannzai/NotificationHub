@@ -7,7 +7,7 @@
 //
 
 import SwiftUI
-import NotificationHubNetwork
+import NotificationHubCore
 
 struct ThumbnailImageViewModifier: ViewModifier {
     let edge: CGFloat = 44

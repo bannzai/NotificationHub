@@ -10,7 +10,7 @@ import UIKit
 import SwiftUI
 import OAuthSwift
 import NotificationHubCore
-import NotificationHubNetwork
+import NotificationHubCore
 import CoreData
 
 let sharedStore = Store<AppState>(

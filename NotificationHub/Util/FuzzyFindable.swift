@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import NotificationHubNetwork
+import NotificationHubCore
 
 protocol FuzzyFindable {
     func fuzzyWords() -> [String]

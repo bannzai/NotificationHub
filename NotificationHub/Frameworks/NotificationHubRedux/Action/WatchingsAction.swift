@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import NotificationHubNetwork
+import NotificationHubCore
 import Combine
 
 struct SetWatchingListAction: Action {

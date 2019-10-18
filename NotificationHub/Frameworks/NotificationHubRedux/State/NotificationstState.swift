@@ -7,7 +7,7 @@
 //
 
 import Foundation
-import NotificationHubNetwork
+import NotificationHubCore
 
 struct NotificationPageState: ReduxState, Codable, Equatable {
     static let allNotificationsState: NotificationsState = NotificationsState(watching: nil, isVisible: true)

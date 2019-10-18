@@ -7,15 +7,14 @@
 //
 
 import Foundation
-import NotificationHubNetwork
+import NotificationHubCore
 
-enum NetworkRequestAction: Action {
+public enum NetworkRequestAction: Action {
     case start
     case finished
 }
 
-struct ReceiveNetworkRequestError: Action {
-    typealias ErrorType = RequestError
-    let error: ErrorType
+public struct ReceiveNetworkRequestError: Action {
+    public let error: RequestError
 }
 
