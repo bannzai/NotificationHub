@@ -10,6 +10,9 @@ import Foundation
 import NotificationHubCore
 import Combine
 
-struct SignupAction: Action {
+public struct SignupAction: Action {
     let githubAccessToken: String
+    public init(githubAccessToken: String) {
+        self.githubAccessToken = githubAccessToken
+    }
 }

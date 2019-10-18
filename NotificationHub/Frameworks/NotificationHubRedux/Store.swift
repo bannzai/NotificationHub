@@ -72,7 +72,7 @@ extension Store where State == AppState {
         dispatch(action: RestoreAction(watching: state.watchingListState))
     }
     
-    func saveState() {
+    public func saveState() {
         DispatchQueue.global().async {
             let coder = Coder<AppState>()
             do {

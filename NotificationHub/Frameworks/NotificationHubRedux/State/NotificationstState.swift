@@ -9,25 +9,25 @@
 import Foundation
 import NotificationHubCore
 
-struct NotificationPageState: ReduxState, Codable, Equatable {
+public struct NotificationPageState: ReduxState, Codable, Equatable {
     static let allNotificationsState: NotificationsState = NotificationsState(watching: nil, isVisible: true)
     static let allNotificationsPage: Int = 0
-    var notificationsStatuses: [NotificationsState] = [Self.allNotificationsState]
+    public var notificationsStatuses: [NotificationsState] = [Self.allNotificationsState]
     var currentNotificationPage: Int = Self.allNotificationsPage
     var currentState: NotificationsState { notificationsStatuses.filter { $0.isVisible }[currentNotificationPage] }
 }
 
-struct NotificationsState: ReduxState, Codable, Equatable {
-    enum FetchStatus: Int, Codable, Equatable {
+public struct NotificationsState: ReduxState, Codable, Equatable {
+    public enum FetchStatus: Int, Codable, Equatable {
         case notYetLoad
         case loaded
     }
 
-    var watching: WatchingElement?
-    var fetchStatus: FetchStatus = .notYetLoad
-    var nextFetchPage: Int { (notifications.count + NotificationsRequest.elementPerPage) / NotificationsRequest.elementPerPage - 1 }
+    public var watching: WatchingElement?
+    public var fetchStatus: FetchStatus = .notYetLoad
+    public var nextFetchPage: Int { (notifications.count + NotificationsRequest.elementPerPage) / NotificationsRequest.elementPerPage - 1 }
     var isVisible: Bool = false
-    var groupedNotifications: [GroupedNotification] {
+    public var groupedNotifications: [GroupedNotification] {
         visibilyNotifications.reduce(into: [GroupedNotification]()) { (result, element) in
             let key = GroupedNotification.toKey(dateString: element.updatedAt)
             let matcher: (GroupedNotification) -> Bool = {
@@ -42,7 +42,7 @@ struct NotificationsState: ReduxState, Codable, Equatable {
             }
         }
     }
-    var visibilyNotifications: [NotificationElement] {
+    public var visibilyNotifications: [NotificationElement] {
         notifications.filter { $0.unread }
     }
     var notifications: [NotificationElement] = []
@@ -58,11 +58,16 @@ extension Array where Element == NotificationElement {
     }
 }
 
-struct GroupedNotification: Equatable, Codable, Identifiable {
-    typealias NotificationDate = String
-    var id: String { key }
-    let key: NotificationDate
+public struct GroupedNotification: Equatable, Codable, Identifiable {
+    public typealias NotificationDate = String
+    public var id: String { key }
+    public let key: NotificationDate
     var values: [NotificationElement]
+    
+    public init(key: NotificationDate, values: [NotificationElement]) {
+        self.key = key
+        self.values = values
+    }
     
     static func toKey(dateString: String) -> NotificationDate {
         let date = APIDateformatter.date(from: dateString)
@@ -72,7 +77,7 @@ struct GroupedNotification: Equatable, Codable, Identifiable {
 }
 
 extension NotificationsState: NotificationPath {
-    var notificationPath: URLPathConvertible {
+    public var notificationPath: URLPathConvertible {
         switch watching {
         case nil:
             return "notifications"

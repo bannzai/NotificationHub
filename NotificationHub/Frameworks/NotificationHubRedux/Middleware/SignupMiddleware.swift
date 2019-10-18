@@ -9,7 +9,7 @@
 import Foundation
 import NotificationHubCore
 
-let signupMiddleware: Middleware<ReduxState> = { dispatch, getState in
+public let signupMiddleware: Middleware<ReduxState> = { dispatch, getState in
     return { next in
         return { action in
             if let action = action as? SignupAction {

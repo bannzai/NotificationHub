@@ -8,7 +8,7 @@
 
 import Foundation
 
-let loggingMiddleware: Middleware<ReduxState> = { dispatch, getState in
+public let loggingMiddleware: Middleware<ReduxState> = { dispatch, getState in
     return { next in
         return { action in
             print("[INFO] action is \(type(of: action))")

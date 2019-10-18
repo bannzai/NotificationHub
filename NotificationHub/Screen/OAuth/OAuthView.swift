@@ -7,6 +7,8 @@
 //
 
 import SwiftUI
+import NotificationHubRedux
+
 struct OAuthView : UIViewControllerRepresentable {
     typealias UIViewControllerType = UINavigationController
 

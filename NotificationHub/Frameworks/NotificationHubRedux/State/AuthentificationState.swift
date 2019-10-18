@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct AuthenfiicationState: ReduxState, Codable, Equatable {
+public struct AuthenfiicationState: ReduxState, Codable, Equatable {
     var githubAccessToken: String? = nil
     var isAuthorized: Bool { githubAccessToken != nil }
 }

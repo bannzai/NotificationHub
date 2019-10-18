@@ -7,6 +7,7 @@
 //
 
 import SwiftUI
+import NotificationHubRedux
 
 struct NavigationBarTitleModifier: ViewModifier {
     @EnvironmentObject var store: Store<AppState>

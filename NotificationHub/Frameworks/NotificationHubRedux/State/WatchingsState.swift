@@ -9,7 +9,7 @@
 import Foundation
 import NotificationHubCore
 
-struct WatchingsState: ReduxState, Codable, Equatable {
+public struct WatchingsState: ReduxState, Codable, Equatable {
     enum FetchStatus: Int, Codable, Equatable {
         case notYetLoad
         case loaded

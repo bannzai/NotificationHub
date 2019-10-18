@@ -10,30 +10,43 @@ import Foundation
 import NotificationHubCore
 import Combine
 
-struct CreateNotificationsAction: Action {
+public struct CreateNotificationsAction: Action {
     let watching: WatchingElement
 }
-struct AddNotificationListAction: Action {
+public struct AddNotificationListAction: Action {
     let watching: WatchingElement?
     let elements: [NotificationElement]
 }
 
-struct ChangeNotificationPageAction: Action {
+public struct ChangeNotificationPageAction: Action {
     let page: Int
+    public init(page: Int) {
+        self.page = page
+    }
 }
 
 
-struct UpdateNotificationsTorRead: Action {
+public struct UpdateNotificationsTorRead: Action {
     let watching: WatchingElement?
     let sectionDate: String
 }
 
-struct ReadNotificationAction: AsyncAction, ReadNotificationPath {
+public struct ReadNotificationAction: AsyncAction, ReadNotificationPath {
     let watching: WatchingElement?
     let sectionDate: String
     var canceller: Canceller
+    
+    init(
+        watching: WatchingElement?,
+        sectionDate: String,
+        canceller: Canceller
+    ) {
+        self.watching = watching
+        self.sectionDate = sectionDate
+        self.canceller = canceller
+    }
 
-    var readNotificationPath: URLPathConvertible {
+    public var readNotificationPath: URLPathConvertible {
         switch watching {
         case nil:
             return "notifications"
@@ -63,7 +76,7 @@ struct ReadNotificationAction: AsyncAction, ReadNotificationPath {
         }
     }
 
-    func async(state: ReduxState?, dispatch: @escaping DispatchFunction) {
+    public func async(state: ReduxState?, dispatch: @escaping DispatchFunction) {
         let oneDay = TimeInterval(60 * 60 * 24)
         var date = SectionTitleDateFormatter.date(from: sectionDate)
         date.addTimeInterval(oneDay)
@@ -88,11 +101,19 @@ struct ReadNotificationAction: AsyncAction, ReadNotificationPath {
     }
 }
 
-struct NotificationsFetchAction: AsyncAction {
+public struct NotificationsFetchAction: AsyncAction {
     let watching: WatchingElement?
     var canceller: Canceller
+    
+    public init(
+        watching: WatchingElement?,
+        canceller: Canceller
+    ) {
+        self.watching = watching
+        self.canceller = canceller
+    }
 
-    func async(state: ReduxState?, dispatch: @escaping DispatchFunction) {
+    public func async(state: ReduxState?, dispatch: @escaping DispatchFunction) {
         let state = appState(state).notificationPageState.notificationsStatuses.first(where: { $0.watching?.owner.login == watching?.owner.login })!
         let mapper: ([NotificationElement]) -> AddNotificationListAction = {
             AddNotificationListAction(watching: self.watching, elements: $0)

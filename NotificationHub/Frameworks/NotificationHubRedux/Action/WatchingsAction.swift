@@ -10,22 +10,22 @@ import Foundation
 import NotificationHubCore
 import Combine
 
-struct SetWatchingListAction: Action {
+public struct SetWatchingListAction: Action {
     let elements: [WatchingElement]
 }
 
-struct SubscribeWatchingAction: Action {
+public struct SubscribeWatchingAction: Action {
     let watching: WatchingElement
 }
 
-struct UnSubscribeWatchingAction: Action {
+public struct UnSubscribeWatchingAction: Action {
     let watching: WatchingElement
 }
 
-struct WatchingsFetchAction: AsyncAction {
+public struct WatchingsFetchAction: AsyncAction {
     var canceller: Canceller
 
-    func async(state: ReduxState?, dispatch: @escaping DispatchFunction) {
+    public func async(state: ReduxState?, dispatch: @escaping DispatchFunction) {
         dispatch(NetworkRequestAction.start)
 
         GitHubAPI

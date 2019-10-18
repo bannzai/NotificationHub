@@ -35,12 +35,12 @@ struct Coder<Coder: Codable> {
 
 public struct AppState: ReduxState, Codable, Equatable {
     public init() { }
-    var requestError: RequestError? = nil
-    var watchingListState = WatchingsState()
-    var hudState: HUDState = HUDState()
-    var notificationPageState: NotificationPageState = NotificationPageState()
-    var authentificationState: AuthenfiicationState = AuthenfiicationState()
-    var title: String { notificationPageState.currentState.watching?.owner.login ?? "Notifications" }
+    public var requestError: RequestError? = nil
+    public var watchingListState = WatchingsState()
+    public var hudState: HUDState = HUDState()
+    public var notificationPageState: NotificationPageState = NotificationPageState()
+    public var authentificationState: AuthenfiicationState = AuthenfiicationState()
+    public var title: String { notificationPageState.currentState.watching?.owner.login ?? "Notifications" }
 
     private enum CodingKeys: String, CodingKey {
         case watchingListState

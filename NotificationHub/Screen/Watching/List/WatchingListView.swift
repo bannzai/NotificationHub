@@ -8,6 +8,7 @@
 
 import SwiftUI
 import NotificationHubCore
+import NotificationHubRedux
 
 struct WatchingListView: View {
     @EnvironmentObject var store: Store<AppState>

@@ -8,6 +8,7 @@
 
 import SwiftUI
 import NotificationHubCore
+import NotificationHubRedux
 
 struct NotificationListView : RenderableView {
     @State private var selectedNotification: NotificationElement? = nil

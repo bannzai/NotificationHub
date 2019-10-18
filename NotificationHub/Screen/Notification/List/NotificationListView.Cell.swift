@@ -9,6 +9,7 @@
 import SwiftUI
 import Combine
 import NotificationHubCore
+import NotificationHubRedux
 
 extension NotificationListView {
     struct Cell: RenderableView {

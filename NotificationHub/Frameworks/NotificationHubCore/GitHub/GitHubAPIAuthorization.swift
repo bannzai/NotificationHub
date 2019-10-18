@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import NotificationHubCore
 
 public struct GitHubAPIAuthorizationHeader: AuthorizationHeader {
     public var header: String { "token \(NetworkConfig.Github.accessToken!)" }
