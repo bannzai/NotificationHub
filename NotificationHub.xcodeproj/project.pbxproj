@@ -64,10 +64,10 @@
 		BA546B1F2359F05B0069F552 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431822A7D1ED00345259 /* HTTPMethod.swift */; };
 		BA546B202359F05B0069F552 /* URLEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431422A7D12900345259 /* URLEncoder.swift */; };
 		BA546B212359F05B0069F552 /* WatchingsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A373D2342250800CB487B /* WatchingsRequest.swift */; };
-		BA546B222359F05B0069F552 /* WatchingList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A37412342257000CB487B /* WatchingList.swift */; };
+		BA546B222359F05B0069F552 /* WatchingElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A37412342257000CB487B /* WatchingElement.swift */; };
 		BA546B232359F05B0069F552 /* NotificationsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60432A22A7D99B00345259 /* NotificationsRequest.swift */; };
 		BA546B242359F05B0069F552 /* ReadNotificationsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 33C675FF2355326000E3F2DD /* ReadNotificationsRequest.swift */; };
-		BA546B252359F05B0069F552 /* NotificationList.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC127F922A9A7FB00B52862 /* NotificationList.swift */; };
+		BA546B252359F05B0069F552 /* NotificationElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC127F922A9A7FB00B52862 /* NotificationElement.swift */; };
 		BA546B262359F05B0069F552 /* GitHubAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431B22A7D22900345259 /* GitHubAPI.swift */; };
 		BA546B272359F05B0069F552 /* GitHubAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431D22A7D2FF00345259 /* GitHubAPIRequest.swift */; };
 		BA546B282359F05B0069F552 /* GitHubAPIAuthorization.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60432722A7D91200345259 /* GitHubAPIAuthorization.swift */; };
@@ -269,7 +269,7 @@
 		BA8A3738234206CF00CB487B /* SafariViewControllerWrapperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariViewControllerWrapperViewController.swift; sourceTree = "<group>"; };
 		BA8A373A2342070500CB487B /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
 		BA8A373D2342250800CB487B /* WatchingsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchingsRequest.swift; sourceTree = "<group>"; };
-		BA8A37412342257000CB487B /* WatchingList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchingList.swift; sourceTree = "<group>"; };
+		BA8A37412342257000CB487B /* WatchingElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchingElement.swift; sourceTree = "<group>"; };
 		BA8A374723422E5100CB487B /* WatchingListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchingListView.swift; sourceTree = "<group>"; };
 		BA8A374B23422F4600CB487B /* WatchingList.Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchingList.Cell.swift; sourceTree = "<group>"; };
 		BAAAA2F82357EADF0087731C /* CoderAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoderAction.swift; sourceTree = "<group>"; };
@@ -280,7 +280,7 @@
 		BAC127D222A8442200B52862 /* URLConvertible.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = URLConvertible.swift; sourceTree = "<group>"; };
 		BAC127D522A844BD00B52862 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
 		BAC127E322A8911C00B52862 /* NotificationListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListView.swift; sourceTree = "<group>"; };
-		BAC127F922A9A7FB00B52862 /* NotificationList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationList.swift; sourceTree = "<group>"; };
+		BAC127F922A9A7FB00B52862 /* NotificationElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationElement.swift; sourceTree = "<group>"; };
 		BAC1280B22A9B57700B52862 /* NotificationListView.Cell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationListView.Cell.swift; sourceTree = "<group>"; };
 		BACDC7FE2346C7F800C4A1AE /* OAuthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthViewController.swift; sourceTree = "<group>"; };
 		BACDC8022346CC1000C4A1AE /* OAuthView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OAuthView.swift; sourceTree = "<group>"; };
@@ -643,7 +643,7 @@
 			children = (
 				BA60432A22A7D99B00345259 /* NotificationsRequest.swift */,
 				33C675FF2355326000E3F2DD /* ReadNotificationsRequest.swift */,
-				BAC127F922A9A7FB00B52862 /* NotificationList.swift */,
+				BAC127F922A9A7FB00B52862 /* NotificationElement.swift */,
 			);
 			path = Notifcation;
 			sourceTree = "<group>";
@@ -685,7 +685,7 @@
 			isa = PBXGroup;
 			children = (
 				BA8A373D2342250800CB487B /* WatchingsRequest.swift */,
-				BA8A37412342257000CB487B /* WatchingList.swift */,
+				BA8A37412342257000CB487B /* WatchingElement.swift */,
 			);
 			path = Watching;
 			sourceTree = "<group>";
@@ -1224,8 +1224,8 @@
 				BA546B2A2359F05B0069F552 /* Secret.swift in Sources */,
 				BA546B202359F05B0069F552 /* URLEncoder.swift in Sources */,
 				BA546B1C2359F05B0069F552 /* HTTPHeader.swift in Sources */,
-				BA546B222359F05B0069F552 /* WatchingList.swift in Sources */,
-				BA546B252359F05B0069F552 /* NotificationList.swift in Sources */,
+				BA546B222359F05B0069F552 /* WatchingElement.swift in Sources */,
+				BA546B252359F05B0069F552 /* NotificationElement.swift in Sources */,
 				BA546B1D2359F05B0069F552 /* Query.swift in Sources */,
 				BA546B172359F05B0069F552 /* ImageLoader.swift in Sources */,
 				BA546B262359F05B0069F552 /* GitHubAPI.swift in Sources */,
