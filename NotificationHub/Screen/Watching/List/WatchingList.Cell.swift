@@ -52,6 +52,7 @@ extension WatchingListView {
     }
 }
 
+#if DEBUG
 struct WatchingListView_Cell_Previews : PreviewProvider {
     static var previews: some View {
         WatchingListView.Cell(
@@ -66,3 +67,4 @@ struct WatchingListView_Cell_Previews : PreviewProvider {
         )
     }
 }
+#endif

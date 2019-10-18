@@ -35,6 +35,7 @@ struct ImageLoaderView : View {
     }
 }
 
+#if DEBUG
 struct ImageLoaderView_Previews : PreviewProvider {
     static var previews: some View {
         Group {
@@ -43,3 +44,4 @@ struct ImageLoaderView_Previews : PreviewProvider {
         }
     }
 }
+#endif
