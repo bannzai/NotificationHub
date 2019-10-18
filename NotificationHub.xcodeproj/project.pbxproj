@@ -444,6 +444,8 @@
 		33498AB72352D80F00D1A8BC /* NotificationHubRedux */ = {
 			isa = PBXGroup;
 			children = (
+				BA546AC42359EF6D0069F552 /* NotificationHubRedux.h */,
+				BA546AC52359EF6D0069F552 /* Info.plist */,
 				33C67602235602BA00E3F2DD /* DateFormatter.swift */,
 				33498AA82352B42E00D1A8BC /* Redux */,
 				338CB7E02354940E00BA3594 /* Tests */,
@@ -546,15 +548,6 @@
 			path = Tests;
 			sourceTree = "<group>";
 		};
-		BA546AC32359EF6D0069F552 /* NotificationHubRedux */ = {
-			isa = PBXGroup;
-			children = (
-				BA546AC42359EF6D0069F552 /* NotificationHubRedux.h */,
-				BA546AC52359EF6D0069F552 /* Info.plist */,
-			);
-			path = NotificationHubRedux;
-			sourceTree = "<group>";
-		};
 		BA546AD02359EF6D0069F552 /* NotificationHubReduxTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -582,16 +575,9 @@
 		BA546B302359FDF30069F552 /* NotificationHubData */ = {
 			isa = PBXGroup;
 			children = (
-				BA60431A22A7D21800345259 /* GitHub */,
-			);
-			path = NotificationHubData;
-			sourceTree = "<group>";
-		};
-		BA546B372359FE090069F552 /* NotificationHubData */ = {
-			isa = PBXGroup;
-			children = (
 				BA546B382359FE090069F552 /* NotificationHubData.h */,
 				BA546B392359FE090069F552 /* Info.plist */,
+				BA60431A22A7D21800345259 /* GitHub */,
 			);
 			path = NotificationHubData;
 			sourceTree = "<group>";
@@ -629,9 +615,7 @@
 				BA60426A22A7409300345259 /* NotificationHub */,
 				BA60428122A7409400345259 /* NotificationHubTests */,
 				BA60428C22A7409400345259 /* NotificationHubUITests */,
-				BA546AC32359EF6D0069F552 /* NotificationHubRedux */,
 				BA546AD02359EF6D0069F552 /* NotificationHubReduxTests */,
-				BA546B372359FE090069F552 /* NotificationHubData */,
 				BA546B442359FE090069F552 /* NotificationHubDataTests */,
 				BA60426922A7409300345259 /* Products */,
 				BAC1277422A830CF00B52862 /* Frameworks */,
@@ -1538,7 +1522,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = NotificationHubRedux/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/NotificationHub/Frameworks/NotificationHubRedux/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1566,7 +1550,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = NotificationHubRedux/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/NotificationHub/Frameworks/NotificationHubRedux/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1633,7 +1617,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = NotificationHubData/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/NotificationHub/Frameworks/NotificationHubData/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1663,7 +1647,7 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = NotificationHubData/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/NotificationHub/Frameworks/NotificationHubData/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
