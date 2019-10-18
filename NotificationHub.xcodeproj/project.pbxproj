@@ -295,8 +295,6 @@
 		BA546B3E2359FE090069F552 /* NotificationHubDataTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NotificationHubDataTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA546B452359FE090069F552 /* NotificationHubDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationHubDataTests.swift; sourceTree = "<group>"; };
 		BA546B472359FE090069F552 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BA546B62235A00C40069F552 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BA546B64235A00CE0069F552 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA602C442348C8A0003C281C /* UserDefaultsGenerator.generated.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultsGenerator.generated.swift; sourceTree = "<group>"; };
 		BA602C462348E68A003C281C /* NetworkConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkConfig.swift; sourceTree = "<group>"; };
 		BA60426822A7409300345259 /* NotificationHub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NotificationHub.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -446,7 +444,6 @@
 		33498AB72352D80F00D1A8BC /* NotificationHubRedux */ = {
 			isa = PBXGroup;
 			children = (
-				BA546B64235A00CE0069F552 /* Info.plist */,
 				33C67602235602BA00E3F2DD /* DateFormatter.swift */,
 				33498AA82352B42E00D1A8BC /* Redux */,
 				338CB7E02354940E00BA3594 /* Tests */,
@@ -585,7 +582,6 @@
 		BA546B302359FDF30069F552 /* NotificationHubData */ = {
 			isa = PBXGroup;
 			children = (
-				BA546B62235A00C40069F552 /* Info.plist */,
 				BA60431A22A7D21800345259 /* GitHub */,
 			);
 			path = NotificationHubData;
