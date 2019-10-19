@@ -52,7 +52,6 @@
 		BA546AFC2359EFBE0069F552 /* ToggleWatchingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 338CB7E12354942400BA3594 /* ToggleWatchingTests.swift */; };
 		BA546AFF2359F03C0069F552 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = BA546AFE2359F03C0069F552 /* Nuke */; };
 		BA546B002359F0430069F552 /* NotificationHubCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA6042C922A7CAD500345259 /* NotificationHubCore.framework */; };
-		BA546B012359F0430069F552 /* NotificationHubCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA6042C922A7CAD500345259 /* NotificationHubCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BA546B172359F05B0069F552 /* ImageLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC1278122A83DBC00B52862 /* ImageLoader.swift */; };
 		BA546B182359F05B0069F552 /* URLConvertible.swift in Sources */ = {isa = PBXBuildFile; fileRef = BAC127D222A8442200B52862 /* URLConvertible.swift */; };
 		BA546B192359F05B0069F552 /* APIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60431222A7CEBF00345259 /* APIRequest.swift */; };
@@ -76,9 +75,7 @@
 		BA546B4B2359FE090069F552 /* NotificationHubData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA546B362359FE090069F552 /* NotificationHubData.framework */; };
 		BA546B4C2359FE090069F552 /* NotificationHubData.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA546B362359FE090069F552 /* NotificationHubData.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BA546B532359FE170069F552 /* NotificationHubCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA6042C922A7CAD500345259 /* NotificationHubCore.framework */; };
-		BA546B542359FE170069F552 /* NotificationHubCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA6042C922A7CAD500345259 /* NotificationHubCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BA546B582359FE1F0069F552 /* NotificationHubData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BA546B362359FE090069F552 /* NotificationHubData.framework */; };
-		BA546B592359FE1F0069F552 /* NotificationHubData.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA546B362359FE090069F552 /* NotificationHubData.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BA546B5D2359FE390069F552 /* WatchingsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A373D2342250800CB487B /* WatchingsRequest.swift */; };
 		BA546B5E2359FE390069F552 /* WatchingElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A37412342257000CB487B /* WatchingElement.swift */; };
 		BA546B5F2359FE390069F552 /* NotificationsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA60432A22A7D99B00345259 /* NotificationsRequest.swift */; };
@@ -207,29 +204,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		BA546B042359F0430069F552 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				BA546B012359F0430069F552 /* NotificationHubCore.framework in Embed Frameworks */,
-				BA546B592359FE1F0069F552 /* NotificationHubData.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		BA546B572359FE170069F552 /* Embed Frameworks */ = {
-			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 2147483647;
-			dstPath = "";
-			dstSubfolderSpec = 10;
-			files = (
-				BA546B542359FE170069F552 /* NotificationHubCore.framework in Embed Frameworks */,
-			);
-			name = "Embed Frameworks";
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		BA6042E022A7CAD500345259 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
@@ -1006,7 +980,6 @@
 				BA546ABE2359EF6D0069F552 /* Sources */,
 				BA546ABF2359EF6D0069F552 /* Frameworks */,
 				BA546AC02359EF6D0069F552 /* Resources */,
-				BA546B042359F0430069F552 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1046,7 +1019,6 @@
 				BA546B322359FE090069F552 /* Sources */,
 				BA546B332359FE090069F552 /* Frameworks */,
 				BA546B342359FE090069F552 /* Resources */,
-				BA546B572359FE170069F552 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1514,6 +1486,7 @@
 		BA546ADA2359EF6D0069F552 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1542,6 +1515,7 @@
 		BA546ADB2359EF6D0069F552 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1608,6 +1582,7 @@
 		BA546B4E2359FE090069F552 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1638,6 +1613,7 @@
 		BA546B4F2359FE090069F552 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -1950,6 +1926,7 @@
 		BA6042E122A7CAD500345259 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -1978,6 +1955,7 @@
 		BA6042E222A7CAD500345259 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
