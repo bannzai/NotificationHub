@@ -18,7 +18,7 @@ public struct NotificationsRequest: GitHubAPIRequest {
     
     public var path: URLPathConvertible
     public var method: HTTPMethod { .GET }
-    private let isOnlyNotUnread = false
+    private let isOnlyNotUnread = true
     public var query: Query? { ["all": isOnlyNotUnread, "page": page, "per_page": Self.elementPerPage] }
 
     public static let elementPerPage = 50

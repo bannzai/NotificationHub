@@ -45,7 +45,7 @@ public struct NotificationsState: ReduxState, Codable, Equatable {
         .sorted { $0.key > $1.key }
     }
     public var visibilyNotifications: [NotificationElement] {
-        notifications.filter { $0.unread }
+        notifications
     }
     var notifications: [NotificationElement] = []
 }

@@ -25,7 +25,21 @@ let notificationsReducer: Reducer<NotificationPageState> = { state, action in
             fatalError("Unexpected watching :\(String(describing: action.watching))")
         }
         var notificationsState = state.notificationsStatuses[index]
-        notificationsState.notifications += action.elements
+        notificationsState.notifications += [
+            (repo: "bannzai/Ocha", desc: ""),
+            ]
+            .enumerated()
+            .map { (offset, element) in
+                NotificationElement(
+                    id: "\(offset)",
+                    unread: true,
+                    subject: Subject(title: element.repo, url: ""),
+                    repository: Repository(id: offset, name: element.repo, fullName: element.repo, repositoryPrivate: false, owner: Owner(id: offset, login: element.repo, avatarURL: )),
+                    reason: <#T##String#>,
+                    url: <#T##String#>,
+                    updatedAt: <#T##String#>
+                )
+        }
         notificationsState.fetchStatus = .loaded
         var state = state
         state.notificationsStatuses[index] = notificationsState
