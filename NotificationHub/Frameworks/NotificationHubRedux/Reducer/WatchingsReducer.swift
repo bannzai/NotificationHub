@@ -27,11 +27,21 @@ let watchingsReducer: Reducer<WatchingsState> = { state, action in
     var state = state
     switch action {
     case let action as SetWatchingListAction:
-        state.watchings = state.watchings.reduce(into: action.elements.distinct(), { (result, element) in
-            result.firstIndex(where: { $0.owner.login == element.owner.login }).map {
-                result[$0].isReceiveNotification = element.isReceiveNotification
-            }
-        })
+        state.watchings = [
+            ("unkojiki", "https://avatars0.githubusercontent.com/u/10897361?s=460&v=4"),
+            ("bannzai", "https://ja.gravatar.com/userimage/115662285/bd8aa2f47f909132bbc70daefcdefb62.png"),
+            ("Awesome Project", "https://user-images.githubusercontent.com/10897361/67152615-26a94100-f315-11e9-8e5d-14d51f010f76.png"),
+            ("Famous OSS community", "https://user-images.githubusercontent.com/10897361/67152621-3d4f9800-f315-11e9-88b8-5fa03f12e68d.png"),
+            ].enumerated().map { (offset, element) in
+                WatchingElement(
+                    id: Int64(offset),
+                    nodeID: "\(offset)",
+                    name: "name",
+                    fullName: "full name",
+                    owner: Owner(id: 10, login: element.0, avatarURL: element.1),
+                    notificationsUrl: "https://github.com/\(element.0)"
+                )
+        }
         state.fetchStatus = .loaded
     case let action as UnSubscribeWatchingAction:
         guard let index = state
