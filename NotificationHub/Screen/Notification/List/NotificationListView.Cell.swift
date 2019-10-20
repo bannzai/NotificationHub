@@ -42,7 +42,7 @@ extension NotificationListView {
                         .modifier(ThumbnailImageViewModifier())
                     VStack(alignment: .leading) {
                         Text(props.notification.repository.fullName).font(.headline).lineLimit(1)
-                        Text(props.notification.subject.title).font(.subheadline).lineLimit(1)
+                        Text(props.notification.subject.title).font(.subheadline)
                     }
                 }
                 .gesture(cellGestuer)
