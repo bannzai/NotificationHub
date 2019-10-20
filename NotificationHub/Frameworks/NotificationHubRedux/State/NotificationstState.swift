@@ -27,6 +27,7 @@ public struct NotificationsState: ReduxState, Codable, Equatable {
     public var watching: WatchingElement?
     public var fetchStatus: FetchStatus = .notYetLoad
     public var nextFetchPage: Int { (notifications.count + NotificationsRequest.elementPerPage) / NotificationsRequest.elementPerPage - 1 }
+    public var isExistsNextPage: Bool { nextFetchPage * NotificationsRequest.elementPerPage >= notifications.count }
     public internal(set) var isVisible: Bool = false
     public var groupedNotifications: [GroupedNotification] {
         visibilyNotifications.reduce(into: [GroupedNotification]()) { (result, element) in

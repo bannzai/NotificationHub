@@ -62,7 +62,7 @@ let notificationsReducer: Reducer<NotificationPageState> = { state, action in
         var state = state
         let indicies = state.notificationsStatuses[pageIndex].notifications.indicies(key: action.sectionDate)
         indicies.forEach {
-            state.notificationsStatuses[pageIndex].notifications[$0].unread = true
+            state.notificationsStatuses[pageIndex].notifications[$0].unread = false
         }
         return state
     case let action as RestoreAction:

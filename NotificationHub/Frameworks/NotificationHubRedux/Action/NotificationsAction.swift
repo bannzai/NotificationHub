@@ -142,6 +142,9 @@ public struct NotificationsFetchAction: AsyncAction {
     
     public func async(state: ReduxState?, dispatch: @escaping DispatchFunction) {
         let state = appState(state).notificationPageState.notificationsStatuses.first(where: { $0.watching?.owner.login == watching?.owner.login })!
+        if !state.isExistsNextPage {
+            return
+        }
         let mapper: ([NotificationElement]) -> AddNotificationListAction = {
             AddNotificationListAction(watching: self.watching, elements: $0)
         }
