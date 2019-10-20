@@ -63,7 +63,7 @@ struct NotificationListView : RenderableView {
                             }
                         }
                     }
-                    EmptyView()
+                    Text("")
                         .frame(maxWidth: .infinity,  idealHeight: 44, alignment: .center)
                         .onAppear {
                             if props.canCallFetchWhenReachedBottom {
