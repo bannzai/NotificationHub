@@ -93,6 +93,7 @@
 		BA6042DF22A7CAD500345259 /* NotificationHubCore.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = BA6042C922A7CAD500345259 /* NotificationHubCore.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		BA6C829022B49E98006D2231 /* NotificationData.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA6C828F22B49E98006D2231 /* NotificationData.swift */; };
 		BA88A60B235BE56700128396 /* UpdateNotificationsTorReadTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA88A609235BE47100128396 /* UpdateNotificationsTorReadTests.swift */; };
+		BA88A60E235BEAE300128396 /* NotificationsStateTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA88A60C235BE8F900128396 /* NotificationsStateTests.swift */; };
 		BA8A3735234200F800CB487B /* PageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A3734234200F800CB487B /* PageView.swift */; };
 		BA8A37372342068500CB487B /* SafariViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A37362342068500CB487B /* SafariViewController.swift */; };
 		BA8A3739234206CF00CB487B /* SafariViewControllerWrapperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA8A3738234206CF00CB487B /* SafariViewControllerWrapperViewController.swift */; };
@@ -303,6 +304,7 @@
 		BA60432A22A7D99B00345259 /* NotificationsRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsRequest.swift; sourceTree = "<group>"; };
 		BA6C828F22B49E98006D2231 /* NotificationData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationData.swift; sourceTree = "<group>"; };
 		BA88A609235BE47100128396 /* UpdateNotificationsTorReadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpdateNotificationsTorReadTests.swift; sourceTree = "<group>"; };
+		BA88A60C235BE8F900128396 /* NotificationsStateTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsStateTests.swift; sourceTree = "<group>"; };
 		BA8A3734234200F800CB487B /* PageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageView.swift; sourceTree = "<group>"; };
 		BA8A37362342068500CB487B /* SafariViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariViewController.swift; sourceTree = "<group>"; };
 		BA8A3738234206CF00CB487B /* SafariViewControllerWrapperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SafariViewControllerWrapperViewController.swift; sourceTree = "<group>"; };
@@ -512,6 +514,7 @@
 			isa = PBXGroup;
 			children = (
 				33C676072356059B00E3F2DD /* GroupedNotificationTests.swift */,
+				BA88A60C235BE8F900128396 /* NotificationsStateTests.swift */,
 			);
 			path = Tests;
 			sourceTree = "<group>";
@@ -1308,6 +1311,7 @@
 			files = (
 				BA546AD22359EF6D0069F552 /* NotificationHubReduxTests.swift in Sources */,
 				BA88A60B235BE56700128396 /* UpdateNotificationsTorReadTests.swift in Sources */,
+				BA88A60E235BEAE300128396 /* NotificationsStateTests.swift in Sources */,
 				BA546AFB2359EFB20069F552 /* GroupedNotificationTests.swift in Sources */,
 				BA546AFC2359EFBE0069F552 /* ToggleWatchingTests.swift in Sources */,
 			);
