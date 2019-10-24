@@ -1,5 +1,6 @@
 # NotificationHub
-NotificationHub is managed [GitHub notification](https://github.com/notifications) to use [SwiftUI](https://developer.apple.com/documentation/swiftui) and [Combine](https://developer.apple.com/documentation/combine) and [Swift Package Manager](https://github.com/apple/swift-package-manager) for iOS.  
+NotificationHub is managed [GitHub notification](https://github.com/notifications).  
+Using [SwiftUI](https://developer.apple.com/documentation/swiftui) and [Combine](https://developer.apple.com/documentation/combine) and [Swift Package Manager](https://github.com/apple/swift-package-manager) for iOS.  
 
 ## Environment
 - Over Xcode 11.0
@@ -15,7 +16,7 @@ $ make setup
 ```
 
 But it maybe got error about `XXX unbound variable`.
-So, It must be to prepared secret variables as environment variablse when exec `$make setup`.
+So, It must be to prepared secret variables as environment variablse when exec `$ make setup`.
 
 The following environment variables must be prepared.
 
