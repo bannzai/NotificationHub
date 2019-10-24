@@ -44,7 +44,7 @@ After the execution `$make setup` you can confirm Secret.swift and Info.plist ar
 <img width=300px src="https://user-images.githubusercontent.com/10897361/67378947-04d4e600-f5c3-11e9-9cbd-e4f178ab94b8.jpg" />
 
 ## Contact and Contributions
-If you contact me(or us) about bug report, improved, question technology, [Please to create issue](https://github.com/bannzai/NotificationHub/issues/new).
+If you contact me(or us) about bug report, improved, question technology, [Please create issue](https://github.com/bannzai/NotificationHub/issues/new).
 Of course, I'm looking forward your to pull request is also waiting.
 
 ## Link
