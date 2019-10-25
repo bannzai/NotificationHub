@@ -8,7 +8,7 @@ Using [SwiftUI](https://developer.apple.com/documentation/swiftui) and [Combine]
 - [Registration GitHub OAuth Apps](https://github.com/settings/developers)
 
 ## Setup
-**NotificationHub** is necessary secret informations for running application.
+**NotificationHub** is necessary secret information for running application.
 You can setup this secret information files with `$make setup`.
 
 ```
@@ -16,7 +16,7 @@ $ make setup
 ```
 
 But it maybe got error about `XXX unbound variable`.
-So, It must be to prepared secret variables as environment variablse when exec `$ make setup`.
+So, It must be to prepared secret variables as environment variables when exec `$ make setup`.
 
 The following environment variables must be prepared.
 
