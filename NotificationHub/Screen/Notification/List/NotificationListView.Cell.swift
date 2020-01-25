@@ -14,8 +14,6 @@ import NotificationHubRedux
 
 extension NotificationListView {
     struct Cell: RenderableView {
-        @EnvironmentObject var store: Store<AppState>
-        
         let notification: NotificationElement
         let didSelectCell: (NotificationElement) -> Void
         
