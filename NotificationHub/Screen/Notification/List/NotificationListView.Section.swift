@@ -13,8 +13,6 @@ import NotificationHubRedux
 
 extension NotificationListView {
     struct SectionView: RenderableView {
-        @EnvironmentObject var store: Store<AppState>
-
         let groupedNotification: GroupedNotification
         let watching: WatchingElement?
         let unreadButtonPressed: (GroupedNotification) -> Void

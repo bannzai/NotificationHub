@@ -53,16 +53,6 @@ final class NotificationListPageViewStore: ObservableObject {
 struct NotificationListPageView: View {
     @ObservedObject var store: NotificationListPageViewStore = .shared
 
-//    var pages: [NotificationListView] {
-//        sharedStore
-//            .state
-//            .notificationPageState
-//            .notificationsStatuses
-//            .map { _ in
-//                NotificationListView()
-//        }
-//    }
-//
     var body: some View {
         PageView(views: store.pages)
     }
