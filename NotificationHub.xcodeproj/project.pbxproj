@@ -1808,6 +1808,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "NotificationHub/Preview\\ Content";
 				DEVELOPMENT_TEAM = TQPN82UBBY;
 				ENABLE_PREVIEWS = YES;
@@ -1817,6 +1818,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.1;
 				OTHER_SWIFT_FLAGS = "-DOAUTH_APP_EXTENSIONS";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bannzai.NotificationHub;
 				PRODUCT_NAME = NotificationHub;
@@ -1833,6 +1835,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_ASSET_PATHS = "NotificationHub/Preview\\ Content";
 				DEVELOPMENT_TEAM = TQPN82UBBY;
 				ENABLE_PREVIEWS = YES;
@@ -1842,6 +1845,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.1;
 				OTHER_SWIFT_FLAGS = "-DOAUTH_APP_EXTENSIONS";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bannzai.NotificationHub;
 				PRODUCT_NAME = NotificationHub;
