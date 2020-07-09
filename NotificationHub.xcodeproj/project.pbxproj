@@ -1818,7 +1818,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.4;
 				OTHER_SWIFT_FLAGS = "-DOAUTH_APP_EXTENSIONS";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bannzai.NotificationHub;
 				PRODUCT_NAME = NotificationHub;
@@ -1845,7 +1845,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 1.0.1;
+				MARKETING_VERSION = 1.0.4;
 				OTHER_SWIFT_FLAGS = "-DOAUTH_APP_EXTENSIONS";
 				PRODUCT_BUNDLE_IDENTIFIER = com.bannzai.NotificationHub;
 				PRODUCT_NAME = NotificationHub;
